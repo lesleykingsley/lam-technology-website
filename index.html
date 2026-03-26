@@ -266,7 +266,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 <script>
 function tNav(){document.getElementById('nMob').classList.toggle('op')}
 document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
-var ws=['Technology Enablement','Digital Transformation','Cybersecurity','Digital Analytics','Customer Experience','Infrastructure Modernization','Managed Services','Mobility & IoT'],wi=0,el=document.getElementById('rw');
+var ws=['Technology Enablement','Digital Transformation','Cybersecurity','Digital Analytics','Customer Experience','Infrastructure Modernization','Managed Services','Mobility & IoT','AI Strategy','Microsoft Licensing'],wi=0,el=document.getElementById('rw');
 function rW(){el.style.opacity='0';el.style.transform='translateY(-10px)';setTimeout(function(){wi=(wi+1)%ws.length;el.textContent=ws[wi];el.style.transform='translateY(10px)';setTimeout(function(){el.style.opacity='1';el.style.transform='translateY(0)'},50)},350)}
 setInterval(rW,2800);
 window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
