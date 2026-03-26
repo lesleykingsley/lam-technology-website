@@ -49,14 +49,14 @@
     .reveal.visible { opacity: 1; transform: none; }
 
     /* NAVBAR */
-    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(15,25,41,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #ffffff; backdrop-filter: blur(16px); border-bottom: 1px solid var(--gray-300); box-shadow: 0 2px 16px rgba(26,39,68,0.08); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
     .nav-logo { font-size: 22px; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
     .nav-logo span { color: var(--red); }
     .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); transition: color var(--transition); position: relative; }
+    .nav-links a { font-size: 14px; font-weight: 600; color: var(--navy); transition: color var(--transition); position: relative; }
     .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transition: transform var(--transition); }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--red); }
     .nav-links a:hover::after { transform: scaleX(1); }
     .nav-cta { margin-left: 8px; padding: 10px 22px !important; font-size: 14px; }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
@@ -676,10 +676,10 @@
   window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 40) {
-      navbar.style.background = 'rgba(15,25,41,0.99)';
+      navbar.style.background = '#ffffff';
       navbar.style.boxShadow = '0 2px 24px rgba(0,0,0,0.25)';
     } else {
-      navbar.style.background = 'rgba(15,25,41,0.97)';
+      navbar.style.background = '#ffffff';
       navbar.style.boxShadow = 'none';
     }
   });
