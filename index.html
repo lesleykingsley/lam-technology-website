@@ -73,6 +73,21 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .et{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.35}
 .es{font-size:14px;color:var(--g6);line-height:1.68}
 .ef{margin-top:40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.ef-banner{margin-top:56px;background:linear-gradient(135deg,var(--navy) 0%,#0f1929 100%);border-radius:16px;overflow:hidden;position:relative;border-left:6px solid var(--red)}
+.ef-banner::before{content:'';position:absolute;top:0;right:0;width:300px;height:100%;background:radial-gradient(ellipse at right center,rgba(192,57,43,.25),transparent 70%);pointer-events:none}
+.ef-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:48px 56px;flex-wrap:wrap}
+.ef-left{flex:1;min-width:280px}
+.ef-eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.ef-title{font-size:clamp(22px,2.5vw,30px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:16px}
+.ef-red{color:var(--red)}
+.ef-sub{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;max-width:520px}
+.ef-sub strong{color:#fff}
+.ef-right{display:flex;flex-direction:column;gap:14px;align-items:flex-start;flex-shrink:0}
+.ef-btn-primary{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:16px;padding:16px 32px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}
+.ef-btn-primary:hover{background:#a93226;transform:translateY(-2px)}
+.ef-btn-secondary{display:inline-block;background:transparent;color:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;border:2px solid rgba(255,255,255,.3);white-space:nowrap;transition:border-color .2s}
+.ef-btn-secondary:hover{border-color:#fff}
+.ef-note{font-size:12px;color:rgba(255,255,255,.45);margin:0}
 #practices{padding:96px 0;background:var(--off)}
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .pc{background:#fff;border-radius:var(--r);padding:36px 28px;display:flex;flex-direction:column;border:1px solid var(--g2);transition:all var(--t)}
@@ -186,7 +201,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 <div class="ec"><div class="ei">&#128225;</div><div class="et">Wireless Wisdom&trade;</div><div class="es">Optimized mobile tools &amp; secure connectivity &mdash; we modernize how your team stays connected in the field and in the office.</div></div>
 <div class="ec"><div class="ei">&#128196;</div><div class="et">RFP Vendor Validation&trade;</div><div class="es">Structured RFP creation &amp; vendor management &mdash; we develop comprehensive RFPs, evaluate vendor responses, and guide you to the right technology partner with confidence.</div></div>
 </div>
-<div class="ef"><a href="#cta" class="btn bn">Just Ask LAM <span class="arr">&rarr;</span></a><span style="font-size:14px;color:var(--g6)">Not sure where to start? We will help you figure it out.</span></div>
+<div class="ef-banner"><div class="ef-inner"><div class="ef-left"><div class="ef-eyebrow">Ready to Simplify Your IT?</div><h3 class="ef-title">Stop Overpaying. Stop Guessing. <span class="ef-red">Start with LAM.</span></h3><p class="ef-sub">Most organizations are leaving money on the table and don't even know it. A single conversation with LAM has helped clients save thousands in vendor costs, close security gaps, and build technology strategies that actually work. <strong>Let's start yours today.</strong></p></div><div class="ef-right"><a href="#cta" class="ef-btn-primary">Schedule a Free Consultation &rarr;</a><a href="tel:8174764714" class="ef-btn-secondary">&#128222; Call Us: (817) 476-4714</a><p class="ef-note">No pressure. No commitment. Just honest guidance.</p></div></div></div>
 </div></section>
 
 <section id="practices"><div class="container">
