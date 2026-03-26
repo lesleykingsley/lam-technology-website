@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAM Technology – Trustworthy IT Guidance</title>
+  <meta name="description" content="LAM Technology provides trustworthy guidance in Technology Enablement, Cybersecurity, Digital Transformation, and Managed Services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:      #1a2744;
+      --navy-dark: #0f1929;
+      --navy-mid:  #1e3060;
+      --red:       #c0392b;
+      --red-hover: #a93226;
+      --white:     #ffffff;
+      --off-white: #f7f8fc;
+      --gray-100:  #f0f2f8;
+      --gray-300:  #d1d5e0;
+      --gray-500:  #8a90a2;
+      --gray-700:  #4a5068;
+      --radius:    8px;
+      --shadow:    0 4px 24px rgba(26,39,68,0.10);
+      --shadow-lg: 0 8px 48px rgba(26,39,68,0.18);
+      --transition: 0.22s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--navy); background: var(--white); line-height: 1.6; font-size: 16px; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section-label { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+    .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.15; color: var(--navy); }
+    .section-title.light { color: var(--white); }
+    .section-subtitle { font-size: 17px; color: var(--gray-700); max-width: 640px; margin-top: 14px; line-height: 1.7; }
+    .section-subtitle.light { color: rgba(255,255,255,0.70); }
+    .btn { display: inline-block; font-weight: 700; font-size: 15px; padding: 14px 30px; border-radius: var(--radius); cursor: pointer; transition: background var(--transition), transform var(--transition), box-shadow var(--transition); border: 2px solid transparent; letter-spacing: 0.02em; }
+    .btn-primary { background: var(--red); color: var(--white); border-color: var(--red); }
+    .btn-primary:hover { background: var(--red-hover); border-color: var(--red-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(192,57,43,0.35); }
+    .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.5); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: var(--white); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
+    .btn-outline:hover { background: var(--navy); color: var(--white); transform: translateY(-2px); }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* NAVBAR */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(15,25,41,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-logo { font-size: 22px; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--red); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); transition: color var(--transition); position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transition: transform var(--transition); }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { margin-left: 8px; padding: 10px 22px !important; font-size: 14px; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; display: block; }
+    .nav-mobile { display: none; flex-direction: column; background: var(--navy-dark); }
+    .nav-mobile.open { display: flex; padding: 20px 24px; gap: 4px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .nav-mobile a { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.80); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+    /* HERO */
+    #hero { min-height: 100vh; background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, var(--navy-mid) 100%); display: flex; align-items: center; padding: 120px 0 80px; position: relative; overflow: hidden; }
+    #hero::before { content: ''; position: absolute; top: -40%; right: -15%; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(192,57,43,0.16) 0%, transparent 70%); pointer-events: none; }
+    #hero::after { content: ''; position: absolute; bottom: -25%; left: -10%; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%); pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; background: rgba(192,57,43,0.15); border: 1px solid rgba(192,57,43,0.30); border-radius: 100px; padding: 6px 18px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); letter-spacing: 0.05em; margin-bottom: 28px; }
+    .hero-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+    .hero-title { font-size: clamp(36px, 5.5vw, 64px); font-weight: 800; color: var(--white); line-height: 1.08; letter-spacing: -0.025em; margin-bottom: 24px; }
+    .hero-title .accent { color: var(--red); display: block; min-height: 1.15em; }
+    .hero-subtitle { font-size: 18px; color: rgba(255,255,255,0.70); max-width: 560px; line-height: 1.75; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-stats { margin-top: 64px; display: flex; gap: 48px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.10); padding-top: 40px; }
+    .hero-stat-number { font-size: 38px; font-weight: 800; color: var(--white); line-height: 1; }
+    .hero-stat-number em { color: var(--red); font-style: normal; }
+    .hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.50); margin-top: 4px; font-weight: 500; }
+
+    /* LOGO STRIP */
+    #logo-strip { background: var(--off-white); padding: 32px 0; border-bottom: 1px solid var(--gray-300); }
+    .logo-strip-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px; }
+    .logo-strip-label { font-size: 12px; font-weight: 700; color: var(--gray-500); letter-spacing: 0.10em; text-transform: uppercase; white-space: nowrap; margin-right: 16px; }
+    .logo-pill { background: var(--white); border: 1px solid var(--gray-300); border-radius: 100px; padding: 8px 20px; font-size: 13px; font-weight: 600; color: var(--gray-500); }
+
+    /* ENGAGEMENT MODEL */
+    #engagement { padding: 100px 0; background: var(--white); }
+    .engagement-header { max-width: 620px; margin-bottom: 60px; }
+    .engagement-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
+    .engagement-card { background: var(--off-white); border: 1px solid var(--gray-300); border-radius: 12px; padding: 32px; position: relative; overflow: hidden; transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition); }
+    .engagement-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--red); transform: scaleY(0); transform-origin: bottom; transition: transform var(--transition); }
+    .engagement-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: rgba(192,57,43,0.20); }
+    .engagement-card:hover::before { transform: scaleY(1); }
+    .engagement-icon { font-size: 28px; margin-bottom: 16px; }
+    .engagement-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .engagement-sub { font-size: 14px; color: var(--gray-700); line-height: 1.65; }
+    .engagement-cta { margin-top: 44px; }
+
+    /* PRACTICE AREAS */
+    #practices { padding: 100px 0; background: var(--gray-100); }
+    .practices-header { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+    .practices-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .practice-card { background: var(--white); border-radius: 12px; padding: 40px 32px; display: flex; flex-direction: column; box-shadow: var(--shadow); transition: box-shadow var(--transition), transform var(--transition); }
+    .practice-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
+    .practice-icon { font-size: 32px; width: 60px; height: 60px; background: var(--gray-100); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .practice-title { font-size: 19px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .practice-desc { font-size: 14px; color: var(--gray-700); line-height: 1.70; flex: 1; }
+    .practice-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 24px; font-size: 14px; font-weight: 700; color: var(--red); transition: gap var(--transition); }
+    .practice-link:hover { gap: 10px; }
+    .practice-link::after { content: '→'; }
+
+    /* WHY LAM */
+    #why { padding: 100px 0; background: var(--white); }
+    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-list { margin-top: 36px; display: flex; flex-direction: column; gap: 22px; }
+    .why-item { display: flex; gap: 16px; align-items: flex-start; }
+    .why-check { width: 26px; height: 26px; border-radius: 50%; background: var(--red); color: var(--white); font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+    .why-item-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .why-item-desc { font-size: 14px; color: var(--gray-700); line-height: 1.65; }
+    .why-visual { background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: 16px; padding: 48px 40px; position: relative; overflow: hidden; }
+    .why-visual::before { content: ''; position: absolute; top: -40%; right: -20%; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(192,57,43,0.22) 0%, transparent 70%); pointer-events: none; }
+    .why-quote-mark { font-size: 72px; color: var(--red); font-family: Georgia, serif; line-height: 0.8; margin-bottom: 16px; }
+    .why-quote-text { font-size: 17px; font-weight: 500; line-height: 1.70; color: rgba(255,255,255,0.90); position: relative; z-index: 1; }
+    .why-quote-author { margin-top: 28px; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.45); position: relative; z-index: 1; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    /* TESTIMONIALS */
+    #testimonials { padding: 100px 0; background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); }
+    .testimonials-header { text-align: center; margin-bottom: 56px; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; }
+    .testimonial-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09); border-radius: 12px; padding: 36px 30px; transition: background var(--transition), transform var(--transition); }
+    .testimonial-card:hover { background: rgba(255,255,255,0.10); transform: translateY(-4px); }
+    .testimonial-stars { color: #f5c518; font-size: 15px; letter-spacing: 2px; margin-bottom: 18px; }
+    .testimonial-text { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.78; font-style: italic; margin-bottom: 24px; }
+    .testimonial-name { font-size: 14px; font-weight: 700; color: var(--white); }
+    .testimonial-role { font-size: 13px; color: rgba(255,255,255,0.40); margin-top: 3px; }
+
+    /* CORE VALUES */
+    #values { padding: 100px 0; background: var(--off-white); }
+    .values-header { text-align: center; max-width: 580px; margin: 0 auto 60px; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+    .value-card { background: var(--white); border-radius: 12px; padding: 36px 28px; text-align: center; box-shadow: var(--shadow); transition: box-shadow var(--transition), transform var(--transition); }
+    .value-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .value-icon { font-size: 36px; margin-bottom: 14px; }
+    .value-name { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .value-desc { font-size: 14px; color: var(--gray-500); font-weight: 500; }
+
+    /* BLOG */
+    #blog { padding: 100px 0; background: var(--white); }
+    .blog-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 44px; flex-wrap: wrap; gap: 20px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; }
+    .blog-card { border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-300); transition: box-shadow var(--transition), transform var(--transition); }
+    .blog-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .blog-card-img { height: 190px; display: flex; align-items: center; justify-content: center; font-size: 44px; }
+    .blog-card-img.cyber { background: linear-gradient(135deg, #0f1929 0%, #1a2744 100%); }
+    .blog-card-img.cx { background: linear-gradient(135deg, #1e3060 0%, #1a2744 100%); }
+    .blog-card-img.infra { background: linear-gradient(135deg, #1a2744 0%, #2a3f6f 100%); }
+    .blog-card-body { padding: 26px 22px; }
+    .blog-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+    .blog-title { font-size: 17px; font-weight: 700; color: var(--navy); line-height: 1.40; margin-bottom: 10px; }
+    .blog-excerpt { font-size: 14px; color: var(--gray-700); line-height: 1.65; margin-bottom: 18px; }
+    .blog-link { font-size: 14px; font-weight: 700; color: var(--red); display: inline-flex; align-items: center; gap: 6px; transition: gap var(--transition); }
+    .blog-link:hover { gap: 10px; }
+    .blog-link::after { content: '→'; }
+
+    /* CTA BANNER */
+    #cta { padding: 96px 0; background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-mid) 100%); text-align: center; position: relative; overflow: hidden; }
+    #cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(192,57,43,0.14) 0%, transparent 70%); pointer-events: none; }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .cta-title { font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: var(--white); margin-bottom: 18px; line-height: 1.12; }
+    .cta-sub { font-size: 17px; color: rgba(255,255,255,0.62); max-width: 520px; margin: 0 auto 40px; line-height: 1.72; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    #footer { background: var(--navy-dark); color: rgba(255,255,255,0.60); padding: 72px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 48px; margin-bottom: 52px; }
+    .footer-logo { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 14px; }
+    .footer-logo span { color: var(--red); }
+    .footer-desc { font-size: 14px; line-height: 1.72; color: rgba(255,255,255,0.45); max-width: 280px; }
+    .footer-social { margin-top: 22px; display: flex; gap: 10px; }
+    .footer-social a { width: 38px; height: 38px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.13); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.60); transition: background var(--transition), border-color var(--transition), color var(--transition); }
+    .footer-social a:hover { background: var(--red); border-color: var(--red); color: var(--white); }
+    .footer-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.10em; color: var(--white); margin-bottom: 18px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 14px; color: rgba(255,255,255,0.50); transition: color var(--transition); }
+    .footer-links a:hover { color: var(--red); }
+    .footer-contact-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 14px; color: rgba(255,255,255,0.50); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 26px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 13px; color: rgba(255,255,255,0.28); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .why-inner { grid-template-columns: 1fr; gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-title .accent { min-height: unset; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .blog-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="navbar">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="#" class="nav-logo">LAM <span>Technology</span></a>
+      <div class="nav-links">
+        <a href="#engagement">Services</a>
+        <a href="#practices">Practice Areas</a>
+        <a href="#why">Why LAM</a>
+        <a href="#blog">Insights</a>
+        <a href="#cta" class="btn btn-primary nav-cta">Just Ask LAM</a>
+      </div>
+      <div class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#engagement" onclick="toggleNav()">Services</a>
+      <a href="#practices" onclick="toggleNav()">Practice Areas</a>
+      <a href="#why" onclick="toggleNav()">Why LAM</a>
+      <a href="#blog" onclick="toggleNav()">Insights</a>
+      <a href="#cta" onclick="toggleNav()">Contact Us</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Fort Worth, TX &mdash; Trusted IT Consulting</div>
+      <h1 class="hero-title">
+        Trustworthy Guidance in<br>
+        <span class="accent" id="rotatingWord">Technology Enablement</span>
+      </h1>
+      <p class="hero-subtitle">LAM Technology helps organizations navigate the ever-changing IT landscape — cutting costs, strengthening security, and enabling growth with confidence.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn btn-primary">Get Started Now</a>
+        <a href="#practices" class="btn btn-ghost">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-number">20<em>+</em></div>
+          <div class="hero-stat-label">Years of Experience</div>
+        </div>
+        <div>
+          <div class="hero-stat-number">5</div>
+          <div class="hero-stat-label">Practice Areas</div>
+        </div>
+        <div>
+          <div class="hero-stat-number">100<em>%</em></div>
+          <div class="hero-stat-label">Client-Driven Focus</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO STRIP -->
+<section id="logo-strip">
+  <div class="container">
+    <div class="logo-strip-inner">
+      <span class="logo-strip-label">Trusted across industries</span>
+      <span class="logo-pill">Automotive Services</span>
+      <span class="logo-pill">Financial Services</span>
+      <span class="logo-pill">Insurance</span>
+      <span class="logo-pill">Roadside Services</span>
+      <span class="logo-pill">Electronic Distribution</span>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT MODEL -->
+<section id="engagement">
+  <div class="container">
+    <div class="engagement-header reveal">
+      <span class="section-label">The LAM Method</span>
+      <h2 class="section-title">Drive Your IT Strategy with the LAM Engagement Model</h2>
+      <p class="section-subtitle">Our clients typically come to LAM because they struggle to keep up with the ever-changing vendor landscape. We simplify complexity and deliver results across six proven disciplines.</p>
+    </div>
+    <div class="engagement-grid">
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">💳</div>
+        <div class="engagement-title">Billing Breakthrough™ &amp; Contract Clarifier™</div>
+        <div class="engagement-sub">Reduced costs &amp; smarter contracts — we audit your vendor agreements and eliminate billing waste before it compounds.</div>
+      </div>
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">🔧</div>
+        <div class="engagement-title">Infrastructure Insight™</div>
+        <div class="engagement-sub">Streamlined, secure &amp; scalable systems — we evaluate and optimize your infrastructure foundation so it grows with you.</div>
+      </div>
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">💬</div>
+        <div class="engagement-title">Experience Examination™</div>
+        <div class="engagement-sub">Enhanced customer experience &amp; effortless engagement — we map and improve every digital touchpoint your customers encounter.</div>
+      </div>
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">🛡️</div>
+        <div class="engagement-title">Vigilance Verification™</div>
+        <div class="engagement-sub">Strengthened defenses &amp; faster threat response — we assess your full security posture and build resilience where it matters most.</div>
+      </div>
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">⚙️</div>
+        <div class="engagement-title">Support Scope™</div>
+        <div class="engagement-sub">Optimized resources, diligent maintenance &amp; responsive support — we keep your operations running without disruption.</div>
+      </div>
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">📡</div>
+        <div class="engagement-title">Wireless Wisdom™</div>
+        <div class="engagement-sub">Optimized mobile tools &amp; secure connectivity — we modernize how your team stays connected in the field and in the office.</div>
+      </div>
+    </div>
+    <div class="engagement-cta reveal">
+      <a href="#cta" class="btn btn-outline">Just Ask LAM &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section id="practices">
+  <div class="container">
+    <div class="practices-header reveal">
+      <span class="section-label">Our Practice Areas</span>
+      <h2 class="section-title">We Are Specialists For Many IT Solutions</h2>
+      <p class="section-subtitle">Five focused areas of expertise to guide your organization at every stage of its technology journey.</p>
+    </div>
+    <div class="practices-grid">
+      <div class="practice-card reveal">
+        <div class="practice-icon">🔐</div>
+        <div class="practice-title">Cybersecurity &amp; Risk</div>
+        <p class="practice-desc">Protect your organization with comprehensive risk assessments, security tabletop exercises, and proactive threat management strategies tailored to your environment and industry.</p>
+        <a href="/practice-areas/cybersecurity-risk/" class="practice-link">Learn More</a>
+      </div>
+      <div class="practice-card reveal">
+        <div class="practice-icon">💡</div>
+        <div class="practice-title">Customer Experience &amp; Digital Engagement</div>
+        <p class="practice-desc">Transform how your customers interact with your brand through contact center modernization, digital engagement tools, and experience design that drives loyalty and reduces churn.</p>
+        <a href="/practice-areas/customer-experience-digital-engagement/" class="practice-link">Learn More</a>
+      </div>
+      <div class="practice-card reveal">
+        <div class="practice-icon">☁️</div>
+        <div class="practice-title">Infrastructure &amp; Cloud</div>
+        <p class="practice-desc">Modernize your IT foundation with scalable cloud strategies, network optimization, and infrastructure redesigns that reduce cost and improve performance across your organization.</p>
+        <a href="/practice-areas/infrastructure-cloud/" class="practice-link">Learn More</a>
+      </div>
+      <div class="practice-card reveal">
+        <div class="practice-icon">🛠️</div>
+        <div class="practice-title">Managed Services</div>
+        <p class="practice-desc">Let LAM handle the day-to-day complexity of your IT environment — from vendor management and invoice disputes to field support — so your team can focus on what matters most.</p>
+        <a href="/practice-areas/managed-services/" class="practice-link">Learn More</a>
+      </div>
+      <div class="practice-card reveal">
+        <div class="practice-icon">📱</div>
+        <div class="practice-title">Mobility &amp; IoT</div>
+        <p class="practice-desc">Equip your workforce with the right mobile tools and connected devices. We design secure, scalable mobility strategies that keep your people productive wherever they work.</p>
+        <a href="/practice-areas/mobility-and-iot/" class="practice-link">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
