@@ -11,7 +11,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--g2:#e8e4dc;--g8:#4a4038;--rs:6px;--r:12px;--t:.2s ease;--rh:#b8922e;--navy:#1a1a2e;--red:#d4a843;--cyan:#1d9e75;--dark:#0d0d1a;--dark2:#0d0d1a;--g1:#f0ede8;--g6:#8a8070;--white:#ffffff}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;padding-top:70px;overflow-x:hidden}
 a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 32px}
 #navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;border-bottom:1px solid var(--g2);transition:box-shadow var(--t)}
@@ -87,7 +87,7 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;displ
 .cs-footer-logo img{height:32px;width:auto;filter:brightness(0) invert(1);opacity:.6}
 .cs-footer-text{font-size:13px;color:rgba(255,255,255,.35)}
 @media(max-width:1024px){.cs-hero-inner{grid-template-columns:1fr;gap:40px}.cs-services-grid{grid-template-columns:1fr 1fr}.cs-process-grid{grid-template-columns:1fr 1fr}.cs-who-inner{grid-template-columns:1fr}.cs-cta-box{grid-template-columns:1fr;gap:32px;padding:36px}}
-@media(max-width:640px){.cs-services-grid{grid-template-columns:1fr}.cs-process-grid{grid-template-columns:1fr}.cs-why-grid{grid-template-columns:1fr}.cs-outcomes{grid-template-columns:1fr}.cs-industries{grid-template-columns:1fr}}
+@media(max-width:640px){.cs-services-grid{grid-template-columns:1fr}.cs-process-grid{grid-template-columns:1fr}.cs-why-grid{grid-template-columns:1fr}.cs-outcomes{grid-template-columns:1fr}.cs-industries{grid-template-columns:1fr}.cs-hero-sub{max-width:100%}.cs-hero-badge{max-width:100%;white-space:normal}.cs-hero h1{font-size:clamp(26px,7vw,42px)}.container{padding:0 16px}}
 </style>
 </head>
 <body>
