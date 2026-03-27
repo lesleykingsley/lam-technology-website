@@ -88,7 +88,7 @@ img{max-width:100%;display:block}
 .cs-footer-text{font-size:13px;color:rgba(255,255,255,.35)}
 .cs-footer-back{font-size:13px;color:rgba(255,255,255,.4);transition:color .2s}
 .cs-footer-back:hover{color:#fff}
-#ee-root{padding:48px 0;background:#f4f6f8}
+#ee-root{padding:0}
 @media(max-width:1024px){.cs-hero-inner{grid-template-columns:1fr;gap:40px}.cs-services-grid{grid-template-columns:1fr 1fr}.cs-process-grid{grid-template-columns:1fr 1fr}.cs-who-inner{grid-template-columns:1fr}.cs-cta-box{grid-template-columns:1fr;gap:32px;padding:36px}}
 @media(max-width:640px){.cs-services-grid{grid-template-columns:1fr}.cs-process-grid{grid-template-columns:1fr}.cs-why-grid{grid-template-columns:1fr}.cs-outcomes{grid-template-columns:1fr}.cs-industries{grid-template-columns:1fr}.cs-nav-links{display:none}}
 </style>
@@ -273,19 +273,19 @@ img{max-width:100%;display:block}
 (function(){
   const NAVY="#0d2240",RED="#c0392b",GRAY="#4a5568";
   const rows=[
-    {color:NAVY,cards:[
+    {color:RED,label:"Channel & Engagement",cards:[
       {title:"Intelligent Front Door",items:["Automation","Voice Calls","Web Chat","Email","SMS","Mobile Connection","IVA","Social Media Feed"]},
       {title:"Customer Experience",items:["Customer Profile","Customer Journey","External Feedback Mechanisms","Satisfaction Gauges","Personalization Methods","Prioritization","NPS","Customer Effort Score","Social Media Reviews"]},
       {title:"Agent Experience",items:["Retention / Satisfaction","Challenges","Tools","Systems","Coaching","Motivation","Performance Management","Proficiency","Onboarding"]},
       {title:"Staffing & Retention",items:["BPO","WFM","QA/QM","Coaching","Training","Recording","Agent Assist Tools","Agent Scripting"]},
     ]},
-    {color:RED,cards:[
+    {color:"#5b7fa6",label:"Platform & Operations",cards:[
       {title:"Relationships",items:["Existing Relationships","Preferred Suppliers","Existing Contracts"]},
       {title:"Platform Core",items:["Cloud, Premise, Hybrid","Topology","Routing","Technology Deficiencies"]},
       {title:"Measure & Improve",items:["Reporting","Analysis","KPIs","Trends"]},
       {title:"Scalability",items:["Anticipated Growth","Acquisitions","New Channels or Languages","New Locations","Marketing Initiatives"]},
     ]},
-    {color:GRAY,cards:[
+    {color:"#4a7c6f",label:"Systems & Compliance",cards:[
       {title:"Adjunct Systems",items:["CRM","HRIS","ITSM","ERP","Finance"]},
       {title:"Disaster Recovery – Support",items:["Back Up & Recovery","Redundancy","Incident Response Plan"]},
       {title:"Compliance",items:["PCI","GDPR","HIPAA","DNC"]},
@@ -296,37 +296,59 @@ img{max-width:100%;display:block}
   function ExperienceExamination(){
     const [hovered,setHovered]=React.useState(null);
     let id=0;
+
     function Card({title,items,color,cardId}){
       const isHovered=hovered===cardId;
       return React.createElement('div',{
         onMouseEnter:()=>setHovered(cardId),
         onMouseLeave:()=>setHovered(null),
-        style:{background:'#fff',padding:'24px 20px 28px',position:'relative',flex:1,transition:'transform 0.2s, box-shadow 0.2s',transform:isHovered?'translateY(-3px)':'translateY(0)',boxShadow:isHovered?'0 10px 32px rgba(0,0,0,0.12)':'none'}
+        style:{
+          background:isHovered?'rgba(255,255,255,0.06)':'rgba(255,255,255,0.03)',
+          border:isHovered?'1px solid '+color:'1px solid rgba(255,255,255,0.08)',
+          borderRadius:12,
+          padding:'20px 18px 22px',
+          flex:1,
+          transition:'background 0.2s, border-color 0.2s, transform 0.2s',
+          transform:isHovered?'translateY(-2px)':'translateY(0)',
+          cursor:'default'
+        }
       },
-      React.createElement('div',{style:{position:'absolute',top:0,left:0,right:0,height:4,background:color,transform:isHovered?'scaleX(1)':'scaleX(0)',transformOrigin:'left',transition:'transform 0.3s'}}),
-      React.createElement('div',{style:{fontSize:14,fontWeight:700,textTransform:'uppercase',letterSpacing:'0.5px',color:color,marginBottom:12,lineHeight:1.2}},title),
-      React.createElement('ul',{style:{listStyle:'none',padding:0,margin:0,display:'flex',flexDirection:'column',gap:4}},
-        items.map((item,i)=>React.createElement('li',{key:i,style:{fontSize:12,color:'#555',paddingLeft:12,position:'relative',lineHeight:1.4}},
-          React.createElement('span',{style:{position:'absolute',left:0,top:6,width:4,height:4,borderRadius:'50%',background:color}}),
+      React.createElement('div',{style:{
+        fontSize:11,fontWeight:700,textTransform:'uppercase',letterSpacing:'0.12em',
+        color:color,marginBottom:14,lineHeight:1.2
+      }},title),
+      React.createElement('ul',{style:{listStyle:'none',padding:0,margin:0,display:'flex',flexDirection:'column',gap:5}},
+        items.map((item,i)=>React.createElement('li',{key:i,style:{
+          fontSize:12,color:'rgba(255,255,255,0.5)',paddingLeft:14,position:'relative',lineHeight:1.5
+        }},
+          React.createElement('span',{style:{
+            position:'absolute',left:0,top:6,width:4,height:4,borderRadius:'50%',background:color,opacity:0.6
+          }}),
           item
         ))
       )
       );
     }
-    return React.createElement('div',{style:{fontFamily:'system-ui,sans-serif',background:'#f4f6f8'}},
-      React.createElement('div',{style:{padding:'0 0 8px',display:'flex',alignItems:'center',gap:14,marginBottom:8}},
-        React.createElement('div',{style:{fontSize:11,fontWeight:700,letterSpacing:4,textTransform:'uppercase',color:'#7f8c8d',whiteSpace:'nowrap'}},'Assessment Areas'),
-        React.createElement('div',{style:{flex:1,height:1,background:'linear-gradient(90deg,#bdc3c7,transparent)'}})
-      ),
-      rows.map((row,ri)=>React.createElement('div',{key:ri,style:{display:'flex',gap:2,margin:ri===0?'0':'2px 0 0',background:'#dde3ea'}},
-        row.cards.map(card=>{
-          const cardId=id++;
-          return React.createElement(Card,{key:cardId,cardId:cardId,title:card.title,items:card.items,color:row.color});
-        })
+
+    return React.createElement('div',{style:{fontFamily:'Inter,system-ui,sans-serif'}},
+      rows.map((row,ri)=>React.createElement('div',{key:ri,style:{marginBottom:ri<rows.length-1?8:0}},
+        React.createElement('div',{style:{
+          fontSize:10,fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase',
+          color:row.color,opacity:0.7,marginBottom:8,paddingLeft:2
+        }},row.label),
+        React.createElement('div',{style:{display:'flex',gap:8}},
+          row.cards.map(card=>{
+            const cardId=id++;
+            return React.createElement(Card,{key:cardId,cardId,title:card.title,items:card.items,color:row.color});
+          })
+        )
       )),
-      React.createElement('div',{style:{background:NAVY,padding:'20px 24px',display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:2,borderRadius:'0 0 8px 8px'}},
-        React.createElement('div',{style:{fontSize:12,color:'#bdc3c7'}},'© LAM Technology · Contact Center Advisory Services'),
-        React.createElement('div',{style:{fontSize:12,fontWeight:600,color:'#e74c3c',letterSpacing:3,textTransform:'uppercase'}},'Experience Examination™')
+      React.createElement('div',{style:{
+        borderTop:'1px solid rgba(255,255,255,0.08)',marginTop:20,paddingTop:14,
+        display:'flex',alignItems:'center',justifyContent:'space-between'
+      }},
+        React.createElement('div',{style:{fontSize:11,color:'rgba(255,255,255,0.25)'}},'LAM Technology · Contact Center Advisory Services'),
+        React.createElement('div',{style:{fontSize:11,fontWeight:600,color:RED,letterSpacing:'0.15em',textTransform:'uppercase'}},'Experience Examination™')
       )
     );
   }
