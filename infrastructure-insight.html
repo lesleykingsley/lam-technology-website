@@ -29,11 +29,11 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;displ
 .cs-hero{position:relative;overflow:hidden;padding:96px 0 80px}
 .cs-hero::before{content:'';position:absolute;top:0;right:0;width:600px;height:600px;background:radial-gradient(circle,rgba(212,168,67,.18) 0%,transparent 65%);pointer-events:none}
 .cs-hero::after{content:'';position:absolute;bottom:0;left:0;width:400px;height:400px;background:radial-gradient(circle,rgba(26,26,46,.6) 0%,transparent 70%);pointer-events:none}
-.cs-hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;position:relative;z-index:1}
+.cs-hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;position:relative;z-index:1} .cs-hero-inner>div{min-width:0}
 .cs-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);border-radius:100px;padding:8px 16px;font-size:13px;color:rgba(255,255,255,.8);margin-bottom:24px;max-width:100%;white-space:normal;word-break:break-word}
 .cs-hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.85)}}
-.cs-hero h1{font-size:clamp(32px,4vw,54px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:24px}
+.cs-hero h1{font-size:clamp(32px,4vw,54px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:24px;overflow-wrap:break-word;word-break:break-word}
 .cs-hero-sub{font-size:17px;color:rgba(255,255,255,.65);line-height:1.75;max-width:min(540px,100%);margin-bottom:36px}
 .cs-hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
 .cs-btn-primary{background:var(--red);color:#fff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;transition:background .2s,transform .2s;display:inline-block}
