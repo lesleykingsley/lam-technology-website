@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#1a2744;--red:#c0392b;--cyan:#4a9eba;--dark:#0a0f1e;--dark2:#0f1929;--dark3:#141f35;--g1:#f0f2f8;--g6:#6b7490;--g8:#3a4060;--white:#ffffff}
+:root{--g2:#e4e8f0;--g8:#3a4060;--rs:6px;--r:12px;--t:.2s ease;--rh:#a93226;--navy:#1a2744;--red:#c0392b;--cyan:#4a9eba;--dark:#0a0f1e;--dark2:#0f1929;--dark3:#141f35;--g1:#f0f2f8;--g6:#6b7490;--g8:#3a4060;--white:#ffffff}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
@@ -128,23 +128,21 @@ img{max-width:100%;display:block}
 .cs-industries{grid-template-columns:1fr}
 .cs-nav-links{display:none}
 }
+
+/* Unified Navbar */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="cs-nav">
-<div class="cs-nav-inner">
-<div class="cs-nav-brand"><a href="/"><img src="LAM Logo Transparent.png" alt="LAM Technology"/></a></div>
-<div class="cs-nav-links">
-<a href="#services">Services</a>
-<a href="#why">Why LAM</a>
-<a href="#process">Approach</a>
-<a href="#contact">Contact</a>
-</div>
-<a href="#contact" class="cs-nav-cta">Talk to an Advisor</a>
-</div>
-</nav>
+<header id="navbar"><div class="container"><nav class="nw">
+<a href="/" class="nlogo"><img src="LAM Logo Transparent.png" alt="LAM Technology"/></a>
+<div class="nl"><a href="/#engagement">Professional Services</a><a href="/#practices">Practice Areas</a><a href="/#why">Why LAM</a><a href="/#blog">Insights</a><a href="/#cta" class="nc">Just Ask LAM</a></div>
+<div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
+</nav><div class="nm" id="nMob"><a href="/#engagement" onclick="tNav()">Professional Services</a><a href="/#practices" onclick="tNav()">Practice Areas</a><a href="/#why" onclick="tNav()">Why LAM</a><a href="/#blog" onclick="tNav()">Insights</a><a href="/#cta" onclick="tNav()">Just Ask LAM</a></div></div></header>
+<div style="background:#f8f9fc;border-bottom:1px solid #e4e8f0;padding:10px 0;margin-top:70px"><div style="max-width:1200px;margin:0 auto;padding:0 32px"><a href="/" style="font-size:13px;color:#6b7490;text-decoration:none;">← Home</a> <span style="font-size:13px;color:#b0b8cc;margin:0 6px">/</span> <a href="/#practices" style="font-size:13px;color:#6b7490;text-decoration:none;">Practice Areas</a> <span style="font-size:13px;color:#b0b8cc;margin:0 6px">/</span> <span style="font-size:13px;color:#1a2744;font-weight:600">Cybersecurity &amp; Risk</span></div></div>
 
 <!-- HERO -->
 <section class="cs-hero">
@@ -298,10 +296,12 @@ img{max-width:100%;display:block}
 <div class="cs-footer-inner">
 <div class="cs-footer-logo"><a href="/"><img src="LAM Logo Transparent.png" alt="LAM Technology"/></a></div>
 <div class="cs-footer-text">&copy; 2025 LAM Technology. All rights reserved.</div>
-<a href="/" class="cs-footer-back">&larr; Back to Home</a>
+
 </div>
 </div>
 </footer>
 
+
+<script>function tNav(){document.getElementById('nMob').classList.toggle('op')} document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});</script>
 </body>
 </html>
