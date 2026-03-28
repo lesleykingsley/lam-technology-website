@@ -296,10 +296,16 @@ body{padding-top:70px;overflow-x:hidden}
 <p class="cs-section-sub">Start with a focused conversation about your current environment, priorities, and risk exposure. We will help you define next steps that are practical, defensible, and aligned to the business.</p>
 </div>
 <div class="cs-contact-card">
-<div class="cs-contact-row"><div class="cs-contact-label">Phone</div><div class="cs-contact-value">(817) 484-4522</div></div>
-<div class="cs-contact-row"><div class="cs-contact-label">Email</div><div class="cs-contact-value">info@lamtechnology.com</div></div>
-<div class="cs-contact-row"><div class="cs-contact-label">Focus Areas</div><div class="cs-contact-value" style="font-size:14px">vCISO &bull; MDR/XDR &bull; IAM &bull; SIEM &bull; ZTNA &bull; Resilience</div></div>
-<a href="mailto:info@lamtechnology.com" class="cs-contact-btn">Book a Security Consultation</a>
+<form onsubmit="var n=this.name.value,c=this.company.value,e=this.email.value,m=this.message.value;window.location='mailto:info@lamtechnology.com?subject=Security+Consultation+Request+from+'+encodeURIComponent(n)+'+('+encodeURIComponent(c)+')&body=Name:+'+encodeURIComponent(n)+'%0ACompany:+'+encodeURIComponent(c)+'%0AEmail:+'+encodeURIComponent(e)+'%0A%0A'+encodeURIComponent(m);return false;" style="display:flex;flex-direction:column;gap:14px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><label style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-bottom:6px">Your Name</label><input name="name" required placeholder="Jane Smith" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:11px 14px;font-size:14px;color:#fff;font-family:inherit;outline:none" onfocus="this.style.borderColor='rgba(212,168,67,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"/></div>
+<div><label style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-bottom:6px">Company</label><input name="company" required placeholder="Acme Corp" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:11px 14px;font-size:14px;color:#fff;font-family:inherit;outline:none" onfocus="this.style.borderColor='rgba(212,168,67,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"/></div>
+</div>
+<div><label style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-bottom:6px">Email Address</label><input name="email" type="email" required placeholder="jane@acmecorp.com" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:11px 14px;font-size:14px;color:#fff;font-family:inherit;outline:none" onfocus="this.style.borderColor='rgba(212,168,67,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"/></div>
+<div><label style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-bottom:6px">What can we help with?</label><textarea name="message" rows="3" placeholder="Tell us a bit about your environment or what you're trying to solve..." style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:11px 14px;font-size:14px;color:#fff;font-family:inherit;outline:none;resize:vertical" onfocus="this.style.borderColor='rgba(212,168,67,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></textarea></div>
+<button type="submit" class="cs-contact-btn">Request a Security Consultation &rarr;</button>
+<p style="font-size:12px;color:rgba(255,255,255,.3);text-align:center;margin-top:-6px">Or call us directly: <a href="tel:8174844522" style="color:rgba(255,255,255,.45)">(817) 484-4522</a></p>
+</form>
 </div>
 </div>
 </div>
