@@ -74,9 +74,9 @@ img{max-width:100%;display:block}
 .cs-service-text{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7}
 
 /* WHY LAM */
-.cs-why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-.cs-why-card{background:var(--dark2);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px 22px;font-size:15px;color:rgba(255,255,255,.75);line-height:1.7;display:flex;gap:12px;align-items:flex-start}
-.cs-why-card::before{content:'✓';color:var(--red);font-weight:800;font-size:15px;flex-shrink:0;margin-top:2px}
+.cs-why-grid{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.cs-why-card{background:rgba(255,255,255,.03);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:16px 20px;font-size:15px;color:rgba(255,255,255,.8);line-height:1.65}
+.cs-why-card::before{display:none}
 
 /* WHO WE HELP */
 .cs-who-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}
@@ -123,7 +123,6 @@ img{max-width:100%;display:block}
 @media(max-width:640px){
 .cs-services-grid{grid-template-columns:1fr}
 .cs-process-grid{grid-template-columns:1fr}
-.cs-why-grid{grid-template-columns:1fr}
 .cs-outcomes{grid-template-columns:1fr}
 .cs-industries{grid-template-columns:1fr}
 .cs-nav-links{display:none}
