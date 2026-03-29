@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact LAM Technology</title>
+<link rel="icon" href="/LAM Logo Transparent.png">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#1a1a2e;--nd:#0d0d1a;--nm:#252550;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--r:12px;--rs:6px;--sl:0 12px 48px rgba(26,26,46,.16);--sxl:0 24px 80px rgba(26,26,46,.24)}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--off);color:var(--navy);padding-top:70px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;border-bottom:1px solid var(--g2)}
+#navbar .container{max-width:1200px;margin:0 auto;padding:0 24px}
+.nw{display:flex;align-items:center;height:70px;gap:16px}
+.nlogo img{height:36px;width:auto}
+.nl{display:flex;align-items:center;justify-content:center;flex:1;gap:8px}
+.nl a{font-size:.85rem;font-weight:500;color:var(--g8);padding:6px 12px;border-radius:6px;transition:color .2s,background .2s}
+.nl a:hover{color:var(--navy);background:var(--g1)}
+.nc{background:var(--navy)!important;color:#fff!important;border-radius:6px;padding:6px 14px!important}
+.nc:hover{background:var(--nm)!important}
+.nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nhb span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+.nm{display:none;flex-direction:column;padding:12px 24px 16px;border-top:1px solid var(--g2);gap:4px}
+.nm a{padding:10px 12px;border-radius:6px;font-size:.9rem;color:var(--g8);font-weight:500}
+.nm a:hover{background:var(--g1);color:var(--navy)}
+.nm.open{display:flex}
+@media(max-width:768px){.nl{display:none}.nhb{display:flex}}
+
+/* HERO */
+.contact-hero{background:var(--navy);padding:72px 0 64px;text-align:center}
+.contact-hero .tag{display:inline-block;background:rgba(212,168,67,.15);color:var(--red);border:1px solid rgba(212,168,67,.3);border-radius:20px;padding:5px 16px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.contact-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;margin-bottom:16px;line-height:1.2}
+.contact-hero h1 em{color:var(--red);font-style:normal}
+.contact-hero p{font-size:1.05rem;color:rgba(255,255,255,.7);max-width:520px;margin:0 auto}
+
+/* FORM SECTION */
+.contact-body{padding:64px 0 80px}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.contact-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+
+/* FORM */
+.cf{background:#fff;border-radius:var(--r);padding:40px;box-shadow:var(--sl)}
+.cf h2{font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.cf .cf-sub{font-size:.9rem;color:var(--g6);margin-bottom:28px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.cf-row{grid-template-columns:1fr}}
+.cf-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.cf-group label{font-size:.82rem;font-weight:600;color:var(--g8);letter-spacing:.04em;text-transform:uppercase}
+.cf-group input,.cf-group textarea,.cf-group select{width:100%;padding:11px 14px;border:1.5px solid var(--g2);border-radius:var(--rs);font-size:.95rem;font-family:inherit;color:var(--navy);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.cf-group input:focus,.cf-group textarea:focus,.cf-group select:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(212,168,67,.12)}
+.cf-group textarea{resize:vertical;min-height:120px}
+.cf-submit{width:100%;padding:14px;background:var(--navy);color:#fff;border:none;border-radius:var(--rs);font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s;margin-top:8px}
+.cf-submit:hover{background:var(--nm)}
+.cf-note{font-size:.8rem;color:var(--g6);text-align:center;margin-top:12px}
+
+/* SIDEBAR */
+.cs{display:flex;flex-direction:column;gap:24px}
+.cs-card{background:#fff;border-radius:var(--r);padding:28px 32px;box-shadow:var(--sl)}
+.cs-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.cs-card p{font-size:.9rem;color:var(--g6);margin-bottom:12px}
+.cs-card a{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:600;color:var(--red)}
+.cs-card a:hover{color:var(--rh)}
+.cs-divider{height:1px;background:var(--g2);margin:12px 0}
+.cs-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0}
+.cs-item-icon{width:36px;height:36px;background:var(--g1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cs-item-icon svg{width:16px;height:16px;color:var(--red)}
+.cs-item-text{font-size:.88rem;color:var(--g8)}
+.cs-item-text strong{display:block;font-weight:600;color:var(--navy);margin-bottom:1px}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:48px 0 32px}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+@media(max-width:768px){.ft{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.ft{grid-template-columns:1fr}}
+.fli img{height:32px;width:auto;filter:brightness(0) invert(1);opacity:.9;margin-bottom:12px}
+.fde{font-size:.85rem;line-height:1.6;max-width:260px;color:rgba(255,255,255,.55);margin-bottom:16px}
+.fsoc{display:flex;gap:10px}
+.fsoc a{width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:.8rem;font-weight:700;text-decoration:none;transition:background .2s}
+.fsoc a:hover{background:rgba(255,255,255,.2)}
+.fh{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.fl{display:flex;flex-direction:column;gap:6px}
+.fl a{font-size:.85rem;color:rgba(255,255,255,.55);transition:color .2s}
+.fl a:hover{color:#fff}
+.fb{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.fc{font-size:.8rem;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+
+<header id="navbar">
+<div class="container">
+<nav class="nw">
+<a href="/" class="nlogo"><img src="/LAM Logo Transparent.png" alt="LAM Technology"></a>
+<div class="nl">
+<a href="/#engagement">Professional Services</a>
+<a href="/#practices">Practice Areas</a>
+<a href="/#why">Why LAM</a>
+<a href="/#blog">Insights</a>
+<a href="/contact/" class="nc">Just Ask LAM</a>
+</div>
+<div class="nhb" onclick="this.parentElement.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+<div class="nm" id="nMob">
+<a href="/#engagement">Services</a>
+<a href="/#practices">Practice Areas</a>
+<a href="/#why">Why LAM</a>
+<a href="/#blog">Insights</a>
+<a href="/contact/">Just Ask LAM</a>
+</div>
+</div>
+</header>
+
+<section class="contact-hero">
+<div class="container">
+<span class="tag">Get in Touch</span>
+<h1>Let's Start the <em>Conversation</em></h1>
+<p>No sales pitch. No obligation. Just a straightforward conversation about what you're dealing with and whether LAM can help.</p>
+</div>
+</section>
+
+<section class="contact-body">
+<div class="container">
+<div class="contact-grid">
+
+<div class="cf">
+<h2>Send Us a Message</h2>
+<p class="cf-sub">We'll respond within one business day.</p>
+<form action="mailto:info@lamtechnology.com" method="POST" enctype="text/plain">
+<div class="cf-row">
+<div class="cf-group">
+<label for="fname">First Name</label>
+<input type="text" id="fname" name="first_name" placeholder="Jane" required>
+</div>
+<div class="cf-group">
+<label for="lname">Last Name</label>
+<input type="text" id="lname" name="last_name" placeholder="Smith" required>
+</div>
+</div>
+<div class="cf-group">
+<label for="company">Company</label>
+<input type="text" id="company" name="company" placeholder="Acme Corp">
+</div>
+<div class="cf-group">
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" placeholder="jane@acmecorp.com" required>
+</div>
+<div class="cf-group">
+<label for="phone">Phone (optional)</label>
+<input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+</div>
+<div class="cf-group">
+<label for="topic">What can we help with?</label>
+<select id="topic" name="topic">
+<option value="" disabled selected>Select a topic...</option>
+<option value="Cybersecurity">Cybersecurity &amp; Risk</option>
+<option value="Customer Experience">Customer Experience</option>
+<option value="Infrastructure">Networking &amp; Infrastructure</option>
+<option value="Managed Services">Managed Services</option>
+<option value="Mobility">Mobility &amp; IoT</option>
+<option value="Billing">Billing Optimization</option>
+<option value="General">General Inquiry</option>
+</select>
+</div>
+<div class="cf-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell us what you're dealing with..." required></textarea>
+</div>
+<button type="submit" class="cf-submit">Send Message</button>
+<p class="cf-note">Your information is never sold or shared.</p>
+</form>
+</div>
+
+<div class="cs">
+<div class="cs-card">
+<h3>Prefer to reach out directly?</h3>
+<p>We're always happy to hear from you.</p>
+<a href="mailto:info@lamtechnology.com">info@lamtechnology.com</a>
+<div class="cs-divider"></div>
+<div class="cs-item">
+<div class="cs-item-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.03 2.18 2 2 0 012 .01h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+</div>
+<div class="cs-item-text">
+<strong>Phone</strong>
+<a href="tel:8174844522">(817) 484-4522</a>
+</div>
+</div>
+</div>
+<div class="cs-card">
+<h3>What to expect</h3>
+<div class="cs-divider"></div>
+<div class="cs-item">
+<div class="cs-item-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+</div>
+<div class="cs-item-text">
+<strong>Response within 1 business day</strong>
+We don't let inquiries sit.
+</div>
+</div>
+<div class="cs-item">
+<div class="cs-item-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+</div>
+<div class="cs-item-text">
+<strong>A real conversation, not a pitch</strong>
+We'll ask questions and listen first.
+</div>
+</div>
+<div class="cs-item">
+<div class="cs-item-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+</div>
+<div class="cs-item-text">
+<strong>No obligation</strong>
+The first conversation is always free.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer id="footer">
+<div class="container">
+<div class="ft">
+<div>
+<div class="fli"><img src="/LAM Logo Transparent.png" alt="LAM Technology"></div>
+<p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model and deep industry expertise.</p>
+<div class="fsoc"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener">in</a></div>
+</div>
+<div>
+<p class="fh">Practice Areas</p>
+<div class="fl">
+<a href="/cybersecurity.html">Cybersecurity &amp; Risk</a>
+<a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a>
+<a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a>
+<a href="/#practices">Managed Services</a>
+<a href="/#practices">Mobility &amp; IoT</a>
+</div>
+</div>
+<div>
+<p class="fh">Company</p>
+<div class="fl">
+<a href="/about-lam/">About LAM</a>
+<a href="/#blog">Blog &amp; Insights</a>
+<a href="/contact/">Contact Us</a>
+</div>
+</div>
+<div>
+<p class="fh">Contact</p>
+<div class="fl">
+<a href="mailto:info@lamtechnology.com">info@lamtechnology.com</a>
+<a href="tel:8174844522">(817) 484-4522</a>
+</div>
+</div>
+</div>
+<div class="fb">
+<span class="fc">&copy; 2025 LAM Technology. All rights reserved.</span>
+</div>
+</div>
+</footer>
+
+<script>
+function tNav(){document.getElementById('nMob').classList.toggle('open')}
+</script>
+</body>
+</html>
