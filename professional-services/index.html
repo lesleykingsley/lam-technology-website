@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Professional Services – LAM Technology</title>
+<meta name="description" content="LAM Technology's Engagement Model: a proven four-phase process covering Insight, Strategy, Execution, and Support for every client engagement."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#1a1a2e;--nd:#0d0d1a;--nm:#252550;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--r:12px;--rs:6px;--sl:0 12px 48px rgba(26,26,46,.16);--t:.2s ease}
+html{scroll-behavior:smooth;overflow-y:scroll}
+body{font-family:'Inter',sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:70px}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+#navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;border-bottom:1px solid var(--g2);transition:box-shadow var(--t)}
+#navbar.sc{box-shadow:0 2px 20px rgba(26,26,46,.10)}
+.nw{display:flex;align-items:center;justify-content:space-between;height:70px}
+.nlogo img{height:46px;width:auto}
+.nl{display:flex;align-items:center;justify-content:center;flex:1;gap:8px}
+.nl a{font-size:14px;font-weight:600;color:var(--g8);padding:8px 14px;border-radius:var(--rs);transition:all var(--t)}
+.nl a:hover{color:var(--navy);background:var(--g1)}
+.nl .nc{background:var(--red);color:#fff;padding:10px 22px;margin-left:8px}.nl .nc:hover{background:var(--rh);transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,168,67,.30)}
+.nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}.nhb span{width:22px;height:2px;background:var(--navy);border-radius:2px;display:block}
+.nm{display:none}.nm.op{display:flex;flex-direction:column;background:#fff;padding:16px 24px 24px;gap:4px;border-top:1px solid var(--g2)}
+.nm a{font-size:15px;font-weight:600;color:var(--g8);padding:12px 0;border-bottom:1px solid var(--g1)}
+.nm a:last-child{border:none;margin-top:8px;background:var(--red);color:#fff;text-align:center;padding:12px;border-radius:var(--rs)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;padding:13px 28px;border-radius:var(--rs);cursor:pointer;transition:all var(--t);border:2px solid transparent;letter-spacing:.01em;white-space:nowrap}
+.br{background:var(--red);color:#fff;border-color:var(--red)}.br:hover{background:var(--rh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,67,.35)}
+.bow{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}.bow:hover{background:rgba(255,255,255,.10);border-color:#fff;transform:translateY(-2px)}
+.arr{font-style:normal;transition:transform var(--t)}.btn:hover .arr{transform:translateX(4px)}
+#footer{background:var(--nd);color:rgba(255,255,255,.55);padding:72px 0 36px}
+.ft{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.3fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07)}
+.fli img{height:42px;width:auto;margin-bottom:18px;filter:brightness(0) invert(1)}
+.fde{font-size:14px;line-height:1.75;color:rgba(255,255,255,.42);max-width:270px}
+.fso{margin-top:24px;display:flex;gap:10px}
+.fso a{width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:rgba(255,255,255,.55);transition:all var(--t)}
+.fso a:hover{background:var(--red);border-color:var(--red);color:#fff}
+.fct{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.85);margin-bottom:20px}
+.flk{display:flex;flex-direction:column;gap:10px}
+.flk a{font-size:14px;color:rgba(255,255,255,.45);transition:color var(--t)}.flk a:hover{color:var(--red)}
+.fcr{display:flex;gap:12px;margin-bottom:12px;font-size:14px;color:rgba(255,255,255,.45);align-items:flex-start}
+.fcr a{color:rgba(255,255,255,.45);transition:color var(--t)}.fcr a:hover{color:var(--red)}
+.fb{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:13px;color:rgba(255,255,255,.25);flex-wrap:wrap;gap:12px}
+@media(max-width:1024px){.ft{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:680px){.container{padding:0 20px}.nl{display:none}.nhb{display:flex}.ft{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header id="navbar">
+  <div class="container">
+    <nav class="nw">
+      <a href="/" class="nlogo"><img src="/LAM Logo Transparent.png" alt="LAM Technology"/></a>
+      <div class="nl">
+        <a href="/professional-services/">Professional Services</a>
+        <a href="/#practices">Practice Areas</a>
+        <a href="/about-lam/">Why LAM</a>
+        <a href="/#blog">Insights</a>
+        <a href="/contact/" class="nc">Just Ask LAM</a>
+      </div>
+      <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="nm" id="nMob">
+      <a href="/professional-services/" onclick="tNav()">Professional Services</a>
+      <a href="/#practices" onclick="tNav()">Practice Areas</a>
+      <a href="/about-lam/" onclick="tNav()">Why LAM</a>
+      <a href="/#blog" onclick="tNav()">Insights</a>
+      <a href="/contact/" onclick="tNav()">Just Ask LAM</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section style="background:var(--nd);padding:80px 0 72px;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
+  <div style="position:absolute;top:-20%;right:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.12) 0%,transparent 65%);pointer-events:none"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div style="max-width:760px">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.25);border-radius:100px;padding:5px 16px;margin-bottom:24px">
+        <span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75)">How We Work</span>
+      </div>
+      <h1 style="font-size:clamp(36px,5vw,64px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:20px">The LAM<br><span style="color:var(--red)">Engagement Model</span></h1>
+      <p style="font-size:18px;color:rgba(255,255,255,.62);line-height:1.78;max-width:580px;margin-bottom:36px">A proven four-phase process built around your success. Every client engagement follows the same disciplined path: Insight, Strategy, Execution, and Support.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="/practice-areas/billing-breakthrough/" class="btn br">Start with Billing Breakthrough <span class="arr">&#8594;</span></a>
+        <a href="/contact/" class="btn bow">Just Ask LAM <span class="arr">&#8594;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS STEPS -->
+<section style="background:var(--off);padding:80px 0 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">The Process</div>
+      <h2 style="font-size:clamp(26px,3vw,40px);font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:14px">Insight. Strategy. Execution. Support.</h2>
+      <p style="font-size:16px;color:var(--g6);max-width:560px;margin:0 auto;line-height:1.75">No shortcuts, no gaps, and no vendor agenda. Just a clear process that gets you to the right outcome.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 01: INSIGHT -->
+<section style="background:var(--nd);padding:72px 0;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">01 / Insight</div>
+        <h2 style="font-size:clamp(28px,3vw,40px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">Assessments &amp; Discovery</h2>
+        <p style="font-size:16px;color:rgba(255,255,255,.62);line-height:1.78;margin-bottom:16px">Before we recommend anything, we need to understand where you actually are. Most organizations are surprised by what we find in the Insight phase.</p>
+        <p style="font-size:16px;color:rgba(255,255,255,.62);line-height:1.78;margin-bottom-32px">Our branded assessments are paid engagements that deliver a clear, objective picture of your environment before you commit to any direction, vendor, or investment. Findings from this phase directly inform everything that follows.</p>
+        <div style="margin-top:28px;padding:20px 24px;background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.20);border-radius:10px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--red);margin-bottom:8px">Important</div>
+          <p style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.7">All Insight phase assessments are paid engagements. This ensures our team is fully committed to your engagement and that findings are thorough, documented, and actionable.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-left:3px solid var(--red);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:6px"><a href="/practice-areas/billing-breakthrough/" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Billing Breakthrough&#8482; &#8594;</a></div>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65">A comprehensive review of your telecom and IT invoices that uncovers billing errors, auto-renewed contracts, and renegotiation opportunities across your service portfolio.</p>
+          <div style="margin-top:10px;display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);background:rgba(212,168,67,.10);padding:3px 10px;border-radius:100px">Step 1 for Most Clients</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-left:3px solid rgba(212,168,67,.40);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:6px"><a href="/infrastructure-insight.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Infrastructure Insight&#8482; &#8594;</a></div>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65">A deep assessment of your network, cloud, and IT infrastructure to identify gaps, redundancies, and modernization opportunities.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-left:3px solid rgba(212,168,67,.40);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:6px"><a href="/cybersecurity.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Vigilance Verification&#8482; &#8594;</a></div>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65">A comprehensive cybersecurity risk assessment that identifies vulnerabilities, evaluates your current posture, and prioritizes remediation.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-left:3px solid rgba(212,168,67,.40);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:6px"><a href="/practice-areas/customer-experience-digital-engagement/" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Experience Examination&#8482; &#8594;</a></div>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65">An evaluation of your customer experience infrastructure and digital engagement tools to uncover friction, gaps, and improvement opportunities.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-left:3px solid rgba(212,168,67,.40);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:6px"><a href="/support-scope.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Support Scope&#8482; &#8594;</a></div>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65">A structured review of your existing IT support model, managed services contracts, and vendor relationships to right-size coverage and cost.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:rgba(255,255,255,.40);margin-bottom:6px">Wireless Wisdom&#8482;</div>
+          <p style="font-size:13px;color:rgba(255,255,255,.35);line-height:1.65">A mobility and IoT assessment for organizations managing wireless infrastructure, connected devices, and mobile workforces. Coming soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 02: STRATEGY -->
+<section style="background:#fff;padding:72px 0">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:12px;order:2">
+        <div style="background:var(--off);border:1px solid var(--g2);border-left:3px solid var(--red);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px">Supplier Shootout&#8482;</div>
+          <p style="font-size:13px;color:var(--g6);line-height:1.65">A structured, side-by-side evaluation of competing vendors against your specific requirements. No guesswork, no salesperson spin.</p>
+        </div>
+        <div style="background:var(--off);border:1px solid var(--g2);border-left:3px solid rgba(212,168,67,.40);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px">RFP Vendor Validation&#8482;</div>
+          <p style="font-size:13px;color:var(--g6);line-height:1.65">LAM builds and manages your RFP process end to end, ensuring you ask the right questions and evaluate responses with expert objectivity.</p>
+        </div>
+      </div>
+      <div style="order:1">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">02 / Strategy</div>
+        <h2 style="font-size:clamp(28px,3vw,40px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">Supplier Selection &amp; Vendor Strategy</h2>
+        <p style="font-size:16px;color:var(--g6);line-height:1.78;margin-bottom:16px">Findings from the Insight phase directly inform your technology direction. With a clear picture of where you are, LAM helps you choose the right vendors, negotiate the right contracts, and invest in the right priorities.</p>
+        <p style="font-size:16px;color:var(--g6);line-height:1.78">Because LAM has no vendor loyalty, your strategy is built around your needs and budget, not our relationships. That independence is your competitive advantage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 03: EXECUTION -->
+<section style="background:var(--nd);padding:72px 0;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">03 / Execution</div>
+        <h2 style="font-size:clamp(28px,3vw,40px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">Managed Delivery &amp; Implementation</h2>
+        <p style="font-size:16px;color:rgba(255,255,255,.62);line-height:1.78;margin-bottom:16px">When change is required, LAM manages the delivery from end to end. We act as your dedicated project manager, vendor liaison, and accountability partner throughout implementation.</p>
+        <p style="font-size:16px;color:rgba(255,255,255,.62);line-height:1.78">No finger-pointing between vendors. No surprises on go-live day. Just disciplined execution with full accountability on our side.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-left:3px solid var(--red);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:6px">Dedicated Delivery&#8482;</div>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65">LAM takes ownership of technology implementations, coordinating vendors, timelines, and deliverables so your team stays focused on the business.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-left:3px solid rgba(212,168,67,.40);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:6px">Dedicated Disconnect&#8482;</div>
+          <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65">Managing the end-of-life of legacy services is just as important as standing up new ones. LAM handles disconnects, migrations, and cutover with the same rigor as deployments.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 04: SUPPORT -->
+<section style="background:#fff;padding:72px 0">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:12px;order:2">
+        <div style="background:var(--off);border:1px solid var(--g2);border-left:3px solid var(--red);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px">Contract &amp; Vendor Management</div>
+          <p style="font-size:13px;color:var(--g6);line-height:1.65">Ongoing oversight of your vendor contracts, renewals, and performance to ensure you never overpay or get locked into terms that no longer serve you.</p>
+        </div>
+        <div style="background:var(--off);border:1px solid var(--g2);border-left:3px solid rgba(212,168,67,.40);border-radius:10px;padding:20px 22px">
+          <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px">Renewal Advocacy</div>
+          <p style="font-size:13px;color:var(--g6);line-height:1.65">When contracts come up for renewal, LAM negotiates on your behalf with the leverage of deep vendor relationships and market knowledge you don't have alone.</p>
+        </div>
+      </div>
+      <div style="order:1">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px">04 / Support</div>
+        <h2 style="font-size:clamp(28px,3vw,40px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">Ongoing Optimization &amp; Advocacy</h2>
+        <p style="font-size:16px;color:var(--g6);line-height:1.78;margin-bottom:16px">The engagement doesn't end at go-live. LAM stays alongside your organization to protect the value of every technology investment over time.</p>
+        <p style="font-size:16px;color:var(--g6);line-height:1.78">From managing renewals to escalating vendor issues to monitoring performance, LAM is your long-term advocate, not just a one-time consultant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:88px 0;background:var(--navy);position:relative;overflow:hidden;text-align:center">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.15) 0%,transparent 65%);pointer-events:none"></div>
+  <div class="container" style="position:relative;z-index:1;max-width:680px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:16px">Ready to Get Started?</div>
+    <h2 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.025em;margin-bottom:20px">Every Great Engagement<br>Begins with <span style="color:var(--red)">Insight.</span></h2>
+    <p style="font-size:17px;color:rgba(255,255,255,.60);line-height:1.75;margin-bottom:40px">Most clients start with the Billing Breakthrough assessment. It is the fastest way to understand where you stand and what LAM can do for you.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="/practice-areas/billing-breakthrough/" class="btn br">Start with Billing Breakthrough <span class="arr">&#8594;</span></a>
+      <a href="/contact/" class="btn bow">Just Ask LAM <span class="arr">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="ft">
+      <div><div class="fli"><img src="/LAM Logo Transparent.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener">in</a></div></div>
+      <div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/#practices">Mobility &amp; IoT</a></div></div>
+      <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/#blog">Blog &amp; Insights</a><a href="/contact/">Contact Us</a></div></div>
+      <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
+    </div>
+    <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span>Fort Worth, TX</span></div>
+  </div>
+</footer>
+<script>
+function tNav(){document.getElementById('nMob').classList.toggle('op')}
+document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
+window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
+</script>
+</body>
+</html>
