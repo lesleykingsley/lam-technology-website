@@ -11,12 +11,12 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 .label{background:#1a1a2e;border-top:3px solid #d4a843;padding:18px 40px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d4a843;display:flex;align-items:center;gap:12px}
 .label span{color:rgba(255,255,255,.5);font-weight:400;letter-spacing:0;text-transform:none;font-size:14px}
 .divider{height:3px;background:linear-gradient(90deg,#d4a843,transparent)}
+
+/* CONCEPT A */
 .a{min-height:100vh;background:#0d0d1a;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
 .a-left{padding:100px 64px 80px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.06);position:relative;z-index:1}
 .a-right{padding:100px 64px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
 .a::before{content:'';position:absolute;top:-100px;right:30%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.10) 0%,transparent 65%);pointer-events:none}
-.a-city{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d4a843;margin-bottom:20px;display:flex;align-items:center;gap:8px}
-.a-city::before{content:'';display:block;width:24px;height:2px;background:#d4a843}
 .a-headline{font-size:clamp(42px,4.5vw,68px);font-weight:900;line-height:1.0;letter-spacing:-.04em;color:#fff;margin-bottom:28px}
 .a-headline em{color:#d4a843;font-style:normal;display:block}
 .a-sub{font-size:18px;color:rgba(255,255,255,.55);line-height:1.75;max-width:420px;margin-bottom:44px}
@@ -36,6 +36,8 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 .a-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.2);border-radius:3px;padding:10px 18px;margin-bottom:24px}
 .a-tag-dot{width:8px;height:8px;border-radius:50%;background:#d4a843}
 .a-tag-text{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+/* CONCEPT B */
 .b{min-height:100vh;background:#0d0d1a;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 80px;position:relative;overflow:hidden}
 .b-bg{position:absolute;inset:0;background:linear-gradient(160deg,#0d0d1a 0%,#1a1a2e 50%,#0d0d1a 100%)}
 .b-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px}
@@ -48,28 +50,31 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 .b-headline{font-size:clamp(52px,6vw,96px);font-weight:900;line-height:.95;letter-spacing:-.04em;color:#fff;margin-bottom:40px;max-width:900px}
 .b-headline em{color:#d4a843;font-style:normal}
 .b-headline span{display:block;color:rgba(255,255,255,.25);font-size:.55em;font-weight:300;letter-spacing:.02em;margin-bottom:8px}
-.b-bottom{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-top:0}
+.b-bottom{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
 .b-sub{font-size:17px;color:rgba(255,255,255,.5);line-height:1.8;max-width:460px}
 .b-right{display:flex;flex-direction:column;align-items:flex-end;gap:24px}
 .b-btns{display:flex;gap:14px}
 .b-proof{font-size:12px;color:rgba(255,255,255,.25);letter-spacing:.06em;text-align:right}
 .b-proof strong{color:rgba(255,255,255,.5)}
-.c{min-height:100vh;background:#f0ede8;display:grid;grid-template-columns:1.1fr .9fr;position:relative;overflow:hidden}
-.c-left{padding:120px 64px 80px;display:flex;flex-direction:column;justify-content:center}
-.c-right{background:#1a1a2e;padding:100px 64px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.c-right::before{content:'';position:absolute;top:-20%;right:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.18) 0%,transparent 65%)}
-.c-location{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8a8070;margin-bottom:28px;display:flex;align-items:center;gap:10px}
-.c-location::before{content:'\25C6';color:#d4a843;font-size:8px}
-.c-headline{font-size:clamp(38px,4vw,58px);font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#1a1a2e;margin-bottom:28px}
+
+/* CONCEPT C — dark version */
+.c{min-height:100vh;background:#0d0d1a;display:grid;grid-template-columns:1.1fr .9fr;position:relative;overflow:hidden}
+.c::before{content:'';position:absolute;top:-100px;left:-100px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.07) 0%,transparent 65%);pointer-events:none}
+.c-left{padding:120px 64px 80px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.06);position:relative;z-index:1}
+.c-right{background:#111127;padding:100px 64px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.c-right::before{content:'';position:absolute;bottom:-20%;right:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.12) 0%,transparent 65%)}
+.c-location{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#d4a843;margin-bottom:28px;display:flex;align-items:center;gap:10px}
+.c-location::before{content:'';display:block;width:24px;height:2px;background:#d4a843}
+.c-headline{font-size:clamp(38px,4vw,60px);font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#fff;margin-bottom:28px}
 .c-headline em{color:#d4a843;font-style:normal}
-.c-sub{font-size:17px;color:#6b6056;line-height:1.8;max-width:440px;margin-bottom:44px}
+.c-sub{font-size:17px;color:rgba(255,255,255,.5);line-height:1.8;max-width:440px;margin-bottom:44px}
 .c-btns{display:flex;gap:14px;margin-bottom:56px}
-.c-btn-primary{background:#1a1a2e;color:#fff;font-weight:700;font-size:15px;padding:15px 32px;border-radius:4px;text-decoration:none}
+.c-btn-dark{background:#fff;color:#0d0d1a;font-weight:700;font-size:15px;padding:15px 32px;border-radius:4px;text-decoration:none}
 .c-btn-gold{background:#d4a843;color:#1a1a2e;font-weight:700;font-size:15px;padding:15px 32px;border-radius:4px;text-decoration:none}
-.c-trust{display:flex;align-items:center;gap:16px;padding-top:32px;border-top:1px solid rgba(26,26,46,.1)}
-.c-trust-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c8c0b0}
+.c-trust{display:flex;align-items:center;gap:16px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06)}
+.c-trust-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3)}
 .c-trust-items{display:flex;gap:10px;flex-wrap:wrap}
-.c-trust-item{font-size:12px;font-weight:600;color:#8a8070;background:#fff;border:1px solid #e8e4dc;border-radius:100px;padding:5px 14px}
+.c-trust-item{font-size:12px;font-weight:600;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:5px 14px}
 .c-quote-box{position:relative;z-index:1}
 .c-quote-mark{font-size:120px;color:rgba(212,168,67,.2);font-family:Georgia,serif;line-height:.6;margin-bottom:16px;display:block}
 .c-quote-text{font-size:20px;font-weight:500;color:rgba(255,255,255,.88);line-height:1.65;margin-bottom:32px}
@@ -79,6 +84,8 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 .c-stat-n{font-size:36px;font-weight:900;color:#fff;letter-spacing:-.03em}
 .c-stat-n em{color:#d4a843;font-style:normal}
 .c-stat-l{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+
+/* nav */
 .section-nav{background:#1a1a2e;padding:14px 40px;display:flex;gap:24px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.06)}
 .section-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);text-decoration:none;padding:6px 14px;border-radius:4px;transition:all .2s}
 .section-nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
@@ -87,12 +94,14 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 </style>
 </head>
 <body>
+
 <div class="section-nav">
 <a href="#concept-a" class="active">A: Split Statement</a>
 <a href="#concept-b">B: Editorial Bold</a>
-<a href="#concept-c">C: Human / Light</a>
+<a href="#concept-c">C: Dark Two-Column</a>
 <span class="nav-label">LAM Technology — Hero Mockups</span>
 </div>
+
 <div id="concept-a">
 <div class="label">Concept A: Split Statement <span>Left = declarative statement + CTA | Right = real client quote as social proof — two columns, no animation</span></div>
 <div class="divider"></div>
@@ -118,6 +127,7 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 </div>
 </div>
 </div>
+
 <div id="concept-b">
 <div class="label">Concept B: Editorial Bold <span>Full-width, oversized type, minimal copy — confident and distinctive, inspired by law firms and financial advisors</span></div>
 <div class="divider"></div>
@@ -148,8 +158,9 @@ The advisor<em>you keep.</em><br>The results<br>you remember.
 </div>
 </div>
 </div>
+
 <div id="concept-c">
-<div class="label">Concept C: Human / Light <span>Off-white left panel breaks away from all-dark AI templates — warmer, more approachable, still premium</span></div>
+<div class="label">Concept C: Dark Two-Column <span>Same dark palette as A and B — left = headline + CTA, right = quote panel with subtle contrast</span></div>
 <div class="divider"></div>
 <div class="c">
 <div class="c-left">
@@ -157,8 +168,8 @@ The advisor<em>you keep.</em><br>The results<br>you remember.
 <h1 class="c-headline">Better decisions.<br>Better outcomes.<br><em>Just Ask LAM.</em></h1>
 <p class="c-sub">LAM works alongside your team as a true extension of your organization — bringing the vendor relationships, technical expertise, and straight talk you need to make IT work for your business.</p>
 <div class="c-btns">
-<a href="#" class="c-btn-primary">Just Ask LAM →</a>
-<a href="#" class="c-btn-gold">Our Services</a>
+<a href="#" class="btn-gold">Just Ask LAM →</a>
+<a href="#" class="btn-ghost">Our Services</a>
 </div>
 <div class="c-trust">
 <span class="c-trust-label">Trusted In</span>
@@ -185,6 +196,7 @@ The advisor<em>you keep.</em><br>The results<br>you remember.
 </div>
 </div>
 </div>
+
 <script>
 document.querySelectorAll('.section-nav a').forEach(a => {
 a.addEventListener('click', () => {
