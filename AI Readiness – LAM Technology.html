@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)file:///C:/Users/LesleyKingsley/Downloads/ai-readiness.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Readiness – LAM Technology</title>
+  <meta name="description" content="Know exactly where your organization stands before making any AI commitment. Readiness Radar™ by LAM Technology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./AI Readiness – LAM Technology_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0a1628;
+      --navy-mid:   #112240;
+      --teal:       #0e7a73;
+      --teal-light: #12968d;
+      --gold:       #c9a84c;
+      --gold-light: #e2c47a;
+      --white:      #ffffff;
+      --off-white:  #f5f7fa;
+      --gray-light: #e8ecf1;
+      --gray-mid:   #8a96a8;
+      --text-dark:  #1a2332;
+      --text-body:  #3d4f63;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-body);
+      background: var(--white);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    .nav-logo img { height: 36px; display: block; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.78);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 0.65rem 2rem;
+      font-size: 0.8rem;
+      color: var(--gray-mid);
+    }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 0.4rem; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0d3d38 100%);
+      color: var(--white);
+      padding: 5rem 2rem 4.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(14,122,115,0.18) 0%, transparent 65%),
+                  radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      color: var(--white);
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto 2.25rem;
+      color: rgba(255,255,255,0.82);
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      padding: 0.85rem 2.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── DELIVERABLES STRIP ── */
+    .deliverables {
+      background: var(--teal);
+      padding: 2.25rem 2rem;
+    }
+    .deliverables-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+    .deliverable-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      color: var(--white);
+    }
+    .deliverable-item::before {
+      content: '✓';
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--gold-light);
+      margin-top: 0.05rem;
+      flex-shrink: 0;
+    }
+    .deliverable-item span { font-size: 0.9rem; line-height: 1.45; }
+
+    /* ── SECTION WRAPPER ── */
+    .section { padding: 4rem 2rem; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+    .section h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 2rem;
+    }
+    .section.alt-bg { background: var(--off-white); }
+    .section.dark-bg { background: var(--navy); }
+    .section.dark-bg h2 { color: var(--white); }
+    .section.dark-bg .section-label { color: var(--gold-light); }
+
+    /* ── DOMAINS ── */
+    .domains-intro {
+      font-size: 1rem;
+      color: var(--text-body);
+      max-width: 640px;
+      margin-bottom: 2rem;
+    }
+    .domain-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+    .domain-tab {
+      background: var(--white);
+      border: 1.5px solid var(--gray-light);
+      border-radius: 4px;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      transition: all 0.18s;
+      text-align: left;
+    }
+    .domain-tab:hover,
+    .domain-tab.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+    .domain-tab .tab-sub {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--gray-mid);
+      margin-top: 0.2rem;
+    }
+    .domain-tab.active .tab-sub,
+    .domain-tab:hover .tab-sub { color: rgba(255,255,255,0.65); }
+
+    /* ── WHY LAM ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .why-item {
+      padding: 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-top: 3px solid var(--teal);
+      border-radius: 4px;
+    }
+    .why-item p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+
+    /* ── WHO WE HELP ── */
+    .who-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+    .who-tag {
+      background: var(--navy-mid);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.85rem;
+      padding: 0.45rem 1rem;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    /* ── EXAMPLE ENGAGEMENTS ── */
+    .engagement-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .engagement-list li {
+      padding: 1.1rem 1.25rem;
+      background: var(--white);
+      border-left: 3px solid var(--gold);
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    /* ── LIFECYCLE ── */
+    .lifecycle-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .lifecycle-step {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+    }
+    .lifecycle-step:last-child { border-right: none; }
+    .lifecycle-step.active-step {
+      background: rgba(14,122,115,0.22);
+      border-top: 3px solid var(--teal-light);
+    }
+    .step-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+    .step-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+    .step-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      margin-bottom: 0.65rem;
+    }
+    .badge-here { background: var(--teal); color: var(--white); }
+    .badge-next { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.65); }
+    .step-desc { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+    .lifecycle-intro {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--teal) 0%, #0a5e58 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-section .cta-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+    .cta-section h2 {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+    .cta-section p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    footer img { height: 28px; opacity: 0.85; }
+    footer p { font-size: 0.8rem; color: var(--gray-mid); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .lifecycle-steps { grid-template-columns: 1fr; }
+      .lifecycle-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://lam-technology-website.vercel.app/" class="nav-logo">
+    <img src="./AI Readiness – LAM Technology_files/LAM Logo Transparent.png" alt="LAM Technology">
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://lam-technology-website.vercel.app/#engagement">Professional Services</a></li>
+    <li><a href="https://lam-technology-website.vercel.app/#practices">Practice Areas</a></li>
+    <li><a href="https://lam-technology-website.vercel.app/#why">Why LAM</a></li>
+    <li><a href="https://lam-technology-website.vercel.app/#blog">Insights</a></li>
+    <li><a href="https://lam-technology-website.vercel.app/contact/">Just Ask LAM</a></li>
+  </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="https://lam-technology-website.vercel.app/">← Home</a>
+  <span>/</span>
+  <a href="https://lam-technology-website.vercel.app/#practices">Practice Areas</a>
+  <span>/</span>
+  AI Readiness
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">AI Readiness – LAM Technology</div>
+  <h1>Know exactly where your organization stands before making any AI commitment.</h1>
+  <p class="hero-desc">
+    Readiness Radar™ is LAM's structured AI readiness assessment. It is a paid, advisor-led engagement that evaluates your environment across eight critical domains. Each domain is reviewed, rated, and documented with findings and recommendations — giving you and LAM the objective foundation to invest in AI with confidence, not guesswork.
+  </p>
+  <a href="file:///C:/Users/LesleyKingsley/Downloads/ai-readiness.html#contact" class="btn-primary">Request an AI Readiness Review</a>
+</section>
+
+<!-- DELIVERABLES -->
+<div class="deliverables">
+  <div class="deliverables-grid">
+    <div class="deliverable-item"><span>Advisor-led interview and environment review</span></div>
+    <div class="deliverable-item"><span>Per-domain ratings with documented findings</span></div>
+    <div class="deliverable-item"><span>Strengths and recommendations for each domain</span></div>
+    <div class="deliverable-item"><span>Strategy session to act on the results</span></div>
+  </div>
+</div>
+
+<!-- DOMAINS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Readiness Radar™: 8 Domains</div>
+    <h2>Readiness Radar™: 8 Domains</h2>
+    <p class="domains-intro">
+      Every domain is assessed, scored, and documented. Findings are practical — not a vendor pitch deck.
+    </p>
+    <div class="domain-tabs">
+      <div class="domain-tab active">
+        Strategy &amp; Vision
+        <span class="tab-sub">Leadership alignment, AI ambition &amp; investment framing</span>
+      </div>
+      <div class="domain-tab">
+        Governance &amp; Policy
+        <span class="tab-sub">Oversight structure, accountability &amp; responsible AI controls</span>
+      </div>
+      <div class="domain-tab">
+        Data Readiness
+        <span class="tab-sub">Quality, access, classification &amp; structure</span>
+      </div>
+      <div class="domain-tab">
+        Infrastructure &amp; Platforms
+        <span class="tab-sub">Cloud environment, compute &amp; integration readiness</span>
+      </div>
+      <div class="domain-tab">
+        Security &amp; Compliance
+        <span class="tab-sub">Risk exposure, privacy controls &amp; regulatory posture</span>
+      </div>
+      <div class="domain-tab">
+        Workforce &amp; Adoption
+        <span class="tab-sub">Skills gaps, change readiness &amp; culture</span>
+      </div>
+      <div class="domain-tab">
+        Use Case Prioritization
+        <span class="tab-sub">Feasibility, business value &amp; sequencing</span>
+      </div>
+      <div class="domain-tab">
+        Vendor &amp; Tool Landscape
+        <span class="tab-sub">Existing contracts, overlap &amp; capability gaps</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY LAM -->
+<section class="section alt-bg">
+  <div class="section-inner">
+    <div class="section-label">Why LAM</div>
+    <h2>AI guidance that is strategic, technically grounded, and vendor-neutral.</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <p>Advisory built around your actual environment and business objectives — not a platform vendor's preferred roadmap.</p>
+      </div>
+      <div class="why-item">
+        <p>Executive-level risk framing and board-ready communication on AI investment and readiness gaps.</p>
+      </div>
+      <div class="why-item">
+        <p>Hands-on support across assessments, use case prioritization, vendor selection, and implementation.</p>
+      </div>
+      <div class="why-item">
+        <p>Coverage across data infrastructure, security, workforce enablement, and responsible AI governance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE HELP -->
+<section class="section dark-bg">
+  <div class="section-inner">
+    <div class="section-label">Who We Help</div>
+    <h2>Built for organizations serious about AI — not just exploring it.</h2>
+    <div class="who-tags">
+      <span class="who-tag">Mid-market enterprises</span>
+      <span class="who-tag">Organizations with AI tool sprawl and no governing strategy</span>
+      <span class="who-tag">Microsoft 365 environments preparing for Copilot deployment</span>
+      <span class="who-tag">Private equity-backed portfolios</span>
+      <span class="who-tag">Teams with data quality or classification gaps</span>
+      <span class="who-tag">Leaders who have invested in AI pilots with little to show for it</span>
+      <span class="who-tag">Regulated industries navigating AI risk and compliance exposure</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE ENGAGEMENTS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Example Engagements</div>
+    <h2>What this looks like in practice.</h2>
+    <ul class="engagement-list">
+      <li>AI readiness assessment and prioritized 12-month investment roadmap</li>
+      <li>Microsoft Copilot and M365 environment readiness review</li>
+      <li>Use case prioritization workshop with effort-to-value scoring</li>
+      <li>AI vendor and platform selection and validation</li>
+      <li>Data governance gap analysis scoped for AI adoption</li>
+      <li>AI policy and responsible use framework development</li>
+    </ul>
+  </div>
+</section>
+
+<!-- LIFECYCLE -->
+<section class="section dark-bg">
+  <div class="section-inner">
+    <div class="section-label">The LAM Engagement Model</div>
+    <h2>Part of a lifecycle designed to move from insight to lasting value.</h2>
+    <p class="lifecycle-intro">
+      Readiness Radar™ is the Insight-phase assessment for the AI Readiness practice — giving you a clear, objective picture of your AI environment before committing to any vendor, platform, or investment.
+    </p>
+    <div class="lifecycle-steps">
+      <div class="lifecycle-step active-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Insight</div>
+        <div><span class="step-badge badge-here">You are here</span></div>
+        <p class="step-desc">A clear, objective picture of your AI readiness across strategy, data, infrastructure, and governance before committing to any direction or vendor. Readiness Radar™ lives here.</p>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Strategy</div>
+        <div><span class="step-badge badge-next">Next Step</span></div>
+        <p class="step-desc">Findings inform use case prioritization, vendor selection, and investment sequencing. Supplier Shootout™ and RFP Vendor Validation™ live here.</p>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Execution</div>
+        <div><span class="step-badge badge-next">When Change Is Required</span></div>
+        <p class="step-desc">LAM manages delivery and implementation end to end. Dedicated Delivery™ and Dedicated Disconnect™ live here.</p>
+      </div>
+      <div class="lifecycle-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Support</div>
+        <div><span class="step-badge badge-next">Long-Term Value</span></div>
+        <p class="step-desc">Ongoing optimization, vendor management, and advisory ensure long-term value from every AI investment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-label">Ready to know where you stand?</div>
+  <h2>Start with a Readiness Radar™ Assessment</h2>
+  <p>A structured review of your AI strategy, data readiness, infrastructure, and governance. No vendor agenda. No assumptions. Just clarity.</p>
+  <a href="https://lam-technology-website.vercel.app/contact/" class="btn-primary">Just Ask LAM</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://lam-technology-website.vercel.app/">
+    <img src="./AI Readiness – LAM Technology_files/LAM Logo Transparent.png" alt="LAM Technology">
+  </a>
+  <p>© 2025 LAM Technology. All rights reserved.</p>
+</footer>
+
+<script>
+  // Domain tab interaction
+  document.querySelectorAll('.domain-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.domain-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+</script>
+
+
+
+</body></html>
