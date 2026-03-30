@@ -23,6 +23,7 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 .a-btns{display:flex;gap:16px}
 .btn-gold{background:#d4a843;color:#1a1a2e;font-weight:700;font-size:15px;padding:15px 32px;border-radius:4px;text-decoration:none;letter-spacing:.01em}
 .btn-ghost{background:transparent;color:#fff;font-weight:600;font-size:15px;padding:15px 28px;border-radius:4px;border:1px solid rgba(255,255,255,.2);text-decoration:none}
+.btn-ghost-dark{background:transparent;color:#fff;font-weight:600;font-size:15px;padding:15px 28px;border-radius:4px;border:1px solid rgba(255,255,255,.35);text-decoration:none}
 .a-proof-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:24px}
 .a-quote{font-size:19px;font-weight:500;color:rgba(255,255,255,.85);line-height:1.65;font-style:italic;margin-bottom:28px;padding-left:20px;border-left:3px solid #d4a843}
 .a-attr{font-size:13px;color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding-left:20px}
@@ -57,7 +58,7 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 .b-proof{font-size:12px;color:rgba(255,255,255,.25);letter-spacing:.06em;text-align:right}
 .b-proof strong{color:rgba(255,255,255,.5)}
 
-/* CONCEPT C — dark version */
+/* CONCEPT C */
 .c{min-height:100vh;background:#0d0d1a;display:grid;grid-template-columns:1.1fr .9fr;position:relative;overflow:hidden}
 .c::before{content:'';position:absolute;top:-100px;left:-100px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.07) 0%,transparent 65%);pointer-events:none}
 .c-left{padding:120px 64px 80px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.06);position:relative;z-index:1}
@@ -69,8 +70,6 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 .c-headline em{color:#d4a843;font-style:normal}
 .c-sub{font-size:17px;color:rgba(255,255,255,.5);line-height:1.8;max-width:440px;margin-bottom:44px}
 .c-btns{display:flex;gap:14px;margin-bottom:56px}
-.c-btn-dark{background:#fff;color:#0d0d1a;font-weight:700;font-size:15px;padding:15px 32px;border-radius:4px;text-decoration:none}
-.c-btn-gold{background:#d4a843;color:#1a1a2e;font-weight:700;font-size:15px;padding:15px 32px;border-radius:4px;text-decoration:none}
 .c-trust{display:flex;align-items:center;gap:16px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06)}
 .c-trust-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3)}
 .c-trust-items{display:flex;gap:10px;flex-wrap:wrap}
@@ -85,6 +84,26 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 .c-stat-n em{color:#d4a843;font-style:normal}
 .c-stat-l{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;font-weight:500;text-transform:uppercase;letter-spacing:.06em}
 
+/* CONCEPT D — Fort Worth Photo + Bold Type */
+.d{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 80px;position:relative;overflow:hidden}
+.d-photo{position:absolute;inset:0;background:url('https://lamtechnology.com/wp-content/uploads/2024/04/LAM-Technology-Ft-Worth-TX-scaled.jpeg') center center / cover no-repeat}
+.d-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(5,5,15,.92) 0%, rgba(5,5,15,.75) 40%, rgba(5,5,15,.45) 70%, rgba(5,5,15,.3) 100%)}
+.d-inner{max-width:1200px;margin:0 auto;padding:0 64px;position:relative;z-index:1;width:100%}
+.d-eyebrow{display:flex;align-items:center;gap:20px;margin-bottom:32px}
+.d-eyebrow-line{height:1px;width:40px;background:#d4a843}
+.d-eyebrow-text{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#d4a843}
+.d-eyebrow-city{font-size:12px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.08em}
+.d-headline{font-size:clamp(52px,6vw,96px);font-weight:900;line-height:.95;letter-spacing:-.04em;color:#fff;margin-bottom:40px;max-width:900px;text-shadow:0 2px 40px rgba(0,0,0,.4)}
+.d-headline em{color:#d4a843;font-style:normal}
+.d-headline span{display:block;color:rgba(255,255,255,.4);font-size:.55em;font-weight:300;letter-spacing:.02em;margin-bottom:8px}
+.d-bottom{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+.d-sub{font-size:17px;color:rgba(255,255,255,.7);line-height:1.8;max-width:460px}
+.d-right{display:flex;flex-direction:column;align-items:flex-end;gap:24px}
+.d-btns{display:flex;gap:14px}
+.d-proof{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.06em;text-align:right}
+.d-proof strong{color:rgba(255,255,255,.65)}
+.d-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#d4a843,rgba(212,168,67,.2),transparent);z-index:2}
+
 /* nav */
 .section-nav{background:#1a1a2e;padding:14px 40px;display:flex;gap:24px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.06)}
 .section-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);text-decoration:none;padding:6px 14px;border-radius:4px;transition:all .2s}
@@ -96,14 +115,15 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 <body>
 
 <div class="section-nav">
-<a href="#concept-a" class="active">A: Split Statement</a>
+<a href="#concept-a">A: Split Statement</a>
 <a href="#concept-b">B: Editorial Bold</a>
 <a href="#concept-c">C: Dark Two-Column</a>
+<a href="#concept-d" class="active">D: Photo + Bold Type</a>
 <span class="nav-label">LAM Technology — Hero Mockups</span>
 </div>
 
 <div id="concept-a">
-<div class="label">Concept A: Split Statement <span>Left = declarative statement + CTA | Right = real client quote as social proof — two columns, no animation</span></div>
+<div class="label">Concept A: Split Statement <span>Left = declarative statement + CTA | Right = real client quote as social proof</span></div>
 <div class="divider"></div>
 <div class="a">
 <div class="a-left">
@@ -129,7 +149,7 @@ body{font-family:'Inter',sans-serif;background:#0d0d1a;color:#fff}
 </div>
 
 <div id="concept-b">
-<div class="label">Concept B: Editorial Bold <span>Full-width, oversized type, minimal copy — confident and distinctive, inspired by law firms and financial advisors</span></div>
+<div class="label">Concept B: Editorial Bold <span>Full-width oversized type — confident and distinctive, no photo</span></div>
 <div class="divider"></div>
 <div class="b">
 <div class="b-bg"></div>
@@ -160,7 +180,7 @@ The advisor<em>you keep.</em><br>The results<br>you remember.
 </div>
 
 <div id="concept-c">
-<div class="label">Concept C: Dark Two-Column <span>Same dark palette as A and B — left = headline + CTA, right = quote panel with subtle contrast</span></div>
+<div class="label">Concept C: Dark Two-Column <span>Stacked headline left · Quote panel right</span></div>
 <div class="divider"></div>
 <div class="c">
 <div class="c-left">
@@ -192,6 +212,37 @@ The advisor<em>you keep.</em><br>The results<br>you remember.
 <div><div class="c-stat-n">20<em>+</em></div><div class="c-stat-l">Years</div></div>
 <div><div class="c-stat-n">7</div><div class="c-stat-l">Practices</div></div>
 <div><div class="c-stat-n">100<em>+</em></div><div class="c-stat-l">Clients</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="concept-d">
+<div class="label">Concept D: Fort Worth Photo + Bold Type <span>Real skyline photo as background · Concept B typography layered over — warm, local, distinctive</span></div>
+<div class="divider"></div>
+<div class="d">
+<div class="d-photo"></div>
+<div class="d-overlay"></div>
+<div class="d-bar"></div>
+<div class="d-inner">
+<div class="d-eyebrow">
+<span class="d-eyebrow-line"></span>
+<span class="d-eyebrow-text">LAM Technology</span>
+<span class="d-eyebrow-city">Fort Worth, TX · Since 2004</span>
+</div>
+<h1 class="d-headline">
+<span>Trusted Channel Advisor</span>
+The advisor<em>you keep.</em><br>The results<br>you remember.
+</h1>
+<div class="d-bottom">
+<p class="d-sub">LAM brings deep vendor relationships and 20+ years of channel expertise to bear for you — so you get the right technology, the right terms, and someone in your corner through every step of the project.</p>
+<div class="d-right">
+<div class="d-btns">
+<a href="#" class="btn-gold">Just Ask LAM →</a>
+<a href="#" class="btn-ghost-dark">Practice Areas</a>
+</div>
+<div class="d-proof">Trusted by banks, manufacturers, and insurers<br><strong>across North Texas for 20+ years</strong></div>
+</div>
 </div>
 </div>
 </div>
