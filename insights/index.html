@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Insights – LAM Technology</title>
+  <meta name="description" content="Practical insights on IT strategy, cybersecurity, digital transformation, and managed services from the LAM Technology team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#1a1a2e;--nd:#0d0d1a;--nm:#1e3060;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--rs:6px;--r:12px;--t:.2s ease;--sl:0 12px 48px rgba(26,26,46,.16);--sxl:0 24px 80px rgba(26,26,46,.20)}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;padding-top:70px}
+    img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 32px}
+    .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:rgba(212,168,67,.08);border-radius:100px;padding:5px 14px;margin-bottom:16px}
+    .tag.lt{color:rgba(255,255,255,.7);background:rgba(255,255,255,.10)}
+    /* NAV */
+    .nw{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,26,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+    .nlogo img{height:38px;width:auto}
+    .nl{display:flex;align-items:center;gap:32px}
+    .nl a{font-size:14px;font-weight:500;color:rgba(255,255,255,.75);transition:color var(--t)}
+    .nl a:hover{color:#fff}
+    .nc{background:var(--red);color:#fff !important;padding:10px 22px;border-radius:var(--rs);font-weight:700;transition:background var(--t) !important}
+    .nc:hover{background:var(--rh) !important}
+    .nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .nhb span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--t)}
+    .nm{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(13,13,26,.98);padding:24px 40px;flex-direction:column;gap:16px;z-index:99;border-bottom:1px solid rgba(255,255,255,.08)}
+    .nm.op{display:flex}
+    .nm a{font-size:16px;font-weight:500;color:rgba(255,255,255,.8);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+    @media(max-width:768px){.nl{display:none}.nhb{display:flex}}
+    /* BREADCRUMB */
+    .bc{background:var(--g1);border-bottom:1px solid var(--g2);padding:14px 0;font-size:13px;color:var(--g6)}
+    .bc a{color:var(--g6)}
+    .bc a:hover{color:var(--navy)}
+    .bc span{margin:0 8px;color:var(--g4)}
+    /* HERO */
+    #hero{background:linear-gradient(135deg,var(--nd) 0%,var(--nm) 60%,#0a1628 100%);padding:80px 0 72px;position:relative;overflow:hidden}
+    #hero::before{content:'';position:absolute;top:-40%;right:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(212,168,67,.12) 0%,transparent 70%);pointer-events:none}
+    .ih-sub{font-size:17px;color:rgba(255,255,255,.6);max-width:560px;line-height:1.75;margin-top:16px}
+    .ih-title{font-size:clamp(32px,4.5vw,52px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.15;margin-bottom:8px}
+    .ih-title em{color:var(--red);font-style:normal}
+    /* FILTER BAR */
+    #filters{background:#fff;border-bottom:2px solid var(--g2);padding:24px 0;position:sticky;top:70px;z-index:50}
+    .filter-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .filter-btn{font-size:13px;font-weight:600;padding:8px 18px;border-radius:100px;border:1.5px solid var(--g2);background:#fff;color:var(--g6);cursor:pointer;transition:all var(--t)}
+    .filter-btn:hover{border-color:var(--navy);color:var(--navy)}
+    .filter-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+    /* ARTICLES GRID */
+    #articles{padding:72px 0 96px}
+    .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+    .article-card{background:#fff;border:1.5px solid var(--g2);border-radius:var(--r);overflow:hidden;transition:all var(--t);display:flex;flex-direction:column}
+    .article-card:hover{box-shadow:var(--sl);transform:translateY(-4px);border-color:rgba(212,168,67,.25)}
+    .ac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:linear-gradient(135deg,var(--nm),var(--nd))}
+    .ac-img-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,var(--nm) 0%,var(--nd) 100%);display:flex;align-items:center;justify-content:center;font-size:40px}
+    .ac-body{padding:24px;display:flex;flex-direction:column;flex:1}
+    .ac-cat{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+    .ac-title{font-size:17px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:10px}
+    .ac-excerpt{font-size:14px;color:var(--g6);line-height:1.7;flex:1;margin-bottom:20px}
+    .ac-meta{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--g4);border-top:1px solid var(--g2);padding-top:14px;margin-top:auto}
+    .ac-read{font-size:13px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:6px;transition:gap var(--t)}
+    .article-card:hover .ac-read{gap:10px}
+    /* FEATURED */
+    .featured-card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--r);overflow:hidden;border:1.5px solid var(--g2);transition:all var(--t)}
+    .featured-card:hover{box-shadow:var(--sxl);transform:translateY(-4px);border-color:rgba(212,168,67,.25)}
+    .fc-img{aspect-ratio:auto;min-height:320px;background:linear-gradient(135deg,var(--nm) 0%,var(--nd) 100%);display:flex;align-items:center;justify-content:center;font-size:72px}
+    .fc-body{padding:40px 44px;display:flex;flex-direction:column;justify-content:center;background:#fff}
+    .fc-badge{display:inline-block;background:rgba(212,168,67,.1);color:var(--red);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:5px 14px;margin-bottom:16px}
+    .fc-title{font-size:clamp(22px,2.5vw,30px);font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:14px;letter-spacing:-.02em}
+    .fc-excerpt{font-size:15px;color:var(--g6);line-height:1.75;margin-bottom:28px}
+    /* CTA STRIP */
+    #cta{background:linear-gradient(135deg,var(--nd),var(--nm));padding:72px 0;text-align:center}
+    .cta-title{font-size:clamp(26px,3.5vw,38px);font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-.02em}
+    .cta-sub{font-size:17px;color:rgba(255,255,255,.6);margin-bottom:36px}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:var(--rs);padding:14px 28px;font-size:15px;transition:all var(--t);cursor:pointer;border:none}
+    .btn-gold{background:var(--red);color:#fff}
+    .btn-gold:hover{background:var(--rh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,67,.35)}
+    .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.3)}
+    .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+    /* FOOTER */
+    footer{background:var(--nd);padding:56px 0 32px;border-top:1px solid rgba(255,255,255,.06)}
+    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .ft-logo img{height:36px;margin-bottom:16px}
+    .ft-desc{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;max-width:280px}
+    .ft-social{margin-top:20px;display:flex;gap:12px}
+    .ft-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.5);transition:all var(--t)}
+    .ft-social a:hover{border-color:var(--red);color:var(--red)}
+    .ft-h{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+    .ft-links{display:flex;flex-direction:column;gap:10px}
+    .ft-links a{font-size:14px;color:rgba(255,255,255,.55);transition:color var(--t)}
+    .ft-links a:hover{color:#fff}
+    .ft-contact-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.55);margin-bottom:12px}
+    .ft-contact-item a{color:rgba(255,255,255,.55);transition:color var(--t)}
+    .ft-contact-item a:hover{color:#fff}
+    .ft-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.3)}
+    @media(max-width:900px){.articles-grid{grid-template-columns:1fr 1fr}.featured-card{grid-template-columns:1fr}.fc-img{min-height:200px}}
+    @media(max-width:600px){.articles-grid{grid-template-columns:1fr}.ft-grid{grid-template-columns:1fr 1fr}.filter-row{gap:8px}.filter-btn{font-size:12px;padding:7px 14px}}
+    </style>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav class="nw">
+        <a href="/" class="nlogo"><img src="/LAM Logo Transparent.png" alt="LAM Technology"></a>a>
+        <div class="nl">
+              <a href="/professional-services/">Professional Services</a>a>
+              <a href="/#practices">Practice Areas</a>a>
+              <a href="/#why">Why LAM</a>a>
+              <a href="/insights/">Insights</a>a>
+              <a href="/contact/" class="nc">Just Ask LAM</a>a>
+        </div>div>
+        <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>div>
+    </nav>nav>
+  <div class="nm" id="nMob">
+    <a href="/professional-services/" onclick="tNav()">Services</a>a>
+    <a href="/#practices" onclick="tNav()">Practice Areas</a>a>
+    <a href="/#why" onclick="tNav()">Why LAM</a>a>
+    <a href="/insights/" onclick="tNav()">Insights</a>a>
+    <a href="/contact/" onclick="tNav()">Just Ask LAM</a>a>
+  </div>div>
+  
+  <!-- BREADCRUMB -->
+  <div class="bc">
+    <div class="container">
+        <a href="/">&#8212; Home</a>a><span>/</span> Insights
+    </div>div>
+  </div>div>
+  
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+        <span class="tag lt">LAM Perspectives</span>
+        <h1 class="ih-title">Practical <em>Insights</em> for<br>IT Decision Makers</h1>h1>
+        <p class="ih-sub">Straight talk on technology strategy, cybersecurity, digital transformation, and managed services — from advisors who've been in the trenches.</p>p>
+    </div>div>
+  </section>section>
+  
+  <!-- FILTER BAR -->
+  <section id="filters">
+    <div class="container">
+        <div class="filter-row">
+              <button class="filter-btn active" onclick="filterArticles('all',this)">All Topics</button>button>
+              <button class="filter-btn" onclick="filterArticles('cybersecurity',this)">Cybersecurity</button>button>
+              <button class="filter-btn" onclick="filterArticles('telecom',this)">Telecom &amp; Billing</button>button>
+              <button class="filter-btn" onclick="filterArticles('ai',this)">AI &amp; Strategy</button>button>
+              <button class="filter-btn" onclick="filterArticles('networking',this)">Networking</button>button>
+              <button class="filter-btn" onclick="filterArticles('mobility',this)">Mobility &amp; IoT</button>button>
+        </div>div>
+    </div>div>
+  </section>section>
+  
+  <!-- ARTICLES -->
+  <section id="articles">
+    <div class="container">
+        <div class="articles-grid" id="articlesGrid">
+        
+              <!-- FEATURED -->
+              <div class="featured-card article-card" data-cat="telecom">
+                      <div class="fc-img">&#128200;</div>div>
+                      <div class="fc-body">
+                                <span class="fc-badge">Featured &middot; Telecom &amp; Billing</span>
+                                <h2 class="fc-title">Are You Overpaying for Telecom? Most Organizations Are — Here&#39;s How to Find Out</h2>h2>
+                                <p class="fc-excerpt">Billing errors, auto-renewed contracts, and unused services quietly drain IT budgets every year. LAM&#39;s Billing Breakthrough assessment was built specifically to surface these issues — and the findings are almost always surprising.</p>p>
+                                <a href="/practice-areas/billing-breakthrough/" class="btn btn-gold" style="align-self:flex-start;">Explore Billing Breakthrough &#8594;</a>a>
+                      </div>div>
+              </div>div>
+        
+              <!-- CARD 1 -->
+              <div class="article-card" data-cat="cybersecurity">
+                      <div class="ac-img-placeholder">&#128737;</div>div>
+                      <div class="ac-body">
+                                <div class="ac-cat">Cybersecurity</div>div>
+                                <h3 class="ac-title">Why Most Cyber Audits Miss the Biggest Risks</h3>h3>
+                                <p class="ac-excerpt">Point-in-time assessments give you a snapshot, not a strategy. Learn why ongoing vigilance verification changes the security conversation for mid-market companies.</p>p>
+                                <div class="ac-meta">
+                                            <span>5 min read</span>
+                                            <a href="/cybersecurity.html" class="ac-read">Read more &#8594;</a>a>
+                                </div>div>
+                      </div>div>
+              </div>div>
+        
+              <!-- CARD 2 -->
+              <div class="article-card" data-cat="ai">
+                      <div class="ac-img-placeholder">&#129504;</div>div>
+                      <div class="ac-body">
+                                <div class="ac-cat">AI &amp; Strategy</div>div>
+                                <h3 class="ac-title">AI Readiness Isn&#39;t About the Tech — It&#39;s About the Foundation</h3>h3>
+                                <p class="ac-excerpt">Before you invest in AI tools, you need to know if your data, infrastructure, and processes are ready. Our Readiness Radar assessment helps you find out before you commit budget.</p>p>
+                                <div class="ac-meta">
+                                            <span>6 min read</span>
+                                            <a href="/ai-readiness.html" class="ac-read">Read more &#8594;</a>a>
+                                </div>div>
+                      </div>div>
+              </div>div>
+        
+              <!-- CARD 3 -->
+              <div class="article-card" data-cat="networking">
+                      <div class="ac-img-placeholder">&#128225;</div>div>
+                      <div class="ac-body">
+                                <div class="ac-cat">Networking &amp; Infrastructure</div>div>
+                                <h3 class="ac-title">The Hidden Cost of "Good Enough" Network Infrastructure</h3>h3>
+                                <p class="ac-excerpt">Aging infrastructure doesn&#39;t fail dramatically — it erodes performance gradually. Here&#39;s what to look for before small inefficiencies become big outages.</p>p>
+                                <div class="ac-meta">
+                                            <span>4 min read</span>
+                                            <a href="/infrastructure-insight.html" class="ac-read">Read more &#8594;</a>a>
+                                </div>div>
+                      </div>div>
+              </div>div>
+        
+              <!-- CARD 4 -->
+              <div class="article-card" data-cat="telecom">
+                      <div class="ac-img-placeholder">&#128222;</div>div>
+                      <div class="ac-body">
+                                <div class="ac-cat">Telecom &amp; Billing</div>div>
+                                <h3 class="ac-title">5 Telecom Contract Traps That Cost Organizations Thousands</h3>h3>
+                                <p class="ac-excerpt">Auto-renewals, outdated rate structures, and buried service charges are more common than you&#39;d think. We break down the most costly contract terms we see every day.</p>p>
+                                <div class="ac-meta">
+                                            <span>5 min read</span>
+                                            <a href="/practice-areas/billing-breakthrough/" class="ac-read">Read more &#8594;</a>a>
+                                </div>div>
+                      </div>div>
+              </div>div>
+        
+              <!-- CARD 5 -->
+              <div class="article-card" data-cat="mobility">
+                      <div class="ac-img-placeholder">&#128241;</div>div>
+                      <div class="ac-body">
+                                <div class="ac-cat">Mobility &amp; IoT</div>div>
+                                <h3 class="ac-title">Managing a Mobile Workforce: What IT Leaders Get Wrong</h3>h3>
+                                <p class="ac-excerpt">Device proliferation, carrier contracts, and IoT endpoints create complexity that compounds quickly. A wireless strategy audit often reveals quick wins hiding in plain sight.</p>p>
+                                <div class="ac-meta">
+                                            <span>4 min read</span>
+                                            <a href="/wireless-wisdom.html" class="ac-read">Read more &#8594;</a>a>
+                                </div>div>
+                      </div>div>
+              </div>div>
+        
+              <!-- CARD 6 -->
+              <div class="article-card" data-cat="cybersecurity">
+                      <div class="ac-img-placeholder">&#128274;</div>div>
+                      <div class="ac-body">
+                                <div class="ac-cat">Cybersecurity</div>div>
+                                <h3 class="ac-title">Third-Party Risk: The Security Gap Most Mid-Market Firms Ignore</h3>h3>
+                                <p class="ac-excerpt">Your security posture is only as strong as your weakest supplier. We walk through a practical framework for assessing and managing third-party exposure without overwhelming your team.</p>p>
+                                <div class="ac-meta">
+                                            <span>6 min read</span>
+                                            <a href="/cybersecurity.html" class="ac-read">Read more &#8594;</a>a>
+                                </div>div>
+                      </div>div>
+              </div>div>
+        
+              <!-- CARD 7 -->
+              <div class="article-card" data-cat="ai">
+                      <div class="ac-img-placeholder">&#9881;</div>div>
+                      <div class="ac-body">
+                                <div class="ac-cat">AI &amp; Strategy</div>div>
+                                <h3 class="ac-title">Choosing the Right AI Supplier: What the Sales Pitch Won&#39;t Tell You</h3>h3>
+                                <p class="ac-excerpt">The AI supplier landscape is noisy. We break down the questions you should be asking — and the answers that separate genuine capability from marketing language.</p>p>
+                                <div class="ac-meta">
+                                            <span>7 min read</span>
+                                            <a href="/ai-readiness.html" class="ac-read">Read more &#8594;</a>a>
+                                </div>div>
+                      </div>div>
+              </div>div>
+        
+              <!-- CARD 8 -->
+              <div class="article-card" data-cat="networking">
+                      <div class="ac-img-placeholder">&#127760;</div>div>
+                      <div class="ac-body">
+                                <div class="ac-cat">Networking &amp; Infrastructure</div>div>
+                                <h3 class="ac-title">SD-WAN vs. MPLS: The Decision Framework Your Supplier Won&#39;t Give You</h3>h3>
+                                <p class="ac-excerpt">The right choice depends on your locations, applications, and risk tolerance — not your supplier&#39;s product lineup. Here&#39;s a supplier-neutral look at how to decide.</p>p>
+                                <div class="ac-meta">
+                                            <span>5 min read</span>
+                                            <a href="/infrastructure-insight.html" class="ac-read">Read more &#8594;</a>a>
+                                </div>div>
+                      </div>div>
+              </div>div>
+        
+        </div>div>
+    </div>div>
+  </section>section>
+  
+  <!-- CTA STRIP -->
+  <section id="cta">
+    <div class="container">
+        <h2 class="cta-title">Have a Technology Question?</h2>h2>
+        <p class="cta-sub">We&#39;re here to give you straight answers — no sales pitch, no obligation.</p>p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+              <a href="/contact/" class="btn btn-gold">Just Ask LAM &#8594;</a>a>
+              <a href="/professional-services/" class="btn btn-outline">See Our Services</a>a>
+        </div>div>
+    </div>div>
+  </section>section>
+  
+  <!-- FOOTER -->
+  <footer>
+      <div class="container">
+            <div class="ft-grid">
+                    <div>
+                              <div class="ft-logo"><img src="/LAM Logo Transparent.png" alt="LAM Technology"></div>
+                              <p class="ft-desc">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p>p>
+                              <div class="ft-social">
+                                          <a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener">in</a>a>
+                              </div>
+                    </div>
+                    <div>
+                              <div class="ft-h">Practice Areas</div>
+                              <div class="ft-links">
+                                          <a href="/cybersecurity.html">Cybersecurity &amp; Risk</a>a>
+                                          <a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a>a>
+                                          <a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a>a>
+                                          <a href="/wireless-wisdom.html">Mobility &amp; IoT</a>a>
+                              </div>
+                    </div>
+                    <div>
+                              <div class="ft-h">Company</div>
+                              <div class="ft-links">
+                                          <a href="/about-lam/">About LAM</a>a>
+                                          <a href="/insights/">Insights</a>a>
+                                          <a href="/contact/">Contact Us</a>a>
+                              </div>
+                    </div>
+                    <div>
+                              <div class="ft-h">Contact Us</div>
+                              <div class="ft-contact-item">&#128222; <a href="tel:8174844522">(817) 484-4522</a>a></div>
+                              <div class="ft-contact-item">&#128205; 1751 River Run, Suite 300<br>Fort Worth, TX 76107</div>
+                    </div>
+            </div>
+            <div class="ft-bottom">
+                    <span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span>
+                  <span>Fort Worth, TX</span>
+            </div>
+      </div>
+  </footer>
+  
+  <script>
+    function tNav(){document.getElementById('nMob').classList.toggle('op')}
+    document.addEventListener('click',function(e){
+        var m=document.getElementById('nMob'),h=document.querySelector('.nhb');
+        if(m&&h&&!m.contains(e.target)&&!h.contains(e.target)){m.classList.remove('op')}
+    });
+    function filterArticles(cat,btn){
+        document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+        btn.classList.add('active');
+        document.querySelectorAll('.article-card').forEach(function(card){
+              if(cat==='all'||card.dataset.cat===cat){card.style.display='flex'}
+              else{card.style.display='none'}
+        });
+    }
+  </script>
+  </body>
+</html>html>
+  </script></span></span>
+                    </div>
+                    </div>
+  </footer></em></span></span>
+  </body>
+  </style></title>
+  </head>
