@@ -1,5 +1,5 @@
 /* ===========================================================
-   LAM Technology — Global Theme
+   LAM Technology â Global Theme
    Single source of truth for fonts, colors, and typography.
    Linked from every HTML page to keep the design consistent.
    =========================================================== */
@@ -119,7 +119,7 @@ a:hover { color: var(--color-gold-hover); }
 nav, header { font-family: var(--font-body); }
 
 /* =====================================================
-   v0.2 BRAND LAYER (additive — does not modify legacy tokens)
+   v0.2 BRAND LAYER (additive â does not modify legacy tokens)
    Navy-dominant, restrained gold. Apply by adding class
    "lam-typography" to <body> and using .section-brand-*
    utilities on subpage sections.
@@ -136,7 +136,7 @@ nav, header { font-family: var(--font-body); }
   --brand-rule:        rgba(13, 34, 64, 0.12);
 }
 
-/* Section utilities — subpages should use these */
+/* Section utilities â subpages should use these */
 .section-brand-navy {
   background: var(--brand-navy);
   color: #ffffff;
@@ -162,7 +162,7 @@ nav, header { font-family: var(--font-body); }
   margin: 1rem 0;
 }
 
-/* Buttons — navy-dominant */
+/* Buttons â navy-dominant */
 .btn-brand-primary {
   display: inline-flex; align-items: center; gap: 0.5rem;
   padding: 0.875rem 1.375rem;
@@ -202,14 +202,13 @@ nav, header { font-family: var(--font-body); }
   color: #ffffff;
 }
 
-/* Typography safety net — add class "lam-typography" to <body>
+/* Typography safety net â add class "lam-typography" to <body>
    on subpages to force the canonical font stack, even if the
    page has leftover inline Segoe UI / Oswald / Arial styles. */
 body.lam-typography,
 .lam-typography {
+  /* Enforce canonical fonts without overriding page background/color. */
   font-family: var(--font-body) !important;
-  color: var(--brand-ink);
-  background: var(--brand-cream);
 }
 .lam-typography h1,
 .lam-typography h2,
@@ -248,7 +247,7 @@ body.lam-typography,
   color: var(--brand-gold);
 }
 
-/* Links inside brand-typography — navy by default, gold on hover */
+/* Links inside brand-typography â navy by default, gold on hover */
 .lam-typography a {
   color: var(--brand-navy);
   text-decoration-color: var(--brand-gold);
