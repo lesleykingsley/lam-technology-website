@@ -71,6 +71,7 @@
 
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet"/>
 
 
 
@@ -326,159 +327,35 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 
 
 
-#hero{min-height:100vh;background:var(--nd);display:flex;flex-direction:column;justify-content:center;padding:100px 0 80px;position:relative;overflow:hidden}#hero .hbg-photo{position:absolute;inset:0;background-image:url("https://lamtechnology.com/wp-content/uploads/2024/04/LAM-Technology-Ft-Worth-TX-scaled.jpeg");background-size:cover;background-position:center top;opacity:0.55;z-index:0}
+#hero{min-height:100vh;background:var(--nd);display:flex;flex-direction:column;justify-content:space-between;padding:0;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;z-index:0}
+#hero::after{content:'';position:absolute;top:-15%;right:-8%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.14) 0%,transparent 65%);pointer-events:none;z-index:0}
+.typ-ghost{position:absolute;bottom:-2%;left:-1%;font-family:'Playfair Display',Georgia,serif;font-size:clamp(180px,22vw,340px);font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.04);line-height:1;pointer-events:none;user-select:none;z-index:0;letter-spacing:-.04em}
+.typ-hero-inner{flex:1;display:flex;align-items:center;gap:0;position:relative;z-index:1;padding:110px 32px 60px;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box}
+.typ-left{flex:1 1 0;display:flex;flex-direction:column;gap:0;padding-right:72px;border-right:1px solid rgba(255,255,255,.08)}
+.typ-eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:28px}
+.typ-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0}
+.typ-h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:1;letter-spacing:-.02em;margin:0 0 32px;display:flex;flex-direction:column}
+.typ-line1{font-size:clamp(52px,5.8vw,86px);color:rgba(255,255,255,.9);font-style:italic;font-weight:700}
+.typ-line2{font-size:clamp(68px,7.5vw,112px);color:var(--red);font-style:normal;font-weight:900;line-height:.93;margin-bottom:18px}
+.typ-line3{font-size:clamp(42px,4.8vw,72px);color:rgba(255,255,255,.5);font-style:italic;font-weight:700;line-height:1.05}
+.typ-line4{font-size:clamp(42px,4.8vw,72px);color:rgba(255,255,255,.5);font-style:normal;font-weight:700;line-height:1.05}
+.typ-rule{width:48px;height:3px;background:var(--red);border-radius:2px;margin-bottom:24px}
+.typ-sub{font-size:17px;line-height:1.7;color:rgba(255,255,255,.6);margin:0 0 36px;max-width:520px}
+.typ-actions{display:flex;gap:12px;align-items:center}
+.typ-right{width:230px;flex-shrink:0;display:flex;flex-direction:column;gap:0;padding-left:52px}
+.typ-stat{padding:22px 0}
+.typ-stat-num{font-family:'Playfair Display',Georgia,serif;font-size:68px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em}
+.typ-stat-plus{font-size:34px;color:var(--red);vertical-align:super}
+.typ-stat-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:4px;line-height:1.5}
+.typ-divider{width:100%;height:1px;background:rgba(255,255,255,.08)}
+.typ-tagline{margin-top:28px;padding:18px;border:1px solid rgba(212,168,67,.25);border-radius:8px;background:rgba(212,168,67,.05)}
+.typ-tagline-text{font-size:13px;font-style:italic;color:rgba(212,168,67,.75);line-height:1.6;font-family:'Playfair Display',Georgia,serif}
+.typ-bottom{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025)}
+.typ-bottom-inner{max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;gap:20px;box-sizing:border-box}
+.typ-bottom-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);white-space:nowrap}
+.typ-bottom-items{font-size:12px;font-weight:500;color:rgba(255,255,255,.45);letter-spacing:.04em}
 
-
-
-
-
-
-
-.hgr{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-
-
-
-
-
-
-
-.hgl{position:absolute;top:-20%;right:-10%;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.18) 0%,transparent 65%);pointer-events:none}
-
-
-
-
-
-
-
-.hgl2{position:absolute;bottom:-30%;left:-15%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(26,26,46,.5) 0%,transparent 65%);pointer-events:none}
-
-
-
-
-
-
-
-.hi{position:relative;z-index:1;max-width:820px}
-
-
-
-
-
-
-
-.hbg{display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,67,.15);border:1px solid rgba(212,168,67,.25);border-radius:100px;padding:6px 16px 6px 10px;margin-bottom:32px}
-
-
-
-
-
-
-
-.hbd{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;animation:pulse 2s infinite}
-
-
-
-
-
-
-
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.85)}}
-
-
-
-
-
-
-
-.hbg span{font-size:12px;font-weight:600;color:rgba(255,255,255,.80);letter-spacing:.05em}
-
-
-
-
-
-
-
-.ht{font-size:clamp(40px,5.5vw,72px);font-weight:900;color:#fff;line-height:1.0;letter-spacing:-.03em;margin-bottom:8px}.ht-break{display:block;margin-top:-0.5em}
-
-
-
-
-
-
-
-.hl2{display:block;color:var(--red);min-height:2.3em;transition:opacity .35s ease,transform .35s ease}
-
-
-
-
-
-
-
-.hs{font-size:18px;color:rgba(255,255,255,.62);max-width:540px;line-height:1.78;margin:24px 0 40px}
-
-
-
-
-
-
-
-.ha{display:flex;gap:14px;flex-wrap:wrap}
-
-
-
-
-
-
-
-.hst{display:flex;justify-content:space-around;margin-top:64px;border-top:1px solid rgba(255,255,255,.08);padding-top:36px}
-
-
-
-
-
-
-
-.hsi{flex:1;text-align:center;padding:0 20px;border-right:1px solid rgba(255,255,255,.08)}
-
-
-
-
-
-
-
-.hsi:last-child{border-right:none}
-
-
-
-
-
-
-
-.hsi:first-child{padding-left:0}
-
-
-
-
-
-
-
-.hsn{font-size:42px;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;white-space:nowrap}
-
-
-
-
-
-
-
-.hsn em{color:var(--red);font-style:normal}
-
-
-
-
-
-
-
-.hsl{font-size:13px;color:rgba(255,255,255,.45);margin-top:6px;font-weight:500}
 
 
 
@@ -1394,67 +1271,54 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 
 
 
-
-
-
-
-<section id="hero"><div class="hgr"></div><div class="hgl"></div><div class="hgl2"></div><div class="hbg-photo"></div>
-
-
-
-
-
-
-
-<div class="container"><div class="hi">
-
-
-
-
-
-
-
-<div class="hbg"><span class="hbd"></span><span>Trusted Advisory Partner</span></div>
-
-
-
-
-
-
-
-<h1 class="ht">The advisor <span class="hl2">you keep.</span><span class="ht-break">The results you remember.</span></h1>
-
-
-
-
-
-
-
-<p class="hs">LAM brings deep supplier relationships and 20+ years of channel expertise to bear for you — so you get the right technology, the right terms, and someone in your corner through every step of the process.</p>
-
-
-
-
-
-
-
-<div class="ha"><a href="/contact/" class="btn br">Get Started <span class="arr">&rarr;</span></a><a href="#practices" class="btn bow">Our Services</a></div>
-
-
-
-
-
-
-
-<div class="hst"><div class="hsi"><div class="hsn">Time<em> back</em></div><div class="hsl">Faster decisions, faster delivery</div></div><div class="hsi"><div class="hsn">Cost<em> down</em></div><div class="hsl">Right tech at the right price</div></div><div class="hsi"><div class="hsn">Risk<em> managed</em></div><div class="hsl">No surprises, ever</div></div></div></div>
-
-
-
-
-
-
-
-</div></div></div></section>
+<section id="hero">
+  <div class="typ-ghost" aria-hidden="true">LAM</div>
+  <div class="typ-hero-inner">
+    <div class="typ-left">
+      <div class="typ-eyebrow">
+        <span class="typ-dot"></span>
+        <span>Fort Worth, TX &nbsp;&middot;&nbsp; Trusted Advisory Partner</span>
+      </div>
+      <h1 class="typ-h1">
+        <span class="typ-line1">The advisor</span>
+        <span class="typ-line2">you keep.</span>
+        <span class="typ-line3">The results</span>
+        <span class="typ-line4">you remember.</span>
+      </h1>
+      <div class="typ-rule"></div>
+      <p class="typ-sub">LAM brings deep supplier relationships and 20+ years of channel expertise to bear for you &mdash; so you get the right technology, the right terms, and someone in your corner through every step of the process.</p>
+      <div class="typ-actions">
+        <a href="/contact/" class="btn br">Get Started <span class="arr">&rarr;</span></a>
+        <a href="#practices" class="btn bow">Our Services</a>
+      </div>
+    </div>
+    <div class="typ-right">
+      <div class="typ-stat">
+        <div class="typ-stat-num">20<span class="typ-stat-plus">+</span></div>
+        <div class="typ-stat-label">Years of channel<br>expertise</div>
+      </div>
+      <div class="typ-divider"></div>
+      <div class="typ-stat">
+        <div class="typ-stat-num">5</div>
+        <div class="typ-stat-label">Dedicated practice<br>areas</div>
+      </div>
+      <div class="typ-divider"></div>
+      <div class="typ-stat">
+        <div class="typ-stat-num">4</div>
+        <div class="typ-stat-label">-step engagement<br>model</div>
+      </div>
+      <div class="typ-tagline">
+        <span class="typ-tagline-text">&ldquo;Time back. Cost down. Risk managed.&rdquo;</span>
+      </div>
+    </div>
+  </div>
+  <div class="typ-bottom">
+    <div class="typ-bottom-inner">
+      <span class="typ-bottom-label">Trusted across</span>
+      <span class="typ-bottom-items">Financial Services &nbsp;&middot;&nbsp; Insurance &nbsp;&middot;&nbsp; Manufacturing &nbsp;&middot;&nbsp; Healthcare &nbsp;&middot;&nbsp; Retail</span>
+    </div>
+  </div>
+</section>section>
 
 
 
