@@ -1,1 +1,119 @@
+/* ===========================================================
+   LAM Technology — Global Theme
+   Single source of truth for fonts, colors, and typography.
+   Linked from every HTML page to keep the design consistent.
+   =========================================================== */
 
+/* --- Fonts (matches the homepage hero) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+/* --- Design tokens --- */
+:root {
+  /* Brand palette */
+  --color-dark:        #0d0d1a;
+  --color-dark-2:      #1a1a2e;
+  --color-navy:        #0d2240;
+  --color-cream:       #faf8f4;
+  --color-cream-2:     #f8f6f0;
+  --color-cream-3:     #f5f1ea;
+  --color-gold:        #d4a843;
+  --color-gold-hover:  #b8922e;
+  --color-ink:         #1a1a2e;
+  --color-ink-soft:    #4a4038;
+  --color-muted:       #8a8070;
+  --color-white:       #ffffff;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  /* Spacing / radius / motion */
+  --radius-sm: 6px;
+  --radius:    12px;
+  --transition: .2s ease;
+}
+
+/* --- Reset / base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Headings use Playfair everywhere --- */
+h1, h2, h3, h4, h5, h6,
+.heading,
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+
+h1 { font-size: clamp(2.25rem, 4vw + 1rem, 4.25rem); }
+h2 { font-size: clamp(1.875rem, 2.5vw + 1rem, 3rem); }
+h3 { font-size: clamp(1.375rem, 1.2vw + 1rem, 1.875rem); }
+h4 { font-size: 1.25rem; }
+
+/* Italic display variant that matches the homepage hero */
+.display-italic { font-style: italic; font-weight: 400; }
+
+/* Gold accent word inside a heading */
+.accent-gold { color: var(--color-gold); }
+
+/* --- Body copy --- */
+p  { font-family: var(--font-body); font-size: 1rem; line-height: 1.7; }
+p.lead { font-size: 1.0625rem; }
+
+/* --- Section backgrounds --- */
+.section-dark    { background: var(--color-dark);    color: var(--color-white); }
+.section-navy    { background: var(--color-navy);    color: var(--color-white); }
+.section-cream   { background: var(--color-cream);   color: var(--color-ink);  }
+.section-cream-2 { background: var(--color-cream-2); color: var(--color-ink);  }
+
+/* Muted paragraph color inside dark sections (matches homepage) */
+.section-dark p, .section-navy p { color: rgba(255,255,255,0.75); }
+
+/* Eyebrow labels (small gold uppercase above headings) */
+.eyebrow {
+  color: var(--color-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+}
+
+/* --- Buttons (match homepage "Get Started" / "Our Services") --- */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.875rem 1.375rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn-primary       { background: var(--color-gold); color: var(--color-white); }
+.btn-primary:hover { background: var(--color-gold-hover); }
+.btn-secondary       { background: var(--color-dark); color: var(--color-white); border-color: rgba(255,255,255,0.15); }
+.btn-secondary:hover { background: var(--color-dark-2); }
+
+/* --- Links --- */
+a       { color: var(--color-gold); transition: var(--transition); }
+a:hover { color: var(--color-gold-hover); }
+
+/* --- Nav / header inherit body font --- */
+nav, header { font-family: var(--font-body); }
