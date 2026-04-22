@@ -1,1275 +1,251 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
 <html lang="en">
-
-
-
-
-
-
-
 <head>
-
-
-
-
-
-
-
 <meta charset="UTF-8"/>
-
-
-
-
-
-
-
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-
-
-
-
-
-
-
-<title>LAM Technology Ã¢ÂÂ Trustworthy IT Guidance</title>
-
-
-
-
-
-
-
+<title>LAM Technology — Trustworthy IT Guidance</title>
 <meta name="description" content="LAM Technology provides trustworthy guidance in Technology Enablement, Cybersecurity, Digital Transformation, and Managed Services."/>
-
-
-
-
-
-
-
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-
-
-
-
-
-
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-
-
-
-
-
-
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet"/>
-
-
-
-
-
-
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet"/>
 <style>
-
-
-
-
-
-
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-
-
-
-
-
-
-:root{--navy:#1a1a2e;--nd:#0d0d1a;--nm:#252550;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--r:12px;--rs:6px;--sl:0 12px 48px rgba(26,26,46,.16);--sxl:0 24px 80px rgba(26,26,46,.20);--t:.2s ease}
-
-
-
-
-
-
-
+:root{
+  --navy:#1a1a2e;--nd:#0d0d1a;--nm:#252550;
+  --gold:#d4a843;--gold-h:#b8922e;--gold-light:rgba(212,168,67,.12);
+  --cream:#faf8f4;--warm:#f5f1ea;--warm2:#ede8df;--warm3:#e0d9ce;
+  --g4:#c8c0b0;--g6:#7a7060;--g8:#4a4038;
+  --r:12px;--rs:6px;
+  --sl:0 12px 48px rgba(26,26,46,.12);--sxl:0 24px 80px rgba(26,26,46,.18);
+  --t:.2s ease
+}
 html{scroll-behavior:smooth;overflow-y:scroll}
-
-
-
-
-
-
-
-body{font-family:'Inter',sans-serif;color:var(--off);background:var(--nd);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-
-
-
-
-
-
-
+body{font-family:'Inter',sans-serif;color:var(--navy);background:var(--cream);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
 
-
-
-
-
-
-
-.container{max-width:1200px;margin:0 auto;padding:0 32px}#hero .container{width:100%}
-
-
-
-
-
-
-
-.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:rgba(212,168,67,.08);border-radius:100px;padding:5px 14px;margin-bottom:16px}
-
-
-
-
-
-
-
-.tag.lt{color:rgba(255,255,255,.7);background:rgba(255,255,255,.10)}
-
-
-
-
-
-
-
-.stit{font-size:clamp(26px,3.5vw,40px);font-weight:800;line-height:1.12;color:var(--navy);letter-spacing:-.02em}
-
-
-
-
-
-
-
-.stit.lt{color:#fff}
-
-
-
-
-
-
-
-.ssub{font-size:17px;color:var(--g6);line-height:1.75;margin-top:14px}
-
-
-
-
-
-
-
-.ssub.lt{color:rgba(255,255,255,.62)}
-
-
-
-
-
-
-
+/* Buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;padding:13px 28px;border-radius:var(--rs);cursor:pointer;transition:all var(--t);border:2px solid transparent;letter-spacing:.01em;white-space:nowrap}
-
-
-
-
-
-
-
-.br{background:var(--red);color:#fff;border-color:var(--red)}.br:hover{background:var(--rh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,67,.35)}
-
-
-
-
-
-
-
-.bn{background:var(--navy);color:#fff}.bn:hover{background:var(--nm);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,26,46,.30)}
-
-
-
-
-
-
-
-.bow{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}.bow:hover{background:rgba(255,255,255,.10);border-color:#fff;transform:translateY(-2px)}
-
-
-
-
-
-
-
-.bon{background:transparent;color:var(--navy);border-color:var(--g2)}.bon:hover{border-color:var(--navy);background:var(--off);transform:translateY(-2px)}
-
-
-
-
-
-
-
+.br{background:var(--gold);color:#fff;border-color:var(--gold)}.br:hover{background:var(--gold-h);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,67,.35)}
+.bow{background:transparent;color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.35)}.bow:hover{background:rgba(255,255,255,.10);border-color:#fff;transform:translateY(-2px)}
+.bon{background:transparent;color:var(--navy);border-color:var(--warm3)}.bon:hover{border-color:var(--navy);background:var(--warm);transform:translateY(-2px)}
 .arr{font-style:normal;transition:transform var(--t)}.btn:hover .arr{transform:translateX(4px)}
 
-
-
-
-
-
-
-#navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;border-bottom:1px solid var(--g2);transition:box-shadow var(--t)}
-
-
-
-
-
-
-
-#navbar.sc{box-shadow:0 2px 20px rgba(26,26,46,.10)}
-
-
-
-
-
-
-
+/* Navbar */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,244,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm3);transition:box-shadow var(--t)}
+#navbar.sc{box-shadow:0 2px 20px rgba(26,26,46,.08)}
 .nw{display:flex;align-items:center;justify-content:space-between;height:70px}
-
-
-
-
-
-
-
 .nlogo img{height:46px;width:auto}
-
-
-
-
-
-
-
 .nl{display:flex;align-items:center;justify-content:center;flex:1;gap:8px}
-
-
-
-
-
-
-
 .nl a{font-size:14px;font-weight:600;color:var(--g8);padding:8px 14px;border-radius:var(--rs);transition:all var(--t)}
-
-
-
-
-
-
-
-.nl a:hover{color:var(--navy);background:var(--g1)}
-
-
-
-
-
-
-
-.nl .nc{background:var(--red);color:#fff;padding:10px 22px;margin-left:8px}.nl .nc:hover{background:var(--rh);transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,168,67,.30)}
-
-
-
-
-
-
-
+.nl a:hover{color:var(--navy);background:var(--warm)}
+.nl .nc{background:var(--gold);color:#fff;padding:10px 22px;margin-left:8px}.nl .nc:hover{background:var(--gold-h);transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,168,67,.30)}
 .nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}.nhb span{width:22px;height:2px;background:var(--navy);border-radius:2px;display:block}
+.nm{display:none}.nm.op{display:flex;flex-direction:column;background:var(--cream);padding:16px 24px 24px;gap:4px;border-top:1px solid var(--warm3)}
+.nm a{font-size:15px;font-weight:600;color:var(--g8);padding:12px 0;border-bottom:1px solid var(--warm2)}
+.nm a:last-child{border:none;margin-top:8px;background:var(--gold);color:#fff;text-align:center;padding:12px;border-radius:var(--rs)}
 
-
-
-
-
-
-
-.nm{display:none}.nm.op{display:flex;flex-direction:column;background:#fff;padding:16px 24px 24px;gap:4px;border-top:1px solid var(--g2)}
-
-
-
-
-
-
-
-.nm a{font-size:15px;font-weight:600;color:var(--g8);padding:12px 0;border-bottom:1px solid var(--g1)}
-
-
-
-
-
-
-
-.nm a:last-child{border:none;margin-top:8px;background:var(--red);color:#fff;text-align:center;padding:12px;border-radius:var(--rs)}
-
-
-
-
-
-
-
+/* Hero - typographic, dark, no city photo */
 #hero{min-height:100vh;background:var(--nd);display:flex;flex-direction:column;justify-content:space-between;padding:0;position:relative;overflow:hidden}
-#hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;z-index:0}
-#hero::after{content:'';position:absolute;top:-15%;right:-8%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.14) 0%,transparent 65%);pointer-events:none;z-index:0}
-.typ-ghost{position:absolute;bottom:-2%;left:-1%;font-family:'Playfair Display',Georgia,serif;font-size:clamp(180px,22vw,340px);font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.04);line-height:1;pointer-events:none;user-select:none;z-index:0;letter-spacing:-.04em}
-.typ-hero-inner{flex:1;display:flex;align-items:center;gap:0;position:relative;z-index:1;padding:110px 32px 60px;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box}
-.typ-left{flex:1 1 0;display:flex;flex-direction:column;gap:0;padding-right:72px;border-right:1px solid rgba(255,255,255,.08)}
-.typ-eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:28px}
-.typ-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0}
-.typ-h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:1;letter-spacing:-.02em;margin:0 0 32px;display:flex;flex-direction:column}
-.typ-line1{font-size:clamp(52px,5.8vw,86px);color:rgba(255,255,255,.9);font-style:italic;font-weight:700}
-.typ-line2{font-size:clamp(68px,7.5vw,112px);color:var(--red);font-style:normal;font-weight:900;line-height:.93;margin-bottom:18px}
-.typ-line3{font-size:clamp(42px,4.8vw,72px);color:rgba(255,255,255,.5);font-style:italic;font-weight:700;line-height:1.05}
-.typ-line4{font-size:clamp(42px,4.8vw,72px);color:rgba(255,255,255,.5);font-style:normal;font-weight:700;line-height:1.05}
-.typ-rule{width:48px;height:3px;background:var(--red);border-radius:2px;margin-bottom:24px}
-.typ-sub{font-size:17px;line-height:1.7;color:rgba(255,255,255,.6);margin:0 0 36px;max-width:520px}
+#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(212,168,67,.08) 0%,transparent 70%);pointer-events:none;z-index:0}
+.typ-ghost{position:absolute;bottom:-4%;left:-2%;font-family:'Playfair Display',Georgia,serif;font-size:clamp(200px,28vw,420px);font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.035);line-height:1;pointer-events:none;user-select:none;z-index:0;letter-spacing:-.04em}
+.typ-hero-inner{flex:1;display:flex;align-items:center;gap:0;position:relative;z-index:1;padding:120px 40px 72px;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box}
+.typ-left{flex:1 1 0;display:flex;flex-direction:column;gap:0;padding-right:80px;border-right:1px solid rgba(255,255,255,.07)}
+.typ-eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:32px}
+.typ-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.typ-h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:1;letter-spacing:-.02em;margin:0 0 36px;display:flex;flex-direction:column;gap:4px}
+.typ-line1{font-size:clamp(48px,5.2vw,82px);color:rgba(255,255,255,.85);font-style:italic;font-weight:700}
+.typ-line2{font-size:clamp(64px,7.2vw,112px);color:var(--gold);font-style:normal;font-weight:900;line-height:.93}
+.typ-line3{font-size:clamp(40px,4.4vw,68px);color:rgba(255,255,255,.42);font-style:italic;font-weight:700;line-height:1.05}
+.typ-line4{font-size:clamp(40px,4.4vw,68px);color:rgba(255,255,255,.42);font-style:normal;font-weight:700;line-height:1.05}
+.typ-rule{width:48px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:28px}
+.typ-sub{font-size:17px;line-height:1.75;color:rgba(255,255,255,.55);margin:0 0 40px;max-width:500px}
 .typ-actions{display:flex;gap:12px;align-items:center}
-.typ-right{width:230px;flex-shrink:0;display:flex;flex-direction:column;gap:0;padding-left:52px}
-.typ-stat{padding:22px 0}
-.typ-stat-num{font-family:'Playfair Display',Georgia,serif;font-size:68px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em}
-.typ-stat-plus{font-size:34px;color:var(--red);vertical-align:super}
-.typ-stat-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:4px;line-height:1.5}
-.typ-divider{width:100%;height:1px;background:rgba(255,255,255,.08)}
-.typ-tagline{margin-top:28px;padding:18px;border:1px solid rgba(212,168,67,.25);border-radius:8px;background:rgba(212,168,67,.05)}
-.typ-tagline-text{font-size:13px;font-style:italic;color:rgba(212,168,67,.75);line-height:1.6;font-family:'Playfair Display',Georgia,serif}
-.typ-bottom{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025)}
-.typ-bottom-inner{max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;gap:20px;box-sizing:border-box}
-.typ-bottom-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);white-space:nowrap}
-.typ-bottom-items{font-size:12px;font-weight:500;color:rgba(255,255,255,.45);letter-spacing:.04em}
+.typ-right{width:240px;flex-shrink:0;display:flex;flex-direction:column;gap:0;padding-left:56px}
+.typ-stat{padding:24px 0}
+.typ-stat-num{font-family:'Playfair Display',Georgia,serif;font-size:72px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em}
+.typ-stat-plus{font-size:36px;color:var(--gold);vertical-align:super}
+.typ-stat-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:6px;line-height:1.5}
+.typ-divider{width:100%;height:1px;background:rgba(255,255,255,.07)}
+.typ-tagline{margin-top:32px;padding:20px;border:1px solid rgba(212,168,67,.20);border-radius:10px;background:rgba(212,168,67,.04)}
+.typ-tagline-text{font-size:14px;font-style:italic;color:rgba(212,168,67,.70);line-height:1.6;font-family:'Playfair Display',Georgia,serif}
+.typ-bottom{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)}
+.typ-bottom-inner{max-width:1200px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;gap:20px;box-sizing:border-box}
+.typ-bottom-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap}
+.typ-bottom-items{font-size:12px;font-weight:500;color:rgba(255,255,255,.40);letter-spacing:.04em}
 
-
-
-
-
-
-
-
-#trust{background:var(--off);border-top:1px solid var(--g2);border-bottom:1px solid var(--g2);padding:22px 0}
-
-
-
-
-
-
-
+/* Industry trust bar */
+#trust{background:var(--warm);border-top:1px solid var(--warm3);border-bottom:1px solid var(--warm3);padding:22px 0}
 .tri{display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center}
-
-
-
-
-
-
-
 .trl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--g4);white-space:nowrap}
-
-
-
-
-
-
-
-.trd{width:1px;height:18px;background:var(--g2)}
-
-
-
-
-
-
-
-.trp{background:#fff;border:1px solid var(--g2);border-radius:100px;padding:7px 18px;font-size:13px;font-weight:600;color:var(--g6);box-shadow:0 2px 8px rgba(26,26,46,.05)}
-
-
-
-
-
-
-
-#engagement{padding:96px 0;background:#fff}
-
-
-
-
-
-
-
-.sh{margin-bottom:52px}.sh.ctr{text-align:center}.sh.ctr .ssub{max-width:600px;margin-left:auto;margin-right:auto}
-
-
-
-
-
-
-
-.eg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-
-
-
-
-
-
-
-.ec{background:var(--off);border:1px solid var(--g2);border-radius:var(--r);padding:32px 28px;transition:all var(--t)}
-
-
-
-
-
-
-
-.ec:hover{background:#fff;box-shadow:var(--sl);transform:translateY(-4px);border-color:rgba(212,168,67,.20)}
-
-
-
-
-
-
-
-.ei{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;background:var(--navy)}
-
-
-
-
-
-
-
-.et{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.35}
-
-
-
-
-
-
-
-.es{font-size:14px;color:var(--g6);line-height:1.68}
-
-
-
-
-
-
-
-.ef{margin-top:40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-
-
-
-
-
-
-
-.ef-banner{margin-top:56px;background:linear-gradient(135deg,var(--navy) 0%,#0d0d1a 100%);border-radius:16px;overflow:hidden;position:relative;border-left:6px solid var(--red)}
-
-
-
-
-
-
-
-.ef-banner::before{content:'';position:absolute;top:0;right:0;width:300px;height:100%;background:radial-gradient(ellipse at right center,rgba(212,168,67,.25),transparent 70%);pointer-events:none}
-
-
-
-
-
-
-
-.ef-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:48px 56px;flex-wrap:wrap}
-
-
-
-
-
-
-
-.ef-left{flex:1;min-width:280px}
-
-
-
-
-
-
-
-.ef-eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
-
-
-
-
-
-
-
-.ef-title{font-size:clamp(22px,2.5vw,30px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:16px}
-
-
-
-
-
-
-
-.ef-red{color:var(--red)}
-
-
-
-
-
-
-
-.ef-sub{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;max-width:520px}
-
-
-
-
-
-
-
-.ef-sub strong{color:#fff}
-
-
-
-
-
-
-
-.ef-right{display:flex;flex-direction:column;gap:14px;align-items:flex-start;flex-shrink:0}
-
-
-
-
-
-
-
-.ef-btn-primary{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:16px;padding:16px 32px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}
-
-
-
-
-
-
-
-.ef-btn-primary:hover{background:#b8922e;transform:translateY(-2px)}
-
-
-
-
-
-
-
-.ef-btn-secondary{display:inline-block;background:transparent;color:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;border:2px solid rgba(255,255,255,.3);white-space:nowrap;transition:border-color .2s}
-
-
-
-
-
-
-
-.ef-btn-secondary:hover{border-color:#fff}
-
-
-
-
-
-
-
-.ef-note{font-size:12px;color:rgba(255,255,255,.45);margin:0}
-
-
-
-
-
-
-
-#practices{padding:96px 0;background:var(--off)}
-
-
-
-
-
-
-
-.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-
-
-
-
-
-
-
-.pc{background:#fff;border-radius:var(--r);padding:36px 28px;display:flex;flex-direction:column;border:1px solid var(--g2);transition:all var(--t)}
-
-
-
-
-
-
-
-.pc:hover{box-shadow:var(--sxl);transform:translateY(-6px);border-color:rgba(212,168,67,.15)}
-
-
-
-
-
-
-
-.piw{width:60px;height:60px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:22px}
-
-
-
-
-
-
-
-.pi1{background:linear-gradient(135deg,#1a1a2e,#d4a843)}.pi2{background:linear-gradient(135deg,#252550,#1d9e75)}
-
-
-
-
-
-
-
-.pi3{background:linear-gradient(135deg,#0d0d1a,#1a1a2e)}.pi4{background:linear-gradient(135deg,#1a1a2e,#252550)}.pi5{background:linear-gradient(135deg,#1a1a2e,#252550)}.pi6{background:linear-gradient(135deg,#4b0082,#7b2d8b)}
-
-
-
-
-
-
-
-.pt{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
-
-
-
-
-
-
-
-.pd{font-size:14px;color:var(--g6);line-height:1.72;flex:1}
-
-
-
-
-
-
-
-.pl{display:inline-flex;align-items:center;gap:6px;margin-top:22px;font-size:13px;font-weight:700;color:var(--red);transition:gap var(--t)}.pl:hover{gap:10px}
-
-
-
-
-
-
-
-#why{padding:96px 0;background:#fff}
-
-
-
-
-
-
-
+.trd{width:1px;height:18px;background:var(--warm3)}
+.trp{background:var(--cream);border:1px solid var(--warm3);border-radius:100px;padding:7px 18px;font-size:13px;font-weight:600;color:var(--g6);box-shadow:0 2px 8px rgba(26,26,46,.04)}
+
+/* Billing Breakthrough spotlight */
+#bb-spotlight{padding:88px 0;background:var(--nd);position:relative;overflow:hidden}
+#bb-spotlight::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(212,168,67,.10) 0%,transparent 70%);pointer-events:none}
+
+/* Engagement model — flowing timeline style */
+#engagement{padding:96px 0;background:var(--cream);position:relative}
+.eng-header{text-align:center;margin-bottom:64px}
+.eng-eyebrow{font-size:11px;font-weight:700;letter-spacing:.20em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.eng-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3.5vw,48px);font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1.1;margin-bottom:20px}
+.eng-sub{font-size:17px;color:var(--g6);line-height:1.75;max-width:600px;margin:0 auto}
+/* Timeline layout */
+.eng-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-bottom:56px}
+.eng-timeline::before{content:'';position:absolute;top:32px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--gold) 0%,rgba(212,168,67,.3) 100%);z-index:0}
+.eng-step{position:relative;padding:0 16px;z-index:1}
+.eng-step-num{width:64px;height:64px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1;transition:all var(--t)}
+.eng-step:hover .eng-step-num{background:var(--gold);border-color:var(--gold)}
+.eng-step-numtext{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:900;color:var(--gold);transition:color var(--t)}
+.eng-step:hover .eng-step-numtext{color:#fff}
+.eng-step-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:10px}
+.eng-step-title{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:10px;line-height:1.25}
+.eng-step-desc{font-size:13px;color:var(--g6);line-height:1.7;text-align:center;margin-bottom:16px}
+.eng-step-items{display:flex;flex-direction:column;gap:7px}
+.eng-step-item{font-size:12px;font-weight:600;color:var(--g8);padding:6px 10px;background:var(--warm);border:1px solid var(--warm3);border-radius:6px;text-align:center;transition:all var(--t)}
+.eng-step-item a{color:inherit;text-decoration:none}
+.eng-step-item:hover{background:rgba(212,168,67,.08);border-color:var(--gold);color:var(--navy)}
+
+/* Practice Areas */
+#practices{padding:88px 0;background:var(--warm)}
+
+/* Why section */
+#why{padding:96px 0;background:var(--cream)}
 .wl{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-
-
-
-
-
-
-
 .wi{margin-top:36px;display:flex;flex-direction:column;gap:20px}
-
-
-
-
-
-
-
 .wii{display:flex;gap:16px}
-
-
-
-
-
-
-
-.wic{width:36px;height:36px;border-radius:8px;background:rgba(212,168,67,.10);color:var(--red);font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:900}
-
-
-
-
-
-
-
+.wic{width:36px;height:36px;border-radius:8px;background:var(--gold-light);color:var(--gold);font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:900}
 .wit{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
-
-
-
-
-
-
-
 .wid{font-size:14px;color:var(--g6);line-height:1.68}
-
-
-
-
-
-
-
-.wr{background:linear-gradient(145deg,var(--navy) 0%,var(--nm) 100%);border-radius:20px;padding:52px 44px;position:relative;overflow:hidden}
-
-
-
-
-
-
-
-.wr::before{content:'';position:absolute;top:-40%;right:-30%;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.20) 0%,transparent 70%)}
-
-
-
-
-
-
-
-.wr::after{content:'';position:absolute;bottom:-20%;left:-15%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 70%)}
-
-
-
-
-
-
-
+/* Quote card - warm cream with gold accent */
+.wr{background:var(--warm);border:1px solid var(--warm3);border-radius:20px;padding:52px 44px;position:relative;overflow:hidden;border-left:4px solid var(--gold)}
 .wq{position:relative;z-index:1}
-
-
-
-
-
-
-
-.wqm{font-size:80px;color:var(--red);font-family:Georgia,serif;line-height:.7;margin-bottom:20px;display:block}
-
-
-
-
-
-
-
-.wqt{font-size:18px;font-weight:500;line-height:1.72;color:rgba(255,255,255,.90);margin-bottom:28px}
-
-
-
-
-
-
-
-.wqd{width:40px;height:3px;background:var(--red);border-radius:2px;margin-bottom:20px}
-
-
-
-
-
-
-
-.wqr{font-size:13px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase}
-
-
-
-
-
-
-
-#testimonials{padding:96px 0;background:var(--nd);position:relative;overflow:hidden}
-
-
-
-
-
-
-
-#testimonials::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-
-
-
-
-
-
-
-.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
-
-
-
-
-
-
-
-.tc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:32px 28px;transition:all var(--t)}
-
-
-
-
-
-
-
-.tc:hover{background:rgba(255,255,255,.08);transform:translateY(-4px);border-color:rgba(255,255,255,.14)}
-
-
-
-
-
-
-
-.tst{color:#f5c518;font-size:14px;letter-spacing:3px;margin-bottom:18px}
-
-
-
-
-
-
-
-.ttx{font-size:15px;color:rgba(255,255,255,.80);line-height:1.78;font-style:italic;margin-bottom:22px}
-
-
-
-
-
-
-
-.tdv{width:30px;height:2px;background:var(--red);border-radius:1px;margin-bottom:16px}
-
-
-
-
-
-
-
-.tna{font-size:14px;font-weight:700;color:#fff}
-
-
-
-
-
-
-
-.tro{font-size:12px;color:rgba(255,255,255,.38);margin-top:3px;font-weight:500}
-
-
-
-
-
-
-
-#values{padding:96px 0;background:var(--off)}
-
-
-
-
-
-
-
-.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-
-
-
-
-
-
-
-.vc{background:#fff;border-radius:var(--r);padding:36px 28px;text-align:center;border:1px solid var(--g2);transition:all var(--t)}
-
-
-
-
-
-
-
-.vc:hover{box-shadow:var(--sl);transform:translateY(-4px);border-color:rgba(212,168,67,.15)}
-
-
-
-
-
-
-
-.vi{font-size:40px;margin-bottom:16px;display:block}
-
-
-
-
-
-
-
-.vn{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px}
-
-
-
-
-
-
-
-.vd{font-size:12px;color:var(--g4);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-
-
-
-
-
-
-
-#blog{padding:96px 0;background:#fff}
-
-
-
-
-
-
-
-.blh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;gap:20px;flex-wrap:wrap}
-
-
-
-
-
-
-
-.blg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-
-
-
-
-
-
-
-.bc{border-radius:var(--r);overflow:hidden;border:1px solid var(--g2);transition:all var(--t);background:#fff}
-
-
-
-
-
-
-
-.bc:hover{box-shadow:var(--sxl);transform:translateY(-6px);border-color:rgba(212,168,67,.15)}
-
-
-
-
-
-
-
-.bim{height:200px;display:flex;align-items:center;justify-content:center;font-size:52px}
-
-
-
-
-
-
-
-.bi1{background:linear-gradient(135deg,#0d0d1a 0%,#d4a843 100%)}.bi2{background:linear-gradient(135deg,#252550 0%,#1a1a2e 100%)}.bi3{background:linear-gradient(135deg,#1a1a2e 0%,#1d9e75 100%)}
-
-
-
-
-
-
-
-.bbd{padding:28px 24px}
-
-
-
-
-
-
-
-.btg{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--red);background:rgba(212,168,67,.08);border-radius:100px;padding:3px 12px;margin-bottom:12px}
-
-
-
-
-
-
-
-.bti{font-size:17px;font-weight:700;color:var(--navy);line-height:1.40;margin-bottom:10px}
-
-
-
-
-
-
-
-.bex{font-size:14px;color:var(--g6);line-height:1.68;margin-bottom:20px}
-
-
-
-
-
-
-
-.blk{font-size:13px;font-weight:700;color:var(--red);display:inline-flex;align-items:center;gap:6px;transition:gap var(--t)}.blk:hover{gap:10px}
-
-
-
-
-
-
-
-#cta{padding:100px 0;background:var(--navy);position:relative;overflow:hidden;text-align:center}
-
-
-
-
-
-
-
-#cta::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-
-
-
-
-
-
-
-.cgl{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.18) 0%,transparent 65%);pointer-events:none}
-
-
-
-
-
-
-
+.wqm{font-family:'Playfair Display',Georgia,serif;font-size:90px;color:var(--gold);line-height:.6;margin-bottom:24px;display:block}
+.wqt{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;line-height:1.65;color:var(--navy);margin-bottom:28px;font-style:italic}
+.wqd{width:40px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:18px}
+.wqr{font-size:13px;font-weight:700;color:var(--g6);letter-spacing:.06em;text-transform:uppercase}
+
+/* Featured quote - full-bleed treatment */
+#featured-quote{padding:80px 0;background:var(--navy);position:relative;overflow:hidden}
+#featured-quote::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 100% at 50% 50%,rgba(212,168,67,.07) 0%,transparent 70%);pointer-events:none}
+.fq-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1;padding:0 40px}
+.fq-mark{font-family:'Playfair Display',Georgia,serif;font-size:120px;color:var(--gold);line-height:.5;margin-bottom:32px;opacity:.5;display:block}
+.fq-text{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3vw,36px);font-weight:700;color:#fff;line-height:1.5;font-style:italic;margin-bottom:36px}
+.fq-text em{color:var(--gold);font-style:normal}
+.fq-rule{width:48px;height:2px;background:var(--gold);margin:0 auto 20px}
+.fq-attr{font-size:13px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+/* Testimonials */
+#testimonials{padding:88px 0;background:var(--warm)}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc{background:var(--cream);border:1px solid var(--warm3);border-radius:var(--r);padding:36px 28px;transition:all var(--t)}
+.tc:hover{box-shadow:var(--sl);transform:translateY(-4px);border-color:rgba(212,168,67,.25)}
+.tst{color:var(--gold);font-size:14px;letter-spacing:3px;margin-bottom:18px}
+.ttx{font-family:'Playfair Display',Georgia,serif;font-size:16px;color:var(--navy);line-height:1.72;font-style:italic;margin-bottom:24px}
+.tdv{width:30px;height:2px;background:var(--gold);border-radius:1px;margin-bottom:16px}
+.tna{font-size:14px;font-weight:700;color:var(--navy)}
+.tro{font-size:12px;color:var(--g6);margin-top:3px;font-weight:500}
+
+/* Section header utility */
+.sh{margin-bottom:52px}.sh.ctr{text-align:center}.sh.ctr .ssub{max-width:600px;margin-left:auto;margin-right:auto}
+.stit{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.5vw,44px);font-weight:900;line-height:1.1;color:var(--navy);letter-spacing:-.02em}
+.stit.lt{color:#fff}
+.ssub{font-size:17px;color:var(--g6);line-height:1.75;margin-top:14px}
+.ssub.lt{color:rgba(255,255,255,.58)}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,67,.10);border-radius:100px;padding:5px 14px;margin-bottom:16px}
+.tag.lt{color:rgba(255,255,255,.65);background:rgba(255,255,255,.09)}
+
+/* CTA */
+#cta{padding:100px 0;background:var(--nd);position:relative;overflow:hidden;text-align:center}
+#cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(212,168,67,.10) 0%,transparent 70%);pointer-events:none}
 .ci{position:relative;z-index:1;max-width:680px;margin:0 auto}
-
-
-
-
-
-
-
-.ctt{font-size:clamp(30px,4vw,52px);font-weight:900;color:#fff;line-height:1.08;letter-spacing:-.025em;margin-bottom:20px}
-
-
-
-
-
-
-
-.ctt em{color:var(--red);font-style:normal}
-
-
-
-
-
-
-
-.cst{font-size:17px;color:rgba(255,255,255,.60);line-height:1.75;margin-bottom:40px}
-
-
-
-
-
-
-
+.ctt{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,4vw,54px);font-weight:900;color:#fff;line-height:1.08;letter-spacing:-.02em;margin-bottom:20px}
+.ctt em{color:var(--gold);font-style:italic}
+.cst{font-size:17px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:40px}
 .ca{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
+/* Blog */
+#blog{padding:88px 0;background:var(--cream)}
+.blh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;gap:20px;flex-wrap:wrap}
+.blg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.bc{border-radius:var(--r);overflow:hidden;border:1px solid var(--warm3);transition:all var(--t);background:var(--cream)}
+.bc:hover{box-shadow:var(--sxl);transform:translateY(-6px);border-color:rgba(212,168,67,.20)}
+.bim{height:200px;display:flex;align-items:center;justify-content:center;font-size:52px}
+.bi1{background:linear-gradient(135deg,#1a1a2e 0%,#d4a843 100%)}.bi2{background:linear-gradient(135deg,#252550 0%,#1a1a2e 100%)}.bi3{background:linear-gradient(135deg,#1a1a2e 0%,#1d9e75 100%)}
+.bbd{padding:28px 24px}
+.btg{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,67,.08);border-radius:100px;padding:3px 12px;margin-bottom:12px}
+.bti{font-size:17px;font-weight:700;color:var(--navy);line-height:1.40;margin-bottom:10px}
+.bex{font-size:14px;color:var(--g6);line-height:1.68;margin-bottom:20px}
+.blk{font-size:13px;font-weight:700;color:var(--gold);display:inline-flex;align-items:center;gap:6px;transition:gap var(--t)}.blk:hover{gap:10px}
 
+/* Practice area cards */
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.pc{background:var(--cream);border-radius:var(--r);padding:32px 24px;display:flex;flex-direction:column;border:1px solid var(--warm3);transition:all var(--t)}
+.pc:hover{box-shadow:var(--sxl);transform:translateY(-5px);border-color:rgba(212,168,67,.20)}
+.piw{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px}
+.pi1{background:linear-gradient(135deg,#1a1a2e,#2a2a40)}.pi2{background:linear-gradient(135deg,#1a2e2a,#1d3d35)}.pi3{background:linear-gradient(135deg,#0d1a2e,#1a2a40)}.pi4{background:linear-gradient(135deg,#1a2a1a,#1a3a2a)}.pi5{background:linear-gradient(135deg,#2a1a3e,#3d1a5a)}
+.pt{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.pd{font-size:13px;color:var(--g6);line-height:1.72;flex:1}
+.pl{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13px;font-weight:700;color:var(--gold);transition:gap var(--t)}.pl:hover{gap:10px}
+.passmall{font-size:11px;font-weight:600;color:var(--g8);padding:5px 9px;background:var(--warm);border-radius:5px;display:inline-block;margin-top:8px;text-decoration:underline;text-underline-offset:2px}
 
+/* Values */
+#values{padding:88px 0;background:var(--warm)}
+.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.vc{background:var(--cream);border-radius:var(--r);padding:36px 28px;text-align:center;border:1px solid var(--warm3);transition:all var(--t)}
+.vc:hover{box-shadow:var(--sl);transform:translateY(-4px);border-color:rgba(212,168,67,.15)}
+.vi{font-size:40px;margin-bottom:16px;display:block}
+.vn{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.vd{font-size:12px;color:var(--g4);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
 
-
-
-
-#footer{background:var(--nd);color:rgba(255,255,255,.55);padding:72px 0 36px}
-
-
-
-
-
-
-
-.ft{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.3fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07)}
-
-
-
-
-
-
-
+/* Footer */
+#footer{background:var(--nd);color:rgba(255,255,255,.50);padding:72px 0 36px}
+.ft{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.3fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.06)}
 .fli img{height:42px;width:auto;margin-bottom:18px;filter:brightness(0) invert(1)}
-
-
-
-
-
-
-
-.fde{font-size:14px;line-height:1.75;color:rgba(255,255,255,.42);max-width:270px}
-
-
-
-
-
-
-
+.fde{font-size:14px;line-height:1.75;color:rgba(255,255,255,.40);max-width:270px}
 .fso{margin-top:24px;display:flex;gap:10px}
-
-
-
-
-
-
-
-.fso a{width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:rgba(255,255,255,.55);transition:all var(--t)}
-
-
-
-
-
-
-
-.fso a:hover{background:var(--red);border-color:var(--red);color:#fff}
-
-
-
-
-
-
-
-.fct{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.85);margin-bottom:20px}
-
-
-
-
-
-
-
+.fso a{width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:rgba(255,255,255,.50);transition:all var(--t)}
+.fso a:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.fct{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.80);margin-bottom:20px}
 .flk{display:flex;flex-direction:column;gap:10px}
+.flk a{font-size:14px;color:rgba(255,255,255,.40);transition:color var(--t)}.flk a:hover{color:var(--gold)}
+.fcr{display:flex;gap:12px;margin-bottom:12px;font-size:14px;color:rgba(255,255,255,.40);align-items:flex-start}
+.fcr a{color:rgba(255,255,255,.40);transition:color var(--t)}.fcr a:hover{color:var(--gold)}
+.fb{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:13px;color:rgba(255,255,255,.22);flex-wrap:wrap;gap:12px}
 
-
-
-
-
-
-
-.flk a{font-size:14px;color:rgba(255,255,255,.45);transition:color var(--t)}.flk a:hover{color:var(--red)}
-
-
-
-
-
-
-
-.fcr{display:flex;gap:12px;margin-bottom:12px;font-size:14px;color:rgba(255,255,255,.45);align-items:flex-start}
-
-
-
-
-
-
-
-.fcr a{color:rgba(255,255,255,.45);transition:color var(--t)}.fcr a:hover{color:var(--red)}
-
-
-
-
-
-
-
-.fb{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:13px;color:rgba(255,255,255,.25);flex-wrap:wrap;gap:12px}
-
-
-
-
-
-
-
-@media(max-width:1024px){.eg,.pg,.tg,.blg{grid-template-columns:repeat(2,1fr)}.wl{grid-template-columns:1fr;gap:48px}.vg{grid-template-columns:repeat(2,1fr)}.ft{grid-template-columns:1fr 1fr;gap:36px}}
-
-
-
-
-
-
-
-@media(max-width:680px){.container{padding:0 20px}.nl{display:none}.nhb{display:flex}.eg,.pg,.tg,.blg{grid-template-columns:1fr}.hst{flex-direction:column;gap:24px}.hsi{border-right:none;padding:0;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:20px}.hsi:last-child{border-bottom:none;padding-bottom:0}.blh{flex-direction:column;align-items:flex-start}.wr{padding:36px 24px}.ft{grid-template-columns:1fr}}
-
-
-
-
-
-
-
+/* Responsive */
+@media(max-width:1024px){
+  .eng-timeline{grid-template-columns:repeat(2,1fr);gap:32px}
+  .eng-timeline::before{display:none}
+  .pg,.tg,.blg{grid-template-columns:repeat(2,1fr)}
+  .wl{grid-template-columns:1fr;gap:48px}
+  .vg{grid-template-columns:repeat(2,1fr)}
+  .ft{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:680px){
+  .container{padding:0 20px}
+  .nl{display:none}.nhb{display:flex}
+  .eng-timeline,.pg,.tg,.blg{grid-template-columns:1fr}
+  .typ-hero-inner{flex-direction:column;padding:100px 20px 48px;gap:48px}
+  .typ-left{padding-right:0;border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:40px}
+  .typ-right{width:100%;padding-left:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .typ-divider{display:none}
+  .typ-stat{padding:12px 0}
+  .wl{grid-template-columns:1fr}
+  .wr{padding:36px 24px}
+  .ft{grid-template-columns:1fr}
+  .fq-text{font-size:20px}
+  .fq-mark{font-size:80px}
+}
 </style>
-
-
-
-
-
-
-
-<!-- v2 --></head><body>
-
-
-
-
-
-
-
+</head>
+<body>
 <header id="navbar"><div class="container"><nav class="nw">
-
-
-
-
-
-
-
-<a href="/" class="nlogo"><img src="LAM Logo Transparent.png" alt="LAM Technology"/></a>
-
-
-
-
-
-
-
-<div class="nl"><a href="/professional-services/">Professional Services</a><a href="#practices">Practice Areas</a><a href="#why">Why LAM</a><a href="/insights/">Insights</a><a href="/contact/" class="nc">Just Ask LAM</a></div>
-
-
-
-
-
-
-
-<div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
-
-
-
-
-
-
-
+  <a href="/" class="nlogo"><img src="LAM Logo Transparent.png" alt="LAM Technology"/></a>
+  <div class="nl"><a href="/professional-services/">Professional Services</a><a href="#practices">Practice Areas</a><a href="#why">Why LAM</a><a href="/insights/">Insights</a><a href="/contact/" class="nc">Just Ask LAM</a></div>
+  <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
 </nav><div class="nm" id="nMob"><a href="/professional-services/" onclick="tNav()">Services</a><a href="#practices" onclick="tNav()">Practice Areas</a><a href="#why" onclick="tNav()">Why LAM</a><a href="/insights/" onclick="tNav()">Insights</a><a href="/contact/" onclick="tNav()">Just Ask LAM</a></div></div></header>
-
-
-
-
-
-
-
-
-
-
 
 <section id="hero">
   <div class="typ-ghost" aria-hidden="true">LAM</div>
@@ -1318,1677 +294,228 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
       <span class="typ-bottom-items">Financial Services &nbsp;&middot;&nbsp; Insurance &nbsp;&middot;&nbsp; Manufacturing &nbsp;&middot;&nbsp; Healthcare &nbsp;&middot;&nbsp; Retail</span>
     </div>
   </div>
-</section>section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</section>
 
 <section id="trust"><div class="container"><div class="tri">
-
-
-
-
-
-
-
-<span class="trl">Trusted Across Industries</span><div class="trd"></div>
-
-
-
-
-
-
-
-<span class="trp">Financial Services</span><span class="trp">Insurance</span><span class="trp">Manufacturing</span><span class="trp">Healthcare</span><span class="trp">Retail</span>
-
-
-
-
-
-
-
+  <span class="trl">Trusted Across Industries</span><div class="trd"></div>
+  <span class="trp">Financial Services</span><span class="trp">Insurance</span><span class="trp">Manufacturing</span><span class="trp">Healthcare</span><span class="trp">Retail</span>
 </div></div></section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="bb-spotlight" style="padding:80px 0;background:#1a1a2e;position:relative;overflow:hidden">
-
-
-
-
-
-
-
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
-
-
-
-
-
-
-
-  <div style="position:absolute;top:50%;right:-5%;transform:translateY(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.15) 0%,transparent 65%);pointer-events:none"></div>
-
-
-
-
-
-
-
-  <div style="max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1">
-
-
-
-
-
-
-
+<section id="bb-spotlight" style="padding:88px 0;background:var(--nd);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(212,168,67,.10) 0%,transparent 70%);pointer-events:none"></div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 40px;position:relative;z-index:1">
     <div style="display:flex;align-items:center;gap:64px;flex-wrap:wrap">
-
-
-
-
-
-
-
       <div style="flex:1;min-width:300px">
-
-
-
-
-
-
-
-        <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(212,168,67,.15);border:1px solid rgba(212,168,67,.30);border-radius:100px;padding:6px 18px 6px 12px;margin-bottom:28px">
-
-
-
-
-
-
-
-          <span style="display:inline-block;background:#d4a843;color:#1a1a2e;font-size:11px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;padding:3px 10px;border-radius:100px">Step 1</span>
-
-
-
-
-
-
-
-          <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,.75);letter-spacing:.05em">Where Every Engagement Begins</span>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-        <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">Are You Overpaying<br>for <span style="color:#d4a843">Telecom &amp; IT Services?</span></h2>
-
-
-
-
-
-
-
-        <p style="font-size:17px;color:rgba(255,255,255,.65);line-height:1.78;margin-bottom:16px">Most organizations are. Before any strategy conversation, LAM begins with the Billing Breakthrough assessment: a comprehensive review of your telecom and IT invoices that almost always uncovers significant savings and contract issues.</p>
-
-
-
-
-
-
-
-        <p style="font-size:15px;color:rgba(255,255,255,.50);line-height:1.72;margin-bottom:36px">This is a paid engagement. Findings from Billing Breakthrough directly inform the rest of your LAM journey.</p>
-
-
-
-
-
-
-
+        <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3.5vw,48px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">Are You Overpaying<br>for <span style="color:var(--gold)">Telecom &amp; IT Services?</span></h2>
+        <p style="font-size:17px;color:rgba(255,255,255,.60);line-height:1.78;margin-bottom:16px">Most organizations are. LAM begins with the <strong style="color:#fff">Billing Breakthrough&#8482;</strong> assessment &mdash; a comprehensive review of your telecom and IT invoices that almost always uncovers significant savings and contract issues.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,.42);line-height:1.72;margin-bottom:36px">This is a paid engagement. Findings directly inform the rest of your LAM journey.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap">
-
-
-
-
-
-
-
-          <a href="/practice-areas/billing-breakthrough/" style="display:inline-flex;align-items:center;gap:8px;background:#d4a843;color:#fff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background .2s,transform .2s">Start with Billing Breakthrough &#8594;</a>
-
-
-
-
-
-
-
-          <a href="/contact/" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.80);font-weight:600;font-size:15px;padding:14px 24px;border-radius:8px;text-decoration:none;border:2px solid rgba(255,255,255,.25)">Ask a Question</a>
-
-
-
-
-
-
-
+          <a href="/practice-areas/billing-breakthrough/" style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background .2s,transform .2s">Start with Billing Breakthrough &rarr;</a>
+          <a href="/contact/" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.75);font-weight:600;font-size:15px;padding:14px 24px;border-radius:8px;text-decoration:none;border:2px solid rgba(255,255,255,.20)">Ask a Question</a>
         </div>
-
-
-
-
-
-
-
       </div>
-
-
-
-
-
-
-
       <div style="flex:0 0 auto;width:340px;max-width:100%">
-
-
-
-
-
-
-
-        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:36px 32px">
-
-
-
-
-
-
-
-          <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#d4a843;margin-bottom:20px">What Billing Breakthrough Uncovers</div>
-
-
-
-
-
-
-
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:36px 32px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px">What Billing Breakthrough Uncovers</div>
           <div style="display:flex;flex-direction:column;gap:14px">
-
-
-
-
-
-
-
-            <div style="display:flex;align-items:flex-start;gap:12px">
-
-
-
-
-
-
-
-              <span style="color:#d4a843;font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span>
-
-
-
-
-
-
-
-              <span style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.6">Billing errors and overcharges hiding in plain sight</span>
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-            <div style="display:flex;align-items:flex-start;gap:12px">
-
-
-
-
-
-
-              <span style="color:#d4a843;font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span>
-
-
-
-
-
-
-
-              <span style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.6">Contracts that have auto-renewed at unfavorable rates</span>
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-            <div style="display:flex;align-items:flex-start;gap:12px">
-
-
-
-
-
-
-
-              <span style="color:#d4a843;font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span>
-
-
-
-
-
-
-
-              <span style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.6">Services you are paying for but no longer using</span>
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-            <div style="display:flex;align-items:flex-start;gap:12px">
-
-
-
-
-
-
-
-              <span style="color:#d4a843;font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span>
-
-
-
-
-
-
-
-              <span style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.6">Renegotiation opportunities across your service portfolio</span>
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-            <div style="display:flex;align-items:flex-start;gap:12px">
-
-
-
-
-
-
-
-              <span style="color:#d4a843;font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span>
-
-
-
-
-
-
-
-              <span style="font-size:14px;color:rgba(255,255,255,.75);line-height:1.6">A clear roadmap for what to address first</span>
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
+            <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">Billing errors and overcharges hiding in plain sight</span></div>
+            <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">Contracts that have auto-renewed at unfavorable rates</span></div>
+            <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">Services you are paying for but no longer using</span></div>
+            <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">Renegotiation opportunities across your service portfolio</span></div>
+            <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">A clear roadmap for what to address first</span></div>
           </div>
-
-
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
       </div>
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
-
-
   </div>
-
-
-
-
-
-
-
 </section>
 
-
-
-
-
-
-
-<section id="engagement" style="padding:96px 0;background:#1a1a2e;position:relative;overflow:hidden">
-
-
-
-
-
-
-
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
-
-
-
-
-
-
-
-  <div style="position:absolute;top:-20%;right:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.10) 0%,transparent 65%);pointer-events:none"></div>
-
-
-
-
-
-
-
-  <div style="max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1">
-
-
-
-
-
-
-
-    <div style="text-align:center;margin-bottom:64px">
-
-
-
-
-
-
-
-      <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d4a843;margin-bottom:16px">The LAM Engagement Model</div>
-
-
-
-
-
-
-
-      <h2 style="font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.15;color:#fff;margin-bottom:20px">Insight. Strategy. Execution. Support.</h2>
-
-
-
-
-
-
-
-      <p style="font-size:17px;color:rgba(255,255,255,.58);line-height:1.75;max-width:600px;margin:0 auto">Every LAM engagement follows the same proven path &#8212; from sharp discovery to smart strategy, disciplined execution, and lasting support. No shortcuts, no gaps, and no supplier agenda. Just a clear process that gets you to the right outcome.</p>
-
-<!-- Video Embed -->
-<div style="display:flex;justify-content:center;margin:0 auto 64px auto;max-width:800px;"><div style="position:relative;width:100%;cursor:pointer;border-radius:12px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);" onclick="document.getElementById('lam-video-modal').style.display='flex'"><img src="/assets/video-preview.jpg" alt="LAM Technology Explainer Video" style="width:100%;display:block;border-radius:12px;" /><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);border-radius:12px;" onmouseover="this.style.background='rgba(0,0,0,0.5)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'"><div style="width:72px;height:72px;background:#d4a843;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,168,67,0.4);"><svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:4px"><polygon points="5,3 19,12 5,21"/></svg></div></div></div></div>
-
-<!-- Video Lightbox Modal -->
-<div id="lam-video-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'"><div style="position:relative;width:90%;max-width:900px;"><button onclick="document.getElementById('lam-video-modal').style.display='none'" style="position:absolute;top:-44px;right:0;background:none;border:none;color:white;font-size:32px;cursor:pointer;line-height:1;">&#x2715;</button><div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;"><video controls controlsList="nodownload" preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;background:#000;" src="/assets/lam-technology-explainer.mp4"></video></div></div></div>
-
-
-
-
-
-
-
-
-
+<section id="engagement">
+  <div class="container">
+    <div class="eng-header">
+      <div class="eng-eyebrow">The LAM Engagement Model</div>
+      <h2 class="eng-title">Insight. Strategy. Execution. Support.</h2>
+      <p class="eng-sub">Every LAM engagement follows the same proven path &mdash; from sharp discovery to smart strategy, disciplined execution, and lasting support. No shortcuts, no gaps, no supplier agenda.</p>
     </div>
-
-
-
-
-
-
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px">
-
-
-
-
-
-
-
-      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-top:3px solid #d4a843;border-radius:12px;padding:32px 28px;transition:background .2s" onmouseover="this.style.background='rgba(212,168,67,.07)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">
-
-
-
-
-
-
-
-        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d4a843;margin-bottom:14px">01: Insight</div>
-
-
-
-
-
-
-
-        <h3 style="font-size:18px;font-weight:800;color:#fff;margin-bottom:12px">Assessments &amp; Discovery</h3>
-
-
-
-
-
-
-
-        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px">A clear, objective picture of where you are before you commit to any direction, supplier, or investment.</p>
-
-
-
-
-
-
-
-        <div style="display:flex;flex-direction:column;gap:8px">
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px"><a href="/practice-areas/billing-breakthrough/" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Billing Breakthrough&#8482; &#8594;</a></div>
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px"><a href="/infrastructure-insight.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Infrastructure Insight&#8482; &#8594;</a></div>
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px"><a href="/cybersecurity.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Vigilance Verification&#8482; &#8594;</a></div>
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px"><a href="/practice-areas/customer-experience-digital-engagement/" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Experience Examination&#8482; &#8594;</a></div>
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px"><a href="/support-scope.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Support Scope&#8482; &#8594;</a></div>
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px"><a href="/wireless-wisdom.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Wireless Wisdom&#8482; &#8594;</a></div>
-              <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px"><a href="/ai-readiness.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Readiness Radar&#8482; &#8594;</a></div>
-
-
-
-
-
-
-
+    <!-- Video -->
+    <div style="display:flex;justify-content:center;margin:0 auto 64px auto;max-width:800px">
+      <div style="position:relative;width:100%;cursor:pointer;border-radius:12px;overflow:hidden;box-shadow:0 24px 64px rgba(26,26,46,0.18);" onclick="document.getElementById('lam-video-modal').style.display='flex'">
+        <img src="/assets/video-preview.jpg" alt="LAM Technology Explainer Video" style="width:100%;display:block;border-radius:12px;"/>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,26,46,0.35);border-radius:12px;" onmouseover="this.style.background='rgba(26,26,46,0.5)'" onmouseout="this.style.background='rgba(26,26,46,0.35)'">
+          <div style="width:72px;height:72px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,168,67,0.35);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:4px"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
         </div>
-
-
-
-
-
-
-
       </div>
-
-
-
-
-
-
-
-      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-top:3px solid #d4a843;border-radius:12px;padding:32px 28px;transition:background .2s" onmouseover="this.style.background='rgba(212,168,67,.07)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">
-
-
-
-
-
-
-
-        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d4a843;margin-bottom:14px">02: Strategy</div>
-
-
-
-
-
-
-
-        <h3 style="font-size:18px;font-weight:800;color:#fff;margin-bottom:12px">Supplier Selection &amp; Supplier Strategy</h3>
-
-
-
-
-
-
-
-        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px">Findings from the Insight phase inform supplier selection, technology direction, and investment priorities.</p>
-
-
-
-
-
-
-
-        <div style="display:flex;flex-direction:column;gap:8px">
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px">Supplier Shootout&#8482;</div>
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px">RFP Supplier Validation&#8482;</div>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-top:3px solid #d4a843;border-radius:12px;padding:32px 28px;transition:background .2s" onmouseover="this.style.background='rgba(212,168,67,.07)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">
-
-
-
-
-
-
-
-        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d4a843;margin-bottom:14px">03: Execution</div>
-
-
-
-
-
-
-
-        <h3 style="font-size:18px;font-weight:800;color:#fff;margin-bottom:12px">Managed Delivery &amp; Implementation</h3>
-
-
-
-
-
-
-
-        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px">LAM manages delivery and implementation when change is required, end to end, with full accountability.</p>
-
-
-
-
-
-
-
-        <div style="display:flex;flex-direction:column;gap:8px">
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px">Dedicated Delivery&#8482;</div>
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px">Dedicated Disconnect&#8482;</div>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-top:3px solid #d4a843;border-radius:12px;padding:32px 28px;transition:background .2s" onmouseover="this.style.background='rgba(212,168,67,.07)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">
-
-
-
-
-
-
-
-        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d4a843;margin-bottom:14px">04: Support</div>
-
-
-
-
-
-
-
-        <h3 style="font-size:18px;font-weight:800;color:#fff;margin-bottom:12px">Ongoing Optimization &amp; Advocacy</h3>
-
-
-
-
-
-
-
-        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px">Ongoing optimization, renewals, and advocacy ensure long-term value from every technology investment.</p>
-
-
-
-
-
-
-
-        <div style="display:flex;flex-direction:column;gap:8px">
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px">Contract &amp; Supplier Management</div>
-
-
-
-
-
-
-
-          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:6px">Renewal Advocacy</div>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
-
-
-    <div style="text-align:center;margin-top:52px">
-
-
-
-
-
-
-
-      <a href="/contact/" style="display:inline-flex;align-items:center;gap:8px;background:#d4a843;color:#fff;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;transition:background .2s,transform .2s" onmouseover="this.style.background='#b8922e';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#d4a843';this.style.transform='translateY(0)'">Just Ask LAM &#8594;</a>
-
-
-
-
-
-
-
+    <!-- Video Modal -->
+    <div id="lam-video-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+      <div style="position:relative;width:90%;max-width:900px;">
+        <button onclick="document.getElementById('lam-video-modal').style.display='none'" style="position:absolute;top:-44px;right:0;background:none;border:none;color:white;font-size:32px;cursor:pointer;line-height:1;">&#x2715;</button>
+        <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;"><video controls controlsList="nodownload" preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;background:#000;" src="/assets/lam-technology-explainer.mp4"></video></div>
+      </div>
     </div>
-
-
-
-
-
-
-
+    <!-- Timeline steps -->
+    <div class="eng-timeline">
+      <div class="eng-step">
+        <div class="eng-step-num"><span class="eng-step-numtext">1</span></div>
+        <div class="eng-step-label">Insight</div>
+        <h3 class="eng-step-title">Assessments &amp; Discovery</h3>
+        <p class="eng-step-desc">A clear, objective picture of where you are before committing to any direction, supplier, or investment.</p>
+        <div class="eng-step-items">
+          <div class="eng-step-item"><a href="/practice-areas/billing-breakthrough/">Billing Breakthrough&#8482; &rarr;</a></div>
+          <div class="eng-step-item"><a href="/infrastructure-insight.html">Infrastructure Insight&#8482; &rarr;</a></div>
+          <div class="eng-step-item"><a href="/cybersecurity.html">Vigilance Verification&#8482; &rarr;</a></div>
+          <div class="eng-step-item"><a href="/practice-areas/customer-experience-digital-engagement/">Experience Examination&#8482; &rarr;</a></div>
+          <div class="eng-step-item"><a href="/wireless-wisdom.html">Wireless Wisdom&#8482; &rarr;</a></div>
+          <div class="eng-step-item"><a href="/ai-readiness.html">Readiness Radar&#8482; &rarr;</a></div>
+        </div>
+      </div>
+      <div class="eng-step">
+        <div class="eng-step-num"><span class="eng-step-numtext">2</span></div>
+        <div class="eng-step-label">Strategy</div>
+        <h3 class="eng-step-title">Supplier Selection &amp; Direction</h3>
+        <p class="eng-step-desc">Insight phase findings inform supplier selection, technology direction, and investment priorities.</p>
+        <div class="eng-step-items">
+          <div class="eng-step-item">Supplier Shootout&#8482;</div>
+          <div class="eng-step-item">RFP Supplier Validation&#8482;</div>
+        </div>
+      </div>
+      <div class="eng-step">
+        <div class="eng-step-num"><span class="eng-step-numtext">3</span></div>
+        <div class="eng-step-label">Execution</div>
+        <h3 class="eng-step-title">Managed Delivery &amp; Implementation</h3>
+        <p class="eng-step-desc">LAM manages delivery and implementation when change is required &mdash; end to end, full accountability.</p>
+        <div class="eng-step-items">
+          <div class="eng-step-item">Dedicated Delivery&#8482;</div>
+          <div class="eng-step-item">Dedicated Disconnect&#8482;</div>
+        </div>
+      </div>
+      <div class="eng-step">
+        <div class="eng-step-num"><span class="eng-step-numtext">4</span></div>
+        <div class="eng-step-label">Support</div>
+        <h3 class="eng-step-title">Ongoing Optimization &amp; Advocacy</h3>
+        <p class="eng-step-desc">Ongoing optimization, renewals, and advocacy ensure long-term value from every technology investment.</p>
+        <div class="eng-step-items">
+          <div class="eng-step-item">Contract &amp; Supplier Management</div>
+          <div class="eng-step-item">Renewal Advocacy</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:8px">
+      <a href="/contact/" class="btn br">Just Ask LAM <span class="arr">&rarr;</span></a>
+    </div>
   </div>
-
-
-
-
-
-
-
 </section>
-
-
-
-
-
-
-
-<section id="practices" style="padding:72px 0;background:#f8f6f0">
-
-
-
-
-
-
-
-  <div style="max-width:1200px;margin:0 auto;padding:0 32px">
-
-
-
-
-
-
-
-    <div style="text-align:center;margin-bottom:48px">
-
-
-
-
-
-
-
-      <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d4a843;margin-bottom:12px">Our Practice Areas</div>
-
-
-
-
-
-
-
-      <h2 style="font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.02em;color:#1a1a2e;margin-bottom:10px">Focused Expertise. Real Results.</h2>
-
-
-
-
-
-
-
-      <p style="font-size:16px;color:#6b6b7b;max-width:520px;margin:0 auto;line-height:1.7">Five practice areas, each led by a director with a branded assessment and deep domain expertise.</p>
-
-
-
-
-
-
-
+<section id="practices">
+  <div class="container">
+    <div class="sh ctr">
+      <span class="tag">Our Practice Areas</span>
+      <h2 class="stit">Focused Expertise. Real Results.</h2>
+      <p class="ssub" style="margin-left:auto;margin-right:auto;max-width:520px">Five practice areas, each with a branded assessment and deep domain expertise.</p>
     </div>
-
-
-
-
-
-
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
-
-
-
-
-
-
-
-      <div style="background:#fff;border:1px solid #e8e4dc;border-radius:12px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;transition:all .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(26,26,46,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-<div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#1a1a2e,#2a2a40);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-
-
-
-
-
-
-
-        <div style="font-size:15px;font-weight:800;color:#1a1a2e;line-height:1.3;min-height:39px">Cybersecurity &amp; Risk</div>
-
-
-
-
-
-
-
-        <a href="/cybersecurity.html" style="font-size:12px;font-weight:600;color:#4a4038;padding:6px 10px;background:#f0ede8;border-radius:6px;text-decoration:underline;text-underline-offset:2px;display:inline-block">Vigilance Verification&#8482; &#8594;</a>
-
-
-
-
-
-
-
-        <a href="/cybersecurity.html" style="font-size:13px;font-weight:700;color:#d4a843;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-top:auto">Learn More &#8594;</a>
-
-
-
-
-
-
-
+    <div class="pg">
+      <div class="pc">
+        <div class="piw pi1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="pt">Cybersecurity &amp; Risk</div>
+        <p class="pd">Comprehensive risk assessments and security posture reviews to protect your organization from evolving threats.</p>
+        <a href="/cybersecurity.html" class="passmall">Vigilance Verification&#8482; &rarr;</a>
+        <a href="/cybersecurity.html" class="pl">Learn More &rarr;</a>
       </div>
-
-
-
-
-
-
-
-      <div style="background:#fff;border:1px solid #e8e4dc;border-radius:12px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;transition:all .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(26,26,46,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-
-
-
-
-
-
-
-        <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#1a2e2a,#1d3d35);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
-
-
-
-
-
-
-
-        <div style="font-size:15px;font-weight:800;color:#1a1a2e;line-height:1.3;min-height:39px">Customer Experience &amp; Digital Engagement</div>
-
-
-
-
-
-
-
-        <a href="/practice-areas/customer-experience-digital-engagement/" style="font-size:12px;font-weight:600;color:#4a4038;padding:6px 10px;background:#f0ede8;border-radius:6px;text-decoration:underline;text-underline-offset:2px;display:inline-block">Experience Examination&#8482; &#8594;</a>
-
-
-
-
-
-
-
-        <a href="/practice-areas/customer-experience-digital-engagement/" style="font-size:13px;font-weight:700;color:#d4a843;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-top:auto">Learn More &#8594;</a>
-
-
-
-
-
-
-
+      <div class="pc">
+        <div class="piw pi2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+        <div class="pt">Customer Experience &amp; Digital Engagement</div>
+        <p class="pd">Evaluate and elevate how your customers experience your brand at every digital and service touchpoint.</p>
+        <a href="/practice-areas/customer-experience-digital-engagement/" class="passmall">Experience Examination&#8482; &rarr;</a>
+        <a href="/practice-areas/customer-experience-digital-engagement/" class="pl">Learn More &rarr;</a>
       </div>
-
-
-
-
-
-
-
-      <div style="background:#fff;border:1px solid #e8e4dc;border-radius:12px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;transition:all .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(26,26,46,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-
-
-
-
-
-
-
-        <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#0d1a2e,#1a2a40);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
-
-
-
-
-
-
-
-        <div style="font-size:15px;font-weight:800;color:#1a1a2e;line-height:1.3;min-height:39px">Networking &amp; Infrastructure</div>
-
-
-
-
-
-
-
-        <a href="/infrastructure-insight.html" style="font-size:12px;font-weight:600;color:#4a4038;padding:6px 10px;background:#f0ede8;border-radius:6px;text-decoration:underline;text-underline-offset:2px;display:inline-block">Infrastructure Insight&#8482; &#8594;</a>
-
-
-
-
-
-
-
-        <a href="/infrastructure-insight.html" style="font-size:13px;font-weight:700;color:#d4a843;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-top:auto">Learn More &#8594;</a>
-
-
-
-
-
-
-
+      <div class="pc">
+        <div class="piw pi3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+        <div class="pt">Networking &amp; Infrastructure</div>
+        <p class="pd">Assess, optimize, and modernize your network and infrastructure to support your current and future operations.</p>
+        <a href="/infrastructure-insight.html" class="passmall">Infrastructure Insight&#8482; &rarr;</a>
+        <a href="/infrastructure-insight.html" class="pl">Learn More &rarr;</a>
       </div>
-
-
-
-
-
-
-
-      <div style="background:#fff;border:1px solid #e8e4dc;border-radius:12px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;transition:all .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(26,26,46,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-
-
-
-
-
-
-
-        <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#1a2a1a,#1a3a2a);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#d4a843"/></svg></div>
-
-
-
-
-
-
-
-        <div style="font-size:15px;font-weight:800;color:#1a1a2e;line-height:1.3;min-height:39px">Mobility &amp; IoT</div>
-
-
-
-
-
-
-
-        <a href="/wireless-wisdom.html" style="font-size:12px;font-weight:600;color:#4a4038;padding:6px 10px;background:#f0ede8;border-radius:6px;text-decoration:underline;text-underline-offset:2px;display:inline-block">Wireless Wisdom&#8482; &#8594;</a>
-
-
-
-
-
-
-
-        <a href="/wireless-wisdom.html" style="font-size:13px;font-weight:700;color:#d4a843;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-top:auto">Learn More &#8594;</a>
-
-
-
-
-
-
-
+      <div class="pc">
+        <div class="piw pi4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#d4a843"/></svg></div>
+        <div class="pt">Mobility &amp; IoT</div>
+        <p class="pd">Manage and optimize your mobile and IoT landscape, from wireless contracts to device strategy and connectivity.</p>
+        <a href="/wireless-wisdom.html" class="passmall">Wireless Wisdom&#8482; &rarr;</a>
+        <a href="/wireless-wisdom.html" class="pl">Learn More &rarr;</a>
       </div>
-
-
-
-
-
-
-
-      <div style="background:#fff;border:1px solid #e8e4dc;border-radius:12px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;transition:all .2s" onmouseover="this.style.boxShadow='0 8px 32px rgba(26,26,46,.12)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
-
-
-
-
-
-
-
-        <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#2a1a3e,#3d1a5a);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
-
-
-
-
-
-
-
-        <div style="font-size:15px;font-weight:800;color:#1a1a2e;line-height:1.3;min-height:39px">AI Readiness &amp; Strategy</div>
-
-
-
-
-
-
-
-        <a href="/ai-readiness.html" style="font-size:12px;font-weight:600;color:#4a4038;padding:6px 10px;background:#f0ede8;border-radius:6px;text-decoration:underline;text-underline-offset:2px;display:inline-block">Readiness Radar&#8482; &#8594;</a>
-        <a href="/ai-readiness.html" style="font-size:13px;font-weight:700;color:#d4a843;text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-top:auto">Learn More &#8594;</a>
-
-
-
-
-
-
-
+      <div class="pc">
+        <div class="piw pi5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
+        <div class="pt">AI Readiness &amp; Strategy</div>
+        <p class="pd">Understand your organization&rsquo;s AI readiness and build a practical, grounded strategy for adoption and governance.</p>
+        <a href="/ai-readiness.html" class="passmall">Readiness Radar&#8482; &rarr;</a>
+        <a href="/ai-readiness.html" class="pl">Learn More &rarr;</a>
       </div>
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
-
-
   </div>
-
-
-
-
-
-
-
 </section>
-
-
-
-
-
-
 
 <section id="why"><div class="container"><div class="wl">
-
-
-
-
-
-
-
-<div>
-
-
-
-
-
-
-
-<span class="tag">Why Choose LAM</span>
-
-
-
-
-
-
-
-<h2 class="stit">Your Trusted Partner,<br>Not Just Another Supplier</h2>
-
-
-
-
-
-
-
-<p class="ssub">We work alongside your team as a true extension of your organization, with no agenda other than your success.</p>
-
-
-
-
-
-
-
-<div class="wi">
-
-
-
-
-
-
-
-<div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Supplier-Neutral Guidance</div><div class="wid">No loyalty to any supplier. Our only loyalty is to you, giving you unbiased recommendations that fit your needs and budget.</div></div></div>
-
-
-
-
-
-
-
-<div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Deep Relationships, Real Results</div><div class="wid">Our deep relationships across the supplier landscape mean we escalate issues, negotiate contracts, and get resolutions faster than you could alone.</div></div></div>
-
-
-
-
-
-
-
-<div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Predictable, Transparent Engagement</div</div></div>
-
-
-
-
-
-
-
-<div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Client-Driven Focus</div><div class="wid">Your needs come first, always. We build every engagement around your goals, timeline, and budget, not ours.</div></div></div>
-
-
-
-
-
-
-
-</div></div>
-
-
-
-
-
-
-
-<div class="wr"><div class="wq">
-
-
-
-
-
-
-
-<span class="wqm">&ldquo;</span>
-
-
-
-
-
-
-
-<p class="wqt">Working with LAM has been like having a trusted friend on the inside, acting as a personal customer advocate to bring timely and substantive results in an upbeat, friendly and professional manner.</p>
-
-
-
-
-
-
-
-<div class="wqd"></div>
-
-
-
-
-
-
-
-<div class="wqr">VP of IT, Major Texas-Based Bank</div>
-
-
-
-
-
-
-
-</div></div>
-
-
-
-
-
-
-
+  <div>
+    <span class="tag">Why Choose LAM</span>
+    <h2 class="stit">Your Trusted Partner,<br>Not Just Another Supplier</h2>
+    <p class="ssub">We work alongside your team as a true extension of your organization, with no agenda other than your success.</p>
+    <div class="wi">
+      <div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Supplier-Neutral Guidance</div><div class="wid">No loyalty to any supplier. Our only loyalty is to you, giving you unbiased recommendations that fit your needs and budget.</div></div></div>
+      <div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Deep Relationships, Real Results</div><div class="wid">Our deep relationships across the supplier landscape mean we escalate issues, negotiate contracts, and get resolutions faster than you could alone.</div></div></div>
+      <div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Predictable, Transparent Engagement</div><div class="wid">You always know what to expect &mdash; no hidden fees, no surprise pivots. Every engagement follows our proven four-step model.</div></div></div>
+      <div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Client-Driven Focus</div><div class="wid">Your needs come first, always. We build every engagement around your goals, timeline, and budget &mdash; not ours.</div></div></div>
+    </div>
+  </div>
+  <div class="wr"><div class="wq">
+    <span class="wqm">&ldquo;</span>
+    <p class="wqt">Working with LAM has been like having a trusted friend on the inside, acting as a personal customer advocate to bring timely and substantive results in an upbeat, friendly and professional manner.</p>
+    <div class="wqd"></div>
+    <div class="wqr">VP of IT &nbsp;&middot;&nbsp; Major Texas-Based Bank</div>
+  </div></div>
 </div></div></section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<section id="featured-quote">
+  <div class="fq-inner">
+    <span class="fq-mark">&ldquo;</span>
+    <p class="fq-text">Working with LAM has been like having a <em>trusted friend on the inside</em>, acting as a personal customer advocate to bring timely and substantive results.</p>
+    <div class="fq-rule"></div>
+    <div class="fq-attr">VP of IT &nbsp;&middot;&nbsp; Major Texas-Based Bank</div>
+  </div>
+</section>
 
 <section id="testimonials"><div class="container">
-
-
-
-
-
-
-
-<div class="sh ctr"><span class="tag lt">What Clients Say</span><h2 class="stit lt">Trusted by Leaders Across Industries</h2><p class="ssub lt" style="margin-left:auto;margin-right:auto;max-width:540px">Real results from real organizations who chose LAM as their IT partner.</p></div>
-
-
-
-
-
-
-
-<div class="tg">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="tc"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">"LAM's expertise enabled me to take on several projects at once and get them all done in less time and at lower cost than I had envisioned."</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Roadside Services Provider</div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="tc"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">"LAM Technology has proven to be a valued partner and strategic enabler as our company executes on a highly aggressive growth strategy."</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Nationwide Automotive Service Company</div></div>
-
-
-
-
-
-
-
-<div class="tc"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">"While making a wholesale changeover of your network can be a risky proposition, it has been one of the best technology decisions we could have made, and LAM was instrumental in making it happen."</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Major Electronic Components Distributor</div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="sh ctr">
+    <span class="tag">What Clients Say</span>
+    <h2 class="stit">Trusted by Leaders Across Industries</h2>
+    <p class="ssub" style="margin-left:auto;margin-right:auto;max-width:540px">Real results from real organizations who chose LAM as their IT partner.</p>
+  </div>
+  <div class="tg">
+    <div class="tc"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;LAM&rsquo;s expertise enabled me to take on several projects at once and get them all done in less time and at lower cost than I had envisioned.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Roadside Services Provider</div></div>
+    <div class="tc"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;LAM Technology has proven to be a valued partner and strategic enabler as our company executes on a highly aggressive growth strategy.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Nationwide Automotive Service Company</div></div>
+    <div class="tc"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;While making a wholesale changeover of your network can be a risky proposition, it has been one of the best technology decisions we could have made, and LAM was instrumental in making it happen.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Major Electronic Components Distributor</div></div>
+  </div>
+</div></section>
+<section id="cta"><div class="container"><div class="ci">
+  <span class="tag lt">Time to Reach Out</span>
+  <h2 class="ctt">You May Be <em>Surprised</em><br>By What We Can Handle.</h2>
+  <p class="cst">Whether you&rsquo;re dealing with supplier chaos, a security concern, or a technology decision you can&rsquo;t quite sort out &mdash; just ask LAM. The first conversation is free.</p>
+  <div class="ca"><a href="/contact/" class="btn br">Just Ask LAM <span class="arr">&rarr;</span></a><a href="#practices" class="btn bow">Explore Practice Areas</a></div>
 </div></div></section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="cta"><div class="cgl"></div><div class="container"><div class="ci">
-
-
-
-
-
-
-
-<span class="tag lt">Time to Reach Out</span>
-
-
-
-
-
-
-
-<h2 class="ctt">You May Be <em>Surprised</em><br>By What We Can Handle.</h2>
-
-
-
-
-
-
-
-<p class="cst">Whether you're dealing with supplier chaos, a security concern, or a technology decision you can't quite sort out. Just ask LAM. The first conversation is free.</p>
-
-
-
-
-
-
-
-<div class="ca"><a href="/contact/" class="btn br">Just Ask LAM <span class="arr">&rarr;</span></a><a href="#practices" class="btn bow">Explore Practice Areas</a></div>
-
-
-
-
-
-
-
-</div></div></section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <footer id="footer"><div class="container">
-
-
-
-
-
-
-
-<div class="ft">
-
-
-
-
-
-
-
-<div><div class="fli"><img src="LAM Logo Transparent.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener">in</a></div></div>
-
-
-
-
-
-
-
-<div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/wireless-wisdom.html">Mobility &amp; IoT</a></div></div>
-
-
-
-
-
-
-
-<div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
-
-
-
-
-
-
-
-<div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span>Fort Worth, TX</span></div>
-
-
-
-
-
-
-
+  <div class="ft">
+    <div><div class="fli"><img src="LAM Logo Transparent.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener">in</a></div></div>
+    <div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/wireless-wisdom.html">Mobility &amp; IoT</a><a href="/ai-readiness.html">AI Readiness</a></div></div>
+    <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
+    <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
+  </div>
+  <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span>Fort Worth, TX</span></div>
 </div></footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
-
-
-
-
-
-
-
 function tNav(){document.getElementById('nMob').classList.toggle('op')}
-
-
-
-
-
-
-
 document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
-
-
-
-
-
-
-
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-75,behavior:'smooth'})}})});
-
-
-
-
-
-
-
 </script>
-
-
-
-
-
-
-
-</body></html>
-
-
-
-
-
-
-
+</body>
+  </html>
