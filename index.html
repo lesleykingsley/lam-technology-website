@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>LAM Technology — Trustworthy IT Guidance</title>
-<meta name="description" content="LAM Technology provides trustworthy guidance in Technology Enablement, Cybersecurity, Digital Transformation, and Managed Services."/>
+<meta name="description" content="LAM Technology provides trustworthy IT advisory services — supplier-neutral guidance in Cybersecurity, Networking, Mobility, Customer Experience, and AI Readiness."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet"/>
@@ -31,23 +31,34 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .bon{background:transparent;color:var(--navy);border-color:var(--warm3)}.bon:hover{border-color:var(--navy);background:var(--warm);transform:translateY(-2px)}
 .arr{font-style:normal;transition:transform var(--t)}.btn:hover .arr{transform:translateX(4px)}
 
-/* Navbar */
-#navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,244,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm3);transition:box-shadow var(--t)}
-#navbar.sc{box-shadow:0 2px 20px rgba(26,26,46,.08)}
+/* Navbar — starts transparent over hero, becomes cream on scroll */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;transition:background .35s ease,border-color .35s ease,box-shadow .35s ease}
+#navbar.sc{background:rgba(250,248,244,.97);backdrop-filter:blur(12px);border-bottom-color:var(--warm3);box-shadow:0 2px 20px rgba(26,26,46,.08)}
 .nw{display:flex;align-items:center;justify-content:space-between;height:70px}
 .nlogo img{height:46px;width:auto}
 .nl{display:flex;align-items:center;justify-content:center;flex:1;gap:8px}
-.nl a{font-size:14px;font-weight:600;color:var(--g8);padding:8px 14px;border-radius:var(--rs);transition:all var(--t)}
-.nl a:hover{color:var(--navy);background:var(--warm)}
-.nl .nc{background:var(--gold);color:#fff;padding:10px 22px;margin-left:8px}.nl .nc:hover{background:var(--gold-h);transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,168,67,.30)}
-.nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}.nhb span{width:22px;height:2px;background:var(--navy);border-radius:2px;display:block}
+/* Nav links — white on transparent navbar, dark on scrolled */
+.nl a{font-size:14px;font-weight:600;color:rgba(255,255,255,.80);padding:8px 14px;border-radius:var(--rs);transition:all var(--t)}
+.nl a:hover{color:#fff;background:rgba(255,255,255,.10)}
+#navbar.sc .nl a{color:var(--g8)}
+#navbar.sc .nl a:hover{color:var(--navy);background:var(--warm)}
+.nl .nc{background:var(--gold);color:#fff;padding:10px 22px;margin-left:8px}
+.nl .nc:hover{background:var(--gold-h);transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,168,67,.30)}
+#navbar.sc .nl .nc{color:#fff}
+.nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;align-items:center}
+.nhb span{width:22px;height:2px;background:rgba(255,255,255,.80);border-radius:2px;display:block;transition:background .35s}
+#navbar.sc .nhb span{background:var(--navy)}
+.nhb-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.60);margin-top:2px;line-height:1;transition:color .35s}
+#navbar.sc .nhb-label{color:var(--g6)}
 .nm{display:none}.nm.op{display:flex;flex-direction:column;background:var(--cream);padding:16px 24px 24px;gap:4px;border-top:1px solid var(--warm3)}
 .nm a{font-size:15px;font-weight:600;color:var(--g8);padding:12px 0;border-bottom:1px solid var(--warm2)}
 .nm a:last-child{border:none;margin-top:8px;background:var(--gold);color:#fff;text-align:center;padding:12px;border-radius:var(--rs)}
 
-/* Hero - typographic, dark, no city photo */
+/* Hero */
 #hero{min-height:100vh;background:var(--nd);display:flex;flex-direction:column;justify-content:space-between;padding:0;position:relative;overflow:hidden}
 #hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(212,168,67,.08) 0%,transparent 70%);pointer-events:none;z-index:0}
+/* Subtle diagonal texture overlay */
+#hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(255,255,255,.012) 40px,rgba(255,255,255,.012) 41px);pointer-events:none;z-index:0}
 .typ-ghost{position:absolute;bottom:-4%;left:-2%;font-family:'Playfair Display',Georgia,serif;font-size:clamp(200px,28vw,420px);font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.035);line-height:1;pointer-events:none;user-select:none;z-index:0;letter-spacing:-.04em}
 .typ-hero-inner{flex:1;display:flex;align-items:center;gap:0;position:relative;z-index:1;padding:120px 40px 72px;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box}
 .typ-left{flex:1 1 0;display:flex;flex-direction:column;gap:0;padding-right:80px;border-right:1px solid rgba(255,255,255,.07)}
@@ -61,37 +72,55 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .typ-rule{width:48px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:28px}
 .typ-sub{font-size:17px;line-height:1.75;color:rgba(255,255,255,.55);margin:0 0 40px;max-width:500px}
 .typ-actions{display:flex;gap:12px;align-items:center}
-.typ-right{width:240px;flex-shrink:0;display:flex;flex-direction:column;gap:0;padding-left:56px}
-.typ-stat{padding:24px 0}
-.typ-stat-num{font-family:'Playfair Display',Georgia,serif;font-size:72px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em}
-.typ-stat-plus{font-size:36px;color:var(--gold);vertical-align:super}
-.typ-stat-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:6px;line-height:1.5}
+.typ-right{width:260px;flex-shrink:0;display:flex;flex-direction:column;gap:0;padding-left:56px}
+.typ-stat{padding:28px 0}
+.typ-stat-num{font-family:'Playfair Display',Georgia,serif;font-size:80px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em}
+.typ-stat-plus{font-size:38px;color:var(--gold);vertical-align:super}
+.typ-stat-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:8px;line-height:1.5}
 .typ-divider{width:100%;height:1px;background:rgba(255,255,255,.07)}
-.typ-tagline{margin-top:32px;padding:20px;border:1px solid rgba(212,168,67,.20);border-radius:10px;background:rgba(212,168,67,.04)}
-.typ-tagline-text{font-size:14px;font-style:italic;color:rgba(212,168,67,.70);line-height:1.6;font-family:'Playfair Display',Georgia,serif}
-.typ-bottom{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)}
-.typ-bottom-inner{max-width:1200px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;gap:20px;box-sizing:border-box}
+.typ-tagline{margin-top:36px;padding:22px;border:1px solid rgba(212,168,67,.20);border-radius:10px;background:rgba(212,168,67,.04)}
+.typ-tagline-text{font-size:15px;font-style:italic;color:rgba(212,168,67,.75);line-height:1.6;font-family:'Playfair Display',Georgia,serif}
+/* Hero bottom bar fades into next section */
+.typ-bottom{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.06);background:linear-gradient(to bottom,rgba(255,255,255,.02) 0%,rgba(212,168,67,.04) 100%)}
+.typ-bottom-inner{max-width:1200px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;gap:20px;box-sizing:border-box}
 .typ-bottom-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap}
 .typ-bottom-items{font-size:12px;font-weight:500;color:rgba(255,255,255,.40);letter-spacing:.04em}
 
-/* Industry trust bar */
-#trust{background:var(--warm);border-top:1px solid var(--warm3);border-bottom:1px solid var(--warm3);padding:22px 0}
-.tri{display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center}
-.trl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--g4);white-space:nowrap}
-.trd{width:1px;height:18px;background:var(--warm3)}
-.trp{background:var(--cream);border:1px solid var(--warm3);border-radius:100px;padding:7px 18px;font-size:13px;font-weight:600;color:var(--g6);box-shadow:0 2px 8px rgba(26,26,46,.04)}
+/* Smooth section transitions — warm band between dark and light */
+.section-bridge{height:64px;background:linear-gradient(to bottom,var(--nd),var(--warm));margin:0;padding:0}
+.section-bridge-rev{height:64px;background:linear-gradient(to bottom,var(--warm),var(--nd));margin:0;padding:0}
+.section-bridge-cc{height:48px;background:linear-gradient(to bottom,var(--cream),var(--warm));margin:0;padding:0}
+.section-bridge-wc{height:48px;background:linear-gradient(to bottom,var(--warm),var(--cream));margin:0;padding:0}
 
 /* Billing Breakthrough spotlight */
-#bb-spotlight{padding:88px 0;background:var(--nd);position:relative;overflow:hidden}
+#bb-spotlight{padding:88px 0;background:linear-gradient(to bottom,var(--nd) 0%,#0f0f1f 100%);position:relative;overflow:hidden}
 #bb-spotlight::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(212,168,67,.10) 0%,transparent 70%);pointer-events:none}
 
-/* Engagement model — flowing timeline style */
+/* Founder / About strip */
+#founder{padding:88px 0;background:var(--warm);position:relative;overflow:hidden}
+#founder::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.founder-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:72px;align-items:center}
+.founder-photo-wrap{position:relative}
+.founder-photo{width:100%;max-width:380px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;box-shadow:var(--sxl);position:relative}
+.founder-photo-placeholder{width:100%;height:100%;background:linear-gradient(145deg,var(--navy) 0%,#2a2a50 50%,var(--nm) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px}
+.founder-initials{font-family:'Playfair Display',Georgia,serif;font-size:80px;font-weight:900;color:var(--gold);line-height:1;opacity:.9}
+.founder-photo-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);text-align:center}
+.founder-gold-bar{position:absolute;bottom:24px;left:-12px;width:6px;height:80px;background:var(--gold);border-radius:3px}
+.founder-content{}
+.founder-eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.founder-name{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3vw,42px);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:8px;letter-spacing:-.02em}
+.founder-title{font-size:14px;font-weight:600;color:var(--g6);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px}
+.founder-bio{font-size:16px;color:var(--g8);line-height:1.82;margin-bottom:24px}
+.founder-bio strong{color:var(--navy);font-weight:700}
+.founder-creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.founder-cred{font-size:12px;font-weight:600;color:var(--g8);background:var(--cream);border:1px solid var(--warm3);border-radius:100px;padding:6px 16px}
+
+/* Engagement model */
 #engagement{padding:96px 0;background:var(--cream);position:relative}
 .eng-header{text-align:center;margin-bottom:64px}
 .eng-eyebrow{font-size:11px;font-weight:700;letter-spacing:.20em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
 .eng-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3.5vw,48px);font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1.1;margin-bottom:20px}
 .eng-sub{font-size:17px;color:var(--g6);line-height:1.75;max-width:600px;margin:0 auto}
-/* Timeline layout */
 .eng-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-bottom:56px}
 .eng-timeline::before{content:'';position:absolute;top:32px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--gold) 0%,rgba(212,168,67,.3) 100%);z-index:0}
 .eng-step{position:relative;padding:0 16px;z-index:1}
@@ -118,23 +147,12 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .wic{width:36px;height:36px;border-radius:8px;background:var(--gold-light);color:var(--gold);font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:900}
 .wit{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
 .wid{font-size:14px;color:var(--g6);line-height:1.68}
-/* Quote card - warm cream with gold accent */
 .wr{background:var(--warm);border:1px solid var(--warm3);border-radius:20px;padding:52px 44px;position:relative;overflow:hidden;border-left:4px solid var(--gold)}
 .wq{position:relative;z-index:1}
 .wqm{font-family:'Playfair Display',Georgia,serif;font-size:90px;color:var(--gold);line-height:.6;margin-bottom:24px;display:block}
 .wqt{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;line-height:1.65;color:var(--navy);margin-bottom:28px;font-style:italic}
 .wqd{width:40px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:18px}
 .wqr{font-size:13px;font-weight:700;color:var(--g6);letter-spacing:.06em;text-transform:uppercase}
-
-/* Featured quote - full-bleed treatment */
-#featured-quote{padding:80px 0;background:var(--navy);position:relative;overflow:hidden}
-#featured-quote::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 100% at 50% 50%,rgba(212,168,67,.07) 0%,transparent 70%);pointer-events:none}
-.fq-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1;padding:0 40px}
-.fq-mark{font-family:'Playfair Display',Georgia,serif;font-size:120px;color:var(--gold);line-height:.5;margin-bottom:32px;opacity:.5;display:block}
-.fq-text{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3vw,36px);font-weight:700;color:#fff;line-height:1.5;font-style:italic;margin-bottom:36px}
-.fq-text em{color:var(--gold);font-style:normal}
-.fq-rule{width:48px;height:2px;background:var(--gold);margin:0 auto 20px}
-.fq-attr{font-size:13px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 
 /* Testimonials */
 #testimonials{padding:88px 0;background:var(--warm)}
@@ -146,6 +164,17 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .tdv{width:30px;height:2px;background:var(--gold);border-radius:1px;margin-bottom:16px}
 .tna{font-size:14px;font-weight:700;color:var(--navy)}
 .tro{font-size:12px;color:var(--g6);margin-top:3px;font-weight:500}
+
+/* Case study mini strip */
+#casestudy{padding:80px 0;background:var(--navy);position:relative;overflow:hidden}
+#casestudy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 20% 50%,rgba(212,168,67,.08) 0%,transparent 65%);pointer-events:none}
+.cs-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;position:relative;z-index:1}
+.cs-card{padding:48px 40px;border-right:1px solid rgba(255,255,255,.06)}
+.cs-card:last-child{border-right:none}
+.cs-tag{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:block}
+.cs-label{font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.30);margin-bottom:6px}
+.cs-value{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:20px}
+.cs-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.72}
 
 /* Section header utility */
 .sh{margin-bottom:52px}.sh.ctr{text-align:center}.sh.ctr .ssub{max-width:600px;margin-left:auto;margin-right:auto}
@@ -165,19 +194,23 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .cst{font-size:17px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:40px}
 .ca{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-/* Blog */
+/* Insights/Blog */
 #blog{padding:88px 0;background:var(--cream)}
 .blh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;gap:20px;flex-wrap:wrap}
 .blg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .bc{border-radius:var(--r);overflow:hidden;border:1px solid var(--warm3);transition:all var(--t);background:var(--cream)}
 .bc:hover{box-shadow:var(--sxl);transform:translateY(-6px);border-color:rgba(212,168,67,.20)}
-.bim{height:200px;display:flex;align-items:center;justify-content:center;font-size:52px}
-.bi1{background:linear-gradient(135deg,#1a1a2e 0%,#d4a843 100%)}.bi2{background:linear-gradient(135deg,#252550 0%,#1a1a2e 100%)}.bi3{background:linear-gradient(135deg,#1a1a2e 0%,#1d9e75 100%)}
+/* Clean text-only card top instead of gradient placeholder */
+.bim{height:8px;background:var(--gold)}
+.bi1{background:linear-gradient(90deg,var(--gold) 0%,var(--gold-h) 100%)}
+.bi2{background:linear-gradient(90deg,var(--navy) 0%,var(--nm) 100%)}
+.bi3{background:linear-gradient(90deg,#1d6e56 0%,#14523e 100%)}
 .bbd{padding:28px 24px}
 .btg{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,67,.08);border-radius:100px;padding:3px 12px;margin-bottom:12px}
 .bti{font-size:17px;font-weight:700;color:var(--navy);line-height:1.40;margin-bottom:10px}
 .bex{font-size:14px;color:var(--g6);line-height:1.68;margin-bottom:20px}
 .blk{font-size:13px;font-weight:700;color:var(--gold);display:inline-flex;align-items:center;gap:6px;transition:gap var(--t)}.blk:hover{gap:10px}
+.bdate{font-size:11px;color:var(--g4);font-weight:500;margin-bottom:8px}
 
 /* Practice area cards */
 .pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
@@ -189,15 +222,6 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .pd{font-size:13px;color:var(--g6);line-height:1.72;flex:1}
 .pl{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13px;font-weight:700;color:var(--gold);transition:gap var(--t)}.pl:hover{gap:10px}
 .passmall{font-size:11px;font-weight:600;color:var(--g8);padding:5px 9px;background:var(--warm);border-radius:5px;display:inline-block;margin-top:8px;text-decoration:underline;text-underline-offset:2px}
-
-/* Values */
-#values{padding:88px 0;background:var(--warm)}
-.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.vc{background:var(--cream);border-radius:var(--r);padding:36px 28px;text-align:center;border:1px solid var(--warm3);transition:all var(--t)}
-.vc:hover{box-shadow:var(--sl);transform:translateY(-4px);border-color:rgba(212,168,67,.15)}
-.vi{font-size:40px;margin-bottom:16px;display:block}
-.vn{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px}
-.vd{font-size:12px;color:var(--g4);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
 
 /* Footer */
 #footer{background:var(--nd);color:rgba(255,255,255,.50);padding:72px 0 36px}
@@ -213,6 +237,15 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .fcr{display:flex;gap:12px;margin-bottom:12px;font-size:14px;color:rgba(255,255,255,.40);align-items:flex-start}
 .fcr a{color:rgba(255,255,255,.40);transition:color var(--t)}.fcr a:hover{color:var(--gold)}
 .fb{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:13px;color:rgba(255,255,255,.22);flex-wrap:wrap;gap:12px}
+.ftx-badge{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.20);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:4px 12px}
+
+/* Scroll reveal animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
 
 /* Responsive */
 @media(max-width:1024px){
@@ -220,8 +253,12 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
   .eng-timeline::before{display:none}
   .pg,.tg,.blg{grid-template-columns:repeat(2,1fr)}
   .wl{grid-template-columns:1fr;gap:48px}
-  .vg{grid-template-columns:repeat(2,1fr)}
   .ft{grid-template-columns:1fr 1fr;gap:36px}
+  .founder-inner{grid-template-columns:1fr;gap:48px}
+  .founder-photo{max-width:280px}
+  .cs-inner{grid-template-columns:1fr}
+  .cs-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+  .cs-card:last-child{border-bottom:none}
 }
 @media(max-width:680px){
   .container{padding:0 20px}
@@ -235,16 +272,14 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
   .wl{grid-template-columns:1fr}
   .wr{padding:36px 24px}
   .ft{grid-template-columns:1fr}
-  .fq-text{font-size:20px}
-  .fq-mark{font-size:80px}
 }
 </style>
 </head>
 <body>
 <header id="navbar"><div class="container"><nav class="nw">
-  <a href="/" class="nlogo"><img src="LAM Logo Transparent.png" alt="LAM Technology"/></a>
+  <a href="/" class="nlogo"><img src="data:image/png;base64,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" alt="LAM Technology"/></a>
   <div class="nl"><a href="/professional-services/">Professional Services</a><a href="#practices">Practice Areas</a><a href="#why">Why LAM</a><a href="/insights/">Insights</a><a href="/contact/" class="nc">Just Ask LAM</a></div>
-  <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
+  <div class="nhb" onclick="tNav()"><span></span><span></span><span></span><span class="nhb-label">Menu</span></div>
 </nav><div class="nm" id="nMob"><a href="/professional-services/" onclick="tNav()">Services</a><a href="#practices" onclick="tNav()">Practice Areas</a><a href="#why" onclick="tNav()">Why LAM</a><a href="/insights/" onclick="tNav()">Insights</a><a href="/contact/" onclick="tNav()">Just Ask LAM</a></div></div></header>
 
 <section id="hero">
@@ -290,21 +325,18 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
   </div>
   <div class="typ-bottom">
     <div class="typ-bottom-inner">
-      <span class="typ-bottom-label">Trusted across</span>
+      <span class="typ-bottom-label">Built in Fort Worth. Trusted across the country.</span>
       <span class="typ-bottom-items">Financial Services &nbsp;&middot;&nbsp; Insurance &nbsp;&middot;&nbsp; Manufacturing &nbsp;&middot;&nbsp; Healthcare &nbsp;&middot;&nbsp; Retail</span>
     </div>
   </div>
 </section>
 
-<section id="trust"><div class="container"><div class="tri">
-  <span class="trl">Trusted Across Industries</span><div class="trd"></div>
-  <span class="trp">Financial Services</span><span class="trp">Insurance</span><span class="trp">Manufacturing</span><span class="trp">Healthcare</span><span class="trp">Retail</span>
-</div></div></section>
-<section id="bb-spotlight" style="padding:88px 0;background:var(--nd);position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(212,168,67,.10) 0%,transparent 70%);pointer-events:none"></div>
+<div class="section-bridge"></div>
+
+<section id="bb-spotlight">
   <div style="max-width:1200px;margin:0 auto;padding:0 40px;position:relative;z-index:1">
     <div style="display:flex;align-items:center;gap:64px;flex-wrap:wrap">
-      <div style="flex:1;min-width:300px">
+      <div style="flex:1;min-width:300px" class="reveal">
         <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3.5vw,48px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">Are You Overpaying<br>for <span style="color:var(--gold)">Telecom &amp; IT Services?</span></h2>
         <p style="font-size:17px;color:rgba(255,255,255,.60);line-height:1.78;margin-bottom:16px">Most organizations are. LAM begins with the <strong style="color:#fff">Billing Breakthrough&#8482;</strong> assessment &mdash; a comprehensive review of your telecom and IT invoices that almost always uncovers significant savings and contract issues.</p>
         <p style="font-size:15px;color:rgba(255,255,255,.42);line-height:1.72;margin-bottom:36px">This is a paid engagement. Findings directly inform the rest of your LAM journey.</p>
@@ -313,7 +345,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
           <a href="/contact/" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.75);font-weight:600;font-size:15px;padding:14px 24px;border-radius:8px;text-decoration:none;border:2px solid rgba(255,255,255,.20)">Ask a Question</a>
         </div>
       </div>
-      <div style="flex:0 0 auto;width:340px;max-width:100%">
+      <div style="flex:0 0 auto;width:340px;max-width:100%" class="reveal reveal-delay-2">
         <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:36px 32px">
           <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px">What Billing Breakthrough Uncovers</div>
           <div style="display:flex;flex-direction:column;gap:14px">
@@ -329,34 +361,48 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
   </div>
 </section>
 
+<div class="section-bridge-rev"></div>
+
+<section id="founder">
+  <div class="container">
+    <div class="founder-inner">
+      <div class="founder-photo-wrap reveal">
+        <div class="founder-photo">
+          <div class="founder-photo-placeholder">
+            <div class="founder-initials">LK</div>
+            <div class="founder-photo-label">Founder &amp; Principal</div>
+          </div>
+        </div>
+        <div class="founder-gold-bar"></div>
+      </div>
+      <div class="founder-content reveal reveal-delay-2">
+        <div class="founder-eyebrow">The Person Behind LAM</div>
+        <h2 class="founder-name">Lesley Kingsley</h2>
+        <div class="founder-title">Founder &amp; Principal &nbsp;&middot;&nbsp; Fort Worth, TX</div>
+        <p class="founder-bio">With <strong>20+ years in the technology channel</strong>, Lesley built LAM on a simple premise: companies deserve an advisor who works for them &mdash; not for the supplier. Before founding LAM, Lesley spent years inside the channel, developing the supplier relationships and negotiation expertise that now benefit every LAM client directly.</p>
+        <p class="founder-bio">LAM isn&rsquo;t a big firm with layers of account managers. It&rsquo;s a <strong>boutique advisory practice</strong> where the person you hire is the person doing the work &mdash; every engagement, every time. That&rsquo;s not a differentiator we stumbled into. It&rsquo;s the whole point.</p>
+        <div class="founder-creds">
+          <span class="founder-cred">20+ Years Channel Expertise</span>
+          <span class="founder-cred">Fort Worth Native</span>
+          <span class="founder-cred">Supplier-Neutral</span>
+          <span class="founder-cred">Boutique Practice</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-bridge-cc"></div>
+
 <section id="engagement">
   <div class="container">
-    <div class="eng-header">
+    <div class="eng-header reveal">
       <div class="eng-eyebrow">The LAM Engagement Model</div>
       <h2 class="eng-title">Insight. Strategy. Execution. Support.</h2>
       <p class="eng-sub">Every LAM engagement follows the same proven path &mdash; from sharp discovery to smart strategy, disciplined execution, and lasting support. No shortcuts, no gaps, no supplier agenda.</p>
     </div>
-    <!-- Video -->
-    <div style="display:flex;justify-content:center;margin:0 auto 64px auto;max-width:800px">
-      <div style="position:relative;width:100%;cursor:pointer;border-radius:12px;overflow:hidden;box-shadow:0 24px 64px rgba(26,26,46,0.18);" onclick="document.getElementById('lam-video-modal').style.display='flex'">
-        <img src="/assets/video-preview.jpg" alt="LAM Technology Explainer Video" style="width:100%;display:block;border-radius:12px;"/>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,26,46,0.35);border-radius:12px;" onmouseover="this.style.background='rgba(26,26,46,0.5)'" onmouseout="this.style.background='rgba(26,26,46,0.35)'">
-          <div style="width:72px;height:72px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(212,168,67,0.35);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:4px"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Video Modal -->
-    <div id="lam-video-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
-      <div style="position:relative;width:90%;max-width:900px;">
-        <button onclick="document.getElementById('lam-video-modal').style.display='none'" style="position:absolute;top:-44px;right:0;background:none;border:none;color:white;font-size:32px;cursor:pointer;line-height:1;">&#x2715;</button>
-        <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;"><video controls controlsList="nodownload" preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;background:#000;" src="/assets/lam-technology-explainer.mp4"></video></div>
-      </div>
-    </div>
-    <!-- Timeline steps -->
     <div class="eng-timeline">
-      <div class="eng-step">
+      <div class="eng-step reveal reveal-delay-1">
         <div class="eng-step-num"><span class="eng-step-numtext">1</span></div>
         <div class="eng-step-label">Insight</div>
         <h3 class="eng-step-title">Assessments &amp; Discovery</h3>
@@ -370,7 +416,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
           <div class="eng-step-item"><a href="/ai-readiness.html">Readiness Radar&#8482; &rarr;</a></div>
         </div>
       </div>
-      <div class="eng-step">
+      <div class="eng-step reveal reveal-delay-2">
         <div class="eng-step-num"><span class="eng-step-numtext">2</span></div>
         <div class="eng-step-label">Strategy</div>
         <h3 class="eng-step-title">Supplier Selection &amp; Direction</h3>
@@ -380,7 +426,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
           <div class="eng-step-item">RFP Supplier Validation&#8482;</div>
         </div>
       </div>
-      <div class="eng-step">
+      <div class="eng-step reveal reveal-delay-3">
         <div class="eng-step-num"><span class="eng-step-numtext">3</span></div>
         <div class="eng-step-label">Execution</div>
         <h3 class="eng-step-title">Managed Delivery &amp; Implementation</h3>
@@ -390,7 +436,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
           <div class="eng-step-item">Dedicated Disconnect&#8482;</div>
         </div>
       </div>
-      <div class="eng-step">
+      <div class="eng-step reveal reveal-delay-4">
         <div class="eng-step-num"><span class="eng-step-numtext">4</span></div>
         <div class="eng-step-label">Support</div>
         <h3 class="eng-step-title">Ongoing Optimization &amp; Advocacy</h3>
@@ -406,43 +452,46 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
     </div>
   </div>
 </section>
+
+<div class="section-bridge-cc" style="background:linear-gradient(to bottom,var(--cream),var(--warm))"></div>
+
 <section id="practices">
   <div class="container">
-    <div class="sh ctr">
+    <div class="sh ctr reveal">
       <span class="tag">Our Practice Areas</span>
       <h2 class="stit">Focused Expertise. Real Results.</h2>
       <p class="ssub" style="margin-left:auto;margin-right:auto;max-width:520px">Five practice areas, each with a branded assessment and deep domain expertise.</p>
     </div>
     <div class="pg">
-      <div class="pc">
+      <div class="pc reveal reveal-delay-1">
         <div class="piw pi1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
         <div class="pt">Cybersecurity &amp; Risk</div>
         <p class="pd">Comprehensive risk assessments and security posture reviews to protect your organization from evolving threats.</p>
         <a href="/cybersecurity.html" class="passmall">Vigilance Verification&#8482; &rarr;</a>
         <a href="/cybersecurity.html" class="pl">Learn More &rarr;</a>
       </div>
-      <div class="pc">
+      <div class="pc reveal reveal-delay-2">
         <div class="piw pi2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
         <div class="pt">Customer Experience &amp; Digital Engagement</div>
         <p class="pd">Evaluate and elevate how your customers experience your brand at every digital and service touchpoint.</p>
         <a href="/practice-areas/customer-experience-digital-engagement/" class="passmall">Experience Examination&#8482; &rarr;</a>
         <a href="/practice-areas/customer-experience-digital-engagement/" class="pl">Learn More &rarr;</a>
       </div>
-      <div class="pc">
+      <div class="pc reveal reveal-delay-3">
         <div class="piw pi3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
         <div class="pt">Networking &amp; Infrastructure</div>
         <p class="pd">Assess, optimize, and modernize your network and infrastructure to support your current and future operations.</p>
         <a href="/infrastructure-insight.html" class="passmall">Infrastructure Insight&#8482; &rarr;</a>
         <a href="/infrastructure-insight.html" class="pl">Learn More &rarr;</a>
       </div>
-      <div class="pc">
+      <div class="pc reveal reveal-delay-4">
         <div class="piw pi4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#d4a843"/></svg></div>
         <div class="pt">Mobility &amp; IoT</div>
         <p class="pd">Manage and optimize your mobile and IoT landscape, from wireless contracts to device strategy and connectivity.</p>
         <a href="/wireless-wisdom.html" class="passmall">Wireless Wisdom&#8482; &rarr;</a>
         <a href="/wireless-wisdom.html" class="pl">Learn More &rarr;</a>
       </div>
-      <div class="pc">
+      <div class="pc reveal reveal-delay-1">
         <div class="piw pi5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
         <div class="pt">AI Readiness &amp; Strategy</div>
         <p class="pd">Understand your organization&rsquo;s AI readiness and build a practical, grounded strategy for adoption and governance.</p>
@@ -453,8 +502,10 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
   </div>
 </section>
 
+<div class="section-bridge-wc" style="background:linear-gradient(to bottom,var(--warm),var(--cream))"></div>
+
 <section id="why"><div class="container"><div class="wl">
-  <div>
+  <div class="reveal">
     <span class="tag">Why Choose LAM</span>
     <h2 class="stit">Your Trusted Partner,<br>Not Just Another Supplier</h2>
     <p class="ssub">We work alongside your team as a true extension of your organization, with no agenda other than your success.</p>
@@ -465,7 +516,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
       <div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Client-Driven Focus</div><div class="wid">Your needs come first, always. We build every engagement around your goals, timeline, and budget &mdash; not ours.</div></div></div>
     </div>
   </div>
-  <div class="wr"><div class="wq">
+  <div class="wr reveal reveal-delay-2"><div class="wq">
     <span class="wqm">&ldquo;</span>
     <p class="wqt">Working with LAM has been like having a trusted friend on the inside, acting as a personal customer advocate to bring timely and substantive results in an upbeat, friendly and professional manner.</p>
     <div class="wqd"></div>
@@ -473,28 +524,99 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
   </div></div>
 </div></div></section>
 
-<section id="featured-quote">
-  <div class="fq-inner">
-    <span class="fq-mark">&ldquo;</span>
-    <p class="fq-text">Working with LAM has been like having a <em>trusted friend on the inside</em>, acting as a personal customer advocate to bring timely and substantive results.</p>
-    <div class="fq-rule"></div>
-    <div class="fq-attr">VP of IT &nbsp;&middot;&nbsp; Major Texas-Based Bank</div>
-  </div>
-</section>
+<div class="section-bridge-cc" style="background:linear-gradient(to bottom,var(--cream),var(--warm))"></div>
 
 <section id="testimonials"><div class="container">
-  <div class="sh ctr">
+  <div class="sh ctr reveal">
     <span class="tag">What Clients Say</span>
     <h2 class="stit">Trusted by Leaders Across Industries</h2>
     <p class="ssub" style="margin-left:auto;margin-right:auto;max-width:540px">Real results from real organizations who chose LAM as their IT partner.</p>
   </div>
   <div class="tg">
-    <div class="tc"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;LAM&rsquo;s expertise enabled me to take on several projects at once and get them all done in less time and at lower cost than I had envisioned.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Roadside Services Provider</div></div>
-    <div class="tc"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;LAM Technology has proven to be a valued partner and strategic enabler as our company executes on a highly aggressive growth strategy.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Nationwide Automotive Service Company</div></div>
-    <div class="tc"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;While making a wholesale changeover of your network can be a risky proposition, it has been one of the best technology decisions we could have made, and LAM was instrumental in making it happen.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Major Electronic Components Distributor</div></div>
+    <div class="tc reveal reveal-delay-1"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;LAM&rsquo;s expertise enabled me to take on several projects at once and get them all done in less time and at lower cost than I had envisioned.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Roadside Services Provider</div></div>
+    <div class="tc reveal reveal-delay-2"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;LAM Technology has proven to be a valued partner and strategic enabler as our company executes on a highly aggressive growth strategy.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Nationwide Automotive Service Company</div></div>
+    <div class="tc reveal reveal-delay-3"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;While making a wholesale changeover of your network can be a risky proposition, it has been one of the best technology decisions we could have made, and LAM was instrumental in making it happen.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Major Electronic Components Distributor</div></div>
   </div>
 </div></section>
-<section id="cta"><div class="container"><div class="ci">
+
+<section id="casestudy">
+  <div class="container">
+    <div class="sh ctr reveal" style="margin-bottom:40px">
+      <span class="tag lt">Results That Speak</span>
+      <h2 class="stit lt">Outcomes Clients Have Seen</h2>
+    </div>
+    <div class="cs-inner">
+      <div class="cs-card reveal reveal-delay-1">
+        <span class="cs-tag">Billing Breakthrough&#8482;</span>
+        <div class="cs-label">Outcome</div>
+        <div class="cs-value">Significant savings uncovered in the first review</div>
+        <div class="cs-desc">A Texas-based financial services firm discovered billing errors and auto-renewed contracts they didn&rsquo;t know existed &mdash; resolved within 90 days.</div>
+      </div>
+      <div class="cs-card reveal reveal-delay-2">
+        <span class="cs-tag">Network Modernization</span>
+        <div class="cs-label">Outcome</div>
+        <div class="cs-value">Wholesale network changeover delivered on time</div>
+        <div class="cs-desc">A major electronic components distributor completed a full network overhaul &mdash; on schedule, under budget, with full LAM accountability end-to-end.</div>
+      </div>
+      <div class="cs-card reveal reveal-delay-3">
+        <span class="cs-tag">Growth Enablement</span>
+        <div class="cs-label">Outcome</div>
+        <div class="cs-value">IT strategy aligned to aggressive growth targets</div>
+        <div class="cs-desc">A nationwide automotive services company used LAM as a strategic enabler while executing on rapid expansion across multiple markets simultaneously.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-bridge" style="background:linear-gradient(to bottom,var(--navy),var(--cream))"></div>
+
+<section id="blog">
+  <div class="container">
+    <div class="blh reveal">
+      <div>
+        <span class="tag">Insights</span>
+        <h2 class="stit">Straight Talk on IT &amp; Telecom</h2>
+      </div>
+      <a href="/insights/" class="btn bon">All Insights &rarr;</a>
+    </div>
+    <div class="blg">
+      <div class="bc reveal reveal-delay-1">
+        <div class="bim bi1"></div>
+        <div class="bbd">
+          <div class="bdate">Cybersecurity</div>
+          <div class="btg">Security</div>
+          <div class="bti">Why Your Cybersecurity Posture Review Is Probably Out of Date</div>
+          <p class="bex">Most organizations haven&rsquo;t done a thorough security review in over a year. Here&rsquo;s what&rsquo;s changed, and what that means for your risk exposure.</p>
+          <a href="/insights/" class="blk">Read More &rarr;</a>
+        </div>
+      </div>
+      <div class="bc reveal reveal-delay-2">
+        <div class="bim bi2"></div>
+        <div class="bbd">
+          <div class="bdate">Telecom</div>
+          <div class="btg">Cost Savings</div>
+          <div class="bti">The Hidden Cost of Auto-Renewed Telecom Contracts</div>
+          <p class="bex">Auto-renewals lock you into yesterday&rsquo;s terms at today&rsquo;s pricing. We break down what to look for and how to get out.</p>
+          <a href="/insights/" class="blk">Read More &rarr;</a>
+        </div>
+      </div>
+      <div class="bc reveal reveal-delay-3">
+        <div class="bim bi3"></div>
+        <div class="bbd">
+          <div class="bdate">AI</div>
+          <div class="btg">Strategy</div>
+          <div class="bti">AI Readiness Isn&rsquo;t a Technology Problem. It&rsquo;s a Strategy Problem.</div>
+          <p class="bex">Before you adopt AI tooling, you need a clear picture of your data, your processes, and your governance framework. Here&rsquo;s where to start.</p>
+          <a href="/insights/" class="blk">Read More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-bridge-cc" style="background:linear-gradient(to bottom,var(--cream),var(--nd))"></div>
+
+<section id="cta"><div class="container"><div class="ci reveal">
   <span class="tag lt">Time to Reach Out</span>
   <h2 class="ctt">You May Be <em>Surprised</em><br>By What We Can Handle.</h2>
   <p class="cst">Whether you&rsquo;re dealing with supplier chaos, a security concern, or a technology decision you can&rsquo;t quite sort out &mdash; just ask LAM. The first conversation is free.</p>
@@ -508,7 +630,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
     <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
     <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
   </div>
-  <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span>Fort Worth, TX</span></div>
+  <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span class="ftx-badge">Fort Worth, TX</span></div>
 </div></footer>
 
 <script>
@@ -516,6 +638,19 @@ function tNav(){document.getElementById('nMob').classList.toggle('op')}
 document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
 window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-75,behavior:'smooth'})}})});
+
+// Scroll reveal using IntersectionObserver
+(function(){
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+})();
 </script>
 </body>
-  </html>
+</html>
