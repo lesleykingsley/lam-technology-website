@@ -2,232 +2,152 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>LAM Logo Preview — 4 Concepts</title>
+<title>LAM Logo Recolor — Option 1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root { --navy:#0d2240; --gold:#d4a843; --ink:#1a1a1a; --mute:#6b7280; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:Inter,system-ui,sans-serif; color:var(--ink); background:#f7f7f8; }
-  header { padding:32px 48px; background:#fff; border-bottom:1px solid #e5e7eb; }
-  h1 { margin:0 0 6px; font-family:'Playfair Display',serif; font-weight:700; color:var(--navy); font-size:28px; }
-  header p { margin:0; color:var(--mute); font-size:14px; }
-  main { padding:40px 48px; max-width:1200px; margin:0 auto; }
-  .concept { background:#fff; border:1px solid #e5e7eb; border-radius:8px; padding:28px; margin-bottom:24px; }
-  .concept h2 { margin:0 0 4px; font-family:'Playfair Display',serif; color:var(--navy); font-size:20px; }
-  .concept .note { margin:0 0 20px; color:var(--mute); font-size:13px; }
-  .row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
-  .bg { border-radius:6px; padding:24px; display:flex; flex-direction:column; gap:20px; align-items:flex-start; }
-  .bg.light { background:#ffffff; border:1px solid #e5e7eb; }
-  .bg.dark  { background:var(--navy); }
-  .bg .label { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); }
-  .bg.dark .label { color:#9ca3af; }
-  .size-row { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
-  .size-row .tag { font-size:11px; color:var(--mute); min-width:60px; }
-  .bg.dark .size-row .tag { color:#9ca3af; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#f7f7f8}
+  header{padding:32px 48px;background:#fff;border-bottom:1px solid #e5e7eb}
+  h1{margin:0 0 6px;font-family:Inter,sans-serif;font-weight:800;color:var(--navy);font-size:26px;letter-spacing:-.01em}
+  header p{margin:0;color:var(--mute);font-size:14px}
+  main{padding:40px 48px;max-width:1200px;margin:0 auto}
+  section{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:28px;margin-bottom:24px}
+  section h2{margin:0 0 4px;font-family:Inter,sans-serif;font-weight:700;color:var(--navy);font-size:18px}
+  section .note{margin:0 0 20px;color:var(--mute);font-size:13px;line-height:1.5}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .bg{border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:28px;align-items:flex-start}
+  .bg.light{background:#fff;border:1px solid #e5e7eb}
+  .bg.dark{background:var(--navy)}
+  .bg .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+  .bg.dark .label{color:#9ca3af}
+  .size-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;width:100%}
+  .size-row .tag{font-size:11px;color:var(--mute);min-width:70px}
+  .bg.dark .size-row .tag{color:#9ca3af}
+  .orig-box{display:flex;gap:24px;align-items:center}
+  .orig-box img{max-height:100px;background:#fff;padding:8px;border:1px solid #e5e7eb;border-radius:4px}
 </style>
 </head>
 <body>
 <header>
-  <h1>LAM Logo Preview — 4 Concepts</h1>
-  <p>Playfair Display wordmark · Navy #0d2240 · Gold #d4a843 accent · Branch: design-consistency</p>
+  <h1>LAM Logo Recolor — Option 1 (Navy + Gold)</h1>
+  <p>Original geometry preserved · All petals navy #0d2240 · Center square gold #d4a843 · Wordmark Inter Bold</p>
 </header>
 <main>
 
-<!-- ============ OPTION A: Small chevron above L ============ -->
-<section class="concept">
-  <h2>Option A — Small chevron above the L</h2>
-  <p class="note">Most literal take on "tiny roofline of amber." Minimal gold (~3%). Versatile at small sizes.</p>
-  <div class="row">
-    <div class="bg light">
-      <span class="label">Light background</span>
-      <div class="size-row"><span class="tag">Header 40px</span>
-        <svg viewBox="0 0 260 80" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="18,22 30,10 42,22" fill="none" stroke="#d4a843" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-      <div class="size-row"><span class="tag">Hero 80px</span>
-        <svg viewBox="0 0 260 80" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="18,22 30,10 42,22" fill="none" stroke="#d4a843" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-      <div class="size-row"><span class="tag">Favicon 24px</span>
-        <svg viewBox="0 0 260 80" height="24" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="18,22 30,10 42,22" fill="none" stroke="#d4a843" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-    </div>
-    <div class="bg dark">
-      <span class="label">Dark background</span>
-      <div class="size-row"><span class="tag" style="color:#9ca3af">Header 40px</span>
-        <svg viewBox="0 0 260 80" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="18,22 30,10 42,22" fill="none" stroke="#d4a843" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#ffffff">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#ffffff" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-      <div class="size-row"><span class="tag" style="color:#9ca3af">Hero 80px</span>
-        <svg viewBox="0 0 260 80" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="18,22 30,10 42,22" fill="none" stroke="#d4a843" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#ffffff">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#ffffff" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
+<!-- ============ CURRENT LOGO (for comparison) ============ -->
+<section>
+  <h2>Current logo (for reference)</h2>
+  <p class="note">The existing PNG — gray diamond petals, red center square, navy wordmark.</p>
+  <div class="orig-box">
+    <img src="/LAM%20Logo%20Transparent.png" alt="Current LAM Technology logo">
+    <div style="font-size:13px;color:var(--mute);line-height:1.6">
+      File: <code>/LAM Logo Transparent.png</code><br>
+      Size: 12.3 KB PNG<br>
+      Issue: red square (retired color), cool grays clash with new gold accent
     </div>
   </div>
 </section>
 
-<!-- ============ OPTION B: Wide roofline ============ -->
-<section class="concept">
-  <h2>Option B — Wide roofline spanning both words</h2>
-  <p class="note">Architectural feel. Gold becomes a more prominent feature — arguably above the 3–5% accent threshold.</p>
-  <div class="row">
-    <div class="bg light">
-      <span class="label">Light background</span>
-      <div class="size-row"><span class="tag">Header 40px</span>
-        <svg viewBox="0 0 260 80" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="4,18 130,4 256,18" fill="none" stroke="#d4a843" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-      <div class="size-row"><span class="tag">Hero 80px</span>
-        <svg viewBox="0 0 260 80" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="4,18 130,4 256,18" fill="none" stroke="#d4a843" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-      <div class="size-row"><span class="tag">Favicon 24px</span>
-        <svg viewBox="0 0 260 80" height="24" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="4,18 130,4 256,18" fill="none" stroke="#d4a843" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-    </div>
-    <div class="bg dark">
-      <span class="label">Dark background</span>
-      <div class="size-row"><span class="tag" style="color:#9ca3af">Header 40px</span>
-        <svg viewBox="0 0 260 80" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="4,18 130,4 256,18" fill="none" stroke="#d4a843" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#ffffff">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#ffffff" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-      <div class="size-row"><span class="tag" style="color:#9ca3af">Hero 80px</span>
-        <svg viewBox="0 0 260 80" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="4,18 130,4 256,18" fill="none" stroke="#d4a843" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#ffffff">LAM</text>
-          <text x="96" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#ffffff" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ============ OPTION 1: Solid navy diamond + gold center ============ -->
+<section>
+  <h2>Option 1 — Solid navy diamond + gold center square</h2>
+  <p class="note">All 4 petals unified to navy #0d2240. Red center → gold #d4a843. Wordmark in Inter Bold (modern sans, stand-in for Gotham). Geometry matches the original diamond-with-4-petals composition.</p>
 
-<!-- ============ OPTION C: Roof-mark lockup ============ -->
-<section class="concept">
-  <h2>Option C — Roof mark (icon + wordmark lockup)</h2>
-  <p class="note">Separate icon to the left. More traditional logo lockup; reads a touch "construction" vs. IT advisory.</p>
   <div class="row">
+    <!-- Light bg -->
     <div class="bg light">
       <span class="label">Light background</span>
-      <div class="size-row"><span class="tag">Header 40px</span>
-        <svg viewBox="0 0 290 80" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="4,40 24,16 44,40" fill="none" stroke="#d4a843" stroke-width="3.5" stroke-linejoin="miter"/>
-          <line x1="4" y1="44" x2="44" y2="44" stroke="#0d2240" stroke-width="3"/>
-          <text x="60" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240">LAM</text>
-          <text x="156" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-      <div class="size-row"><span class="tag">Hero 80px</span>
-        <svg viewBox="0 0 290 80" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="4,40 24,16 44,40" fill="none" stroke="#d4a843" stroke-width="3.5" stroke-linejoin="miter"/>
-          <line x1="4" y1="44" x2="44" y2="44" stroke="#0d2240" stroke-width="3"/>
-          <text x="60" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240">LAM</text>
-          <text x="156" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-      <div class="size-row"><span class="tag">Favicon 24px</span>
-        <svg viewBox="0 0 50 50" height="24" xmlns="http://www.w3.org/2000/svg" aria-label="LAM">
-          <polyline points="4,40 25,16 46,40" fill="none" stroke="#d4a843" stroke-width="4" stroke-linejoin="miter"/>
-          <line x1="4" y1="44" x2="46" y2="44" stroke="#0d2240" stroke-width="3"/>
-        </svg>
-      </div>
-    </div>
-    <div class="bg dark">
-      <span class="label">Dark background</span>
-      <div class="size-row"><span class="tag" style="color:#9ca3af">Header 40px</span>
-        <svg viewBox="0 0 290 80" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="4,40 24,16 44,40" fill="none" stroke="#d4a843" stroke-width="3.5" stroke-linejoin="miter"/>
-          <line x1="4" y1="44" x2="44" y2="44" stroke="#ffffff" stroke-width="3"/>
-          <text x="60" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#ffffff">LAM</text>
-          <text x="156" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#ffffff" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-      <div class="size-row"><span class="tag" style="color:#9ca3af">Hero 80px</span>
-        <svg viewBox="0 0 290 80" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="4,40 24,16 44,40" fill="none" stroke="#d4a843" stroke-width="3.5" stroke-linejoin="miter"/>
-          <line x1="4" y1="44" x2="44" y2="44" stroke="#ffffff" stroke-width="3"/>
-          <text x="60" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#ffffff">LAM</text>
-          <text x="156" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#ffffff" letter-spacing="2">TECHNOLOGY</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ OPTION D: A refined (wider L-kerning + thicker chevron) ============ -->
-<section class="concept">
-  <h2>Option D — Refined A (wider L-kerning + thicker chevron)</h2>
-  <p class="note">Same concept as A with two tweaks: chevron stroke bumped 3 → 4, and "LAM" letter-spacing opened slightly for more presence.</p>
-  <div class="row">
-    <div class="bg light">
-      <span class="label">Light background</span>
       <div class="size-row"><span class="tag">Header 40px</span>
-        <svg viewBox="0 0 270 80" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="16,22 30,8 44,22" fill="none" stroke="#d4a843" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240" letter-spacing="3">LAM</text>
-          <text x="108" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
+        <svg viewBox="0 0 320 100" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
+          <!-- Diamond icon: 4 triangular petals around a center square. Icon occupies 0-100 x-range. -->
+          <!-- Top petal -->
+          <polygon points="50,4 88,42 50,42 12,42" fill="#0d2240"/>
+          <!-- Left petal -->
+          <polygon points="4,50 42,12 42,50 42,88" fill="#0d2240"/>
+          <!-- Right petal -->
+          <polygon points="96,50 58,12 58,50 58,88" fill="#0d2240"/>
+          <!-- Bottom petal -->
+          <polygon points="50,96 88,58 50,58 12,58" fill="#0d2240"/>
+          <!-- Center gold square -->
+          <rect x="38" y="38" width="24" height="24" fill="#d4a843"/>
+          <!-- Wordmark -->
+          <text x="112" y="52" font-family="Inter,sans-serif" font-weight="800" font-size="42" fill="#0d2240" letter-spacing="-1">LAM</text>
+          <text x="112" y="82" font-family="Inter,sans-serif" font-weight="700" font-size="20" fill="#0d2240" letter-spacing="1">TECHNOLOGY</text>
         </svg>
       </div>
+
       <div class="size-row"><span class="tag">Hero 80px</span>
-        <svg viewBox="0 0 270 80" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="16,22 30,8 44,22" fill="none" stroke="#d4a843" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240" letter-spacing="3">LAM</text>
-          <text x="108" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
+        <svg viewBox="0 0 320 100" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
+          <polygon points="50,4 88,42 50,42 12,42" fill="#0d2240"/>
+          <polygon points="4,50 42,12 42,50 42,88" fill="#0d2240"/>
+          <polygon points="96,50 58,12 58,50 58,88" fill="#0d2240"/>
+          <polygon points="50,96 88,58 50,58 12,58" fill="#0d2240"/>
+          <rect x="38" y="38" width="24" height="24" fill="#d4a843"/>
+          <text x="112" y="52" font-family="Inter,sans-serif" font-weight="800" font-size="42" fill="#0d2240" letter-spacing="-1">LAM</text>
+          <text x="112" y="82" font-family="Inter,sans-serif" font-weight="700" font-size="20" fill="#0d2240" letter-spacing="1">TECHNOLOGY</text>
         </svg>
       </div>
-      <div class="size-row"><span class="tag">Favicon 24px</span>
-        <svg viewBox="0 0 270 80" height="24" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="16,22 30,8 44,22" fill="none" stroke="#d4a843" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#0d2240" letter-spacing="3">LAM</text>
-          <text x="108" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#0d2240" letter-spacing="2">TECHNOLOGY</text>
+
+      <div class="size-row"><span class="tag">Favicon 32px</span>
+        <svg viewBox="0 0 100 100" height="32" xmlns="http://www.w3.org/2000/svg" aria-label="LAM">
+          <polygon points="50,4 88,42 50,42 12,42" fill="#0d2240"/>
+          <polygon points="4,50 42,12 42,50 42,88" fill="#0d2240"/>
+          <polygon points="96,50 58,12 58,50 58,88" fill="#0d2240"/>
+          <polygon points="50,96 88,58 50,58 12,58" fill="#0d2240"/>
+          <rect x="38" y="38" width="24" height="24" fill="#d4a843"/>
+        </svg>
+      </div>
+
+      <div class="size-row"><span class="tag">Icon only 96px</span>
+        <svg viewBox="0 0 100 100" height="96" xmlns="http://www.w3.org/2000/svg" aria-label="LAM">
+          <polygon points="50,4 88,42 50,42 12,42" fill="#0d2240"/>
+          <polygon points="4,50 42,12 42,50 42,88" fill="#0d2240"/>
+          <polygon points="96,50 58,12 58,50 58,88" fill="#0d2240"/>
+          <polygon points="50,96 88,58 50,58 12,58" fill="#0d2240"/>
+          <rect x="38" y="38" width="24" height="24" fill="#d4a843"/>
         </svg>
       </div>
     </div>
+
+    <!-- Dark bg -->
     <div class="bg dark">
       <span class="label">Dark background</span>
-      <div class="size-row"><span class="tag" style="color:#9ca3af">Header 40px</span>
-        <svg viewBox="0 0 270 80" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="16,22 30,8 44,22" fill="none" stroke="#d4a843" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#ffffff" letter-spacing="3">LAM</text>
-          <text x="108" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#ffffff" letter-spacing="2">TECHNOLOGY</text>
+
+      <div class="size-row"><span class="tag">Header 40px</span>
+        <svg viewBox="0 0 320 100" height="40" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
+          <polygon points="50,4 88,42 50,42 12,42" fill="#ffffff"/>
+          <polygon points="4,50 42,12 42,50 42,88" fill="#ffffff"/>
+          <polygon points="96,50 58,12 58,50 58,88" fill="#ffffff"/>
+          <polygon points="50,96 88,58 50,58 12,58" fill="#ffffff"/>
+          <rect x="38" y="38" width="24" height="24" fill="#d4a843"/>
+          <text x="112" y="52" font-family="Inter,sans-serif" font-weight="800" font-size="42" fill="#ffffff" letter-spacing="-1">LAM</text>
+          <text x="112" y="82" font-family="Inter,sans-serif" font-weight="700" font-size="20" fill="#ffffff" letter-spacing="1">TECHNOLOGY</text>
         </svg>
       </div>
+
       <div class="size-row"><span class="tag" style="color:#9ca3af">Hero 80px</span>
-        <svg viewBox="0 0 270 80" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
-          <polyline points="16,22 30,8 44,22" fill="none" stroke="#d4a843" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
-          <text x="0" y="60" font-family="Playfair Display, serif" font-weight="700" font-size="44" fill="#ffffff" letter-spacing="3">LAM</text>
-          <text x="108" y="60" font-family="Playfair Display, serif" font-weight="600" font-size="26" fill="#ffffff" letter-spacing="2">TECHNOLOGY</text>
+        <svg viewBox="0 0 320 100" height="80" xmlns="http://www.w3.org/2000/svg" aria-label="LAM Technology">
+          <polygon points="50,4 88,42 50,42 12,42" fill="#ffffff"/>
+          <polygon points="4,50 42,12 42,50 42,88" fill="#ffffff"/>
+          <polygon points="96,50 58,12 58,50 58,88" fill="#ffffff"/>
+          <polygon points="50,96 88,58 50,58 12,58" fill="#ffffff"/>
+          <rect x="38" y="38" width="24" height="24" fill="#d4a843"/>
+          <text x="112" y="52" font-family="Inter,sans-serif" font-weight="800" font-size="42" fill="#ffffff" letter-spacing="-1">LAM</text>
+          <text x="112" y="82" font-family="Inter,sans-serif" font-weight="700" font-size="20" fill="#ffffff" letter-spacing="1">TECHNOLOGY</text>
+        </svg>
+      </div>
+
+      <div class="size-row"><span class="tag" style="color:#9ca3af">Icon only 96px</span>
+        <svg viewBox="0 0 100 100" height="96" xmlns="http://www.w3.org/2000/svg" aria-label="LAM">
+          <polygon points="50,4 88,42 50,42 12,42" fill="#ffffff"/>
+          <polygon points="4,50 42,12 42,50 42,88" fill="#ffffff"/>
+          <polygon points="96,50 58,12 58,50 58,88" fill="#ffffff"/>
+          <polygon points="50,96 88,58 50,58 12,58" fill="#ffffff"/>
+          <rect x="38" y="38" width="24" height="24" fill="#d4a843"/>
         </svg>
       </div>
     </div>
