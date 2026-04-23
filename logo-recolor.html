@@ -29,7 +29,7 @@
 </head>
 <body>
 <h1>LAM Logo Recolor Tool</h1>
-<p>Loads <code>/LAM Logo Transparent.png</code>, remaps red→gold and grays→navy, preserves original geometry exactly.</p>
+<p>Loads <code>/lam-logo.png</code>, remaps red→gold and grays→navy, preserves original geometry exactly.</p>
 
 <div class="controls">
   <div class="row">
@@ -86,7 +86,7 @@ img.onload = () => {
   drawOriginal();
   recolor();
 };
-img.src = "/LAM%20Logo%20Transparent.png";
+img.src = "/lam-logo.png";
 
 function drawOriginal(){
   const ctx = document.getElementById('original').getContext('2d');
