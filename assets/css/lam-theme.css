@@ -12,11 +12,6 @@
   /* Brand palette */
   --color-dark:        #0d0d1a;
   --color-dark-2:      #1a1a2e;
-
-  /* Inline-page aliases (used by per-page <style> blocks) */
-  --nd:                #0d0d1a;  /* navy dark   */
-  --nm:                #252550;  /* navy mid    */
-  --ne:                #0a1628;  /* navy end    */
   --color-navy:        #0d2240;
   --color-cream:       #faf8f4;
   --color-cream-2:     #f8f6f0;
