@@ -29,8 +29,8 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .nm a{font-size:15px;font-weight:600;color:var(--g8);padding:12px 0;border-bottom:1px solid var(--g1)}
 .nm a:last-child{border:none;margin-top:8px;background:var(--red);color:#fff;text-align:center;padding:12px;border-radius:var(--rs)}
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;padding:13px 28px;border-radius:var(--rs);cursor:pointer;transition:all var(--t);border:2px solid transparent;letter-spacing:.01em;white-space:nowrap}
-.br{background:var(--red);color:#fff;border-color:var(--red)}.br:hover{background:var(--rh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,67,.35)}
-.bow{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}.bow:hover{background:rgba(255,255,255,.10);border-color:#fff;transform:translateY(-2px)}
+.lam-typography .br,.br{background:var(--red);color:#fff;border-color:var(--red)}.lam-typography .br:hover,.br:hover{background:var(--rh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,67,.35)}
+.lam-typography .bow,.bow{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}.lam-typography .bow:hover,.bow:hover{background:rgba(255,255,255,.10);border-color:#fff;transform:translateY(-2px)}
 .arr{font-style:normal;transition:transform var(--t)}.btn:hover .arr{transform:translateX(4px)}
 #footer{background:var(--nd);color:rgba(255,255,255,.55);padding:72px 0 36px}
 .ft{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.3fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07)}
@@ -57,7 +57,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}
 50%{opacity:.5;transform:scale(.85)}
 }
-.cs-hero{position:relative;overflow:hidden;padding:96px 0 80px}
+.cs-hero{position:relative;overflow:hidden;padding:96px 0 80px;scroll-margin-top:80px}
 .cs-hero::before{content:'';position:absolute;top:0;right:0;width:600px;height:600px;background:radial-gradient(circle,rgba(212,168,67,.18) 0%,transparent 65%);pointer-events:none}
 .cs-hero::after{content:'';position:absolute;bottom:0;left:0;width:400px;height:400px;background:radial-gradient(circle,rgba(26,26,46,.6) 0%,transparent 70%);pointer-events:none}
 .cs-hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;position:relative;z-index:1}
@@ -88,7 +88,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .cs-snapshot-total{margin-top:16px;padding-top:16px;border-top:1px solid rgba(212,168,67,.2);display:flex;justify-content:space-between;align-items:center}
 .cs-snapshot-total-label{font-size:12px;color:rgba(255,255,255,.4)}
 .cs-snapshot-total-val{font-size:18px;font-weight:800;color:#fff}
-.cs-section{padding:88px 0}
+.cs-section{padding:88px 0;scroll-margin-top:80px}
 .cs-section-alt{background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
 .cs-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
 .cs-section-title{font-size:clamp(26px,3vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:20px}
@@ -225,7 +225,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 <p class="cs-hero-sub">A one-time snapshot of every IT infrastructure and communications service you're paying for. Telecom, networking, security, cloud, mobility, and managed services. Broken out by location and supplier, with a clear map of what renews when and what it will cost you to leave.</p>
 <div class="cs-hero-btns">
 <a href="/contact/" class="cs-btn-primary">Request Your Snapshot</a>
-<a href="#bb-services" class="cs-btn-secondary">Explore Services</a>
+<a href="#going-deeper" class="cs-btn-secondary">Explore Assessments</a>
 </div>
 <div class="cs-hero-features">
 <div class="cs-hero-feature">Full IT spend picture by supplier &amp; location</div>
@@ -542,7 +542,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 </section>
 
 <!-- Going Deeper -->
-      <section style="padding:88px 0;background:var(--navy);position:relative;overflow:hidden">
+      <section id="going-deeper" style="padding:88px 0;background:var(--navy);position:relative;overflow:hidden">
         <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 20% 30%,rgba(212,168,67,.10),transparent 55%),radial-gradient(circle at 80% 70%,rgba(212,168,67,.06),transparent 55%);pointer-events:none"></div>
         <div class="container" style="position:relative;z-index:1">
           <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#d4a843;margin-bottom:16px">Assessment-Led Expertise</div>
