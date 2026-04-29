@@ -43,6 +43,18 @@ img{max-width:100%;display:block}
 .card a.btn{display:inline-block;background:var(--red);color:#fff;padding:10px 20px;border-radius:6px;font-size:.85rem;font-weight:600;transition:background .2s}
 .card a.btn:hover{background:#c49830}
 .tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);background:rgba(212,168,67,.1);border-radius:100px;padding:4px 12px;margin-bottom:16px}
+
+/* CTA contrast fix: navy background, light text, gold button */
+.cs-section{background:var(--color-dark);color:var(--color-cream);padding:80px 0;margin-top:48px}
+.cs-section .container{max-width:1200px;margin:0 auto;padding:0 32px}
+.cs-cta-box{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:900px){.cs-cta-box{grid-template-columns:1fr;gap:32px}}
+.cs-eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--color-gold);margin-bottom:14px}
+.cs-section-title{font-family:var(--font-display);font-size:clamp(2rem,3.2vw,2.75rem);line-height:1.1;color:var(--color-cream);margin:0 0 18px}
+.cs-section-sub{font-size:15px;line-height:1.65;color:rgba(255,255,255,.72);margin:0;max-width:48ch}
+.cs-contact-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px}
+.cs-contact-btn{width:100%;background:var(--color-gold);color:var(--color-dark);border:none;border-radius:8px;padding:14px 18px;font-size:14px;font-weight:700;letter-spacing:.04em;cursor:pointer;font-family:inherit;transition:background .2s}
+.cs-contact-btn:hover{background:var(--color-gold-hover)}
 </style>
 </head>
 <body class="lam-typography">
