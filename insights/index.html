@@ -140,12 +140,109 @@ footer{background:var(--nd);padding:56px 0 32px;border-top:1px solid rgba(255,25
       <button class="filter-btn" onclick="filterArticles('telecom',this)">Telecom &amp; Billing</button>
       <button class="filter-btn" onclick="filterArticles('ai',this)">AI &amp; Strategy</button>
       <button class="filter-btn" onclick="filterArticles('networking',this)">Networking</button>
-      <button class="filter-btn" onclick="filterArticles('mobility',this)">Mobility &amp; IoT</button>\n            <button class="filter-btn" onclick="filterArticles('cx',this)">Customer Experience</button>
+      <button class="filter-btn" onclick="filterArticles('mobility',this)">Mobility &amp; IoT</button>
+            <button class="filter-btn" onclick="filterArticles('cx',this)">Customer Experience</button>
     </div>
   </div>
 </section>
 
-<section id="articles">\n        <div class="container">\n          <div class="articles-grid" id="articlesGrid">\n          <!-- FEATURED: Telecom  Billing -->\n          <div class="featured-card article-card" data-cat="telecom">\n            <div class="fc-img">\n              <img src="/assets/insights/telephone-laptop.jpg" alt="Telecom billing">\n            </div>\n            <div class="fc-body">\n              <div class="fc-cat">FEATURED &middot; TELECOM &AMP; BILLING</div>\n              <h2 class="fc-title">Why Are We Still Talking About POTS Lines?</h2>\n              <p class="fc-excerpt">POTS lines are getting expensive and the reasons to keep them are disappearing. Why most organizations should be planning the exit now.</p>\n              <a href="/insights/pots-lines/" class="btn btn-gold">Read the full insight &rarr;</a>\n            </div>\n          </div>\n\n          <div class="article-card" data-cat="cybersecurity">\n            <img class="ac-img" src="/assets/insights/diagrams-business-plans.jpg" alt="Tabletop planning">\n            <div class="ac-body">\n              <div class="ac-cat">Cybersecurity</div>\n              <h3 class="ac-title">Security Tabletops: We Were Ready For That</h3>\n              <p class="ac-excerpt">Cybersecurity incidents are inevitable. Tabletop exercises help your team practice the response so the first time isn&rsquo;t the real time.</p>\n              <div class="ac-meta">\n                <span>6 min read</span>\n                <a href="/insights/security-tabletops/" class="ac-read">Read more &rarr;</a>\n              </div>\n            </div>\n          </div>\n\n          <div class="article-card" data-cat="mobility">\n            <img class="ac-img" src="/assets/insights/businesspeople-wireless.jpg" alt="Mobile workforce">\n            <div class="ac-body">\n              <div class="ac-cat">Mobility &amp; IoT</div>\n              <h3 class="ac-title">Optimizing Enterprise Mobility Costs</h3>\n              <p class="ac-excerpt">Six proven strategies CIOs and CMOs use to reduce enterprise mobility spend without compromising productivity, security, or employee experience.</p>\n              <div class="ac-meta">\n                <span>7 min read</span>\n                <a href="/insights/mobility-costs/" class="ac-read">Read more &rarr;</a>\n              </div>\n            </div>\n          </div>\n\n          <div class="article-card" data-cat="cx">\n            <img class="ac-img" src="/assets/insights/call-center-manager.jpg" alt="Contact center">\n            <div class="ac-body">\n              <div class="ac-cat">Customer Experience</div>\n              <h3 class="ac-title">How Do I Keep My Best Contact Center Agents From Leaving?</h3>\n              <p class="ac-excerpt">Five proven strategies for retaining top contact center agents and the software features that make them work.</p>\n              <div class="ac-meta">\n                <span>7 min read</span>\n                <a href="/insights/contact-center-agents/" class="ac-read">Read more &rarr;</a>\n              </div>\n            </div>\n          </div>\n\n          <div class="article-card" data-cat="cybersecurity">\n            <img class="ac-img" src="/assets/insights/server-cabinet.jpg" alt="Identity management">\n            <div class="ac-body">\n              <div class="ac-cat">Cybersecurity</div>\n              <h3 class="ac-title">Five Reasons You Need an Identity Management System</h3>\n              <p class="ac-excerpt">Identity management is one of the most effective layers of cybersecurity defense. Here are the five reasons it belongs at the center of your program.</p>\n              <div class="ac-meta">\n                <span>6 min read</span>\n                <a href="/insights/identity-management/" class="ac-read">Read more &rarr;</a>\n              </div>\n            </div>\n          </div>\n\n          <div class="article-card" data-cat="cybersecurity">\n            <img class="ac-img" src="/assets/insights/stealthy-intruder.jpg" alt="Penetration testing">\n            <div class="ac-body">\n              <div class="ac-cat">Cybersecurity</div>\n              <h3 class="ac-title">The Stealthy Intruders: A Penetration Testing Chronicle</h3>\n              <p class="ac-excerpt">A pen test that quietly compromised a sophisticated MDR program &mdash; and the lesson it left behind about testing assumptions rather than trusting them.</p>\n              <div class="ac-meta">\n                <span>6 min read</span>\n                <a href="/insights/penetration-testing/" class="ac-read">Read more &rarr;</a>\n              </div>\n            </div>\n          </div>\n\n          <div class="article-card" data-cat="networking">\n            <img class="ac-img" src="/assets/insights/fast-casual-dining.jpg" alt="SASE networking">\n            <div class="ac-body">\n              <div class="ac-cat">Networking & Infrastructure</div>\n              <h3 class="ac-title">Four Reasons SASE Should Be Standard</h3>\n              <p class="ac-excerpt">Why Secure Access Service Edge has become the practical foundation for modern, cloud-first communications &mdash; and the four reasons it belongs as standard.</p>\n              <div class="ac-meta">\n                <span>7 min read</span>\n                <a href="/insights/sase/" class="ac-read">Read more &rarr;</a>\n              </div>\n            </div>\n          </div>\n\n          </div>\n        </div>\n      </section>
+<section id="articles">
+        <div class="container">
+          <div class="articles-grid" id="articlesGrid">
+          <!-- FEATURED: Telecom  Billing -->
+          <div class="featured-card article-card" data-cat="telecom">
+            <div class="fc-img">
+              <img src="/assets/insights/telephone-laptop.jpg" alt="Telecom billing">
+            </div>
+            <div class="fc-body">
+              <div class="fc-cat">FEATURED &middot; TELECOM &AMP; BILLING</div>
+              <h2 class="fc-title">Why Are We Still Talking About POTS Lines?</h2>
+              <p class="fc-excerpt">POTS lines are getting expensive and the reasons to keep them are disappearing. Why most organizations should be planning the exit now.</p>
+              <a href="/insights/pots-lines/" class="btn btn-gold">Read the full insight &rarr;</a>
+            </div>
+          </div>
+
+          <div class="article-card" data-cat="cybersecurity">
+            <img class="ac-img" src="/assets/insights/diagrams-business-plans.jpg" alt="Tabletop planning">
+            <div class="ac-body">
+              <div class="ac-cat">Cybersecurity</div>
+              <h3 class="ac-title">Security Tabletops: We Were Ready For That</h3>
+              <p class="ac-excerpt">Cybersecurity incidents are inevitable. Tabletop exercises help your team practice the response so the first time isn&rsquo;t the real time.</p>
+              <div class="ac-meta">
+                <span>6 min read</span>
+                <a href="/insights/security-tabletops/" class="ac-read">Read more &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" data-cat="mobility">
+            <img class="ac-img" src="/assets/insights/businesspeople-wireless.jpg" alt="Mobile workforce">
+            <div class="ac-body">
+              <div class="ac-cat">Mobility &amp; IoT</div>
+              <h3 class="ac-title">Optimizing Enterprise Mobility Costs</h3>
+              <p class="ac-excerpt">Six proven strategies CIOs and CMOs use to reduce enterprise mobility spend without compromising productivity, security, or employee experience.</p>
+              <div class="ac-meta">
+                <span>7 min read</span>
+                <a href="/insights/mobility-costs/" class="ac-read">Read more &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" data-cat="cx">
+            <img class="ac-img" src="/assets/insights/call-center-manager.jpg" alt="Contact center">
+            <div class="ac-body">
+              <div class="ac-cat">Customer Experience</div>
+              <h3 class="ac-title">How Do I Keep My Best Contact Center Agents From Leaving?</h3>
+              <p class="ac-excerpt">Five proven strategies for retaining top contact center agents and the software features that make them work.</p>
+              <div class="ac-meta">
+                <span>7 min read</span>
+                <a href="/insights/contact-center-agents/" class="ac-read">Read more &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" data-cat="cybersecurity">
+            <img class="ac-img" src="/assets/insights/server-cabinet.jpg" alt="Identity management">
+            <div class="ac-body">
+              <div class="ac-cat">Cybersecurity</div>
+              <h3 class="ac-title">Five Reasons You Need an Identity Management System</h3>
+              <p class="ac-excerpt">Identity management is one of the most effective layers of cybersecurity defense. Here are the five reasons it belongs at the center of your program.</p>
+              <div class="ac-meta">
+                <span>6 min read</span>
+                <a href="/insights/identity-management/" class="ac-read">Read more &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" data-cat="cybersecurity">
+            <img class="ac-img" src="/assets/insights/stealthy-intruder.jpg" alt="Penetration testing">
+            <div class="ac-body">
+              <div class="ac-cat">Cybersecurity</div>
+              <h3 class="ac-title">The Stealthy Intruders: A Penetration Testing Chronicle</h3>
+              <p class="ac-excerpt">A pen test that quietly compromised a sophisticated MDR program &mdash; and the lesson it left behind about testing assumptions rather than trusting them.</p>
+              <div class="ac-meta">
+                <span>6 min read</span>
+                <a href="/insights/penetration-testing/" class="ac-read">Read more &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card" data-cat="networking">
+            <img class="ac-img" src="/assets/insights/fast-casual-dining.jpg" alt="SASE networking">
+            <div class="ac-body">
+              <div class="ac-cat">Networking & Infrastructure</div>
+              <h3 class="ac-title">Four Reasons SASE Should Be Standard</h3>
+              <p class="ac-excerpt">Why Secure Access Service Edge has become the practical foundation for modern, cloud-first communications &mdash; and the four reasons it belongs as standard.</p>
+              <div class="ac-meta">
+                <span>7 min read</span>
+                <a href="/insights/sase/" class="ac-read">Read more &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </section>
 
 <section id="cta">
   <div class="container">
