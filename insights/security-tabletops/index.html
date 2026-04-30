@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Tabletops: We Were Ready For That | LAM Technology</title>
+<meta name="description" content="Cybersecurity incidents are inevitable. Tabletop exercises help your team practice the response so the first time isn't the real time.">
+<link rel="icon" type="image/png" href="/lam-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#1a1a2e;--nd:#1a1a2e;--nm:#252540;--ne:#2d2d4a;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--rs:6px;--r:12px;--t:.2s ease;--sl:0 12px 48px rgba(26,26,46,.16);--sxl:0 24px 80px rgba(26,26,46,.20)}
+html{scroll-behavior:smooth;overflow-y:scroll}
+body{font-family:'Inter',sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;padding-top:70px}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul,ol{padding-left:1.4em}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+#navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,.97);border-bottom:1px solid var(--g2);transition:box-shadow var(--t)}
+#navbar.sc{box-shadow:0 2px 8px rgba(26,26,46,.06)}
+.nw{display:flex;align-items:center;justify-content:space-between;height:70px}
+.nlogo img{height:46px;width:auto}
+.nl{display:flex;align-items:center;justify-content:center;flex:1;gap:8px}
+.nl a{font-size:14px;font-weight:600;color:var(--g8);padding:8px 14px;border-radius:var(--rs);transition:all var(--t)}
+.nl a:hover{color:var(--navy);background:var(--g1)}
+.nc{background:var(--red);color:#fff !important;padding:10px 22px !important;border-radius:var(--rs);font-weight:700;margin-left:8px;transition:background var(--t) !important}
+.nc:hover{background:var(--rh) !important}
+.nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nhb span{display:block;width:24px;height:2px;background:var(--navy);border-radius:1px}
+.nm{display:none;position:fixed;top:70px;left:0;right:0;background:#fff;padding:24px 40px;flex-direction:column;gap:16px;z-index:99;border-bottom:1px solid var(--g2);box-shadow:0 4px 16px rgba(26,26,46,.1)}
+.nm.op{display:flex}
+.nm a{font-size:16px;font-weight:500;color:var(--navy);padding:8px 0;border-bottom:1px solid var(--g2)}
+@media(max-width:768px){.nl{display:none}.nhb{display:flex}}
+.bc{background:var(--g1);border-bottom:1px solid var(--g2);padding:14px 0;font-size:13px;color:var(--g6)}
+.bc a{color:var(--g6)}.bc a:hover{color:var(--navy)}.bc span{margin:0 8px;color:var(--g4)}
+</style>
+<style>
+#post-hero{background:linear-gradient(135deg,var(--nd) 0%,var(--nm) 60%,var(--ne) 100%);padding:72px 0 56px;position:relative;overflow:hidden}
+#post-hero::before{content:'';position:absolute;top:-40%;right:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(212,168,67,.12) 0%,transparent 70%);pointer-events:none}
+.ph-inner{max-width:780px;position:relative}
+.ph-cat{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:rgba(212,168,67,.12);border-radius:100px;padding:6px 16px;margin-bottom:24px}
+.ph-title{font-size:clamp(30px,4.2vw,46px);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.18;margin-bottom:20px}
+.ph-meta{font-size:14px;color:rgba(255,255,255,.55);display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.ph-meta .dot{width:3px;height:3px;background:var(--g4);border-radius:50%;display:inline-block}
+#post-body{padding:64px 0 88px;background:#fff}
+.post-wrap{max-width:720px;margin:0 auto}
+.post-wrap p{font-size:17px;color:var(--g8);line-height:1.78;margin-bottom:22px}
+.post-wrap h2{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.3;margin:48px 0 18px}
+.post-wrap h3{font-size:20px;font-weight:700;color:var(--navy);line-height:1.4;margin:36px 0 14px}
+.post-wrap ul,.post-wrap ol{margin:0 0 24px 0;padding-left:1.6em}
+.post-wrap li{font-size:17px;color:var(--g8);line-height:1.78;margin-bottom:10px}
+.post-wrap blockquote{border-left:3px solid var(--red);padding:6px 0 6px 22px;margin:28px 0;font-style:italic;color:var(--g8)}
+.post-wrap a{color:var(--red);font-weight:600;border-bottom:1px solid rgba(212,168,67,.3)}
+.post-wrap a:hover{border-bottom-color:var(--red)}
+.post-wrap strong{color:var(--navy);font-weight:700}
+.post-cta{background:var(--g1);border-radius:var(--r);padding:36px 40px;margin:56px 0 0;text-align:center}
+.post-cta-title{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.01em}
+.post-cta-sub{font-size:15px;color:var(--g6);margin-bottom:22px;line-height:1.65}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:var(--rs);padding:13px 26px;font-size:15px;transition:all var(--t);cursor:pointer;border:none}
+.btn-gold{background:var(--red);color:#fff}
+.btn-gold:hover{background:var(--rh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,67,.35)}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--g6);font-weight:600;margin-bottom:24px;transition:color var(--t)}
+.back-link:hover{color:var(--navy)}
+footer{background:var(--nd);padding:56px 0 32px;border-top:1px solid rgba(255,255,255,.06)}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.ft-logo img{height:36px;margin-bottom:16px}
+.ft-desc{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;max-width:280px}
+.ft-social{margin-top:20px;display:flex;gap:10px}
+.ft-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);border-radius:6px;font-size:12px;font-weight:700;transition:all var(--t)}
+.ft-social a:hover{background:var(--red);color:#fff}
+.ft-h{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.ft-links{display:flex;flex-direction:column;gap:10px}
+.ft-links a{font-size:14px;color:rgba(255,255,255,.5);transition:color var(--t)}
+.ft-links a:hover{color:#fff}
+.ft-contact-item{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:12px;line-height:1.6}
+.ft-contact-item a{color:rgba(255,255,255,.5)}
+.ft-contact-item a:hover{color:#fff}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.35)}
+@media(max-width:768px){.ft-grid{grid-template-columns:1fr;gap:32px}.ft-bottom{flex-direction:column;gap:10px;text-align:center}}
+</style>
+</head>
+<body>
+<header id="navbar">
+  <div class="container">
+    <nav class="nw">
+      <a href="/" class="nlogo"><img src="/lam-logo.png" alt="LAM Technology"></a>
+      <div class="nl">
+        <a href="/professional-services/">Professional Services</a>
+        <a href="/practice-areas/">Practice Areas</a>
+        <a href="/about-lam/">Why LAM</a>
+        <a href="/insights/">Insights</a>
+        <a href="/contact/" class="nc">Just Ask LAM</a>
+      </div>
+      <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
+    </nav>
+  </div>
+</header>
+<div class="nm" id="nMob">
+  <a href="/professional-services/">Professional Services</a>
+  <a href="/practice-areas/">Practice Areas</a>
+  <a href="/about-lam/">Why LAM</a>
+  <a href="/insights/">Insights</a>
+  <a href="/contact/">Just Ask LAM</a>
+</div>
+
+<div class="bc">
+  <div class="container">
+    <a href="/">&larr; Home</a><span>/</span><a href="/insights/">Insights</a><span>/</span> Security Tabletops
+  </div>
+</div>
+
+<section id="post-hero">
+  <div class="container">
+    <div class="ph-inner">
+      <span class="ph-cat">Cybersecurity</span>
+      <h1 class="ph-title">Security Tabletops: We Were Ready For That</h1>
+      <div class="ph-meta">
+        <span>By LAM Technology</span>
+        <span class="dot"></span>
+        <span>Published September 12, 2024</span>
+        <span class="dot"></span>
+        <span>Updated April 30, 2026</span>
+        <span class="dot"></span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="post-body">
+  <div class="container">
+    <div class="post-wrap">
+      <a href="/insights/" class="back-link">&larr; All insights</a>
+
+      <p>In today's threat landscape, cybersecurity incidents are not just possible. They are highly probable, and for most organizations, eventually inevitable. As organizations rely more heavily on digital infrastructure, the stakes climb in step. For CIOs and CISOs, the challenge isn't only implementing the right controls. It's making sure your team is prepared to respond effectively when something does happen.</p>
+
+      <p>One of the most effective ways to build that preparedness is the tabletop exercise. Tabletop exercises create a structured, low-stakes environment where teams simulate a real incident and practice their response without the cost of an actual crisis. Done well, they don't just sharpen readiness. They expose the gaps your runbooks haven't found yet, and they build a culture of security awareness that propagates beyond the security team.</p>
+
+      <h2>Why tabletops matter</h2>
+
+      <p>The most expensive part of an incident is rarely the breach itself. It's the time spent figuring out who's supposed to do what, escalating through the wrong channels, and reconstructing decisions in the middle of the response. Industry research has consistently shown that organizations with regularly tested incident response plans contain breaches faster and at lower cost than those without. The reason is simple: rehearsed teams move faster than reading teams.</p>
+
+      <p>Tabletops are how you rehearse without lighting the building on fire. A facilitator walks the team through an incident scenario, pausing at decision points to ask: <em>What do you do now? Who do you call? What systems do you isolate? How do you communicate to customers and the board?</em> The answers reveal exactly where your plan is real and where it's aspirational.</p>
+      <h2>What a good tabletop actually looks like</h2>
+
+      <p>The shape of a useful tabletop varies, but the strongest exercises share a few characteristics:</p>
+
+      <ul>
+        <li><strong>The scenario is plausible for your business.</strong> A generic ransomware playbook won't surface the specific weaknesses in your environment. Build the scenario around your actual systems, your actual vendors, your actual regulatory exposure.</li>
+        <li><strong>The right people are in the room.</strong> Security alone isn't enough. Legal, communications, executive leadership, IT operations, and key business owners all need to be present. The first time someone meets shouldn't be in the middle of a crisis.</li>
+        <li><strong>Decisions get made and timed.</strong> A good facilitator pushes for actual answers, not "we would call someone." If a decision takes 20 minutes in a tabletop, it will take longer under real pressure.</li>
+        <li><strong>The output is a punch list.</strong> The exercise is only valuable if it generates concrete action items: missing contact information, ambiguous escalation paths, untested backups, contracts with response time gaps. Those items get owners and dates.</li>
+      </ul>
+
+      <h2>Common gaps tabletops surface</h2>
+
+      <p>Across the engagements we've run, a handful of issues come up over and over:</p>
+
+      <ul>
+        <li><strong>Out-of-date contact lists.</strong> The IR plan references a vendor contact who left the company two years ago, or an after-hours number that rolls to voicemail.</li>
+        <li><strong>Decision authority is unclear.</strong> Nobody knows who has the authority to take a system offline, pay a ransom demand, or notify regulators. That ambiguity costs hours.</li>
+        <li><strong>Communications go in two different directions.</strong> Internal comms says one thing, the legal-approved external statement says another, and the CEO posts something different on LinkedIn.</li>
+        <li><strong>Backups aren't actually tested.</strong> The team is confident in the recovery plan until someone asks when it was last fully exercised.</li>
+        <li><strong>Third parties have keys you forgot they had.</strong> An MSP or platform vendor has standing privileged access that becomes a critical question mid-incident.</li>
+      </ul>
+      <h2>How often should you run them?</h2>
+
+      <p>For most mid-market organizations, an annual full-scope tabletop with quarterly focused exercises strikes the right balance. The annual exercise pulls in the full executive cross-functional team. The quarterly ones can be smaller and more tactical: an EDR alert escalation walk-through, a vendor-compromise scenario for the procurement team, a phishing-to-domain-admin path for security and IT operations. The cadence keeps muscle memory current without consuming the calendar.</p>
+
+      <h2>The bottom line</h2>
+
+      <p>The phrase that gives this post its title comes from a CISO we worked with after a real incident. He told us, plainly: "When the attacker actually showed up, my team kept saying the same thing, almost on a loop. <em>We were ready for that.</em>" That readiness didn't come from the plan document. It came from having walked the steps before, in a room, with the people who'd have to walk them again for real.</p>
+
+      <p>Tabletops aren't glamorous, and they're easy to defer. But the gap between an organization that has rehearsed and one that hasn't shows up in the first 30 minutes of an incident, and it doesn't close on its own.</p>
+
+      <div class="post-cta">
+        <div class="post-cta-title">Want to stress-test your incident response?</div>
+        <div class="post-cta-sub">We facilitate tabletop exercises tailored to your environment, your team, and the threats most likely to land in your lap. No sales pitch, no obligation.</div>
+        <a href="/contact/" class="btn btn-gold">Just Ask LAM &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-logo"><img src="/lam-logo.png" alt="LAM Technology"></div>
+        <p class="ft-desc">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p>
+        <div class="ft-social">
+          <a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener">in</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-h">Practice Areas</div>
+        <div class="ft-links">
+          <a href="/cybersecurity.html">Cybersecurity &amp; Risk</a>
+          <a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a>
+          <a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a>
+          <a href="/wireless-wisdom.html">Mobility &amp; IoT</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-h">Company</div>
+        <div class="ft-links">
+          <a href="/about-lam/">About LAM</a>
+          <a href="/insights/">Insights</a>
+          <a href="/contact/">Contact Us</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-h">Contact Us</div>
+        <div class="ft-contact-item"><a href="tel:8174844522">(817) 484-4522</a></div>
+        <div class="ft-contact-item">1751 River Run, Suite 300<br>Fort Worth, TX 76107</div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span>
+      <span>Fort Worth, TX</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function tNav(){document.getElementById('nMob').classList.toggle('op')}
+document.addEventListener('click',function(e){
+  var m=document.getElementById('nMob'),h=document.querySelector('.nhb');
+  if(m&&h&&!m.contains(e.target)&&!h.contains(e.target)){m.classList.remove('op')}
+});
+window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
+</script>
+
+</body>
+</html>
