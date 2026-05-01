@@ -1,4 +1,4 @@
-/* LAM Technology consent banner with Google Consent Mode v2 */
+/* LAM Technology consent banner with Google Consent Mode v2 + footer link injection */
 (function () {
   'use strict';
 
@@ -63,10 +63,43 @@
       '#lam-cc button{appearance:none;border:1px solid rgba(255,255,255,.18);background:transparent;color:#e6e8ee;border-radius:100px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}',
       '#lam-cc button.primary{background:#d4b66a;border-color:#d4b66a;color:#0b0e15}',
       '#lam-cc button:hover{filter:brightness(1.08)}',
-      '@media(max-width:520px){#lam-cc{left:8px;right:8px;bottom:8px;padding:16px}}'
+      '@media(max-width:520px){#lam-cc{left:8px;right:8px;bottom:8px;padding:16px}}',
+      '.lam-legal-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:18px 16px 24px;font-size:13px;color:rgba(255,255,255,.55);text-align:center}',
+      '.lam-legal-links a{color:rgba(255,255,255,.7);text-decoration:none}',
+      '.lam-legal-links a:hover{color:#d4b66a;text-decoration:underline}'
     ].join('
 ');
     document.head.appendChild(s);
+  }
+
+  function injectFooterLinks() {
+    if (document.querySelector('.lam-legal-links')) return;
+    // If existing footer already has Privacy and Cookies links, skip.
+    var existingPriv = document.querySelector('a[href="/privacy/"]');
+    var existingCk = document.querySelector('a[href="/cookies/"]');
+    if (existingPriv && existingCk) return;
+
+    var row = document.createElement('div');
+    row.className = 'lam-legal-links';
+    row.innerHTML = [
+      '<a href="/privacy/">Privacy Policy</a>',
+      '<a href="/cookies/">Cookies Notice</a>',
+      '<a href="#" id="lam-cc-reopen-link">Cookie preferences</a>'
+    ].join('');
+
+    var footer = document.querySelector('footer');
+    if (footer && footer.parentNode) {
+      footer.parentNode.insertBefore(row, footer.nextSibling);
+    } else {
+      document.body.appendChild(row);
+    }
+
+    var reopen = document.getElementById('lam-cc-reopen-link');
+    if (reopen) reopen.addEventListener('click', function (e) {
+      e.preventDefault();
+      try { localStorage.removeItem(STORAGE_KEY); } catch (err) {}
+      showBanner();
+    });
   }
 
   function showBanner() {
@@ -99,11 +132,15 @@
   // Expose so the cookies page can re-open the banner.
   window.__lamShowConsent = showBanner;
 
-  if (!existing) {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', showBanner);
-    } else {
-      showBanner();
-    }
+  function onReady() {
+    injectStyles();
+    injectFooterLinks();
+    if (!existing) showBanner();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', onReady);
+  } else {
+    onReady();
   }
 })();
