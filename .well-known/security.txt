@@ -1,0 +1,4 @@
+Contact: mailto:lesleykingsley@lamtechnology.com
+Expires: 2027-05-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://lamtechnology.com/.well-known/security.txt
