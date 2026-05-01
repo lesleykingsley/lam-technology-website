@@ -1,0 +1,62 @@
+/* Site-wide accessibility helpers */
+
+/* Skip-to-content link, visible only when focused */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  background: #0b0e15;
+  color: #d4b66a;
+  padding: 12px 18px;
+  border: 2px solid #d4b66a;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 10000;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 8px;
+  outline: none;
+}
+
+/* Visible focus rings for keyboard users.
+   :focus-visible only fires for keyboard focus, not mouse clicks. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #d4b66a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Make sure the focus ring is visible on dark backgrounds */
+.btn:focus-visible,
+footer a:focus-visible,
+nav a:focus-visible {
+  outline: 2px solid #d4b66a;
+  outline-offset: 3px;
+}
+
+/* Honor users who request reduced motion.
+   Disables scroll-reveal animations and any other transitions. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Make scroll-reveal items show immediately */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
