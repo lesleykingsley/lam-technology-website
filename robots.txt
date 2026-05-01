@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /hero-mockups.html
+
+Sitemap: https://lamtechnology.com/sitemap.xml
