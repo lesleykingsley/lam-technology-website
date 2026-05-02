@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Billing Breakthrough™ Self-Check Results | LAM Technology</title>
+<meta name="description" content="Your Billing Breakthrough Self-Check results. Findings, magnitude bands, and the modernization conversation that recovered budget can fund.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://lamtechnology.com/professional-services/self-check/results/">
+<link rel="icon" href="/lam-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/assets/css/lam-theme.css">
+<link rel="stylesheet" href="/assets/css/a11y.css">
+<link rel="stylesheet" href="/assets/css/billing-breakthrough-self-check.css">
+</head>
+<body class="lam-typography">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nw">
+      <a href="/" class="nlogo"><img src="/lam-logo.png" alt="LAM Technology"/></a>
+      <div class="nl">
+        <a href="/professional-services/">Professional Services</a>
+        <a href="/practice-areas/">Practice Areas</a>
+        <a href="/about-lam/">Why LAM</a>
+        <a href="/insights/">Insights</a>
+        <a href="/contact/" class="nc">Just Ask LAM</a>
+      </div>
+      <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
+    </nav>
+<main id="main">
+  <div class="bb-sc-shell" id="bb-sc-results-root"></div>
+</main>
+<footer id="footer"><div class="container">
+  <div class="ft">
+    <div><div class="fli"><img src="/lam-logo.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div>
+    <div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/wireless-wisdom.html">Mobility &amp; IoT</a><a href="/ai-readiness.html">AI Readiness</a></div></div>
+    <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
+    <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
+  </div>
+  <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span class="ftx-badge">Fort Worth, TX</span></div>
+</div></footer>
+<script>
+function tNav(){var m=document.getElementById('nMob');if(m)m.classList.toggle('op')}
+document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m&&h&&m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
+window.addEventListener('scroll',function(){var n=document.getElementById('navbar');if(n)n.classList.toggle('sc',window.scrollY>20)});
+</script>
+<script>
+const QUESTIONS_ORDER = ['locations','inventory','pots','pots_sunset','legacy_voice','per_minute','ccaas','circuits','suppliers','gaps','mobility'];
+
+function getAnswers() {
+  try { return JSON.parse(sessionStorage.getItem('bb_sc_answers_v1')) || {}; } catch (e) { return {}; }
+}
+
+function locationTier(a) {
+  const v = a.locations;
+  if (v === 'lt10' || v === '10_50') return 'small';
+  if (v === '51_200' || v === '201_500') return 'mid';
+  if (v === '501_1000' || v === '1001_2000' || v === 'gt2000') return 'large';
+  return 'mid';
+}
+
+function buildFindings(a) {
+  const f = [];
+
+  // Inventory gap
+  if (a.inventory && a.inventory !== 'current') {
+    f.push({
+      title: 'Inventory gap',
+      body: 'Without a current written inventory, the other findings on this page cannot be confirmed or ruled out. This is the first thing to fix. At scale, an inventory gap is not an oversight, it is a structural problem, and the fix is a different engagement than a small-client audit.',
+      redeploy: 'Recovered spend from cleaning up inventory typically funds the documentation and tooling that prevents the gap from reopening.'
+    });
+  }
+
+  // Legacy voice infrastructure
+  const potsLeak = a.pots === 'unsure_need' || a.pots === 'unsure';
+  const legacy = a.legacy_voice === 'yes' || a.legacy_voice === 'unsure';
+  if (potsLeak || legacy) {
+    f.push({
+      title: 'Legacy voice infrastructure leak',
+      body: 'POTS lines and PRI circuits that were never decommissioned are one of the most common leaks LAM sees. POTS lines commonly bill in the high three figures or low four figures per line per month. PRI circuits can run several thousand to tens of thousands per month in environments LAM has audited.',
+      redeploy: 'Most LAM clients redeploy recovered legacy voice spend into SIP migration or cloud voice, which is the architecture they were moving to anyway.'
+    });
+  }
+
+  // POTS sunset
+  const hasPots = a.pots === 'documented' || a.pots === 'unsure_need' || a.pots === 'unsure';
+  const noPlan = a.pots_sunset === 'no_plan' || a.pots_sunset === 'first_hearing';
+  if (hasPots && noPlan) {
+    f.push({
+      title: 'POTS sunset exposure',
+      body: 'Major carriers are actively decommissioning POTS copper service under the FCC unbundling order. Notice windows are short. Lines used for fax, alarm, elevator, fire, and back-of-house phones need a planned migration to cellular, VoIP, or managed POTS replacement. An unplanned cutover is more expensive than a planned one and can take critical safety systems offline.',
+      redeploy: 'Recovered POTS spend typically funds the cellular or managed-replacement migration that the sunset requires anyway. The leakage and the modernization are the same conversation.'
+    });
+  }
+
+  // Above-market voice rates
+  if (a.per_minute === 'not_reviewed' || a.per_minute === 'unsure') {
+    f.push({
+      title: 'Above-market voice rates and plans',
+      body: 'Per-minute toll-free, 8YY rates, and legacy long-distance plans are some of the most commonly unbenchmarked items on a telecom bill. Contact center environments are particularly exposed. Bundled or flat-rate LD plans negotiated years ago routinely cost more than equivalent SIP or cloud voice service today.',
+      redeploy: 'Most LAM clients redeploy recovered voice spend into modern voice architecture or contact center capabilities they could not previously fund.'
+    });
+  }
+
+  // Dedicated circuits without failover
+  if (a.circuits === 'no_failover') {
+    f.push({
+      title: 'Dedicated circuits without failover',
+      body: 'A dedicated circuit without a documented failover path is both a cost issue and a resilience issue. Above-market dedicated pricing is common, and a single-path design is a business continuity risk regardless of the price.',
+      redeploy: 'Recovered circuit spend typically funds SD-WAN deployment or proper failover architecture, which is what the environment needed in the first place.'
+    });
+  }
+
+  // CCaaS overspend
+  if (a.ccaas === 'not_reviewed' || a.ccaas === 'unsure_when' || a.ccaas === 'unsure') {
+    const tier = locationTier(a);
+    let body = 'Contact center platforms accumulate cost in three places: licensed seats no longer assigned to active agents, premium features turned on but unused, and per-minute rates that have not been benchmarked since contract signing.';
+    if (tier === 'mid' || tier === 'large') {
+      body += ' At your scale, a 12-month review typically identifies 20 to 40 percent in recoverable seat and feature spend.';
+    }
+    if (tier === 'large') {
+      body += ' On a recent engagement at this scale, LAM recovered 50 percent of monthly contact center spend, an annualized recovery in the seven figures for a single client.';
+    }
+    f.push({
+      title: 'CCaaS overspend',
+      body: body,
+      redeploy: 'Most LAM clients redeploy recovered CCaaS spend into AI features, transcription, QA tooling, or seat expansion that was previously unfunded.'
+    });
+  }
+
+  // Vendor sprawl with coverage gaps
+  if (a.suppliers === '5plus' && a.gaps === 'yes') {
+    f.push({
+      title: 'Vendor sprawl with coverage gaps',
+      body: 'Paying multiple suppliers for overlapping services while leaving real gaps elsewhere is a portfolio mismanagement signal, not a duplicate-billing problem. The fix is consolidation and rebalance, not renegotiation.',
+      redeploy: 'Most LAM clients redeploy recovered consolidation spend into the cybersecurity or monitoring gaps that the sprawl was masking.'
+    });
+  }
+
+  // Mobility waste
+  if (a.mobility && a.mobility !== 'small_recent' && a.mobility !== 'mid_recent') {
+    let body = 'Mobility environments accumulate waste in three places: zombie lines (active billing for inactive users), oversized plans, and stale device upgrade cycles. Recoverable mobility spend typically runs 20 to 35 percent in mid-market environments.';
+    if (a.mobility === 'large' || a.mobility === 'enterprise') {
+      body += ' On fleets of 500 or more lines, recoverable waste typically runs into six figures. On 1,000-line fleets, zombie line rates of 8 to 12 percent are common. Fleets untouched for three or more years commonly recover 40 to 45 percent.';
+    }
+    f.push({
+      title: 'Mobility waste',
+      body: body,
+      redeploy: 'Most LAM clients redeploy recovered mobility spend into device refresh cycles, MDM upgrades, or expansion into ruggedized devices for field workers.'
+    });
+  }
+
+  return f;
+}
+
+function buildBand(a, count) {
+  const tier = locationTier(a);
+  let lead = '';
+  if (tier === 'large') {
+    lead = 'Across your scale of operations, even a conservative recovery is a material number. ';
+  } else if (tier === 'mid') {
+    lead = 'At your scale, recovery is typically a meaningful line item rather than a rounding error. ';
+  }
+  let body;
+  if (count === 0) {
+    body = lead + 'Your environment looks tighter than most. A formal LAM snapshot would confirm.';
+  } else if (count <= 2) {
+    body = lead + 'Your environment likely has 20 to 30 percent recoverable spend. This is the typical mid-market range LAM sees.';
+  } else if (count <= 4) {
+    body = lead + 'Your environment likely has 30 percent or more recoverable spend.';
+  } else {
+    body = lead + 'Your environment likely has 30 percent or more recoverable spend, and possibly 40 percent or more if it has been neglected. This is the upper range LAM sees.';
+  }
+  return body;
+}
+
+(function () {
+  const a = getAnswers();
+  const root = document.getElementById('bb-sc-results-root');
+  const answered = QUESTIONS_ORDER.filter(k => a[k]).length;
+
+  if (answered === 0) {
+    root.innerHTML = '<div class="bb-sc-empty"><p>It looks like you have not completed the Self-Check yet.</p><p style="margin-top:16px"><a class="bb-sc-start" href="/professional-services/self-check/">Start the Self-Check</a></p></div>';
+    return;
+  }
+
+  const findings = buildFindings(a);
+  const band = buildBand(a, findings.length);
+
+  let html = '';
+  html += '<p class="bb-sc-eyebrow">Billing Breakthrough\u2122 Self-Check Results</p>';
+  html += '<h1 class="bb-sc-title">Here is what your answers suggest.</h1>';
+  html += '<p class="bb-sc-lede">Self-Check findings are directional, not definitive. The LAM snapshot engagement turns these signals into a written benchmark against current market rates and a modernization roadmap.</p>';
+  html += '<p class="bb-sc-lede" style="margin-top:-16px;font-size:15px"><em>What you do with the recovery matters as much as the recovery itself. Most LAM clients redeploy recovered spend into modernization (POTS replacement, network refresh, security tooling, contact center AI) rather than returning it to the budget.</em></p>';
+
+  html += '<div class="bb-sc-band"><h2>Overall picture</h2><p>' + band + '</p></div>';
+
+  if (findings.length === 0) {
+    html += '<div class="bb-sc-finding"><h3>No findings triggered</h3><p>Based on your answers, none of the common leakage patterns triggered. That is unusual and worth confirming. A LAM snapshot is the fastest way to verify.</p></div>';
+  } else {
+    html += '<h2 style="font-size:20px;margin:0 0 16px">Findings</h2>';
+    html += '<div class="bb-sc-findings">';
+    findings.forEach(f => {
+      html += '<div class="bb-sc-finding"><h3>' + f.title + '</h3><p>' + f.body + '</p><p class="bb-sc-redeploy">' + f.redeploy + '</p></div>';
+    });
+    html += '</div>';
+  }
+
+  html += '<div class="bb-sc-cross">Billing problems and contract problems travel together. The Contract Clarifier\u2122 Self-Check is the companion tool. <a href="/professional-services/#bb-services">Learn about Contract Clarifier\u2122</a> while we finish building the Self-Check version.</div>';
+
+  html += '<h2 style="font-size:20px;margin:0 0 12px">What happens next</h2>';
+  html += '<p style="font-size:15px;line-height:1.55;margin:0 0 16px">The Self-Check you just completed is free. The LAM snapshot engagement that follows is paid, scoped to your environment and the size of the opportunity. We will tell you what it costs before you commit, and we will tell you up front if your environment is too small or too clean for the engagement to be worth your investment.</p>';
+  html += '<p style="font-size:15px;line-height:1.55;margin:0 0 8px"><strong>Who this is for:</strong> Companies with roughly $100,000 or more in total monthly recurring spend across telecom, network, contact center, mobility, cybersecurity, and data center services.</p>';
+
+  html += '<div class="bb-sc-cta-row">';
+  html += '<a class="bb-sc-cta-primary" href="/professional-services/#bb-contact">Book a snapshot conversation</a>';
+  html += '<a class="bb-sc-cta-secondary" href="/professional-services/self-check/">Retake the Self-Check</a>';
+  html += '</div>';
+
+  root.innerHTML = html;
+})();
+</script>
+</body>
+</html>

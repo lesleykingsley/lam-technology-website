@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Billing Breakthrough™ Self-Check | LAM Technology</title>
+<meta name="description" content="A free five-minute Self-Check. Find out where your telecom and contact center spend is likely leaking, and how recovered budget can fund your modernization roadmap.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://lamtechnology.com/professional-services/self-check/">
+<link rel="icon" href="/lam-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/assets/css/lam-theme.css">
+<link rel="stylesheet" href="/assets/css/a11y.css">
+<link rel="stylesheet" href="/assets/css/billing-breakthrough-self-check.css">
+</head>
+<body class="lam-typography">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nw">
+      <a href="/" class="nlogo"><img src="/lam-logo.png" alt="LAM Technology"/></a>
+      <div class="nl">
+        <a href="/professional-services/">Professional Services</a>
+        <a href="/practice-areas/">Practice Areas</a>
+        <a href="/about-lam/">Why LAM</a>
+        <a href="/insights/">Insights</a>
+        <a href="/contact/" class="nc">Just Ask LAM</a>
+      </div>
+      <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
+    </nav>
+<main id="main">
+  <div class="bb-sc-shell" id="bb-sc-shell">
+    <p class="bb-sc-eyebrow">Billing Breakthrough™ Self-Check</p>
+    <h1 class="bb-sc-title">Your telecom bill is probably leaking. Find out where in five minutes.</h1>
+    <p class="bb-sc-lede">Eleven questions about your current telecom and contact center environment. At the end, a plain-language report names where your spend is leaking, how big the leak likely is, and how recovered budget could fund modernization work that is already on your roadmap.</p>
+
+    <div class="bb-sc-positioning">
+      <h3>What this is, and what it isn’t</h3>
+      <p>This is not a Telecom Expense Management dashboard. LAM is not a TEMS. We do not sell a platform that ingests your bills and produces recurring reports.</p>
+      <p>We read the bills, find the leakage, and help you redeploy the recovery into the services your business actually needs next. POTS replacement, SIP or cloud voice, SD-WAN, contact center AI, security tooling, the modernization work that was already on your roadmap and waiting for budget.</p>
+      <p>This Self-Check focuses on telecom, contact center, and mobility, because that is where most clients have the highest immediate leakage. The full LAM engagement also covers network, cybersecurity, and data center spend.</p>
+      <p>No login. No email required.</p>
+    </div>
+
+    <div class="bb-sc-progress" aria-live="polite">
+      <span id="bb-sc-counter">Question 1 of 11</span>
+      <div class="bb-sc-progress-track" aria-hidden="true"><div class="bb-sc-progress-fill" id="bb-sc-fill"></div></div>
+    </div>
+
+    <div id="bb-sc-stage"></div>
+
+    <div class="bb-sc-nav">
+      <button type="button" class="bb-sc-back" id="bb-sc-back" disabled>← Back</button>
+      <button type="button" class="bb-sc-next" id="bb-sc-next" disabled>Next</button>
+    </div>
+  </div>
+</main>
+<footer id="footer"><div class="container">
+  <div class="ft">
+    <div><div class="fli"><img src="/lam-logo.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div>
+    <div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/wireless-wisdom.html">Mobility &amp; IoT</a><a href="/ai-readiness.html">AI Readiness</a></div></div>
+    <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
+    <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
+  </div>
+  <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span class="ftx-badge">Fort Worth, TX</span></div>
+</div></footer>
+<script>
+function tNav(){var m=document.getElementById('nMob');if(m)m.classList.toggle('op')}
+document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m&&h&&m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
+window.addEventListener('scroll',function(){var n=document.getElementById('navbar');if(n)n.classList.toggle('sc',window.scrollY>20)});
+</script>
+<script>
+const QUESTIONS = [
+  {
+    id: 'locations',
+    title: 'How many physical locations does your company operate?',
+    help: 'Offices, branches, plants, warehouses, retail sites, anywhere with telecom service.',
+    options: [
+      { value: 'lt10', label: 'Under 10' },
+      { value: '10_50', label: '10 to 50' },
+      { value: '51_200', label: '51 to 200' },
+      { value: '201_500', label: '201 to 500' },
+      { value: '501_1000', label: '501 to 1,000' },
+      { value: '1001_2000', label: '1,001 to 2,000' },
+      { value: 'gt2000', label: 'More than 2,000' },
+      { value: 'unsure', label: "I'm not sure" }
+    ]
+  },
+  {
+    id: 'inventory',
+    title: 'Do you have a current, written inventory of every telecom service at every location?',
+    options: [
+      { value: 'current', label: 'Yes, updated within the last 12 months' },
+      { value: 'old', label: "Yes, but it's older than 12 months" },
+      { value: 'no', label: 'No' },
+      { value: 'unsure', label: "I'm not sure" }
+    ]
+  },
+  {
+    id: 'pots',
+    title: 'Do you still have analog POTS lines anywhere in your environment?',
+    help: 'Fax, alarm, elevator, fire, back-of-house phones.',
+    options: [
+      { value: 'documented', label: 'Yes, and we know exactly where and why' },
+      { value: 'unsure_need', label: "Yes, and we're not sure they're all still needed" },
+      { value: 'no', label: 'No' },
+      { value: 'unsure', label: "I'm not sure" }
+    ]
+  },
+  {
+    id: 'pots_sunset',
+    title: 'Carriers are actively decommissioning POTS copper service. If you still have POTS lines, do you have a documented migration plan and timeline?',
+    options: [
+      { value: 'plan', label: 'Yes, we have a plan and a timeline' },
+      { value: 'no_plan', label: 'We know it is coming but we have not planned for it' },
+      { value: 'first_hearing', label: 'This is the first I am hearing of it' },
+      { value: 'na', label: 'We do not have POTS lines' }
+    ]
+  },
+  {
+    id: 'legacy_voice',
+    title: 'Do you still have PRI circuits or other legacy voice trunks?',
+    options: [
+      { value: 'yes', label: 'Yes' },
+      { value: 'no', label: 'No, fully migrated to SIP or cloud voice' },
+      { value: 'unsure', label: "I'm not sure" }
+    ]
+  },
+  {
+    id: 'per_minute',
+    title: 'Do you have per-minute charges for toll-free or 8YY, or any kind of long-distance plan or bundle?',
+    help: 'Includes flat-rate, bundled minutes, dedicated long-distance service, and per-minute toll-free.',
+    options: [
+      { value: 'reviewed', label: "Yes, and we've reviewed the rates and plans in the last 12 months" },
+      { value: 'not_reviewed', label: 'Yes, and we have not reviewed them in the last 12 months' },
+      { value: 'no', label: 'No per-minute charges and no LD plans' },
+      { value: 'unsure', label: "I'm not sure" }
+    ]
+  },
+  {
+    id: 'ccaas',
+    title: 'Do you operate a contact center on a CCaaS platform?',
+    help: 'Five9, NICE, Genesys, Talkdesk, Amazon Connect, or similar.',
+    options: [
+      { value: 'reviewed', label: "Yes, and we've reviewed the contract and seat counts in the last 12 months" },
+      { value: 'not_reviewed', label: 'Yes, and we have not reviewed the contract or seat counts in the last 12 months' },
+      { value: 'unsure_when', label: "Yes, but I'm not sure when it was last reviewed" },
+      { value: 'no', label: 'No contact center platform' },
+      { value: 'unsure', label: "I'm not sure" }
+    ]
+  },
+  {
+    id: 'circuits',
+    title: 'Do you have dedicated internet circuits without a documented failover path?',
+    help: 'Fiber, MPLS, point-to-point.',
+    options: [
+      { value: 'no_failover', label: 'Yes, dedicated with no failover' },
+      { value: 'has_failover', label: 'Yes, dedicated with documented failover' },
+      { value: 'no_dedicated', label: 'No dedicated circuits' },
+      { value: 'unsure', label: "I'm not sure" }
+    ]
+  },
+  {
+    id: 'suppliers',
+    title: 'How many telecom suppliers does your company pay each month?',
+    help: 'Across voice, data, mobility, and toll-free.',
+    options: [
+      { value: '1_2', label: 'One or two' },
+      { value: '3_4', label: 'Three or four' },
+      { value: '5plus', label: 'Five or more' },
+      { value: 'unsure', label: "I'm not sure" }
+    ]
+  },
+  {
+    id: 'gaps',
+    title: 'Are there areas of your IT environment where you know you have gaps, while you also pay multiple telecom suppliers for overlapping services?',
+    help: 'Cybersecurity, backup, monitoring, and similar.',
+    options: [
+      { value: 'yes', label: 'Yes' },
+      { value: 'no', label: 'No' },
+      { value: 'unsure', label: "I'm not sure" }
+    ]
+  },
+  {
+    id: 'mobility',
+    title: 'How many mobile lines does your company pay for, and when were the plans and active-line list last reviewed?',
+    options: [
+      { value: 'small_recent', label: 'Under 100 lines, reviewed within 12 months' },
+      { value: 'small_stale', label: 'Under 100 lines, not reviewed in 12 or more months' },
+      { value: 'mid_recent', label: '100 to 500 lines, reviewed within 12 months' },
+      { value: 'mid_stale', label: '100 to 500 lines, not reviewed in 12 or more months' },
+      { value: 'large', label: '500 to 1,000 lines, any review status' },
+      { value: 'enterprise', label: '1,000 or more lines, any review status' },
+      { value: 'unsure', label: "I'm not sure how many lines we have" }
+    ]
+  }
+];
+
+(function() {
+  const STORAGE_KEY = 'bb_sc_answers_v1';
+  const shell = document.getElementById('bb-sc-shell');
+  const stage = document.getElementById('bb-sc-stage');
+  const fill = document.getElementById('bb-sc-fill');
+  const counter = document.getElementById('bb-sc-counter');
+  const backBtn = document.getElementById('bb-sc-back');
+  const nextBtn = document.getElementById('bb-sc-next');
+
+  let idx = 0;
+  let answers = {};
+
+  function render() {
+    const q = QUESTIONS[idx];
+    stage.innerHTML = '';
+    const wrap = document.createElement('div');
+    wrap.className = 'bb-sc-question is-active';
+    const h = document.createElement('h2');
+    h.textContent = q.title;
+    wrap.appendChild(h);
+    if (q.help) {
+      const p = document.createElement('p');
+      p.className = 'bb-sc-help';
+      p.textContent = q.help;
+      wrap.appendChild(p);
+    }
+    const opts = document.createElement('div');
+    opts.className = 'bb-sc-options';
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'bb-sc-option' + (answers[q.id] === opt.value ? ' is-selected' : '');
+      btn.textContent = opt.label;
+      btn.addEventListener('click', () => {
+        answers[q.id] = opt.value;
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
+        opts.querySelectorAll('.bb-sc-option').forEach(b => b.classList.remove('is-selected'));
+        btn.classList.add('is-selected');
+        nextBtn.removeAttribute('disabled');
+      });
+      opts.appendChild(btn);
+    });
+    wrap.appendChild(opts);
+    stage.appendChild(wrap);
+
+    counter.textContent = 'Question ' + (idx + 1) + ' of ' + QUESTIONS.length;
+    fill.style.width = ((idx) / QUESTIONS.length * 100) + '%';
+    backBtn.disabled = idx === 0;
+    if (answers[q.id]) {
+      nextBtn.removeAttribute('disabled');
+    } else {
+      nextBtn.setAttribute('disabled', 'true');
+    }
+    nextBtn.textContent = idx === QUESTIONS.length - 1 ? 'See results' : 'Next';
+  }
+
+  backBtn.addEventListener('click', () => {
+    if (idx > 0) { idx--; render(); }
+  });
+  nextBtn.addEventListener('click', () => {
+    if (!answers[QUESTIONS[idx].id]) return;
+    if (idx < QUESTIONS.length - 1) {
+      idx++;
+      render();
+    } else {
+      fill.style.width = '100%';
+      window.location.href = '/professional-services/self-check/results/';
+    }
+  });
+
+  // Initialize
+  const saved = sessionStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    try { answers = JSON.parse(saved) || {}; } catch (e) { answers = {}; }
+  }
+  render();
+})();
+</script>
+</body>
+</html>
