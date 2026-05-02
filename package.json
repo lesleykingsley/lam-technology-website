@@ -1,0 +1,9 @@
+{
+    "name": "lam-technology-website",
+    "version": "1.0.0",
+    "private": true,
+    "description": "LAM Technology marketing website with native contact form API.",
+    "dependencies": {
+          "resend": "^4.0.1"
+    }
+}
