@@ -1,639 +1,1290 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <script src="/assets/js/consent.js"></script>
+
   <!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B7C7CBGJ42"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-B7C7CBGJ42');</script></script>
+
 <meta charset="UTF-8"/>
+
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
 <title>LAM Technology | Trustworthy IT Guidance</title>
+
 <meta name="description" content="LAM Technology provides trustworthy IT advisory services, supplier-neutral guidance in Cybersecurity, Networking, Mobility, Customer Experience, and AI Readiness."/>
+
   <link rel="canonical" href="https://lamtechnology.com/"/>
+
   <meta property="og:type" content="website"/>
+
   <meta property="og:site_name" content="LAM Technology"/>
+
   <meta property="og:title" content="LAM Technology | Trustworthy IT Guidance"/>
+
   <meta property="og:description" content="LAM Technology provides trustworthy IT advisory services, supplier-neutral guidance in Cybersecurity, Networking, Mobility, Customer Experience, and AI Readiness."/>
+
   <meta property="og:url" content="https://lamtechnology.com/"/>
+
   <meta property="og:image" content="https://lamtechnology.com/lam-logo.png"/>
+
   <meta name="twitter:card" content="summary"/>
+
   <meta name="twitter:title" content="LAM Technology | Trustworthy IT Guidance"/>
+
   <meta name="twitter:description" content="LAM Technology provides trustworthy IT advisory services, supplier-neutral guidance in Cybersecurity, Networking, Mobility, Customer Experience, and AI Readiness."/>
+
   <meta name="twitter:image" content="https://lamtechnology.com/lam-logo.png"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet"/>
+
 <link href="/assets/css/lam-theme.css" rel="stylesheet">  
+
 <style>
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 :root{
+
   --navy:#1a1a2e;
+
   --gold:#d4a843;--gold-h:#b8922e;--gold-light:rgba(212,168,67,.12);
+
   --cream:#faf8f4;--warm:#f5f1ea;--warm2:#ede8df;--warm3:#e0d9ce;
+
   --g4:#c8c0b0;--g6:#7a7060;--g8:#4a4038;
+
   --r:12px;--rs:6px;
+
   --sl:0 12px 48px rgba(26,26,46,.12);--sxl:0 24px 80px rgba(26,26,46,.18);
+
   --t:.2s ease
+
 }
+
 html{scroll-behavior:smooth;overflow-y:scroll}
+
 body{font-family:'Inter',sans-serif;color:var(--navy);background:var(--cream);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
 img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+
 .container{max-width:1200px;margin:0 auto;padding:0 32px}
 
+
+
 /* Buttons */
+
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;padding:13px 28px;border-radius:var(--rs);cursor:pointer;transition:all var(--t);border:2px solid transparent;letter-spacing:.01em;white-space:nowrap}
+
 .br{background:var(--gold);color:#fff;border-color:var(--gold)}.br:hover{background:var(--gold-h);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,67,.35)}
+
 .bow{background:transparent;color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.35)}.bow:hover{background:rgba(255,255,255,.10);border-color:#fff;transform:translateY(-2px)}
+
 .bon{background:transparent;color:var(--navy);border-color:var(--warm3)}.bon:hover{border-color:var(--navy);background:var(--warm);transform:translateY(-2px)}
+
 .arr{font-style:normal;transition:transform var(--t)}.btn:hover .arr{transform:translateX(4px)}
 
+
+
 /* Navbar, starts transparent over hero, becomes cream on scroll */
+
 #navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,244,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm3);box-shadow:0 2px 20px rgba(26,26,46,.08);transition:background .35s ease,border-color .35s ease,box-shadow .35s ease}
+
 #navbar.sc{background:rgba(250,248,244,.97);backdrop-filter:blur(12px);border-bottom-color:var(--warm3);box-shadow:0 2px 20px rgba(26,26,46,.08)}
+
 .nw{display:flex;align-items:center;justify-content:space-between;height:70px}
+
 .nlogo img{height:46px;width:auto}
+
 .nl{display:flex;align-items:center;justify-content:center;flex:1;gap:8px}
+
 /* Nav links, white on transparent navbar, dark on scrolled */
+
 .nl a{font-size:14px;font-weight:600;color:var(--g8);padding:8px 14px;border-radius:var(--rs);transition:all var(--t)}
+
 .nl a:hover{color:var(--navy);background:var(--warm)}
+
 #navbar.sc .nl a{color:var(--g8)}
+
 #navbar.sc .nl a:hover{color:var(--navy);background:var(--warm)}
+
 .nl .nc{background:var(--gold);color:#fff;padding:10px 22px;margin-left:8px}
+
 .nl .nc:hover{background:var(--gold-h);transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,168,67,.30)}
+
 #navbar.sc .nl .nc{color:#fff}
+
 .nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;align-items:center}
+
 .nhb span{width:22px;height:2px;background:var(--navy);border-radius:2px;display:block;transition:background .35s}
+
 #navbar.sc .nhb span{background:var(--navy)}
+
 .nhb-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g6);margin-top:2px;line-height:1;transition:color .35s}
+
 #navbar.sc .nhb-label{color:var(--g6)}
+
 .nm{display:none}.nm.op{display:flex;flex-direction:column;background:var(--cream);padding:16px 24px 24px;gap:4px;border-top:1px solid var(--warm3)}
+
 .nm a{font-size:15px;font-weight:600;color:var(--g8);padding:12px 0;border-bottom:1px solid var(--warm2)}
+
 .nm a:last-child{border:none;margin-top:8px;background:var(--gold);color:#fff;text-align:center;padding:12px;border-radius:var(--rs)}
 
+
+
 /* Hero */
+
 #hero{min-height:100vh;background:linear-gradient(135deg,var(--nd) 0%,var(--nm) 60%,var(--ne) 100%);display:flex;flex-direction:column;justify-content:space-between;padding:0;position:relative;overflow:hidden}
+
 #hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(212,168,67,.08) 0%,transparent 70%);pointer-events:none;z-index:0}
+
 /* Subtle diagonal texture overlay */
+
 #hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(255,255,255,.012) 40px,rgba(255,255,255,.012) 41px);pointer-events:none;z-index:0}
+
 .typ-ghost{position:absolute;bottom:-4%;left:-2%;font-family:'Playfair Display',Georgia,serif;font-size:clamp(200px,28vw,420px);font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.035);line-height:1;pointer-events:none;user-select:none;z-index:0;letter-spacing:-.04em}
+
 .typ-hero-inner{flex:1;display:flex;align-items:center;gap:0;position:relative;z-index:1;padding:120px 40px 72px;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box}
+
 .typ-left{flex:1 1 0;display:flex;flex-direction:column;gap:0;padding-right:80px;border-right:1px solid rgba(255,255,255,.07)}
+
 .typ-eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:32px}
+
 .typ-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
 .typ-h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:1;letter-spacing:-.02em;margin:0 0 36px;display:flex;flex-direction:column;gap:4px}
+
 .typ-line1{font-size:clamp(48px,5.2vw,82px);color:rgba(255,255,255,.85);font-style:italic;font-weight:700}
+
 .typ-line2{font-size:clamp(64px,7.2vw,112px);color:var(--gold);font-style:normal;font-weight:900;line-height:.93}
+
 .typ-line3{font-size:clamp(40px,4.4vw,68px);color:rgba(255,255,255,.42);font-style:italic;font-weight:700;line-height:1.05}
+
 .typ-line4{font-size:clamp(40px,4.4vw,68px);color:rgba(255,255,255,.42);font-style:normal;font-weight:700;line-height:1.05}
+
 .typ-rule{width:48px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:28px}
+
 .typ-sub{font-size:17px;line-height:1.75;color:rgba(255,255,255,.55);margin:0 0 40px;max-width:500px}
+
 .typ-actions{display:flex;gap:12px;align-items:center}
+
 .typ-right{width:260px;flex-shrink:0;display:flex;flex-direction:column;gap:0;padding-left:56px}
+
 .typ-stat{padding:28px 0}
+
 .typ-stat-num{font-family:'Playfair Display',Georgia,serif;font-size:80px;font-weight:900;color:#fff;line-height:1;letter-spacing:-.04em}
+
 .typ-stat-plus{font-size:38px;color:var(--gold);vertical-align:super}
+
 .typ-stat-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:8px;line-height:1.5}
+
 .typ-divider{width:100%;height:1px;background:rgba(255,255,255,.07)}
+
 .typ-tagline{margin-top:36px;padding:22px;border:1px solid rgba(212,168,67,.20);border-radius:10px;background:rgba(212,168,67,.04)}
+
 .typ-tagline-text{font-size:15px;font-style:italic;color:rgba(212,168,67,.75);line-height:1.6;font-family:'Playfair Display',Georgia,serif}
+
 /* Hero bottom bar fades into next section */
+
 .typ-bottom{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.06);background:linear-gradient(to bottom,rgba(255,255,255,.02) 0%,rgba(212,168,67,.04) 100%)}
+
 .typ-bottom-inner{max-width:1200px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;gap:20px;box-sizing:border-box}
+
 .typ-bottom-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap}
+
 .typ-bottom-items{font-size:12px;font-weight:500;color:rgba(255,255,255,.40);letter-spacing:.04em}
 
+
+
 /* Smooth section transitions, warm band between dark and light */
+
 .section-bridge{height:64px;background:linear-gradient(to bottom,var(--nd),var(--warm));margin:0;padding:0}
+
 .section-bridge-rev{height:64px;background:linear-gradient(to bottom,var(--warm),var(--nd));margin:0;padding:0}
+
 .section-bridge-cc{height:48px;background:linear-gradient(to bottom,var(--cream),var(--warm));margin:0;padding:0}
+
 .section-bridge-wc{height:48px;background:linear-gradient(to bottom,var(--warm),var(--cream));margin:0;padding:0}
 
+
+
 /* Billing Breakthrough spotlight */
+
 #bb-spotlight{padding:88px 0;background:linear-gradient(to bottom,var(--nd) 0%,#0f0f1f 100%);position:relative;overflow:hidden}
+
 #bb-spotlight::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(212,168,67,.10) 0%,transparent 70%);pointer-events:none}
 
+
+
 /* Founder / About strip */
+
 #founder{padding:88px 0;background:var(--warm);position:relative;overflow:hidden}
+
 #founder::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
 .founder-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:72px;align-items:center}
+
 .founder-photo-wrap{position:relative}
+
 .founder-photo{width:100%;max-width:380px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;box-shadow:var(--sxl);position:relative}
+
 .founder-photo-placeholder{width:100%;height:100%;background:linear-gradient(145deg,var(--navy) 0%,#2a2a50 50%,var(--nm) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px}
+
 .founder-initials{font-family:'Playfair Display',Georgia,serif;font-size:80px;font-weight:900;color:var(--gold);line-height:1;opacity:.9}
+
 .founder-photo-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);text-align:center}
+
 .founder-gold-bar{position:absolute;bottom:24px;left:-12px;width:6px;height:80px;background:var(--gold);border-radius:3px}
+
 .founder-content{}
+
 .founder-eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+
 .founder-name{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3vw,42px);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:8px;letter-spacing:-.02em}
+
 .founder-title{font-size:14px;font-weight:600;color:var(--g6);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px}
+
 .founder-bio{font-size:16px;color:var(--g8);line-height:1.82;margin-bottom:24px}
+
 .founder-bio strong{color:var(--navy);font-weight:700}
+
 .founder-creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+
 .founder-cred{font-size:12px;font-weight:600;color:var(--g8);background:var(--cream);border:1px solid var(--warm3);border-radius:100px;padding:6px 16px} .team-card:hover{box-shadow:var(--sxl);transform:translateY(-4px);border-color:rgba(212,168,67,.25)}
 
+
+
 /* Engagement model */
+
 #engagement{padding:96px 0;background:var(--cream);position:relative}
+
 .eng-header{text-align:center;margin-bottom:64px}
+
 .eng-eyebrow{font-size:11px;font-weight:700;letter-spacing:.20em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+
 .eng-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3.5vw,48px);font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1.1;margin-bottom:20px}
+
 .eng-sub{font-size:17px;color:var(--g6);line-height:1.75;max-width:600px;margin:0 auto}
+
 .eng-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-bottom:56px}
+
 .eng-timeline::before{content:'';position:absolute;top:32px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--gold) 0%,rgba(212,168,67,.3) 100%);z-index:0}
+
 .eng-step{position:relative;padding:0 16px;z-index:1}
+
 .eng-step-num{width:64px;height:64px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1;transition:all var(--t)}
+
 .eng-step:hover .eng-step-num{background:var(--gold);border-color:var(--gold)}
+
 .eng-step-numtext{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:900;color:var(--gold);transition:color var(--t)}
+
 .eng-step:hover .eng-step-numtext{color:#fff}
+
 .eng-step-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:10px}
+
 .eng-step-title{font-family:'Playfair Display',Georgia,serif;font-size:19px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:10px;line-height:1.25}
+
 .eng-step-desc{font-size:13px;color:var(--g6);line-height:1.7;text-align:center;margin-bottom:16px}
+
 .eng-step-items{display:flex;flex-direction:column;gap:7px}
+
 .eng-step-item{font-size:12px;font-weight:600;color:var(--g8);padding:6px 10px;background:var(--warm);border:1px solid var(--warm3);border-radius:6px;text-align:center;transition:all var(--t)}
+
 .eng-step-item a{color:inherit;text-decoration:none}
+
 .eng-step-item:hover{background:rgba(212,168,67,.08);border-color:var(--gold);color:var(--navy)}
 
+
+
 /* Practice Areas */
+
 #practices{padding:88px 0;background:var(--warm)}
 
+
+
 /* Why section */
+
 #why{padding:96px 0;background:var(--cream)}
+
 .wl{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+
 .wi{margin-top:36px;display:flex;flex-direction:column;gap:20px}
+
 .wii{display:flex;gap:16px}
+
 .wic{width:36px;height:36px;border-radius:8px;background:var(--gold-light);color:var(--gold);font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:900}
+
 .wit{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
+
 .wid{font-size:14px;color:var(--g6);line-height:1.68}
+
 .wr{background:var(--warm);border:1px solid var(--warm3);border-radius:20px;padding:52px 44px;position:relative;overflow:hidden;border-left:4px solid var(--gold)}
+
 .wq{position:relative;z-index:1}
+
 .wqm{font-family:'Playfair Display',Georgia,serif;font-size:90px;color:var(--gold);line-height:.6;margin-bottom:24px;display:block}
+
 .wqt{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;line-height:1.65;color:var(--navy);margin-bottom:28px;font-style:italic}
+
 .wqd{width:40px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:18px}
+
 .wqr{font-size:13px;font-weight:700;color:var(--g6);letter-spacing:.06em;text-transform:uppercase}
 
+
+
 /* Testimonials */
+
 #testimonials{padding:88px 0;background:var(--warm)}
+
 .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
 .tc{background:var(--cream);border:1px solid var(--warm3);border-radius:var(--r);padding:36px 28px;transition:all var(--t)}
+
 .tc:hover{box-shadow:var(--sl);transform:translateY(-4px);border-color:rgba(212,168,67,.25)}
+
 .tst{color:var(--gold);font-size:14px;letter-spacing:3px;margin-bottom:18px}
+
 .ttx{font-family:'Playfair Display',Georgia,serif;font-size:16px;color:var(--navy);line-height:1.72;font-style:italic;margin-bottom:24px}
+
 .tdv{width:30px;height:2px;background:var(--gold);border-radius:1px;margin-bottom:16px}
+
 .tna{font-size:14px;font-weight:700;color:var(--navy)}
+
 .tro{font-size:12px;color:var(--g6);margin-top:3px;font-weight:500}
 
+
+
 /* Case study mini strip */
+
 #casestudy{padding:80px 0;background:var(--navy);position:relative;overflow:hidden}
+
 #casestudy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 20% 50%,rgba(212,168,67,.08) 0%,transparent 65%);pointer-events:none}
+
 .cs-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;position:relative;z-index:1}
+
 .cs-card{padding:48px 40px;border-right:1px solid rgba(255,255,255,.06)}
+
 .cs-card:last-child{border-right:none}
+
 .cs-tag{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:block}
+
 .cs-label{font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.30);margin-bottom:6px}
+
 .cs-value{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:20px}
+
 .cs-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.72}
 
+
+
 /* Section header utility */
+
 .sh{margin-bottom:52px}.sh.ctr{text-align:center}.sh.ctr .ssub{max-width:600px;margin-left:auto;margin-right:auto}
+
 .stit{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.5vw,44px);font-weight:900;line-height:1.1;color:var(--navy);letter-spacing:-.02em}
+
 .stit.lt{color:#fff}
+
 .ssub{font-size:17px;color:var(--g6);line-height:1.75;margin-top:14px}
+
 .ssub.lt{color:rgba(255,255,255,.58)}
+
 .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,67,.10);border-radius:100px;padding:5px 14px;margin-bottom:16px}
+
 .tag.lt{color:rgba(255,255,255,.65);background:rgba(255,255,255,.09)}
 
+
+
 /* CTA */
+
 #cta{padding:100px 0;background:var(--nd);position:relative;overflow:hidden;text-align:center}
+
 #cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(212,168,67,.10) 0%,transparent 70%);pointer-events:none}
+
 .ci{position:relative;z-index:1;max-width:680px;margin:0 auto}
+
 .ctt{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,4vw,54px);font-weight:900;color:#fff;line-height:1.08;letter-spacing:-.02em;margin-bottom:20px}
+
 .ctt em{color:var(--gold);font-style:italic}
+
 .cst{font-size:17px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:40px}
+
 .ca{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
+
+
 /* Insights/Blog */
+
 #blog{padding:88px 0;background:var(--cream)}
+
 .blh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;gap:20px;flex-wrap:wrap}
+
 .blg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
 .bc{border-radius:var(--r);overflow:hidden;border:1px solid var(--warm3);transition:all var(--t);background:var(--cream)}
+
 .bc:hover{box-shadow:var(--sxl);transform:translateY(-6px);border-color:rgba(212,168,67,.20)}
+
 /* Clean text-only card top instead of gradient placeholder */
+
 .bim{height:8px;background:var(--gold)}
+
 .bi1{background:linear-gradient(90deg,var(--gold) 0%,var(--gold-h) 100%)}
+
 .bi2{background:linear-gradient(90deg,var(--navy) 0%,var(--nm) 100%)}
+
 .bi3{background:linear-gradient(90deg,#1d6e56 0%,#14523e 100%)}
+
 .bbd{padding:28px 24px}
+
 .btg{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,67,.08);border-radius:100px;padding:3px 12px;margin-bottom:12px}
+
 .bti{font-size:17px;font-weight:700;color:var(--navy);line-height:1.40;margin-bottom:10px}
+
 .bex{font-size:14px;color:var(--g6);line-height:1.68;margin-bottom:20px}
+
 .blk{font-size:13px;font-weight:700;color:var(--gold);display:inline-flex;align-items:center;gap:6px;transition:gap var(--t)}.blk:hover{gap:10px}
+
 .bdate{font-size:11px;color:var(--g4);font-weight:500;margin-bottom:8px}
 
+
+
 /* Practice area cards */
+
 .pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+
 .pc{background:var(--cream);border-radius:var(--r);padding:32px 24px;display:flex;flex-direction:column;border:1px solid var(--warm3);transition:all var(--t)}
+
 .pc:hover{box-shadow:var(--sxl);transform:translateY(-5px);border-color:rgba(212,168,67,.20)}
+
 .piw{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px}
+
 .pi1{background:linear-gradient(135deg,#1a1a2e,#2a2a40)}.pi2{background:linear-gradient(135deg,#1a2e2a,#1d3d35)}.pi3{background:linear-gradient(135deg,#0d1a2e,#1a2a40)}.pi4{background:linear-gradient(135deg,#1a2a1a,#1a3a2a)}.pi5{background:linear-gradient(135deg,#2a1a3e,#3d1a5a)}
+
 .pt{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3}
+
 .pd{font-size:13px;color:var(--g6);line-height:1.72;flex:1}
+
 .pl{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13px;font-weight:700;color:var(--gold);transition:gap var(--t)}.pl:hover{gap:10px}
+
 .passmall{font-size:11px;font-weight:600;color:var(--g8);padding:5px 9px;background:var(--warm);border-radius:5px;display:inline-block;margin-top:8px;text-decoration:underline;text-underline-offset:2px}
 
+
+
 /* Footer */
+
 #footer{background:var(--nd);color:rgba(255,255,255,.50);padding:72px 0 36px}
+
 .ft{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.3fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.06)}
+
 .fli img{height:42px;width:auto;margin-bottom:18px;filter:brightness(0) invert(1)}
+
 .fde{font-size:14px;line-height:1.75;color:rgba(255,255,255,.40);max-width:270px}
+
 .fso{margin-top:24px;display:flex;gap:10px}
+
 .fso a{width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:rgba(255,255,255,.50);transition:all var(--t)}
+
 .fso a:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
 .fct{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.80);margin-bottom:20px}
+
 .flk{display:flex;flex-direction:column;gap:10px}
+
 .flk a{font-size:14px;color:rgba(255,255,255,.40);transition:color var(--t)}.flk a:hover{color:var(--gold)}
+
 .fcr{display:flex;gap:12px;margin-bottom:12px;font-size:14px;color:rgba(255,255,255,.40);align-items:flex-start}
+
 .fcr a{color:rgba(255,255,255,.40);transition:color var(--t)}.fcr a:hover{color:var(--gold)}
+
 .fb{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:13px;color:rgba(255,255,255,.22);flex-wrap:wrap;gap:12px}
+
 .ftx-badge{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.20);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:4px 12px}
 
+
+
 /* Scroll reveal animations */
+
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+
 .reveal.visible{opacity:1;transform:translateY(0)}
+
 .reveal-delay-1{transition-delay:.1s}
+
 .reveal-delay-2{transition-delay:.2s}
+
 .reveal-delay-3{transition-delay:.3s}
+
 .reveal-delay-4{transition-delay:.4s}
 
+
+
 /* Responsive */
+
 @media(max-width:1024px){
+
   .eng-timeline{grid-template-columns:repeat(2,1fr);gap:32px}
+
   .eng-timeline::before{display:none}
+
   .pg,.tg,.blg{grid-template-columns:repeat(2,1fr)}
+
   .wl{grid-template-columns:1fr;gap:48px}
+
   .ft{grid-template-columns:1fr 1fr;gap:36px}
+
   .founder-inner{grid-template-columns:1fr;gap:48px}
+
   .founder-photo{max-width:280px}
+
   .cs-inner{grid-template-columns:1fr}
+
   .cs-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+
   .cs-card:last-child{border-bottom:none}
+
   .team-grid{grid-template-columns:repeat(3,1fr)!important}
+
 }
+
 @media(max-width:680px){
+
   .container{padding:0 20px}
+
   .nl{display:none}.nhb{display:flex}
+
   .eng-timeline,.pg,.tg,.blg{grid-template-columns:1fr}
+
   .typ-hero-inner{flex-direction:column;padding:100px 20px 48px;gap:48px}
+
   .typ-left{padding-right:0;border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:40px}
+
   .typ-right{width:100%;padding-left:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+
   .typ-divider{display:none}
+
   .typ-stat{padding:12px 0}
+
   .wl{grid-template-columns:1fr}
+
   .wr{padding:36px 24px}
+
   
+
   .team-grid{grid-template-columns:repeat(2,1fr)!important}.ft{grid-template-columns:1fr}
+
 }
+
 </style>
+
   <link rel="stylesheet" href="/assets/css/a11y.css"/>
+
 </head>
+
 <body>
+
 <a class="skip-link" href="#main">Skip to content</a>
+
 <header id="navbar"><div class="container"><nav class="nw">
+
   <a href="/" class="nlogo"><img src="/lam-logo.png" alt="LAM Technology"/></a>
+
   <div class="nl"><a href="/professional-services/">Professional Services</a><a href="/practice-areas/">Practice Areas</a><a href="/about-lam/">Why LAM</a><a href="/insights/">Insights</a><a href="/contact/" class="nc">Just Ask LAM</a></div>
+
   <div class="nhb" onclick="tNav()"><span></span><span></span><span></span><span class="nhb-label">Menu</span></div>
+
 </nav><div class="nm" id="nMob"><a href="/professional-services/" onclick="tNav()">Services</a><a href="/practice-areas/" onclick="tNav()">Practice Areas</a><a href="/about-lam/" onclick="tNav()">Why LAM</a><a href="/insights/" onclick="tNav()">Insights</a><a href="/contact/" onclick="tNav()">Just Ask LAM</a></div></div></header>
+
 <main id="main">
 
+
+
 <section id="hero">
+
   <div class="typ-ghost" aria-hidden="true">LAM</div>
+
   <div class="typ-hero-inner">
+
     <div class="typ-left">
+
       <div class="typ-eyebrow">
+
         <span class="typ-dot"></span>
+
         <span>Fort Worth, TX &nbsp;&middot;&nbsp; Trusted Advisory Partner</span>
+
       </div>
+
       <h1 class="typ-h1">
+
         <span class="typ-line1">The advisor</span>
+
         <span class="typ-line2">you keep.</span>
+
         <span class="typ-line3">The results</span>
+
         <span class="typ-line4">you remember.</span>
+
       </h1>
+
       <div class="typ-rule"></div>
+
       <p class="typ-sub">LAM brings deep supplier relationships and 20+ years of channel expertise to bear for you. So you get the right technology, the right terms, and someone in your corner through every step of the process.</p>
+
       <div class="typ-actions">
+
         <a href="/contact/" class="btn br">Get Started <span class="arr">&rarr;</span></a>
+
         <a href="/practice-areas/" class="btn bow">Our Services</a>
+
       </div>
+
     </div>
+
     <div class="typ-right">
+
       <div class="typ-stat">
+
         <div class="typ-stat-num">20<span class="typ-stat-plus">+</span></div>
+
         <div class="typ-stat-label">Years of channel<br>expertise</div>
+
       </div>
+
       <div class="typ-divider"></div>
+
       <div class="typ-stat">
+
         <div class="typ-stat-num">5</div>
+
         <div class="typ-stat-label">Dedicated practice<br>areas</div>
+
       </div>
+
       <div class="typ-divider"></div>
+
       <div class="typ-stat">
+
         <div class="typ-stat-num">4</div>
+
         <div class="typ-stat-label">-step engagement<br>model</div>
+
       </div>
+
       <div class="typ-tagline">
+
         <span class="typ-tagline-text">&ldquo;Time back. Cost down. Risk managed.&rdquo;</span>
+
       </div>
+
     </div>
+
   </div>
+
   <div class="typ-bottom">
+
     <div class="typ-bottom-inner">
+
       <span class="typ-bottom-label">Built in Fort Worth. Trusted across the country.</span>
+
       <span class="typ-bottom-items">Financial Services &nbsp;&middot;&nbsp; Insurance &nbsp;&middot;&nbsp; Manufacturing &nbsp;&middot;&nbsp; Healthcare &nbsp;&middot;&nbsp; Retail</span>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <div class="section-bridge"></div>
 
+
+
 <section id="bb-spotlight">
+
   <div style="max-width:1200px;margin:0 auto;padding:0 40px;position:relative;z-index:1">
+
     <div style="display:flex;align-items:center;gap:64px;flex-wrap:wrap">
+
       <div style="flex:1;min-width:300px" class="reveal">
+
         <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3.5vw,48px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px">Are You Overpaying<br>for <span style="color:var(--gold)">Telecom &amp; IT Services?</span></h2>
+
         <p style="font-size:17px;color:rgba(255,255,255,.60);line-height:1.78;margin-bottom:16px">Most organizations are. LAM begins with the <strong style="color:#fff">Billing Breakthrough&#8482;</strong> assessment. A comprehensive review of your telecom and IT invoices that almost always uncovers significant savings and contract issues.</p>
+
         <p style="font-size:15px;color:rgba(255,255,255,.42);line-height:1.72;margin-bottom:36px">This is a paid engagement. Findings directly inform the rest of your LAM journey.</p>
+
         <div style="display:flex;gap:16px;flex-wrap:wrap">
+
           <a href="/professional-services/#bb-services" style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background .2s,transform .2s">Start with Billing Breakthrough &rarr;</a>
+
           <a href="/contact/" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.75);font-weight:600;font-size:15px;padding:14px 24px;border-radius:8px;text-decoration:none;border:2px solid rgba(255,255,255,.20)">Ask a Question</a>
+
         </div>
+
       </div>hh
+
       <div style="flex:0 0 auto;width:340px;max-width:100%" class="reveal reveal-delay-2">
+
         <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:36px 32px">
+
           <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px">What Billing Breakthrough Uncovers</div>
+
           <div style="display:flex;flex-direction:column;gap:14px">
+
             <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">Billing errors and overcharges hiding in plain sight</span></div>
+
             <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">Contracts that have auto-renewed at unfavorable rates</span></div>
+
             <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">Services you are paying for but no longer using</span></div>
+
             <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">Renegotiation opportunities across your service portfolio</span></div>
+
             <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:var(--gold);font-weight:900;font-size:16px;line-height:1;flex-shrink:0;margin-top:2px">&#10003;</span><span style="font-size:14px;color:rgba(255,255,255,.70);line-height:1.6">A clear roadmap for what to address first</span></div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <div class="section-bridge-rev"></div>
 
+
+
 <section id="engagement">
+
   <div class="container">
+
     <div class="eng-header reveal">
+
       <div class="eng-eyebrow">The LAM Engagement Model</div>
+
       <h2 class="eng-title">Insight. Strategy. Execution. Support.</h2>
+
       <p class="eng-sub">Every LAM engagement follows the same proven path. From sharp discovery to smart strategy, disciplined execution, and lasting support. No shortcuts, no gaps, no supplier agenda.</p>
+
     </div>
+
     <div class="eng-timeline">
+
       <div class="eng-step reveal reveal-delay-1">
+
         <div class="eng-step-num"><span class="eng-step-numtext">1</span></div>
+
         <div class="eng-step-label">Insight</div>
+
         <h3 class="eng-step-title">Assessments &amp; Discovery</h3>
+
         <p class="eng-step-desc">A clear, objective picture of where you are before committing to any direction, supplier, or investment.</p>
+
         <div class="eng-step-items">
+
           <div class="eng-step-item"><a href="/professional-services/"><strong>Billing Breakthrough&#8482; + Contract Clarifier&#8482;</strong> &rarr;</a></div>
+
           <div class="eng-step-item" style="margin-top:10px"><a href="/practice-areas/" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:linear-gradient(135deg,#d4a843 0%,#b8902f 100%);color:#1a1a2e;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:999px;border:1px solid rgba(212,168,67,.5);box-shadow:0 2px 8px rgba(212,168,67,.25);transition:transform .15s ease,box-shadow .15s ease" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 12px rgba(212,168,67,.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 8px rgba(212,168,67,.25)'">LAM Branded Assessments <span style="font-size:14px">&rarr;</span></a></div>
+
         </div>
+
       </div>
+
       <div class="eng-step reveal reveal-delay-2">
+
         <div class="eng-step-num"><span class="eng-step-numtext">2</span></div>
+
         <div class="eng-step-label">Strategy</div>
+
         <h3 class="eng-step-title">Supplier Selection &amp; Direction</h3>
+
         <p class="eng-step-desc">Insight phase findings inform supplier selection, technology direction, and investment priorities.</p>
+
         <div class="eng-step-items">
+
           <div class="eng-step-item">Supplier Shootout&#8482;</div>        </div>
+
       </div>
+
       <div class="eng-step reveal reveal-delay-3">
+
         <div class="eng-step-num"><span class="eng-step-numtext">3</span></div>
+
         <div class="eng-step-label">Execution</div>
+
         <h3 class="eng-step-title">Managed Delivery &amp; Implementation</h3>
+
         <p class="eng-step-desc">LAM manages delivery and implementation when change is required. End to end, full accountability.</p>
+
         <div class="eng-step-items">
+
           <div class="eng-step-item">Dedicated Delivery&#8482;</div>
+
           <div class="eng-step-item">Dedicated Disconnect&#8482;</div>
+
         </div>
+
       </div>
+
       <div class="eng-step reveal reveal-delay-4">
+
         <div class="eng-step-num"><span class="eng-step-numtext">4</span></div>
+
         <div class="eng-step-label">Support</div>
+
         <h3 class="eng-step-title">Ongoing Optimization &amp; Advocacy</h3>
+
         <p class="eng-step-desc">Ongoing optimization, renewals, and advocacy ensure long-term value from every technology investment.</p>
+
         <div class="eng-step-items">
+
           <div class="eng-step-item">Contract &amp; Supplier Management</div>
+
           <div class="eng-step-item">Renewal Advocacy</div>
+
         </div>
+
       </div>
+
     </div>
+
     <div style="text-align:center;margin-top:8px">
+
       <a href="/contact/" class="btn br">Just Ask LAM <span class="arr">&rarr;</span></a>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <div class="section-bridge-cc" style="background:linear-gradient(to bottom,var(--cream),var(--warm))"></div>
 
+
+
 <section id="practices">
+
   <div class="container">
+
     <div class="sh ctr reveal">
+
       <span class="tag">Our Practice Areas</span>
+
       <h2 class="stit">Focused Expertise. Real Results.</h2>
+
       <p class="ssub" style="margin-left:auto;margin-right:auto;max-width:520px">Five practice areas, each with a branded assessment and deep domain expertise.</p>
+
     </div>
+
     <div class="pg">
+
       <div class="pc reveal reveal-delay-1">
+
         <div class="piw pi1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+
         <div class="pt">Cybersecurity &amp; Risk</div>
+
         <p class="pd">Comprehensive risk assessments and security posture reviews to protect your organization from evolving threats.</p>
+
         <a href="/cybersecurity.html" class="passmall">Vigilance Verification&#8482; &rarr;</a>
+
         <a href="/cybersecurity.html" class="pl">Learn More &rarr;</a>
+
       </div>
+
       <div class="pc reveal reveal-delay-2">
+
         <div class="piw pi2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+
         <div class="pt">Customer Experience &amp; Digital Engagement</div>
+
         <p class="pd">Evaluate and elevate how your customers experience your brand at every digital and service touchpoint.</p>
+
         <a href="/practice-areas/customer-experience-digital-engagement/" class="passmall">Experience Examination&#8482; &rarr;</a>
+
         <a href="/practice-areas/customer-experience-digital-engagement/" class="pl">Learn More &rarr;</a>
+
       </div>
+
       <div class="pc reveal reveal-delay-3">
+
         <div class="piw pi3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+
         <div class="pt">Networking &amp; Infrastructure</div>
+
         <p class="pd">Assess, optimize, and modernize your network and infrastructure to support your current and future operations.</p>
+
         <a href="/infrastructure-insight.html" class="passmall">Infrastructure Insight&#8482; &rarr;</a>
+
         <a href="/infrastructure-insight.html" class="pl">Learn More &rarr;</a>
+
       </div>
+
       <div class="pc reveal reveal-delay-4">
+
         <div class="piw pi4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#d4a843"/></svg></div>
+
         <div class="pt">Mobility &amp; IoT</div>
+
         <p class="pd">Manage and optimize your mobile and IoT landscape, from wireless contracts to device strategy and connectivity.</p>
+
         <a href="/wireless-wisdom.html" class="passmall">Wireless Wisdom&#8482; &rarr;</a>
+
         <a href="/wireless-wisdom.html" class="pl">Learn More &rarr;</a>
+
       </div>
+
       <div class="pc reveal reveal-delay-1">
+
         <div class="piw pi5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
+
         <div class="pt">AI Readiness &amp; Strategy</div>
+
         <p class="pd">Understand your organization&rsquo;s AI readiness and build a practical, grounded strategy for adoption and governance.</p>
+
         <a href="/ai-readiness.html" class="passmall">Readiness Radar&#8482; &rarr;</a>
+
         <a href="/ai-readiness.html" class="pl">Learn More &rarr;</a>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <div class="section-bridge-wc" style="background:linear-gradient(to bottom,var(--warm),var(--cream))"></div>
 
+
+
 <section id="why"><div class="container"><div class="wl">
+
   <div class="reveal">
+
     <span class="tag">Why Choose LAM</span>
+
     <h2 class="stit">Your Trusted Partner,<br>Not Just Another Supplier</h2>
+
     <p class="ssub">We work alongside your team as a true extension of your organization, with no agenda other than your success.</p>
+
     <div class="wi">
+
       <div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Supplier-Neutral Guidance</div><div class="wid">No loyalty to any supplier. Our only loyalty is to you, giving you unbiased recommendations that fit your needs and budget.</div></div></div>
+
       <div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Deep Relationships, Real Results</div><div class="wid">Our deep relationships across the supplier landscape mean we escalate issues, negotiate contracts, and get resolutions faster than you could alone.</div></div></div>
+
       <div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Predictable, Transparent Engagement</div><div class="wid">You always know what to expect. No hidden fees, no surprise pivots. Every engagement follows our proven four-step model.</div></div></div>
+
       <div class="wii"><div class="wic">&#10003;</div><div><div class="wit">Client-Driven Focus</div><div class="wid">Your needs come first, always. We build every engagement around your goals, timeline, and budget. Not ours.</div></div></div>
+
     </div>
+
   </div>
+
   <div class="wr reveal reveal-delay-2"><div class="wq">
+
     <span class="wqm">&ldquo;</span>
+
     <p class="wqt">Working with LAM has been like having a trusted friend on the inside, acting as a personal customer advocate to bring timely and substantive results in an upbeat, friendly and professional manner.</p>
+
     <div class="wqd"></div>
+
     <div class="wqr">VP of IT &nbsp;&middot;&nbsp; Major Texas-Based Bank</div>
+
   </div></div>
+
 </div></div></section>
+
+
 
 <div class="section-bridge-cc" style="background:linear-gradient(to bottom,var(--cream),var(--warm))"></div>
 
+
+
 <section id="testimonials"><div class="container">
+
   <div class="sh ctr reveal">
+
     <span class="tag">What Clients Say</span>
+
     <h2 class="stit">Trusted by Leaders Across Industries</h2>
+
     <p class="ssub" style="margin-left:auto;margin-right:auto;max-width:540px">Real results from real organizations who chose LAM as their IT partner.</p>
+
   </div>
+
   <div class="tg">
+
     <div class="tc reveal reveal-delay-1"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;LAM&rsquo;s expertise enabled me to take on several projects at once and get them all done in less time and at lower cost than I had envisioned.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Roadside Services Provider</div></div>
+
     <div class="tc reveal reveal-delay-2"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;LAM Technology has proven to be a valued partner and strategic enabler as our company executes on a highly aggressive growth strategy.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Nationwide Automotive Service Company</div></div>
+
     <div class="tc reveal reveal-delay-3"><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="ttx">&ldquo;While making a wholesale changeover of your network can be a risky proposition, it has been one of the best technology decisions we could have made, and LAM was instrumental in making it happen.&rdquo;</p><div class="tdv"></div><div class="tna">CIO</div><div class="tro">Major Electronic Components Distributor</div></div>
+
   </div>
+
 </div></section>
 
+
+
 <section id="casestudy">
+
   <div class="container">
+
     <div class="sh ctr reveal" style="margin-bottom:40px">
+
       <span class="tag lt">Results That Speak</span>
+
       <h2 class="stit lt">Outcomes Clients Have Seen</h2>
+
     </div>
+
     <div class="cs-inner">
+
       <div class="cs-card reveal reveal-delay-1">
+
         <span class="cs-tag">Billing Breakthrough&#8482;</span>
+
         <div class="cs-label">Outcome</div>
+
         <div class="cs-value">Significant savings uncovered in the first review</div>
+
         <div class="cs-desc">A Texas-based financial services firm discovered billing errors and auto-renewed contracts they didn&rsquo;t know existed. Resolved within 90 days.</div>
+
       </div>
+
       <div class="cs-card reveal reveal-delay-2">
+
         <span class="cs-tag">Network Modernization</span>
+
         <div class="cs-label">Outcome</div>
+
         <div class="cs-value">Wholesale network changeover delivered on time</div>
+
         <div class="cs-desc">A major electronic components distributor completed a full network overhaul. On schedule, under budget, with full LAM accountability end-to-end.</div>
+
       </div>
+
       <div class="cs-card reveal reveal-delay-3">
+
         <span class="cs-tag">Growth Enablement</span>
+
         <div class="cs-label">Outcome</div>
+
         <div class="cs-value">IT strategy aligned to aggressive growth targets</div>
+
         <div class="cs-desc">A nationwide automotive services company used LAM as a strategic enabler while executing on rapid expansion across multiple markets simultaneously.</div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <div class="section-bridge" style="background:linear-gradient(to bottom,var(--navy),var(--cream))"></div>
 
+
+
 <section id="blog">
+
   <div class="container">
+
     <div class="blh reveal">
+
       <div>
+
         <span class="tag">Insights</span>
+
         <h2 class="stit">Straight Talk on IT &amp; Telecom</h2>
+
       </div>
+
       <a href="/insights/" class="btn bon">All Insights &rarr;</a>
+
     </div>
+
     <div class="blg">
+
       <div class="bc reveal reveal-delay-1">
+
         <div class="bim bi1"></div>
+
         <div class="bbd">
+
           <div class="bdate">Cybersecurity</div>
+
           <div class="btg">Security</div>
+
           <div class="bti">Why Your Cybersecurity Posture Review Is Probably Out of Date</div>
+
           <p class="bex">Most organizations haven&rsquo;t done a thorough security review in over a year. Here&rsquo;s what&rsquo;s changed, and what that means for your risk exposure.</p>
+
           <a href="/insights/" class="blk">Read More &rarr;</a>
+
         </div>
+
       </div>
+
       <div class="bc reveal reveal-delay-2">
+
         <div class="bim bi2"></div>
+
         <div class="bbd">
+
           <div class="bdate">Telecom</div>
+
           <div class="btg">Cost Savings</div>
+
           <div class="bti">The Hidden Cost of Auto-Renewed Telecom Contracts</div>
+
           <p class="bex">Auto-renewals lock you into yesterday&rsquo;s terms at today&rsquo;s pricing. We break down what to look for and how to get out.</p>
+
           <a href="/insights/" class="blk">Read More &rarr;</a>
+
         </div>
+
       </div>
+
       <div class="bc reveal reveal-delay-3">
+
         <div class="bim bi3"></div>
+
         <div class="bbd">
+
           <div class="bdate">AI</div>
+
           <div class="btg">Strategy</div>
+
           <div class="bti">AI Readiness Isn&rsquo;t a Technology Problem. It&rsquo;s a Strategy Problem.</div>
+
           <p class="bex">Before you adopt AI tooling, you need a clear picture of your data, your processes, and your governance framework. Here&rsquo;s where to start.</p>
+
           <a href="/insights/" class="blk">Read More &rarr;</a>
+
         </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<div class="section-bridge-cc" style="background:linear-gradient(to bottom,var(--cream),var(--nd))"></div>
+
+
+
+<section id="cta" class="cs-cta-section">
+  <div class="container">
+    <div class="cs-cta-box">
+      <div>
+        <div class="cs-eyebrow">Just Ask LAM</div>
+        <h2>Ready to talk to a trustworthy IT advisor?</h2>
+        <p class="cs-section-sub">Whether you&rsquo;re dealing with supplier chaos, a security concern, or a transformation that&rsquo;s stalled &mdash; tell us what you&rsquo;re working on. We&rsquo;ll come back with a focused, no-pressure perspective.</p>
+      </div>
+      <div class="cs-contact-card">
+        <form onsubmit="var n=this.name.value,c=this.company.value,e=this.email.value,m=this.message.value;window.location='mailto:info@lamtechnology.com?subject=Inquiry+from+'+encodeURIComponent(n)+'+('+encodeURIComponent(c)+')&body=Name:+'+encodeURIComponent(n)+'%0ACompany:+'+encodeURIComponent(c)+'%0AEmail:+'+encodeURIComponent(e)+'%0A%0A'+encodeURIComponent(m);return false;">
+          <div class="cta-row">
+            <div><label>Your Name</label><input name="name" required placeholder="Jane Smith"/></div>
+            <div><label>Company</label><input name="company" required placeholder="Acme Corp"/></div>
+          </div>
+          <div><label>Email Address</label><input name="email" type="email" required placeholder="jane@acmecorp.com"/></div>
+          <div><label>What can we help with?</label><textarea name="message" rows="3" placeholder="Tell us a bit about your environment or what you're trying to solve..."></textarea></div>
+          <button type="submit" class="cs-contact-btn">Just Ask LAM &rarr;</button>
+          <p class="cs-cta-call">Or call us directly: <a href="tel:8174844522">(817) 484-4522</a></p>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
-<div class="section-bridge-cc" style="background:linear-gradient(to bottom,var(--cream),var(--nd))"></div>
 
-<section id="cta"><div class="container"><div class="ci reveal">
-  <span class="tag lt">Time to Reach Out</span>
-  <h2 class="ctt">You May Be <em>Surprised</em><br>By What We Can Handle.</h2>
-  <p class="cst">Whether you&rsquo;re dealing with supplier chaos, a security concern, or a technology decision you can&rsquo;t quite sort out. Just ask LAM. The first conversation is free.</p>
-  <div class="ca"><a href="/contact/" class="btn br">Just Ask LAM <span class="arr">&rarr;</span></a><a href="/practice-areas/" class="btn bow">Explore Practice Areas</a></div>
-</div></div></section>
 
 </main>
+
 <footer id="footer"><div class="container">
+
   <div class="ft">
+
     <div><div class="fli"><img src="/lam-logo.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div>
+
     <div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/wireless-wisdom.html">Mobility &amp; IoT</a><a href="/ai-readiness.html">AI Readiness</a></div></div>
+
     <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
+
     <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
+
   </div>
+
   <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span class="ftx-badge">Fort Worth, TX</span></div>
+
 </div></footer>
 
+
+
 <script>
+
 function tNav(){document.getElementById('nMob').classList.toggle('op')}
+
 document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
+
 window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
+
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-75,behavior:'smooth'})}})});
 
+
+
 // Scroll reveal using IntersectionObserver
+
 (function(){
+
   var observer = new IntersectionObserver(function(entries){
+
     entries.forEach(function(entry){
+
       if(entry.isIntersecting){
+
         entry.target.classList.add('visible');
+
         observer.unobserve(entry.target);
+
       }
+
     });
+
   }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+
   document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+
 })();
+
 </script>
+
 </body>
+
 </html>
+
