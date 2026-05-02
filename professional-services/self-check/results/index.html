@@ -61,7 +61,12 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .bc-bar{background:var(--off);border-bottom:1px solid var(--g2);padding:12px 0;font-size:13px;color:var(--g6)}
 .bc-bar a{color:var(--g6);transition:color var(--t)}.bc-bar a:hover{color:var(--red)}
 .bc-bar span{color:var(--g4);margin:0 8px}
-</style>
+
+    .bb-sc-flag{display:inline-flex;align-items:center;justify-content:center;vertical-align:-1px;margin-right:8px;width:14px;height:16px}
+    .bb-sc-flag svg{display:block}
+    .bb-sc-finding.bb-sc-sev-high h3{color:#1f3a52}
+    .bb-sc-finding.bb-sc-sev-med h3{color:#1f3a52}
+  </style>
 <link rel="stylesheet" href="/assets/css/a11y.css"/>
 <link rel="stylesheet" href="/assets/css/billing-breakthrough-self-check.css"/>
 </head>
@@ -132,7 +137,7 @@ function buildFindings(a) {
   // Inventory gap
   if (a.inventory && a.inventory !== 'current') {
     f.push({
-      title: 'Inventory gap',
+      title: 'Inventory gap', severity: 'low',
       body: 'Without a current written inventory, the other findings on this page cannot be confirmed or ruled out. This is the first thing to fix. At scale, an inventory gap is not an oversight, it is a structural problem, and the fix is a different engagement than a small-client audit.',
       redeploy: 'Recovered spend from cleaning up inventory typically funds the documentation and tooling that prevents the gap from reopening.'
     });
@@ -143,7 +148,7 @@ function buildFindings(a) {
   const legacy = a.legacy_voice === 'yes' || a.legacy_voice === 'unsure';
   if (potsLeak || legacy) {
     f.push({
-      title: 'Legacy voice infrastructure leak',
+      title: 'Legacy voice infrastructure leak', severity: 'med',
       body: 'POTS lines and PRI circuits that were never decommissioned are one of the most common leaks LAM sees. POTS lines commonly bill in the high three figures or low four figures per line per month. PRI circuits can run several thousand to tens of thousands per month in environments LAM has audited.',
       redeploy: 'Most LAM clients redeploy recovered legacy voice spend into SIP migration or cloud voice, which is the architecture they were moving to anyway.'
     });
@@ -154,7 +159,7 @@ function buildFindings(a) {
   const noPlan = a.pots_sunset === 'no_plan' || a.pots_sunset === 'first_hearing';
   if (hasPots && noPlan) {
     f.push({
-      title: 'POTS sunset exposure',
+      title: 'POTS sunset exposure', severity: 'high',
       body: 'Major carriers are actively decommissioning POTS copper service under the FCC unbundling order. Notice windows are short. Lines used for fax, alarm, elevator, fire, and back-of-house phones need a planned migration to cellular, VoIP, or managed POTS replacement. An unplanned cutover is more expensive than a planned one and can take critical safety systems offline.',
       redeploy: 'Recovered POTS spend typically funds the cellular or managed-replacement migration that the sunset requires anyway. The leakage and the modernization are the same conversation.'
     });
@@ -163,7 +168,7 @@ function buildFindings(a) {
   // Above-market voice rates
   if (a.per_minute === 'not_reviewed' || a.per_minute === 'unsure') {
     f.push({
-      title: 'Above-market voice rates and plans',
+      title: 'Above-market voice rates and plans', severity: 'med',
       body: 'Per-minute toll-free, 8YY rates, and legacy long-distance plans are some of the most commonly unbenchmarked items on a telecom bill. Contact center environments are particularly exposed. Bundled or flat-rate LD plans negotiated years ago routinely cost more than equivalent SIP or cloud voice service today.',
       redeploy: 'Most LAM clients redeploy recovered voice spend into modern voice architecture or contact center capabilities they could not previously fund.'
     });
@@ -172,7 +177,7 @@ function buildFindings(a) {
   // Dedicated circuits without failover
   if (a.circuits === 'no_failover') {
     f.push({
-      title: 'Dedicated circuits without failover',
+      title: 'Dedicated circuits without failover', severity: 'high',
       body: 'A dedicated circuit without a documented failover path is both a cost issue and a resilience issue. Above-market dedicated pricing is common, and a single-path design is a business continuity risk regardless of the price.',
       redeploy: 'Recovered circuit spend typically funds SD-WAN deployment or proper failover architecture, which is what the environment needed in the first place.'
     });
@@ -189,7 +194,7 @@ function buildFindings(a) {
       body += ' On a recent engagement at this scale, LAM recovered 50 percent of monthly contact center spend, an annualized recovery in the seven figures for a single client.';
     }
     f.push({
-      title: 'CCaaS overspend',
+      title: 'CCaaS overspend', severity: 'high',
       body: body,
       redeploy: 'Most LAM clients redeploy recovered CCaaS spend into AI features, transcription, QA tooling, or seat expansion that was previously unfunded.'
     });
@@ -198,7 +203,7 @@ function buildFindings(a) {
   // Vendor sprawl with coverage gaps
   if (a.suppliers === '5plus' && a.gaps === 'yes') {
     f.push({
-      title: 'Vendor sprawl with coverage gaps',
+      title: 'Vendor sprawl with coverage gaps', severity: 'med',
       body: 'Paying multiple suppliers for overlapping services while leaving real gaps elsewhere is a portfolio mismanagement signal, not a duplicate-billing problem. The fix is consolidation and rebalance, not renegotiation.',
       redeploy: 'Most LAM clients redeploy recovered consolidation spend into the cybersecurity or monitoring gaps that the sprawl was masking.'
     });
@@ -211,7 +216,7 @@ function buildFindings(a) {
       body += ' On fleets of 500 or more lines, recoverable waste typically runs into six figures. On 1,000-line fleets, zombie line rates of 8 to 12 percent are common. Fleets untouched for three or more years commonly recover 30 percent or more.';
     }
     f.push({
-      title: 'Mobility waste',
+      title: 'Mobility waste', severity: 'med',
       body: body,
       redeploy: 'Most LAM clients redeploy recovered mobility spend into device refresh cycles, MDM upgrades, or expansion into ruggedized devices for field workers.'
     });
@@ -230,7 +235,7 @@ function buildBand(a, count) {
   }
   let body;
   if (count === 0) {
-    body = lead + 'Your environment looks tighter than most. A formal LAM snapshot would confirm.';
+    body = lead + 'Your environment looks tighter than most. Most environments still surface a few opportunities once we look at line-item data, so a snapshot would confirm whether yours is the exception.';
   } else if (count <= 2) {
     body = lead + 'Your environment likely has 20 to 30 percent recoverable spend. This is the typical mid-market range LAM sees.';
   } else if (count <= 4) {
@@ -268,7 +273,7 @@ function buildBand(a, count) {
     html += '<h2 style="font-size:20px;margin:0 0 16px">Findings</h2>';
     html += '<div class="bb-sc-findings">';
     findings.forEach(f => {
-      html += '<div class="bb-sc-finding"><h3>' + f.title + '</h3><p>' + f.body + '</p><p class="bb-sc-redeploy">' + f.redeploy + '</p></div>';
+      html += '<div class="bb-sc-finding bb-sc-sev-' + (f.severity || 'low') + '"><h3>' + (f.severity === 'high' ? '<span class="bb-sc-flag bb-sc-flag-high" aria-label="High priority"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1v14M1 1h11l-2 3 2 3H1" fill="#c0392b" stroke="#c0392b" stroke-width="1.2" stroke-linejoin="round"/></svg></span>' : f.severity === 'med' ? '<span class="bb-sc-flag bb-sc-flag-med" aria-label="Medium priority"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1v14M1 1h11l-2 3 2 3H1" fill="#d39000" stroke="#d39000" stroke-width="1.2" stroke-linejoin="round"/></svg></span>' : '') + f.title + '</h3><p>' + f.body + '</p><p class="bb-sc-redeploy">' + f.redeploy + '</p></div>';
     });
     html += '</div>';
   }
