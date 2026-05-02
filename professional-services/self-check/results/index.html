@@ -183,7 +183,7 @@ function buildFindings(a) {
     const tier = locationTier(a);
     let body = 'Contact center platforms accumulate cost in three places: licensed seats no longer assigned to active agents, premium features turned on but unused, and per-minute rates that have not been benchmarked since contract signing.';
     if (tier === 'mid' || tier === 'large') {
-      body += ' At your scale, a 12-month review typically identifies 20 to 40 percent in recoverable seat and feature spend.';
+      body += ' At your scale, a 12-month review typically identifies 30 percent or more in recoverable seat and feature spend.';
     }
     if (tier === 'large') {
       body += ' On a recent engagement at this scale, LAM recovered 50 percent of monthly contact center spend, an annualized recovery in the seven figures for a single client.';
@@ -206,9 +206,9 @@ function buildFindings(a) {
 
   // Mobility waste
   if (a.mobility && a.mobility !== 'small_recent' && a.mobility !== 'mid_recent') {
-    let body = 'Mobility environments accumulate waste in three places: zombie lines (active billing for inactive users), oversized plans, and stale device upgrade cycles. Recoverable mobility spend typically runs 20 to 35 percent in mid-market environments.';
+    let body = 'Mobility environments accumulate waste in three places: zombie lines (active billing for inactive users), oversized plans, and stale device upgrade cycles. Recoverable mobility spend typically runs 30 percent or more in mid-market environments.';
     if (a.mobility === 'large' || a.mobility === 'enterprise') {
-      body += ' On fleets of 500 or more lines, recoverable waste typically runs into six figures. On 1,000-line fleets, zombie line rates of 8 to 12 percent are common. Fleets untouched for three or more years commonly recover 40 to 45 percent.';
+      body += ' On fleets of 500 or more lines, recoverable waste typically runs into six figures. On 1,000-line fleets, zombie line rates of 8 to 12 percent are common. Fleets untouched for three or more years commonly recover 30 percent or more.';
     }
     f.push({
       title: 'Mobility waste',
