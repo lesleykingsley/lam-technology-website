@@ -122,7 +122,7 @@ function locationTier(a) {
   const v = a.locations;
   if (v === 'lt10' || v === '10_50') return 'small';
   if (v === '51_200' || v === '201_500') return 'mid';
-  if (v === '501_1000' || v === '1001_2000' || v === 'gt2000') return 'large';
+  if (v === 'gt500') return 'large';
   return 'mid';
 }
 
