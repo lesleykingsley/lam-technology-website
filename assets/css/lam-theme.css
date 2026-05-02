@@ -11,11 +11,11 @@
 :root {
   /* Brand palette */
   --color-dark:    #1B2D5B;
-  --color-dark-2:  #14325c;
+  --color-dark-2:  #1B2D5B;
 
   /* Inline-page aliases (used by per-page <style> blocks) */
   --nd:            #1B2D5B; /* navy dark  - was #0d0d1a */
-  --nm:            #14325c; /* navy mid */
+  --nm:            #1B2D5B; /* navy mid */
   --ne:            #1B2D5B; /* navy end */
 
   --color-navy:    #1B2D5B;
@@ -131,7 +131,7 @@ nav, header { font-family: var(--font-body); }
    ===================================================== */
 :root {
   --brand-navy:      #1B2D5B;
-  --brand-navy-2:    #14325c;
+  --brand-navy-2:    #1B2D5B;
   --brand-gold:      #d4a843;
   --brand-gold-soft: rgba(212, 168, 67, 0.18);
   --brand-cream:     #faf8f4;
