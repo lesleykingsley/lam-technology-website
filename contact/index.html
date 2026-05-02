@@ -153,7 +153,76 @@ footer{background:var(--navy);color:rgba(255,255,255,.7);padding:48px 0 32px}
 <div class="cf">
 <h2>Send Us a Message</h2>
 <p class="cf-sub">We'll respond within one business day.</p>
-<iframe src="https://working-parrot-418.forms.space/019d3b9d-eec9-7aa8-bb01-4ef7392b6172" width="100%" height="1400" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="border: none; border-radius: 8px; width: 100%; max-width: 100%;"></iframe>
+<form id="contact-form" class="cf-form" novalidate>
+            <div class="cf-row">
+              <div class="cf-group">
+                <label for="cf-name">Name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="200">
+              </div>
+              <div class="cf-group">
+                <label for="cf-email">Email</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="cf-row">
+              <div class="cf-group">
+                <label for="cf-company">Company</label>
+                <input id="cf-company" name="company" type="text" autocomplete="organization">
+              </div>
+              <div class="cf-group">
+                <label for="cf-phone">Phone (optional)</label>
+                <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+              </div>
+            </div>
+            <div class="cf-group">
+              <label for="cf-message">How can we help?</label>
+              <textarea id="cf-message" name="message" required maxlength="5000" rows="6"></textarea>
+            </div>
+            <!-- Honeypot: hidden from humans, often filled by bots -->
+            <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden">
+              <label for="cf-website">Website</label>
+              <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <button type="submit" class="cf-submit" id="cf-submit">Send Message</button>
+            <p class="cf-note" id="cf-status" aria-live="polite">We never share your information.</p>
+          </form>
+          <script>
+            (function(){
+              var form = document.getElementById('contact-form');
+              var btn = document.getElementById('cf-submit');
+              var status = document.getElementById('cf-status');
+              if (!form) return;
+              form.addEventListener('submit', async function(e){
+                e.preventDefault();
+                btn.disabled = true;
+                var original = btn.textContent;
+                btn.textContent = 'Sending...';
+                status.textContent = '';
+                var data = Object.fromEntries(new FormData(form).entries());
+                try {
+                  var res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                  });
+                  if (res.ok) {
+                    form.reset();
+                    status.textContent = "Thanks — we'll respond within one business day.";
+                    if (window.gtag) { window.gtag('event', 'contact_form_submit', { event_category: 'engagement' }); }
+                  } else {
+                    var err = {};
+                    try { err = await res.json(); } catch(_){}
+                    status.textContent = (err && err.error) ? ('Error: ' + err.error + '. Please email info@lamtechnology.com.') : 'Something went wrong. Please email info@lamtechnology.com.';
+                  }
+                } catch (e2) {
+                  status.textContent = 'Network error. Please email info@lamtechnology.com.';
+                } finally {
+                  btn.disabled = false;
+                  btn.textContent = original;
+                }
+              });
+            })();
+          </script>
 </div>
 
 <div class="cs">
