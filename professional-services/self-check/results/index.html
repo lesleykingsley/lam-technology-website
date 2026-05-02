@@ -289,7 +289,36 @@ function buildBand(a, count) {
   html += '<a class="bb-sc-cta-secondary" href="/professional-services/self-check/">Retake the Self-Check</a>';
   html += '</div>';
 
+  // GA4 tracking
+  if (typeof gtag === 'function') {
+    var bbHighCount = findings.filter(function(x){return x.severity==='high';}).length;
+    var bbMedCount = findings.filter(function(x){return x.severity==='medium';}).length;
+    var bbLowCount = findings.filter(function(x){return x.severity==='low';}).length;
+    gtag('event', 'self_check_complete', {
+      tool: 'billing_breakthrough',
+      finding_count: findings.length,
+      high_count: bbHighCount,
+      medium_count: bbMedCount,
+      low_count: bbLowCount,
+      locations_bucket: a.locations || 'unknown'
+    });
+  }
   root.innerHTML = html;
+  // Track outbound clicks to snapshot/contact CTAs
+  if (typeof gtag === 'function') {
+    root.addEventListener('click', function(e) {
+      var t = e.target.closest && e.target.closest('a');
+      if (!t) return;
+      var href = t.getAttribute('href') || '';
+      if (href.indexOf('contact') !== -1 || href.indexOf('mailto:') !== -1) {
+        gtag('event', 'self_check_to_snapshot', {
+          tool: 'billing_breakthrough',
+          target_href: href,
+          finding_count: findings.length
+        });
+      }
+    });
+  }
 })();
 </script>
 </body>

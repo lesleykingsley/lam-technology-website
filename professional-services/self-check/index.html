@@ -296,6 +296,10 @@ const QUESTIONS = [
       btn.addEventListener('click', () => {
         answers[q.id] = opt.value;
         sessionStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
+        if (!window.__bbScStarted && typeof gtag === 'function') {
+          window.__bbScStarted = true;
+          gtag('event', 'self_check_start', { tool: 'billing_breakthrough', first_question_id: q.id });
+        }
         opts.querySelectorAll('.bb-sc-option').forEach(b => b.classList.remove('is-selected'));
         btn.classList.add('is-selected');
         nextBtn.removeAttribute('disabled');
@@ -326,6 +330,9 @@ const QUESTIONS = [
       render();
     } else {
       fill.style.width = '100%';
+      if (typeof gtag === 'function') {
+        gtag('event', 'self_check_submit', { tool: 'billing_breakthrough', locations_bucket: answers.locations || 'unknown', answers_count: Object.keys(answers).length });
+      }
       window.location.href = '/professional-services/self-check/results/';
     }
   });
