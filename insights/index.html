@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/assets/css/lam-theme.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#1a1a2e;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--rs:6px;--r:12px;--t:.2s ease;--sl:0 12px 48px rgba(26,26,46,.16);--sxl:0 24px 80px rgba(26,26,46,.20)}
+:root{--navy:#1B2D5B;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--rs:6px;--r:12px;--t:.2s ease;--sl:0 12px 48px rgba(26,26,46,.16);--sxl:0 24px 80px rgba(26,26,46,.20)}
 html{scroll-behavior:smooth;overflow-y:scroll}
 body{font-family:'Inter',sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;padding-top:70px}
 img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
@@ -258,13 +258,26 @@ footer{background:var(--nd);padding:56px 0 32px;border-top:1px solid rgba(255,25
         </div>
       </section>
 
-<section id="cta">
+<section id="cta" class="cs-cta-section">
   <div class="container">
-    <h2 class="cta-title">Have a Technology Question?</h2>
-    <p class="cta-sub">We&rsquo;re here to give you straight answers. No sales pitch, no obligation.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="/contact/" class="btn btn-gold">Just Ask LAM &rarr;</a>
-      <a href="/professional-services/" class="btn btn-outline">See Our Services</a>
+    <div class="cs-cta-box">
+      <div>
+        <div class="cs-eyebrow">Just Ask LAM</div>
+        <h2>Want these insights tailored to your environment?</h2>
+        <p class="cs-section-sub">Tell us a bit about what you&rsquo;re working on and we&rsquo;ll come back with a focused, no-pressure perspective &mdash; no sales pitch, no obligation.</p>
+      </div>
+      <div class="cs-contact-card">
+        <form onsubmit="var n=this.name.value,c=this.company.value,e=this.email.value,m=this.message.value;window.location='mailto:info@lamtechnology.com?subject=Insights+Inquiry+from+'+encodeURIComponent(n)+'+('+encodeURIComponent(c)+')&body=Name:+'+encodeURIComponent(n)+'%0ACompany:+'+encodeURIComponent(c)+'%0AEmail:+'+encodeURIComponent(e)+'%0A%0A'+encodeURIComponent(m);return false;">
+          <div class="cta-row">
+            <div><label>Your Name</label><input name="name" required placeholder="Jane Smith"/></div>
+            <div><label>Company</label><input name="company" required placeholder="Acme Corp"/></div>
+          </div>
+          <div><label>Email Address</label><input name="email" type="email" required placeholder="jane@acmecorp.com"/></div>
+          <div><label>What can we help with?</label><textarea name="message" rows="3" placeholder="Tell us a bit about your environment or what you're trying to solve..."></textarea></div>
+          <button type="submit" class="cs-contact-btn">Request a Tailored Briefing &rarr;</button>
+          <p class="cs-cta-call">Or call us directly: <a href="tel:8174844522">(817) 484-4522</a></p>
+        </form>
+      </div>
     </div>
   </div>
 </section>

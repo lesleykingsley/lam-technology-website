@@ -1,5 +1,5 @@
 /* ===========================================================
-   LAM Technology â Global Theme
+   LAM Technology — Global Theme
    Single source of truth for fonts, colors, and typography.
    Linked from every HTML page to keep the design consistent.
    =========================================================== */
@@ -10,27 +10,28 @@
 /* --- Design tokens --- */
 :root {
   /* Brand palette */
-  --color-dark:        #0d0d1a;
-  --color-dark-2:      #1a1a2e;
+  --color-dark:    #1B2D5B;
+  --color-dark-2:  #1B2D5B;
 
   /* Inline-page aliases (used by per-page <style> blocks) */
-  --nd:                #0d0d1a;  /* navy dark   */
-  --nm:                #252550;  /* navy mid    */
-  --ne:                #0a1628;  /* navy end    */
-  --color-navy:        #0d2240;
-  --color-cream:       #faf8f4;
-  --color-cream-2:     #f8f6f0;
-  --color-cream-3:     #f5f1ea;
-  --color-gold:        #d4a843;
-  --color-gold-hover:  #b8922e;
-  --color-ink:         #1a1a2e;
-  --color-ink-soft:    #4a4038;
-  --color-muted:       #8a8070;
-  --color-white:       #ffffff;
+  --nd:            #1B2D5B; /* navy dark  - was #0d0d1a */
+  --nm:            #1B2D5B; /* navy mid */
+  --ne:            #1B2D5B; /* navy end */
+
+  --color-navy:    #1B2D5B;
+  --color-cream:   #faf8f4;
+  --color-cream-2: #f8f6f0;
+  --color-cream-3: #f5f1ea;
+  --color-gold:    #d4a843;
+  --color-gold-hover: #b8922e;
+  --color-ink:     #1B2D5B;
+  --color-ink-soft: #4a4038;
+  --color-muted:   #8a8070;
+  --color-white:   #ffffff;
 
   /* Typography */
-  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-display:  'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 
   /* Spacing / radius / motion */
   --radius-sm: 6px;
@@ -41,7 +42,6 @@
 /* --- Reset / base --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
 body {
   font-family: var(--font-body);
   font-size: 17px;
@@ -54,15 +54,13 @@ body {
 
 /* --- Headings use Playfair everywhere --- */
 h1, h2, h3, h4, h5, h6,
-.heading,
-.hero-title {
+.heading, .hero-title {
   font-family: var(--font-display);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: inherit;
 }
-
 h1 { font-size: clamp(2.25rem, 4vw + 1rem, 4.25rem); }
 h2 { font-size: clamp(1.875rem, 2.5vw + 1rem, 3rem); }
 h3 { font-size: clamp(1.375rem, 1.2vw + 1rem, 1.875rem); }
@@ -75,14 +73,14 @@ h4 { font-size: 1.25rem; }
 .accent-gold { color: var(--color-gold); }
 
 /* --- Body copy --- */
-p  { font-family: var(--font-body); font-size: 1rem; line-height: 1.7; }
+p { font-family: var(--font-body); font-size: 1rem; line-height: 1.7; }
 p.lead { font-size: 1.0625rem; }
 
 /* --- Section backgrounds --- */
-.section-dark    { background: var(--color-dark);    color: var(--color-white); }
-.section-navy    { background: var(--color-navy);    color: var(--color-white); }
-.section-cream   { background: var(--color-cream);   color: var(--color-ink);  }
-.section-cream-2 { background: var(--color-cream-2); color: var(--color-ink);  }
+.section-dark   { background: var(--color-dark);    color: var(--color-white); }
+.section-navy   { background: var(--color-navy);    color: var(--color-white); }
+.section-cream  { background: var(--color-cream);   color: var(--color-ink); }
+.section-cream-2{ background: var(--color-cream-2); color: var(--color-ink); }
 
 /* Muted paragraph color inside dark sections (matches homepage) */
 .section-dark p, .section-navy p { color: rgba(255,255,255,0.75); }
@@ -99,7 +97,9 @@ p.lead { font-size: 1.0625rem; }
 
 /* --- Buttons (match homepage "Get Started" / "Our Services") --- */
 .btn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.875rem 1.375rem;
   font-family: var(--font-body);
   font-size: 0.875rem;
@@ -111,53 +111,46 @@ p.lead { font-size: 1.0625rem; }
   cursor: pointer;
   border: 1px solid transparent;
 }
-.btn-primary       { background: var(--color-gold); color: var(--color-white); }
+.btn-primary { background: var(--color-gold); color: var(--color-white); }
 .btn-primary:hover { background: var(--color-gold-hover); }
-.btn-secondary       { background: var(--color-dark); color: var(--color-white); border-color: rgba(255,255,255,0.15); }
+.btn-secondary { background: var(--color-dark); color: var(--color-white); border-color: rgba(255,255,255,0.15); }
 .btn-secondary:hover { background: var(--color-dark-2); }
 
 /* --- Links --- */
-a       { color: var(--color-gold); transition: var(--transition); }
+a { color: var(--color-gold); transition: var(--transition); }
 a:hover { color: var(--color-gold-hover); }
 
 /* --- Nav / header inherit body font --- */
 nav, header { font-family: var(--font-body); }
 
 /* =====================================================
-   v0.2 BRAND LAYER (additive â does not modify legacy tokens)
+   v0.2 BRAND LAYER (additive — does not modify legacy tokens)
    Navy-dominant, restrained gold. Apply by adding class
    "lam-typography" to <body> and using .section-brand-*
    utilities on subpage sections.
    ===================================================== */
 :root {
-  --brand-navy:        #0d2240;
-  --brand-navy-2:      #14325c;
-  --brand-gold:        #d4a843;
-  --brand-gold-soft:   rgba(212, 168, 67, 0.18);
-  --brand-cream:       #faf8f4;
-  --brand-cream-alt:   #f5f1ea;
-  --brand-ink:         #1a1a2e;
-  --brand-ink-soft:    #4a4038;
-  --brand-rule:        rgba(13, 34, 64, 0.12);
+  --brand-navy:      #1B2D5B;
+  --brand-navy-2:    #1B2D5B;
+  --brand-gold:      #d4a843;
+  --brand-gold-soft: rgba(212, 168, 67, 0.18);
+  --brand-cream:     #faf8f4;
+  --brand-cream-alt: #f5f1ea;
+  --brand-ink:       #1B2D5B;
+  --brand-ink-soft:  #4a4038;
+  --brand-rule:      rgba(27, 45, 91, 0.12);
 }
 
-/* Section utilities â subpages should use these */
+/* Section utilities — subpages should use these */
 .section-brand-navy {
   background: var(--brand-navy);
   color: #ffffff;
 }
 .section-brand-navy p,
-.section-brand-navy li {
-  color: rgba(255, 255, 255, 0.78);
-}
-.section-brand-cream {
-  background: var(--brand-cream);
-  color: var(--brand-ink);
-}
-.section-brand-cream-alt {
-  background: var(--brand-cream-alt);
-  color: var(--brand-ink);
-}
+.section-brand-navy li { color: rgba(255, 255, 255, 0.78); }
+
+.section-brand-cream     { background: var(--brand-cream);     color: var(--brand-ink); }
+.section-brand-cream-alt { background: var(--brand-cream-alt); color: var(--brand-ink); }
 
 /* Thin gold rule (the "roofline" idea) */
 .brand-rule-gold {
@@ -167,9 +160,11 @@ nav, header { font-family: var(--font-body); }
   margin: 1rem 0;
 }
 
-/* Buttons â navy-dominant */
+/* Buttons — navy-dominant */
 .btn-brand-primary {
-  display: inline-flex; align-items: center; gap: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.875rem 1.375rem;
   font-family: var(--font-body);
   font-size: 0.875rem;
@@ -183,12 +178,12 @@ nav, header { font-family: var(--font-body); }
   color: #ffffff;
   border: 1px solid var(--brand-navy);
 }
-.btn-brand-primary:hover {
-  background: var(--brand-navy-2);
-  border-color: var(--brand-navy-2);
-}
+.btn-brand-primary:hover { background: var(--brand-navy-2); border-color: var(--brand-navy-2); }
+
 .btn-brand-ghost {
-  display: inline-flex; align-items: center; gap: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.875rem 1.375rem;
   font-family: var(--font-body);
   font-size: 0.875rem;
@@ -202,35 +197,24 @@ nav, header { font-family: var(--font-body); }
   color: var(--brand-navy);
   border: 1px solid var(--brand-navy);
 }
-.btn-brand-ghost:hover {
-  background: var(--brand-navy);
-  color: #ffffff;
-}
+.btn-brand-ghost:hover { background: var(--brand-navy); color: #ffffff; }
 
-/* Typography safety net â add class "lam-typography" to <body>
-   on subpages to force the canonical font stack, even if the
-   page has leftover inline Segoe UI / Oswald / Arial styles. */
+/* Typography safety net — add class "lam-typography" to <body> on
+   subpages to force the canonical font stack, even if the page has
+   leftover inline Segoe UI / Oswald / Arial styles. */
 body.lam-typography,
 .lam-typography {
-  /* Enforce canonical fonts without overriding page background/color. */
   font-family: var(--font-body) !important;
 }
-.lam-typography h1,
-.lam-typography h2,
-.lam-typography h3,
-.lam-typography h4,
-.lam-typography h5,
-.lam-typography h6 {
+.lam-typography h1, .lam-typography h2, .lam-typography h3,
+.lam-typography h4, .lam-typography h5, .lam-typography h6 {
   font-family: var(--font-display) !important;
   font-weight: 900;
   letter-spacing: -0.01em;
   line-height: 1.1;
 }
-.lam-typography p,
-.lam-typography li,
-.lam-typography a,
-.lam-typography span,
-.lam-typography div {
+.lam-typography p, .lam-typography li, .lam-typography a,
+.lam-typography span, .lam-typography div {
   font-family: var(--font-body) !important;
 }
 
@@ -248,29 +232,225 @@ body.lam-typography,
 /* Restrained gold accent inside navy sections */
 .section-brand-navy .accent-gold,
 .section-brand-navy .eyebrow,
-.section-brand-navy .eyebrow-brand {
-  color: var(--brand-gold);
-}
+.section-brand-navy .eyebrow-brand { color: var(--brand-gold); }
 
-/* Links inside brand-typography â navy by default, gold on hover */
-.lam-typography a {
-  color: var(--brand-navy);
-  text-decoration-color: var(--brand-gold);
-}
-.lam-typography a:hover {
-  color: var(--brand-navy-2);
-}
+/* Links inside brand-typography — navy by default, gold on hover */
+.lam-typography a { color: var(--brand-navy); text-decoration-color: var(--brand-gold); }
+.lam-typography a:hover { color: var(--brand-navy-2); }
+
 .section-brand-navy a,
 .section-brand-navy .lam-typography a {
   color: #ffffff;
   text-decoration-color: var(--brand-gold);
 }
 
-/* Forbidden-font fallback: if a subpage still has stray Oswald
-   or similar display fonts on headings, normalize them. */
 .lam-typography h1[style*="Oswald"],
 .lam-typography h2[style*="Oswald"],
 .lam-typography h3[style*="Oswald"],
 .lam-typography h4[style*="Oswald"] {
   font-family: var(--font-display) !important;
+}
+
+/* =====================================================
+   GLOBAL FOOTER (lifted from per-page inline styles so
+   every page that uses the standard footer markup renders
+   correctly — including Insights and Practice Areas)
+   ===================================================== */
+#footer {
+  background: var(--brand-navy);
+  color: rgba(255,255,255,.55);
+  padding: 72px 0 36px;
+  font-family: var(--font-body);
+}
+#footer .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.ft {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1.3fr;
+  gap: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.fli img { height: 42px; width: auto; margin-bottom: 18px; filter: brightness(0) invert(1); }
+.fde {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.55);
+  max-width: 270px;
+}
+.fso { margin-top: 24px; display: flex; gap: 10px; }
+.fso a {
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,.65);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.fso a:hover { background: var(--color-gold); border-color: var(--color-gold); color: #fff; }
+.fct {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+}
+.flk { display: flex; flex-direction: column; gap: 10px; }
+.flk a {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.flk a:hover { color: #fff; }
+.fcr {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.fcr a { color: rgba(255,255,255,.55); text-decoration: none; }
+.fcr a:hover { color: #fff; }
+.fb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 28px;
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+}
+.ftx-badge {
+  background: rgba(212,168,67,.12);
+  border: 1px solid rgba(212,168,67,.3);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,.7);
+}
+@media (max-width: 900px) {
+  .ft { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .ft { grid-template-columns: 1fr; gap: 32px; }
+  #footer { padding: 56px 0 28px; }
+}
+
+/* =====================================================
+   GLOBAL CTA SECTION (the "Just Ask LAM" card pattern
+   from the practice-area pages, lifted here so any page
+   can drop in <section class="cs-cta-section">)
+   ===================================================== */
+.cs-cta-section {
+  background: var(--brand-navy);
+  padding: 88px 0;
+  color: #ffffff;
+  font-family: var(--font-body);
+}
+.cs-cta-section .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.cs-cta-box {
+  background: linear-gradient(135deg, rgba(212,168,67,.12) 0%, rgba(20,50,92,.6) 50%, rgba(27,45,91,.5) 100%);
+  border: 1px solid rgba(212,168,67,.2);
+  border-radius: 24px;
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 48px;
+  align-items: center;
+}
+.cs-cta-box .cs-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+}
+.cs-cta-box h2 {
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  font-family: var(--font-display);
+  color: #fff;
+}
+.cs-cta-box p.cs-section-sub,
+.cs-cta-box p {
+  font-size: 17px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.7;
+  max-width: 540px;
+}
+.cs-contact-card {
+  background: rgba(13,22,40,.7);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  padding: 32px;
+}
+.cs-contact-card form { display: flex; flex-direction: column; gap: 14px; }
+.cs-contact-card .cta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cs-contact-card label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-body);
+}
+.cs-contact-card input,
+.cs-contact-card textarea {
+  width: 100%;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #fff;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition);
+}
+.cs-contact-card input:focus,
+.cs-contact-card textarea:focus { border-color: rgba(212,168,67,.6); }
+.cs-contact-card textarea { resize: vertical; min-height: 90px; }
+.cs-contact-btn {
+  display: block;
+  width: 100%;
+  background: var(--color-gold);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 6px;
+  transition: background .2s, transform .2s;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.cs-contact-btn:hover { background: var(--color-gold-hover); transform: translateY(-2px); }
+.cs-cta-call {
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  text-align: center;
+  margin-top: 0;
+}
+.cs-cta-call a { color: rgba(255,255,255,.7); text-decoration: none; }
+.cs-cta-call a:hover { color: #fff; }
+@media (max-width: 1024px) {
+  .cs-cta-box { grid-template-columns: 1fr; gap: 32px; padding: 36px; }
+  .cs-cta-box p.cs-section-sub, .cs-cta-box p { max-width: 100%; }
+}
+@media (max-width: 600px) {
+  .cs-contact-card .cta-row { grid-template-columns: 1fr; }
+  .cs-cta-box { padding: 28px; }
 }
