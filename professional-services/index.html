@@ -193,23 +193,82 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 
 <!-- HERO -->
 <section id="main" style="background:linear-gradient(135deg,var(--nd) 0%,var(--nm) 60%,var(--ne) 100%);padding:80px 0 72px;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
-  <div style="position:absolute;top:-20%;right:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.12) 0%,transparent 65%);pointer-events:none"></div>
-  <div class="container" style="position:relative;z-index:1">
-    <div style="max-width:760px">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.25);border-radius:100px;padding:5px 16px;margin-bottom:24px">
-        <span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75)">How We Work</span>
-      </div>
-      <h1 style="font-size:clamp(36px,5vw,64px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:20px">The LAM<br><span style="color:var(--red)">Engagement Model</span></h1>
-      <p style="font-size:18px;color:rgba(255,255,255,.62);line-height:1.78;max-width:580px;margin-bottom:36px">A proven four-phase process built around your success. Every client engagement follows the same disciplined path: Insight, Strategy, Execution, and Support.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="/professional-services/self-check/" class="btn br">Take the 5-Minute Self-Check <span class="arr">&#8594;</span></a>
-        <a href="/contact/" class="btn bow">Just Ask LAM <span class="arr">&#8594;</span></a>
-      </div>
-    </div>
-  </div>
+<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
+<div style="position:absolute;top:-20%;right:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.12) 0%,transparent 65%);pointer-events:none"></div>
+<div class="container" style="position:relative;z-index:1">
+<div style="display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center" class="ps-hero-grid">
+<div style="max-width:600px">
+<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.25);border-radius:100px;padding:5px 16px;margin-bottom:24px">
+<span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75)">How We Work</span>
+</div>
+<h1 style="font-size:clamp(36px,5vw,64px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:20px">The LAM<br><span style="color:var(--red)">Engagement Model</span></h1>
+<p style="font-size:18px;color:rgba(255,255,255,.62);line-height:1.78;margin-bottom:36px">A proven, disciplined process built around your success &mdash; and built to keep evolving as your business does.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap">
+<a href="/professional-services/billing-breakthrough/" class="btn br">Start with Billing Breakthrough <span class="arr">&#8594;</span></a>
+<a href="/contact/" class="btn bow">Just Ask LAM <span class="arr">&#8594;</span></a>
+</div>
+</div>
+<div class="ps-circle-wrap" style="position:relative;width:100%;max-width:440px;margin:0 auto;aspect-ratio:1/1">
+<svg viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block" aria-labelledby="psCircleTitle" role="img">
+<title id="psCircleTitle">The LAM Engagement Model: a continuous cycle of Insight, Strategy, Execution, and Support</title>
+<defs>
+<marker id="psArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#d4a843"/>
+</marker>
+</defs>
+<!-- outer ring -->
+<circle cx="220" cy="220" r="170" fill="none" stroke="rgba(212,168,67,.18)" stroke-width="1"/>
+<!-- four clockwise arc arrows between phases -->
+<!-- Insight (top, 12 o'clock) to Strategy (right, 3 o'clock) -->
+<path d="M 305,80 A 170,170 0 0,1 360,135" fill="none" stroke="#d4a843" stroke-width="2" marker-end="url(#psArrow)" opacity=".85"/>
+<!-- Strategy (right) to Execution (bottom) -->
+<path d="M 360,305 A 170,170 0 0,1 305,360" fill="none" stroke="#d4a843" stroke-width="2" marker-end="url(#psArrow)" opacity=".85"/>
+<!-- Execution (bottom) to Support (left) -->
+<path d="M 135,360 A 170,170 0 0,1 80,305" fill="none" stroke="#d4a843" stroke-width="2" marker-end="url(#psArrow)" opacity=".85"/>
+<!-- Support (left) back to Insight (top) — the closing loop -->
+<path d="M 80,135 A 170,170 0 0,1 135,80" fill="none" stroke="#d4a843" stroke-width="2.5" marker-end="url(#psArrow)" opacity="1"/>
+<!-- center logomark -->
+<g transform="translate(220,220)">
+<circle r="58" fill="rgba(212,168,67,.08)" stroke="rgba(212,168,67,.35)" stroke-width="1"/>
+<text x="0" y="-2" text-anchor="middle" font-family="Inter,sans-serif" font-size="22" font-weight="900" fill="#fff" letter-spacing="0.08em">LAM</text>
+<text x="0" y="18" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="rgba(212,168,67,.85)" letter-spacing="0.18em">ONGOING</text>
+</g>
+<!-- Phase nodes -->
+<!-- 01 Insight (top) -->
+<g>
+<circle cx="220" cy="60" r="44" fill="rgba(255,255,255,.06)" stroke="rgba(212,168,67,.55)" stroke-width="1.5"/>
+<text x="220" y="52" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#d4a843" letter-spacing="0.18em">01</text>
+<text x="220" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="800" fill="#fff">INSIGHT</text>
+</g>
+<!-- 02 Strategy (right) -->
+<g>
+<circle cx="380" cy="220" r="44" fill="rgba(255,255,255,.06)" stroke="rgba(212,168,67,.55)" stroke-width="1.5"/>
+<text x="380" y="212" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#d4a843" letter-spacing="0.18em">02</text>
+<text x="380" y="232" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="800" fill="#fff">STRATEGY</text>
+</g>
+<!-- 03 Execution (bottom) -->
+<g>
+<circle cx="220" cy="380" r="44" fill="rgba(255,255,255,.06)" stroke="rgba(212,168,67,.55)" stroke-width="1.5"/>
+<text x="220" y="372" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#d4a843" letter-spacing="0.18em">03</text>
+<text x="220" y="392" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="800" fill="#fff">EXECUTION</text>
+</g>
+<!-- 04 Support (left) -->
+<g>
+<circle cx="60" cy="220" r="44" fill="rgba(255,255,255,.06)" stroke="rgba(212,168,67,.55)" stroke-width="1.5"/>
+<text x="60" y="212" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#d4a843" letter-spacing="0.18em">04</text>
+<text x="60" y="232" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="800" fill="#fff">SUPPORT</text>
+</g>
+</svg>
+</div>
+</div>
+</div>
 </section>
-
+<style>
+@media(max-width:768px){
+.ps-hero-grid{grid-template-columns:1fr !important;gap:40px !important}
+.ps-circle-wrap{max-width:340px !important}
+}
+</style>
 <!-- PROCESS STEPS -->
 <section style="background:var(--off);padding:80px 0 0">
   <div class="container">
