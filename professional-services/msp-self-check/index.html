@@ -265,7 +265,7 @@ const QUESTIONS = [
   }
 ];
 var answers = {};
-var history = [];
+var navHistory = [];
 var currentIndex = 0;
 function getVisibleQuestions() { return QUESTIONS.filter(function(q){ return !q.showIf || q.showIf(answers); }); }
 function saveState(){ try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(answers)); } catch(e) {} }
@@ -299,7 +299,7 @@ function renderCurrent(){
   container.innerHTML = html;
   attachHandlers(q);
   updateNav(q);
-  document.getElementById("msp-sc-back").disabled = history.length === 0;
+  document.getElementById("msp-sc-back").disabled = navHistory.length === 0;
 }
 function renderSingle(q){
   var v = answers[q.id];
@@ -409,7 +409,7 @@ function goNext(){
   var q = visible[currentIndex];
   if (!isAnswered(q)) return;
   if (q.id === "gate" && (answers.gate === "inhouse" || answers.gate === "considering")) { goToResults(); return; }
-  history.push(currentIndex);
+  navHistory.push(currentIndex);
   visible = getVisibleQuestions();
   if (currentIndex >= visible.length - 1) { goToResults(); return; }
   currentIndex++;
@@ -418,13 +418,13 @@ function goNext(){
   if (shell) window.scrollTo({ top: shell.offsetTop - 24, behavior: "smooth" });
 }
 function goBack(){
-  if (history.length === 0) return;
-  currentIndex = history.pop();
+  if (navHistory.length === 0) return;
+  currentIndex = navHistory.pop();
   renderCurrent();
 }
 function goToResults(){ saveState(); window.location.href = "/professional-services/msp-self-check/results/"; }
 function init(){
-  answers = {}; history = []; currentIndex = 0;
+  answers = {}; navHistory = []; currentIndex = 0;
   renderCurrent();
   document.getElementById("msp-sc-next").addEventListener("click", goNext);
   document.getElementById("msp-sc-back").addEventListener("click", goBack);
