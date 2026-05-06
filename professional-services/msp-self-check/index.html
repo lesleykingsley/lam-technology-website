@@ -287,7 +287,7 @@ function renderCurrent(){
   var q = visible[currentIndex];
   var container = document.getElementById("msp-sc-question");
   var total = visible.length;
-  document.getElementById("msp-sc-progress-label").textContent = "Question " + (currentIndex + 1) + " of " + total;
+  document.getElementById("msp-sc-progress-label").textContent = (q.id === "gate" ? "Question 1" : "Question " + (currentIndex + 1) + " of " + total);
   var pct = (currentIndex / total) * 100;
   document.getElementById("msp-sc-bar").style.width = pct + "%";
   var html = "<h2 class=\"bb-sc-q-title\">" + escapeHtml(q.title) + "<\/h2>";
@@ -402,7 +402,7 @@ function updateNav(q){
   nextBtn.disabled = !isAnswered(q);
   var visible = getVisibleQuestions();
   var isLast = currentIndex >= visible.length - 1;
-  nextBtn.textContent = isLast ? "See findings" : "Next";
+  nextBtn.textContent = (isLast && q.id !== "gate") ? "See findings" : "Next";
 }
 function goNext(){
   var visible = getVisibleQuestions();
