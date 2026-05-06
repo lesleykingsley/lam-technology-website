@@ -39,32 +39,54 @@
 .bb-sc-crosslink a{color:#1B2D5B;font-weight:600}
 </style>
 </head>
-<body class="bb-sc-body">
-<a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header" role="banner">
-  <div class="container header-row">
-    <a class="brand" href="/" aria-label="LAM Technology home">
-      <img src="/lam-logo.png" alt="" class="brand-mark" width="40" height="40"/>
-      <span class="brand-text"><span class="brand-name">LAM Technology</span><span class="brand-tag">Trustworthy IT guidance</span></span>
-    </a>
-    <nav class="primary-nav" aria-label="Primary">
-      <a href="/professional-services/">Professional Services</a>
-      <a href="/managed-services/">Managed Services</a>
-      <a href="/why-lam/">Why LAM</a>
-      <a href="/about-lam/">About</a>
-      <a class="nav-cta" href="/contact/">Contact</a>
+<body class="lam-typography">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="navbar">
+  <div class="container">
+    <nav class="nw">
+      <a href="/" class="nlogo"><img src="/lam-logo.png" alt="LAM Technology"/></a>
+      <div class="nl">
+        <a href="/professional-services/">Professional Services</a>
+        <a href="/practice-areas/">Practice Areas</a>
+        <a href="/about-lam/">Why LAM</a>
+        <a href="/insights/">Insights</a>
+        <a href="/contact/" class="nc">Just Ask LAM</a>
+      </div>
+      <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
     </nav>
+    <div class="nm" id="nMob">
+      <a href="/professional-services/" onclick="tNav()">Professional Services</a>
+      <a href="/practice-areas/" onclick="tNav()">Practice Areas</a>
+      <a href="/about-lam/" onclick="tNav()">Why LAM</a>
+      <a href="/insights/" onclick="tNav()">Insights</a>
+      <a href="/contact/" onclick="tNav()">Just Ask LAM</a>
+    </div>
   </div>
 </header>
+<div class="bc-bar"><div class="container">
+  <a href="/">&#8592; Home</a><span>/</span><a href="/professional-services/">Professional Services</a><span>/</span><a href="/professional-services/msp-self-check/">MSP Self-Check</a><span>/</span>Findings
+</div></div>
+
 <main id="main">
   <div class="bb-sc-shell" id="msp-sc-results-root"></div>
 </main>
-<footer class="site-footer" role="contentinfo">
-  <div class="container footer-row">
-    <p class="footer-brand">LAM Technology</p>
-    <p class="footer-copy">&copy; 2025 LAM Technology. Trustworthy IT guidance for mid-market leaders.</p>
+
+
+<footer id="footer"><div class="container">
+  <div class="ft">
+    <div><div class="fli"><img src="/lam-logo.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div>
+    <div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/wireless-wisdom.html">Mobility &amp; IoT</a><a href="/ai-readiness.html">AI Readiness</a></div></div>
+    <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
+    <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
   </div>
-</footer>
+  <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span class="ftx-badge">Fort Worth, TX</span></div>
+</div></footer>
+
+<script>
+function tNav(){document.getElementById('nMob').classList.toggle('op')}
+document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
+window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
+</script>
 <script>
 "use strict";
 var STORAGE_KEY = "msp_sc_answers_v1";
