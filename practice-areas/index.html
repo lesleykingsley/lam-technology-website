@@ -78,6 +78,23 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 .pa-method-text{font-size:14px;color:rgba(255,255,255,.62);line-height:1.7}
 @media(max-width:900px){.pa-method-row{grid-template-columns:1fr}}
 @media(max-width:768px){section .container > div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}}
+
+/* === Practice-areas navigation additions === */
+.pa-quick-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+.pa-quick-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:18px 16px;transition:all var(--t);display:flex;flex-direction:column;gap:8px;text-decoration:none}
+.pa-quick-card:hover{background:rgba(212,168,67,.08);border-color:rgba(212,168,67,.40);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.20)}
+.pa-quick-eyebrow{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.pa-quick-name{font-size:15px;font-weight:800;color:#fff;line-height:1.25;letter-spacing:-.01em}
+.pa-quick-tool{font-size:12px;color:rgba(255,255,255,.55);font-weight:500;line-height:1.4}
+.pa-quick-arrow{font-size:13px;font-weight:700;color:var(--red);margin-top:auto;padding-top:6px}
+@media(max-width:1024px){.pa-quick-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.pa-quick-grid{grid-template-columns:1fr}}
+.pa-anchor-nav{position:sticky;top:70px;z-index:50;background:rgba(248,246,240,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--g2);padding:14px 0}
+.pa-anchor-row{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;align-items:center}
+.pa-anchor-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g6);margin-right:8px}
+.pa-anchor-link{font-size:13px;font-weight:600;color:var(--navy);padding:7px 14px;border-radius:100px;border:1px solid var(--g2);background:#fff;transition:all var(--t);white-space:nowrap}
+.pa-anchor-link:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media(max-width:680px){.pa-anchor-row{justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}.pa-anchor-label{display:none}.pa-anchor-nav{padding:10px 0}}
 </style>
 <link rel="stylesheet" href="/assets/css/a11y.css"/>
 </head>
@@ -118,9 +135,39 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 </div>
 <h1 style="font-size:clamp(36px,5vw,60px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:20px">Five Lenses.<br><span style="color:var(--red)">One Disciplined Approach.</span></h1>
 <p style="font-size:18px;color:rgba(255,255,255,.62);line-height:1.78;max-width:620px;margin-bottom:36px">LAM doesn't sell features. We bring focused expertise to the technology questions mid-market IT leaders actually face &mdash; and we run every practice the same way: a branded assessment to set the baseline, a clear methodology for the work, and a path that flows back into the engagement model.</p>
-</div>
-</div>
-</section>
+        <div class="pa-quick-grid" style="margin-top:24px">
+          <a href="#lens-cyber" class="pa-quick-card">
+            <div class="pa-quick-eyebrow">Cybersecurity</div>
+            <div class="pa-quick-name">Vigilance Verification&trade;</div>
+            <div class="pa-quick-tool">Are we actually secure?</div>
+            <div class="pa-quick-arrow">Explore &rarr;</div>
+          </a>
+          <a href="#lens-infra" class="pa-quick-card">
+            <div class="pa-quick-eyebrow">Infrastructure</div>
+            <div class="pa-quick-name">Infrastructure Insight&trade;</div>
+            <div class="pa-quick-tool">Helping or holding back?</div>
+            <div class="pa-quick-arrow">Explore &rarr;</div>
+          </a>
+          <a href="#lens-cx" class="pa-quick-card">
+            <div class="pa-quick-eyebrow">Customer Experience</div>
+            <div class="pa-quick-name">Experience Examination&trade;</div>
+            <div class="pa-quick-tool">Where is CX breaking?</div>
+            <div class="pa-quick-arrow">Explore &rarr;</div>
+          </a>
+          <a href="#lens-mobility" class="pa-quick-card">
+            <div class="pa-quick-eyebrow">Mobility &amp; IoT</div>
+            <div class="pa-quick-name">Wireless Wisdom&trade;</div>
+            <div class="pa-quick-tool">What's wireless costing us?</div>
+            <div class="pa-quick-arrow">Explore &rarr;</div>
+          </a>
+          <a href="#lens-ai" class="pa-quick-card">
+            <div class="pa-quick-eyebrow">AI &amp; Strategy</div>
+            <div class="pa-quick-name">AI Readiness Radar&trade;</div>
+            <div class="pa-quick-tool">Are we positioned for AI?</div>
+            <div class="pa-quick-arrow">Explore &rarr;</div>
+          </a>
+        </div>
+ </div> </div> </section>
 <section style="background:var(--nd);padding:72px 0;position:relative;overflow:hidden">
 <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
 <div class="container" style="position:relative;z-index:1">
@@ -156,35 +203,35 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-st
 <p style="font-size:16px;color:var(--g6);line-height:1.78">Choose the lens that matches the question you're trying to answer. Each links to the full practice page with detail on methodology, deliverables, and how the work fits into your environment.</p>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
-<div class="pa-lens-card">
+<div class="pa-lens-card" id="lens-cyber" style="scroll-margin-top:140px">
 <div class="pa-lens-eyebrow">Cybersecurity &amp; Risk &middot; Vigilance Verification&trade;</div>
 <div class="pa-lens-title">For leaders who need to know they're actually secure &mdash; not just compliant.</div>
 <div class="pa-lens-question">Am I secure where it matters, or just checking boxes?</div>
 <div class="pa-lens-body">A structured security assessment across nine critical control domains. Built for CIOs walking into environments they didn't design and for leadership teams that need a defensible read on posture before the next investment, audit, or board conversation.</div>
 <a href="/cybersecurity.html" class="pa-lens-link">Go deeper into Vigilance Verification <span class="arr">&#8594;</span></a>
 </div>
-<div class="pa-lens-card">
+<div class="pa-lens-card" id="lens-infra" style="scroll-margin-top:140px">
 <div class="pa-lens-eyebrow">Networking &amp; Infrastructure &middot; Infrastructure Insight&trade;</div>
 <div class="pa-lens-title">For leaders inheriting infrastructure that quietly costs them every day.</div>
 <div class="pa-lens-question">Is my infrastructure helping or holding the business back?</div>
 <div class="pa-lens-body">Infrastructure rarely fails dramatically &mdash; it erodes. Aging gear, drifting MSP relationships, ISP contracts no one's reviewed in five years, and device lifecycle programs that just keep billing. This lens delivers a practical, prioritized read on where your infrastructure and the suppliers running pieces of it actually stand &mdash; and what's worth changing first.</div>
 <a href="/infrastructure-insight.html" class="pa-lens-link">Go deeper into Infrastructure Insight <span class="arr">&#8594;</span></a>
 </div>
-<div class="pa-lens-card">
+<div class="pa-lens-card" id="lens-cx" style="scroll-margin-top:140px">
 <div class="pa-lens-eyebrow">Customer Experience &middot; Experience Examination&trade;</div>
 <div class="pa-lens-title">For leaders whose customer experience vision keeps colliding with their technology reality.</div>
 <div class="pa-lens-question">Where is our customer experience actually breaking?</div>
 <div class="pa-lens-body">A clear-eyed look at how customers actually move through your business across voice, digital, and self-service channels. We surface the friction points that are quietly costing engagement, loyalty, and revenue &mdash; and give you a defensible plan for where to focus.</div>
 <a href="/practice-areas/customer-experience-digital-engagement/" class="pa-lens-link">Go deeper into Experience Examination <span class="arr">&#8594;</span></a>
 </div>
-<div class="pa-lens-card">
+<div class="pa-lens-card" id="lens-mobility" style="scroll-margin-top:140px">
 <div class="pa-lens-eyebrow">Mobility &amp; IoT &middot; Wireless Wisdom&trade;</div>
 <div class="pa-lens-title">For leaders carrying a wireless program no one fully owns or fully understands.</div>
 <div class="pa-lens-question">What is wireless really costing us &mdash; in dollars and in capability?</div>
 <div class="pa-lens-body">A 12-domain evaluation of your wireless and IoT footprint covering cost, coverage, lifecycle, and operational risk. Built for environments where mobility decisions have piled up across acquisitions, locations, and supplier changes.</div>
 <a href="/wireless-wisdom.html" class="pa-lens-link">Go deeper into Wireless Wisdom <span class="arr">&#8594;</span></a>
 </div>
-<div class="pa-lens-card">
+<div class="pa-lens-card" id="lens-ai" style="scroll-margin-top:140px">
 <div class="pa-lens-eyebrow">AI &amp; Strategy &middot; AI Readiness Radar&trade;</div>
 <div class="pa-lens-title">For leaders being pushed to "do something with AI" before they know what they're standing on.</div>
 <div class="pa-lens-question">Are we actually positioned for AI &mdash; or just being asked to act like it?</div>
