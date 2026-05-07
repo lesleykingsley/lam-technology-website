@@ -6,7 +6,7 @@
 <title>LAM Technology — The advisor you keep</title>
 <meta name="description" content="LAM Technology is a 20-year IT advisory firm. We start with the receipts: a Billing Breakthrough that typically uncovers 20–30% in savings on telecom and IT spend.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=4">
+<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=5">
 <style>
   /* ===============================================================
      LAM HOMEPAGE — "THE QUIET AUTHORITY, WIRED"
@@ -1405,24 +1405,29 @@
       </p>
     </div>
 
-    <form class="form" action="/api/contact" method="POST">
+    <form id="contact-form" class="form" action="/api/contact" method="POST" novalidate>
       <div class="form-row">
         <label class="form-label" for="name">Your name</label>
-        <input class="form-input" type="text" id="name" name="name" required>
+        <input class="form-input" type="text" id="name" name="name" required maxlength="200" autocomplete="name">
       </div>
       <div class="form-row">
         <label class="form-label" for="company">Company</label>
-        <input class="form-input" type="text" id="company" name="company" required>
+        <input class="form-input" type="text" id="company" name="company" autocomplete="organization">
       </div>
       <div class="form-row">
         <label class="form-label" for="email">Email</label>
-        <input class="form-input" type="email" id="email" name="email" required>
+        <input class="form-input" type="email" id="email" name="email" required autocomplete="email">
       </div>
       <div class="form-row">
-        <label class="form-label" for="msg">What can we help with?</label>
-        <textarea class="form-textarea" id="msg" name="msg" rows="3" required></textarea>
+        <label class="form-label" for="message">What can we help with?</label>
+        <textarea class="form-textarea" id="message" name="message" rows="3" required maxlength="5000"></textarea>
       </div>
-      <button type="submit" class="form-submit">Just Ask LAM →</button>
+      <div class="form-row" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+        <label for="website">Website (leave blank)</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit" id="cf-submit" class="form-submit">Just Ask LAM →</button>
+      <p id="cf-status" aria-live="polite" style="margin-top: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-muted); line-height: 1.5;">We never share your information.</p>
     </form>
 
   </div>
@@ -1441,8 +1446,8 @@
     } catch (e) { console.error(e); }
   };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=4'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=4')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=5'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=5')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
@@ -1451,6 +1456,44 @@
       link.classList.add('nav-active');
     } else if (href === '/' && currentPath === '/') {
       link.classList.add('nav-active');
+    }
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var form = document.getElementById('contact-form');
+  var btn = document.getElementById('cf-submit');
+  var status = document.getElementById('cf-status');
+  if (!form) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    btn.disabled = true;
+    var original = btn.textContent;
+    btn.textContent = 'Sending...';
+    status.textContent = '';
+    var data = Object.fromEntries(new FormData(form).entries());
+    try {
+      var res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        form.reset();
+        status.textContent = "Thanks — we'll respond within one business day.";
+        if (window.gtag) { window.gtag('event', 'contact_form_submit', { event_category: 'engagement' }); }
+      } else {
+        var err = {};
+        try { err = await res.json(); } catch(_){}
+        status.textContent = (err && err.error) ? ('Error: ' + err.error + '. Please email info@lamtechnology.com.') : 'Something went wrong. Please email info@lamtechnology.com.';
+      }
+    } catch (e2) {
+      status.textContent = 'Network error. Please email info@lamtechnology.com.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = original;
     }
   });
 })();

@@ -7,7 +7,7 @@
   <meta name="description" content="Field reports from twenty years of LAM Technology engagements &mdash; phone bills, security posture, mobility costs, and the operational choices that compound into outcomes.">
   <link rel="canonical" href="https://lamtechnology.com/insights/">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=4">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=5">
 </head>
 <body>
 
@@ -78,7 +78,7 @@
   <div class="article-cta-eyebrow">JUST ASK LAM</div>
   <h2 class="article-cta-headline"><em>None of this quite the question?</em></h2>
   <p class="article-cta-body">Tell us what you&rsquo;re working on. We&rsquo;ll tell you what we&rsquo;d say &mdash; and whether you&rsquo;d be better served working with someone else.</p>
-  <a href="/#cta" class="btn btn-gold-ghost">JUST ASK LAM <span class="btn-arrow">&rarr;</span></a>
+  <a href="/contact/" class="btn btn-gold-ghost">JUST ASK LAM <span class="btn-arrow">&rarr;</span></a>
 </section>
 
 <div id="lam-footer"></div>
@@ -93,8 +93,8 @@
     } catch (e) { console.error(e); }
   };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=4'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=4')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=5'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=5')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
