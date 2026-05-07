@@ -9,9 +9,9 @@
   <link rel="canonical" href="https://lamtechnology.com/about-lam/">
   <link rel="stylesheet" href="/assets/css/lam-redesign.css">
   <style>
-    .lam-nav { position: relative; z-index: 10; padding: 28px 56px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--lam-rule); }
-    .lam-wordmark { font-family: var(--lam-display); font-weight: 500; font-size: 22px; letter-spacing: -0.01em; color: var(--lam-navy); text-decoration: none; }
-    .lam-wordmark em { font-style: italic; color: var(--lam-gold); }
+    .lam-nav { position: relative; z-index: 10; padding: 24px 56px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--lam-rule); }
+    .lam-nav-logo { display: block; }
+    .lam-nav-logo img { display: block; width: 100px; height: auto; }
     .lam-nav-links { display: flex; gap: 36px; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
     .lam-nav-links a { color: var(--lam-ink-soft); text-decoration: none; transition: color 0.2s; padding-bottom: 4px; }
     .lam-nav-links a:hover { color: var(--lam-navy); }
@@ -43,7 +43,8 @@
     .lam-btn--ghost { background: transparent; color: var(--lam-ink); border: 1px solid var(--lam-ink); }
     .lam-btn--ghost:hover { background: var(--lam-ink); color: var(--lam-paper); }
     @media (max-width: 900px) {
-      .lam-nav { padding: 20px 24px; }
+      .lam-nav { padding: 18px 24px; }
+      .lam-nav-logo img { width: 80px; }
       .lam-nav-links { display: none; }
       .lam-breadcrumb { padding: 24px 24px 0; }
       .lam-hero { grid-template-columns: 1fr; padding: 48px 24px 72px; gap: 56px; }
@@ -56,8 +57,11 @@
   </style>
 </head>
 <body class="lam-rd lam-rd-body">
+
 <nav class="lam-nav lam-reveal lam-r1">
-  <a href="/" class="lam-wordmark">LAM <em>Technology</em></a>
+  <a href="/" class="lam-nav-logo" aria-label="LAM Technology home">
+    <img src="/lam-logo.png" alt="LAM Technology" width="100" height="46">
+  </a>
   <div class="lam-nav-links">
     <a href="/professional-services/">Professional Services</a>
     <a href="/practice-areas/">Practice Areas</a>
@@ -66,9 +70,11 @@
     <a href="/contact/">Contact</a>
   </div>
 </nav>
+
 <div class="lam-breadcrumb lam-reveal lam-r2">
   <a href="/">Home</a> &nbsp;/&nbsp; About LAM
 </div>
+
 <section class="lam-hero">
   <div class="lam-hero-proof">
     <div class="lam-eyebrow lam-eyebrow--with-rule lam-reveal lam-r3">The metric that matters</div>
@@ -89,10 +95,11 @@
   </div>
   <div class="lam-hero-statement lam-reveal lam-r7">
     <div class="lam-eyebrow lam-eyebrow--muted">About LAM</div>
-    <h1 class="lam-headline">The advisor<br>—<em>you keep.</em></h1>
+    <h1 class="lam-headline">The advisor<br><em>you keep.</em></h1>
     <p class="lam-body-lead">In a market where leadership turns over every three to five years, the numbers on the left are the only metric that tells you whether the work was worth keeping. <strong>It's also the most honest answer we can give to the question of why LAM.</strong></p>
   </div>
 </section>
+
 <section class="lam-section lam-section--bordered">
   <div class="lam-eyebrow lam-eyebrow--with-rule">Where we sit</div>
   <h2 class="lam-subhead lam-where-headline">A serious firm, quietly run.</h2>
@@ -111,9 +118,10 @@
     </div>
   </div>
 </section>
+
 <section class="lam-section lam-section--awards">
   <div class="lam-awards-label">Recognition</div>
-  <h2 class="lam-subhead lam-awards-headline">Awards from the suppliers we evaluate.</h2>
+  <h2 class="lam-subhead lam-awards-headline">Recognition from the partners we work alongside.</h2>
   <div class="lam-laurels">
     <div class="lam-laurel">
       <div class="lam-laurel-mark"></div>
@@ -137,14 +145,16 @@
     </div>
   </div>
 </section>
+
 <section class="lam-section lam-section--bordered lam-cta">
   <div class="lam-eyebrow lam-eyebrow--with-rule">Just Ask LAM</div>
-  <h2 class="lam-headline lam-cta-headline">Let's talk about<br>—<em>your next decade.</em></h2>
+  <h2 class="lam-headline lam-cta-headline">Let's talk about<br><em>your next decade.</em></h2>
   <p class="lam-body-lead lam-cta-lead">Tell us what you're working on. We'll bring honest answers and a real read on where we can help.</p>
   <div class="lam-cta-actions">
     <a href="/contact/" class="lam-btn lam-btn--primary">Request a Conversation</a>
     <a href="tel:8174844522" class="lam-btn lam-btn--ghost">Or call (817) 484-4522</a>
   </div>
 </section>
+
 </body>
 </html>
