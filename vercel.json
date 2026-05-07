@@ -2,7 +2,11 @@
     "redirects": [
           { "source": "/practice-areas/billing-breakthrough", "destination": "/professional-services/", "permanent": true },
           { "source": "/practice-areas/billing-breakthrough/", "destination": "/professional-services/", "permanent": true },
-          { "source": "/practice-areas/billing-breakthrough/:path*", "destination": "/professional-services/", "permanent": true }
+          { "source": "/practice-areas/billing-breakthrough/:path*", "destination": "/professional-services/", "permanent": true },
+          { "source": "/insights/identity-management", "destination": "/insights/", "permanent": true },
+          { "source": "/insights/identity-management/", "destination": "/insights/", "permanent": true },
+          { "source": "/insights/sase", "destination": "/insights/", "permanent": true },
+          { "source": "/insights/sase/", "destination": "/insights/", "permanent": true }
     ],
     "headers": [
           {

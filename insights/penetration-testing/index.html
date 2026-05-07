@@ -1,191 +1,96 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-  <script src="/assets/js/consent.js"></script>
-  <!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-B7C7CBGJ42"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-B7C7CBGJ42');</script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Stealthy Intruders: A Penetration Testing Chronicle | LAM Technology</title>
-<meta name="description" content="A pen test that quietly compromised a sophisticated MDR program — and the lesson it left behind for security leaders."/>
-  <link rel="canonical" href="https://lamtechnology.com/insights/penetration-testing/"/>
-  <meta property="og:type" content="article"/>
-  <meta property="og:site_name" content="LAM Technology"/>
-  <meta property="og:title" content="The Stealthy Intruders: A Penetration Testing Chronicle | LAM Technology"/>
-  <meta property="og:description" content="A pen test that quietly compromised a sophisticated MDR program — and the lesson it left behind for security leaders."/>
-  <meta property="og:url" content="https://lamtechnology.com/insights/penetration-testing/"/>
-  <meta property="og:image" content="https://lamtechnology.com/lam-logo.png"/>
-  <meta name="twitter:card" content="summary"/>
-  <meta name="twitter:title" content="The Stealthy Intruders: A Penetration Testing Chronicle | LAM Technology"/>
-  <meta name="twitter:description" content="A pen test that quietly compromised a sophisticated MDR program — and the lesson it left behind for security leaders."/>
-  <meta name="twitter:image" content="https://lamtechnology.com/lam-logo.png"/>
-<link rel="icon" type="image/png" href="/lam-logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#1a1a2e;--nd:#1a1a2e;--nm:#252540;--ne:#2d2d4a;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--rs:6px;--r:12px;--t:.2s ease;--sl:0 12px 48px rgba(26,26,46,.16);--sxl:0 24px 80px rgba(26,26,46,.20)}
-html{scroll-behavior:smooth;overflow-y:scroll}
-body{font-family:'Inter',sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;padding-top:70px}
-img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul,ol{padding-left:1.4em}
-.container{max-width:1200px;margin:0 auto;padding:0 32px}
-#navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,.97);border-bottom:1px solid var(--g2);transition:box-shadow var(--t)}
-#navbar.sc{box-shadow:0 2px 8px rgba(26,26,46,.06)}
-.nw{display:flex;align-items:center;justify-content:space-between;height:70px}
-.nlogo img{height:46px;width:auto}
-.nl{display:flex;align-items:center;justify-content:center;flex:1;gap:8px}
-.nl a{font-size:14px;font-weight:600;color:var(--g8);padding:8px 14px;border-radius:var(--rs);transition:all var(--t)}
-.nl a:hover{color:var(--navy);background:var(--g1)}
-.nc{background:var(--red);color:#fff !important;padding:10px 22px !important;border-radius:var(--rs);font-weight:700;margin-left:8px;transition:background var(--t) !important}
-.nc:hover{background:var(--rh) !important}
-.nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.nhb span{display:block;width:24px;height:2px;background:var(--navy);border-radius:1px}
-.nm{display:none;position:fixed;top:70px;left:0;right:0;background:#fff;padding:24px 40px;flex-direction:column;gap:16px;z-index:99;border-bottom:1px solid var(--g2);box-shadow:0 4px 16px rgba(26,26,46,.1)}
-.nm.op{display:flex}
-.nm a{font-size:16px;font-weight:500;color:var(--navy);padding:8px 0;border-bottom:1px solid var(--g2)}
-@media(max-width:768px){.nl{display:none}.nhb{display:flex}}
-.bc{background:var(--g1);border-bottom:1px solid var(--g2);padding:14px 0;font-size:13px;color:var(--g6)}
-.bc a{color:var(--g6)}.bc a:hover{color:var(--navy)}.bc span{margin:0 8px;color:var(--g4)}
-</style>
-<style>
-#post-hero{background:linear-gradient(135deg,var(--nd) 0%,var(--nm) 60%,var(--ne) 100%);padding:72px 0 56px;position:relative;overflow:hidden}
-#post-hero::before{content:'';position:absolute;top:-40%;right:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(212,168,67,.12) 0%,transparent 70%);pointer-events:none}
-.ph-inner{max-width:780px;position:relative}
-.ph-cat{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:rgba(212,168,67,.12);border-radius:100px;padding:6px 16px;margin-bottom:24px}
-.ph-title{font-size:clamp(30px,4.2vw,46px);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.18;margin-bottom:20px}
-.ph-meta{font-size:14px;color:rgba(255,255,255,.55);display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-.ph-meta .dot{width:3px;height:3px;background:var(--g4);border-radius:50%;display:inline-block}
-#post-body{padding:64px 0 88px;background:#fff}
-.post-wrap{max-width:720px;margin:0 auto}
-.post-wrap p{font-size:17px;color:var(--g8);line-height:1.78;margin-bottom:22px}
-.post-wrap h2{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.01em;line-height:1.3;margin:48px 0 18px}
-.post-wrap h3{font-size:20px;font-weight:700;color:var(--navy);line-height:1.4;margin:36px 0 14px}
-.post-wrap ul,.post-wrap ol{margin:0 0 24px 0;padding-left:1.6em}
-.post-wrap li{font-size:17px;color:var(--g8);line-height:1.78;margin-bottom:10px}
-.post-wrap blockquote{border-left:3px solid var(--red);padding:6px 0 6px 22px;margin:28px 0;font-style:italic;color:var(--g8)}
-.post-wrap a{color:var(--red);font-weight:600;border-bottom:1px solid rgba(212,168,67,.3)}
-.post-wrap a:hover{border-bottom-color:var(--red)}
-.post-wrap strong{color:var(--navy);font-weight:700}
-.post-cta{background:var(--g1);border-radius:var(--r);padding:36px 40px;margin:56px 0 0;text-align:center}
-.post-cta-title{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.01em}
-.post-cta-sub{font-size:15px;color:var(--g6);margin-bottom:22px;line-height:1.65}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:var(--rs);padding:13px 26px;font-size:15px;transition:all var(--t);cursor:pointer;border:none}
-.btn-gold,a.btn-gold{background:var(--red);color:#fff !important}
-.btn-gold:hover{background:var(--rh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,67,.35)}
-.back-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--g6);font-weight:600;margin-bottom:24px;transition:color var(--t)}
-.back-link:hover{color:var(--navy)}
-footer{background:var(--nd);padding:56px 0 32px;border-top:1px solid rgba(255,255,255,.06)}
-.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.ft-logo img{height:36px;margin-bottom:16px}
-.ft-desc{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;max-width:280px}
-.ft-social{margin-top:20px;display:flex;gap:10px}
-.ft-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);border-radius:6px;font-size:12px;font-weight:700;transition:all var(--t)}
-.ft-social a:hover{background:var(--red);color:#fff}
-.ft-h{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:18px}
-.ft-links{display:flex;flex-direction:column;gap:10px}
-.ft-links a{font-size:14px;color:rgba(255,255,255,.5);transition:color var(--t)}
-.ft-links a:hover{color:#fff}
-.ft-contact-item{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:12px;line-height:1.6}
-.ft-contact-item a{color:rgba(255,255,255,.5)}
-.ft-contact-item a:hover{color:#fff}
-.ft-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.35)}
-@media(max-width:768px){.ft-grid{grid-template-columns:1fr;gap:32px}.ft-bottom{flex-direction:column;gap:10px;text-align:center}}
-</style>
-  <link rel="stylesheet" href="/assets/css/a11y.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Stealthy Intruders: A Penetration Testing Chronicle &mdash; LAM Technology Insights</title>
+  <meta name="description" content="A field account of a light red team engagement that escalated to god-privilege access in silence &mdash; and what it revealed about the incumbent MDR provider.">
+  <link rel="canonical" href="https://lamtechnology.com/insights/penetration-testing/">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=3">
 </head>
 <body>
-<a class="skip-link" href="#post-hero">Skip to content</a>
-<header id="navbar">
-  <div class="container">
-    <nav class="nw">
-      <a href="/" class="nlogo"><img src="/lam-logo.png" alt="LAM Technology"></a>
-      <div class="nl">
-        <a href="/professional-services/">Professional Services</a>
-        <a href="/practice-areas/">Practice Areas</a>
-        <a href="/about-lam/">Why LAM</a>
-        <a href="/insights/">Insights</a>
-        <a href="/contact/" class="nc">Just Ask LAM</a>
-      </div>
-      <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
-    </nav>
-  </div>
-</header>
-<div class="nm" id="nMob">
-  <a href="/professional-services/">Professional Services</a>
-  <a href="/practice-areas/">Practice Areas</a>
-  <a href="/about-lam/">Why LAM</a>
-  <a href="/insights/">Insights</a>
-  <a href="/contact/">Just Ask LAM</a>
-</div>
+  <div id="lam-nav"></div>
 
-<div class="bc">
-  <div class="container">
-    <a href="/">&larr; Home</a><span>/</span><a href="/insights/">Insights</a><span>/</span> Penetration Testing
-  </div>
-</div>
-
-<section id="post-hero">
-  <div class="container">
-    <div class="ph-inner">
-      <span class="ph-cat">Cybersecurity</span>
-      <h1 class="ph-title">The Stealthy Intruders: A Penetration Testing Chronicle</h1>
-      <div class="ph-meta">
-        <span>By LAM Technology</span>
-        <span class="dot"></span>
-        <span>Published March 27, 2024</span>
-        <span class="dot"></span>
-        <span>Updated April 30, 2026</span>
-        <span class="dot"></span>
-        <span>6 min read</span>
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <div class="article-meta">
+          <span class="cat">CYBERSECURITY</span>
+          <span class="sep">&middot;</span>
+          March 27, 2024
+        </div>
+        <h1 class="article-headline">The Stealthy Intruders: <em>A Penetration Testing Chronicle.</em></h1>
+        <p class="article-lede">The story comes out of an MDR engagement we ran for a services company with more than a thousand locations. What unfolded was a useful reminder of how much can hide inside a security program that looks, on paper, perfectly capable.</p>
+        <div class="article-byline">By LAM Technology</div>
       </div>
+    </header>
+
+    <div class="article-body">
+      <p>In a discipline where staying one step ahead of the adversary is the entire job, the value of testing your own defenses cannot be overstated. The story below comes out of an MDR (Managed Detection and Response) RFP engagement we ran for a services company with more than a thousand locations. The mandate had two parts: help the client find a new penetration testing provider, and stress-test the incumbent&rsquo;s detection capabilities along the way.</p>
+
+      <p>What unfolded was a useful reminder of how much can hide inside a security program that looks, on paper, perfectly capable.</p>
+
+      <h2>What Pen Testing Actually Spans</h2>
+
+      <p>&ldquo;Penetration testing&rdquo; covers a wide spectrum. At one end sit basic vulnerability scans &mdash; useful, but limited to surface-level findings. At the other end is a full Red Team Advanced Persistent Threat simulation, where ethical hackers operate over weeks or months to mimic the patience and creativity of real adversaries.</p>
+
+      <p>For this engagement, we recommended a light red team approach: a focused effort that combined manual techniques with automated tooling, executed by experienced ethical hackers operating under strict rules of engagement.</p>
+
+      <h2>The Operation</h2>
+
+      <p>The result was, as one team member put it, &ldquo;a little cinematic.&rdquo; Our white-hat operators infiltrated the client&rsquo;s network and, through a chain of legitimate-looking actions, escalated their way to domain admin privileges &mdash; effectively obtaining the keys to the kingdom directly through IT leadership credentials. From there, they captured password hashes and created additional domain admin accounts, granting themselves what penetration testers sometimes call &ldquo;god privilege&rdquo;: a level of access that turns the entire network into an open book.</p>
+
+      <aside class="article-pullquote">No alert was raised. No anomaly was flagged. The breach simulation completed successfully and silently.</aside>
+
+      <p>The implications were significant. Despite the sophistication of the incumbent MDR provider&rsquo;s endpoint detection and log analytics, the entire operation slipped past unobserved. No alert was raised. No anomaly was flagged. The breach simulation completed successfully and silently.</p>
+
+      <h2>What the Test Revealed</h2>
+
+      <p>The findings did exactly what a good penetration test is supposed to do: they made invisible problems visible. Defenses that the client and the incumbent both believed to be working in concert turned out, under realistic adversarial pressure, to have meaningful gaps. The conversation that followed was uncomfortable but productive, and it ultimately drove the client to reconsider both their MDR provider and their broader detection posture.</p>
+
+      <p>This is also why we encourage clients to rotate penetration testing vendors annually. Familiarity breeds blind spots. A fresh team brings a different methodology, a different toolset, and a different intuition for where to push, which surfaces vulnerabilities that an established relationship will routinely miss.</p>
+
+      <h2>The Takeaway</h2>
+
+      <p>The incumbent provider&rsquo;s failure to detect the orchestrated breach was the single most important data point of the engagement. It became the deciding factor in the client&rsquo;s decision to seek a new MDR partner, and it reinforced something we tell every client we work with: assumptions about your security posture should be tested, not trusted.</p>
+
+      <p>Cybersecurity is a continuous discipline. Adversaries do not stand still, and neither can defenders. Penetration testing &mdash; done well, done regularly, and done by teams with no incentive to flatter your existing tooling &mdash; remains one of the most cost-effective ways to keep that gap from widening.</p>
     </div>
-  </div>
-</section>
-<section id="post-body">
-  <div class="container">
-    <div class="post-wrap">
-      <a href="/insights/" class="back-link">&larr; All insights</a>
-          <p>In a discipline where staying one step ahead of the adversary is the entire job, the value of testing your own defenses cannot be overstated. The story below comes out of an MDR (Managed Detection and Response) RFP engagement we ran for a services company with more than a thousand locations. The mandate had two parts: help the client find a new penetration testing provider, and stress-test the incumbent&rsquo;s detection capabilities along the way.</p>
-          <p>What unfolded was a useful reminder of how much can hide inside a security program that looks, on paper, perfectly capable.</p>
-          <h2>What Pen Testing Actually Spans</h2>
-          <p>&ldquo;Penetration testing&rdquo; covers a wide spectrum. At one end sit basic vulnerability scans &mdash; useful, but limited to surface-level findings. At the other end is a full Red Team Advanced Persistent Threat simulation, where ethical hackers operate over weeks or months to mimic the patience and creativity of real adversaries.</p>
-          <p>For this engagement, we recommended a light red team approach: a focused effort that combined manual techniques with automated tooling, executed by experienced ethical hackers operating under strict rules of engagement.</p>
-          <h2>The Operation</h2>
-          <p>The result was, as one team member put it, &ldquo;a little cinematic.&rdquo; Our white-hat operators infiltrated the client&rsquo;s network and, through a chain of legitimate-looking actions, escalated their way to domain admin privileges &mdash; effectively obtaining the keys to the kingdom directly through IT leadership credentials. From there, they captured password hashes and created additional domain admin accounts, granting themselves what penetration testers sometimes call &ldquo;god privilege&rdquo;: a level of access that turns the entire network into an open book.</p>
-          <p>The implications were significant. Despite the sophistication of the incumbent MDR provider&rsquo;s endpoint detection and log analytics, the entire operation slipped past unobserved. No alert was raised. No anomaly was flagged. The breach simulation completed successfully and silently.</p>
-          <h2>What the Test Revealed</h2>
-          <p>The findings did exactly what a good penetration test is supposed to do: they made invisible problems visible. Defenses that the client and the incumbent both believed to be working in concert turned out, under realistic adversarial pressure, to have meaningful gaps. The conversation that followed was uncomfortable but productive, and it ultimately drove the client to reconsider both their MDR provider and their broader detection posture.</p>
-          <p>This is also why we encourage clients to rotate penetration testing vendors annually. Familiarity breeds blind spots. A fresh team brings a different methodology, a different toolset, and a different intuition for where to push, which surfaces vulnerabilities that an established relationship will routinely miss.</p>
-          <h2>The Takeaway</h2>
-          <p>The incumbent provider&rsquo;s failure to detect the orchestrated breach was the single most important data point of the engagement. It became the deciding factor in the client&rsquo;s decision to seek a new MDR partner, and it reinforced something we tell every client we work with: assumptions about your security posture should be tested, not trusted.</p>
-          <p>Cybersecurity is a continuous discipline. Adversaries do not stand still, and neither can defenders. Penetration testing &mdash; done well, done regularly, and done by teams with no incentive to flatter your existing tooling &mdash; remains one of the most cost-effective ways to keep that gap from widening.</p>
-        <div class="post-cta">
-        <div class="post-cta-title">Curious what a real penetration test would surface in your environment?</div>
-        <div class="post-cta-sub">LAM coordinates penetration testing engagements that go beyond vulnerability scans, with vendors selected to match your environment and your threat profile. No sales pitch, no obligation.</div>
-        <a href="/contact/" class="btn btn-gold">Just Ask LAM &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-<footer id="footer"><div class="container">
-  <div class="ft">
-    <div><div class="fli"><img src="/lam-logo.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div>
-    <div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/wireless-wisdom.html">Mobility &amp; IoT</a><a href="/ai-readiness.html">AI Readiness</a></div></div>
-    <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
-    <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
-  </div>
-  <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span class="ftx-badge">Fort Worth, TX</span></div>
-</div></footer>
 
-<script>
-function tNav(){document.getElementById('nMob').classList.toggle('op')}
-document.addEventListener('click',function(e){
-  var m=document.getElementById('nMob'),h=document.querySelector('.nhb');
-  if(m&&h&&!m.contains(e.target)&&!h.contains(e.target)){m.classList.remove('op')}
-});
-window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
-</script>
+    <section class="article-cta">
+      <div class="article-cta-eyebrow">JUST ASK LAM</div>
+      <h2 class="article-cta-headline"><em>Confident in your defenses?</em></h2>
+      <p class="article-cta-body">The only honest way to find out is to test them. We&rsquo;ll tell you what level of testing fits your risk profile, which providers we&rsquo;d actually recommend, and whether your current vendor is the right partner &mdash; or whether familiarity has started to breed blind spots.</p>
+      <a href="/#cta" class="btn btn-gold-ghost">JUST ASK LAM <span class="btn-arrow">&rarr;</span></a>
+    </section>
+  </article>
 
+  <div id="lam-footer"></div>
+
+  <script>
+  (async () => {
+    const loadPartial = async (id, path) => {
+      try {
+        const res = await fetch(path);
+        if (!res.ok) throw new Error('Failed to load ' + path);
+        document.getElementById(id).innerHTML = await res.text();
+      } catch (e) { console.error(e); }
+    };
+    await Promise.all([
+      loadPartial('lam-nav', '/partials/nav-redesign.html?v=3'),
+      loadPartial('lam-footer', '/partials/footer-redesign.html?v=3')
+    ]);
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && currentPath.startsWith(href) && href !== '/') {
+        link.classList.add('nav-active');
+      } else if (href === '/' && currentPath === '/') {
+        link.classList.add('nav-active');
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
