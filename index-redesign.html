@@ -694,6 +694,8 @@
   }
   .schematic-meta span { color: var(--gold-deep); }
 
+  .schematic-mobile { display: none; }
+
   .schematic-svg {
     display: block;
     width: 100%;
@@ -1215,7 +1217,9 @@
     .bb-grid { grid-template-columns: 1fr; gap: 56px; padding: 0 24px; }
     .bb-left { position: static; }
     .bb-receipt-head { padding: 24px 28px; }
-    .bb-stat { padding: 24px 28px; }
+    .bb-stat-grid { grid-template-columns: 1fr; }
+    .bb-stat { padding: 24px 28px; border-right: none !important; border-bottom: 1px solid var(--rule); }
+    .bb-stat:last-child { border-bottom: none; }
     .bb-receipt-foot { padding: 24px 28px; }
     .engagement { padding: 80px 0; }
     .engagement-head {
@@ -1224,22 +1228,29 @@
       padding: 0 24px;
       margin-bottom: 56px;
     }
-    .schematic { padding: 48px 24px 40px; margin: 0 24px; }
-    .schematic-foot {
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .schematic-foot-item { border-left: none !important; padding-left: 0 !important; }
+    .schematic > .schematic-svg, .schematic > .schematic-meta, .schematic > .schematic-corner { display: none; }
+    .schematic { padding: 32px 24px; margin: 0 24px; }
+    .schematic-mobile { display: block; }
     .practices { padding: 80px 0; }
     .practices-head { padding: 0 24px; }
     .practice-list { padding: 0 24px; }
     .practice-item {
-      grid-template-columns: 32px 1fr;
+      grid-template-columns: 32px 1fr 24px;
       gap: 16px;
-      padding: 24px 0;
+      padding: 28px 0;
+      align-items: center;
     }
     .practice-name { font-size: 22px; }
-    .practice-tool, .practice-arrow { display: none; }
+    .practice-tool { display: none; }
+    .practice-arrow {
+      display: block;
+      font-size: 22px;
+      color: var(--gold-deep);
+    }
+    .practice-item:active {
+      background: var(--gold-tint);
+      padding-left: 12px;
+    }
     .outcomes { padding: 80px 0; }
     .outcomes-head { padding: 0 24px; }
     .outcomes-grid { grid-template-columns: 1fr; gap: 36px; padding: 0 24px; }
@@ -1328,7 +1339,7 @@
     <div class="bb-grid">
 
       <div class="bb-left">
-        <div class="section-coord"><span>[02]</span> &nbsp; The Wedge</div>
+        <div class="section-coord"><span>[02]</span></div>
         <div class="label label-rule bb-eyebrow">Two ways to start</div>
         <div class="bb-mark">Billing Breakthrough<sup>™</sup></div>
         <p class="bb-tagline">
@@ -1470,6 +1481,54 @@
         <text x="570" y="36" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="300" font-size="13" fill="#b8922e">Lifecycle continues — relationships that span decades</text>
 
       </svg>
+
+      <div class="schematic-mobile">
+        <ol style="list-style: none; padding: 0; margin: 0;">
+          <li style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--rule);">
+            <div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--navy); display: flex; align-items: center; justify-content: center; position: relative;">
+              <span style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 9px; color: var(--gold-deep); letter-spacing: 1px;">[ 01 ]</span>
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
+            </div>
+            <div>
+              <div style="font-family: var(--display); font-style: italic; font-weight: 400; font-size: 22px; color: var(--navy); margin-bottom: 2px;">Insight</div>
+              <div style="font-family: var(--mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 1px;">ASSESS &middot; DISCOVER</div>
+            </div>
+          </li>
+          <li style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--rule);">
+            <div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--navy); display: flex; align-items: center; justify-content: center; position: relative;">
+              <span style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 9px; color: var(--gold-deep); letter-spacing: 1px;">[ 02 ]</span>
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
+            </div>
+            <div>
+              <div style="font-family: var(--display); font-style: italic; font-weight: 400; font-size: 22px; color: var(--navy); margin-bottom: 2px;">Strategy</div>
+              <div style="font-family: var(--mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 1px;">ROADMAP &middot; SOURCE</div>
+            </div>
+          </li>
+          <li style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--rule);">
+            <div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--navy); display: flex; align-items: center; justify-content: center; position: relative;">
+              <span style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 9px; color: var(--gold-deep); letter-spacing: 1px;">[ 03 ]</span>
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
+            </div>
+            <div>
+              <div style="font-family: var(--display); font-style: italic; font-weight: 400; font-size: 22px; color: var(--navy); margin-bottom: 2px;">Execution</div>
+              <div style="font-family: var(--mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 1px;">DEPLOY &middot; MANAGE</div>
+            </div>
+          </li>
+          <li style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center; position: relative;">
+              <span style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 9px; color: var(--gold-deep); letter-spacing: 1px;">[ 04 ]</span>
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
+            </div>
+            <div>
+              <div style="font-family: var(--display); font-style: italic; font-weight: 400; font-size: 22px; color: var(--navy); margin-bottom: 2px;">Support</div>
+              <div style="font-family: var(--mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 1px;">ADVOCATE &middot; RENEW</div>
+            </div>
+          </li>
+        </ol>
+        <p style="font-family: var(--display); font-style: italic; font-weight: 300; font-size: 14px; color: var(--gold-deep); text-align: center; margin-top: 24px; line-height: 1.4;">
+          Lifecycle continues &mdash; relationships that span decades.
+        </p>
+      </div>
 
     </div>
   </div>
