@@ -189,6 +189,10 @@
     color: var(--paper) !important;
     border: 1px solid var(--navy) !important;
     transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
   }
   .nav-cta:hover {
     background: var(--navy-deep);
@@ -536,16 +540,15 @@
 
   .bb-stat-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     padding: 0;
   }
 
   .bb-stat {
     padding: 32px 40px;
-    border-bottom: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
   }
-  .bb-stat:nth-child(odd) { border-right: 1px solid var(--rule); }
-  .bb-stat:nth-last-child(-n+2) { border-bottom: none; }
+  .bb-stat:last-child { border-right: none; }
 
   .bb-stat-key {
     font-family: var(--mono);
@@ -696,6 +699,9 @@
     position: relative;
     z-index: 1;
   }
+  .schematic-svg g { transition: transform 0.3s ease; transform-origin: center; cursor: pointer; }
+  .schematic-svg g:hover { transform: scale(1.05); }
+  .schematic-svg g:hover circle:first-child { stroke: var(--gold); stroke-width: 2.5; }
 
   .schematic-foot {
     margin-top: 36px;
@@ -1354,11 +1360,6 @@
             <div class="bb-stat-label">Of telecom &amp; IT spend, uncovered in review.</div>
           </div>
           <div class="bb-stat">
-            <div class="bb-stat-key">Time to resolution</div>
-            <div class="bb-stat-num">~90</div>
-            <div class="bb-stat-label">Days, on average, from engagement to credits applied.</div>
-          </div>
-          <div class="bb-stat">
             <div class="bb-stat-key">Reason it works</div>
             <div class="bb-stat-num">1</div>
             <div class="bb-stat-label">Receipts don't lie. We just read them carefully.</div>
@@ -1468,28 +1469,6 @@
 
       </svg>
 
-      <div class="schematic-foot">
-        <div class="schematic-foot-item">
-          <div class="schematic-foot-num">[ 01 ]</div>
-          <div class="schematic-foot-title">Insight</div>
-          <div class="schematic-foot-text">A clear, objective picture of where you stand before anyone commits to direction.</div>
-        </div>
-        <div class="schematic-foot-item">
-          <div class="schematic-foot-num">[ 02 ]</div>
-          <div class="schematic-foot-title">Strategy</div>
-          <div class="schematic-foot-text">A prioritized path forward with the right partners, terms, and economics.</div>
-        </div>
-        <div class="schematic-foot-item">
-          <div class="schematic-foot-num">[ 03 ]</div>
-          <div class="schematic-foot-title">Execution</div>
-          <div class="schematic-foot-text">We don't hand you a plan and walk away. We see it through, with accountability.</div>
-        </div>
-        <div class="schematic-foot-item">
-          <div class="schematic-foot-num">[ 04 ]</div>
-          <div class="schematic-foot-title">Support</div>
-          <div class="schematic-foot-text">Escalations, contract clarity, supplier management — for as long as the relationship lasts.</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
