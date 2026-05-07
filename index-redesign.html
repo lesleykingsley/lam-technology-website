@@ -182,19 +182,21 @@
     border-bottom: 1px solid transparent;
   }
   .nav-links a:hover { color: var(--navy); }
-  .nav-cta {
+  a.nav-cta {
     margin-left: 14px;
     padding: 11px 22px;
+    padding-bottom: 11px;
     background: var(--navy);
     color: var(--paper) !important;
     border: 1px solid var(--navy) !important;
+    border-bottom: 1px solid var(--navy) !important;
     transition: all 0.25s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
   }
-  .nav-cta:hover {
+  a.nav-cta:hover {
     background: var(--navy-deep);
     border-color: var(--navy-deep) !important;
   }
@@ -1197,7 +1199,7 @@
   @media (max-width: 800px) {
     .nav-inner { padding: 16px 24px; }
     .nav-links { display: none; }
-    .nav-cta { display: inline-flex; margin: 0; }
+    a.nav-cta { display: inline-flex; margin: 0; }
     .hero { padding-top: 56px; }
     .hero-inner {
       grid-template-columns: 1fr;
