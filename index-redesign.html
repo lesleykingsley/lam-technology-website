@@ -965,18 +965,6 @@
     background: var(--navy);
   }
 
-  .form-head {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 28px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .form-head span:last-child { color: var(--ink-muted); }
-
   .form-row { margin-bottom: 24px; }
   .form-label {
     display: block;
@@ -1476,10 +1464,6 @@
     </div>
 
     <form class="form" action="/api/contact" method="POST">
-      <div class="form-head">
-        <span>FORM · CONTACT-001</span>
-        <span>SECURE · TLS</span>
-      </div>
       <div class="form-row">
         <label class="form-label" for="name">Your name</label>
         <input class="form-input" type="text" id="name" name="name" required>
