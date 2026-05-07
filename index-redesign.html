@@ -6,7 +6,7 @@
 <title>LAM Technology — The advisor you keep</title>
 <meta name="description" content="LAM Technology is a 20-year IT advisory firm. We start with the receipts: a Billing Breakthrough that typically uncovers 20–30% in savings on telecom and IT spend.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=3">
+<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=4">
 <style>
   /* ===============================================================
      LAM HOMEPAGE — "THE QUIET AUTHORITY, WIRED"
@@ -198,64 +198,6 @@
     gap: 16px;
     align-items: center;
     flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 28px;
-    font-family: var(--body);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid;
-    transition: all 0.25s ease;
-    cursor: pointer;
-    background: none;
-    line-height: 1;
-  }
-  .btn-arrow {
-    display: inline-block;
-    transition: transform 0.25s ease;
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1;
-  }
-  .btn:hover .btn-arrow { transform: translateX(4px); }
-
-  .btn-primary {
-    background: var(--navy);
-    color: var(--paper);
-    border-color: var(--navy);
-  }
-  .btn-primary:hover {
-    background: var(--navy-deep);
-    border-color: var(--navy-deep);
-  }
-
-  .btn-ghost {
-    background: transparent;
-    color: var(--ink);
-    border-color: var(--ink);
-  }
-  .btn-ghost:hover {
-    background: var(--ink);
-    color: var(--paper);
-  }
-
-  .btn-gold-ghost {
-    background: transparent;
-    color: var(--navy);
-    border-color: var(--gold);
-  }
-  .btn-gold-ghost:hover {
-    background: var(--gold);
-    color: var(--navy);
-    border-color: var(--gold);
   }
 
   /* Hero right column — receipts */
@@ -1499,8 +1441,8 @@
     } catch (e) { console.error(e); }
   };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=3'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=3')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=4'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=4')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {

@@ -7,7 +7,7 @@
   <meta name="description" content="Tabletop exercises expose the gaps your runbooks haven&rsquo;t found yet. A field-tested view of what good ones look like, and the readiness they actually produce.">
   <link rel="canonical" href="https://lamtechnology.com/insights/security-tabletops/">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=3">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=4">
 </head>
 <body>
   <div id="lam-nav"></div>
@@ -93,8 +93,8 @@
       } catch (e) { console.error(e); }
     };
     await Promise.all([
-      loadPartial('lam-nav', '/partials/nav-redesign.html?v=3'),
-      loadPartial('lam-footer', '/partials/footer-redesign.html?v=3')
+      loadPartial('lam-nav', '/partials/nav-redesign.html?v=4'),
+      loadPartial('lam-footer', '/partials/footer-redesign.html?v=4')
     ]);
     const currentPath = window.location.pathname;
     document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {

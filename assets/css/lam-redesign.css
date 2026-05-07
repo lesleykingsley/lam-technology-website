@@ -1,4 +1,4 @@
-/* Version: 3 — bump to invalidate browser caches */
+/* Version: 4 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -408,6 +408,68 @@ a.nav-cta:hover {
 }
 
 /* =============================================================================
+   BUTTONS — canonical .btn system used across all redesigned pages
+   ============================================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    background: none;
+    line-height: 1;
+}
+.btn-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1;
+}
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+.btn-primary {
+    background: var(--navy);
+    color: var(--paper);
+    border-color: var(--navy);
+}
+.btn-primary:hover {
+    background: var(--navy-deep);
+    border-color: var(--navy-deep);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+}
+.btn-ghost:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.btn-gold-ghost {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--gold);
+}
+.btn-gold-ghost:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+}
+
+/* =============================================================================
    INSIGHTS — editorial reading typography
    ============================================================================= */
 
@@ -712,39 +774,6 @@ a.nav-cta:hover {
 }
 .insights-item.featured .insights-item-lede {
   font-size: 19px;
-}
-
-/* CTA button — used in article-cta and insights index closing CTA */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 16px 24px;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-  cursor: pointer;
-}
-.btn-gold-ghost {
-  color: var(--navy);
-  background: transparent;
-  border: 1px solid var(--gold);
-}
-.btn-gold-ghost:hover {
-  background: var(--navy);
-  color: var(--paper);
-  border-color: var(--navy);
-}
-.btn-arrow {
-  display: inline-block;
-  transition: transform 0.25s ease;
-}
-.btn:hover .btn-arrow {
-  transform: translateX(4px);
 }
 
 @media (max-width: 800px) {
