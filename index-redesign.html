@@ -949,20 +949,6 @@
   }
   .cta-direct a:hover { border-bottom-color: var(--navy); }
 
-  .cta-meta {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--ink-muted);
-    border-top: 1px solid var(--rule);
-    padding-top: 20px;
-    margin-top: 32px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .cta-meta span { color: var(--gold-deep); }
-
   /* Form */
   .form {
     background: var(--paper);
@@ -1484,10 +1470,9 @@
       <p class="cta-direct">
         Or call us directly: <a href="tel:8174844522">(817) 484-4522</a>
       </p>
-      <div class="cta-meta">
-        <span>// Reply within one business day</span>
-        <span><span>·</span> No marketing nurture sequences</span>
-      </div>
+      <p class="cta-direct" style="margin-top: 8px; font-size: 16px;">
+        Reply within one business day.
+      </p>
     </div>
 
     <form class="form" action="/api/contact" method="POST">
