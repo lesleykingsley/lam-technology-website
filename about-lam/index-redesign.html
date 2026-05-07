@@ -9,16 +9,9 @@
   <link rel="canonical" href="https://lamtechnology.com/about-lam/">
   <link rel="stylesheet" href="/assets/css/lam-redesign.css">
   <style>
-    .lam-nav { position: relative; z-index: 10; padding: 24px 56px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--lam-rule); }
-    .lam-nav-logo { display: block; }
-    .lam-nav-logo img { display: block; width: 100px; height: auto; }
-    .lam-nav-links { display: flex; gap: 36px; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .lam-nav-links a { color: var(--lam-ink-soft); text-decoration: none; transition: color 0.2s; padding-bottom: 4px; }
-    .lam-nav-links a:hover { color: var(--lam-navy); }
-    .lam-nav-active { border-bottom: 1px solid var(--lam-gold); color: var(--lam-navy) !important; }
-    .lam-breadcrumb { position: relative; z-index: 5; padding: 32px 56px 0; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lam-ink-muted); }
-    .lam-breadcrumb a { color: var(--lam-ink-muted); text-decoration: none; }
-    .lam-breadcrumb a:hover { color: var(--lam-navy); }
+    .lam-breadcrumb { position: relative; z-index: 5; padding: 32px 56px 0; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+    .lam-breadcrumb a { color: var(--ink-muted); text-decoration: none; }
+    .lam-breadcrumb a:hover { color: var(--navy); }
     .lam-hero { position: relative; z-index: 5; padding: 80px 56px 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; min-height: 78vh; }
     .lam-eyebrow { margin-bottom: 32px; }
     .lam-hero-statement .lam-eyebrow { margin-bottom: 28px; }
@@ -26,26 +19,23 @@
     .lam-body-lead { max-width: 480px; }
     .lam-where-headline { margin: 12px 0 56px; max-width: 720px; }
     .lam-where-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; max-width: 1200px; }
-    .lam-where-num { font-family: var(--lam-display); font-weight: 300; font-size: 72px; line-height: 0.9; letter-spacing: -0.03em; color: var(--lam-navy); margin-bottom: 20px; }
-    .lam-where-num sup { font-size: 28px; vertical-align: super; color: var(--lam-gold); }
-    .lam-where-label { font-family: var(--lam-display); font-weight: 400; font-style: italic; font-size: 32px; color: var(--lam-navy); margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--lam-gold); display: inline-block; padding-right: 24px; }
-    .lam-where-text { font-size: 15px; line-height: 1.6; color: var(--lam-ink-soft); max-width: 320px; }
-    .lam-section--awards { padding: 72px 56px 88px; background: linear-gradient(180deg, transparent, rgba(27, 45, 91, 0.025)); border-top: 1px solid var(--lam-rule); text-align: center; }
-    .lam-awards-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lam-navy); margin-bottom: 12px; font-weight: 500; }
+    .lam-where-num { font-family: var(--display); font-weight: 300; font-size: 72px; line-height: 0.9; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 20px; }
+    .lam-where-num sup { font-size: 28px; vertical-align: super; color: var(--gold); }
+    .lam-where-label { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 32px; color: var(--navy); margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--gold); display: inline-block; padding-right: 24px; }
+    .lam-where-text { font-size: 15px; line-height: 1.6; color: var(--ink-soft); max-width: 320px; }
+    .lam-section--awards { padding: 72px 56px 88px; background: linear-gradient(180deg, transparent, rgba(27, 45, 91, 0.025)); border-top: 1px solid var(--rule); text-align: center; }
+    .lam-awards-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--navy); margin-bottom: 12px; font-weight: 500; }
     .lam-awards-headline { margin-bottom: 56px; }
     .lam-cta { padding: 96px 56px 120px; }
     .lam-cta-headline { margin: 24px 0 32px; }
     .lam-cta-lead { margin-bottom: 48px; max-width: 520px; }
     .lam-cta-actions { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
-    .lam-btn { display: inline-block; padding: 16px 28px; font-family: var(--lam-body); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: all 0.25s ease; border-radius: 0; }
-    .lam-btn--primary { background: var(--lam-navy); color: var(--lam-paper); border: 1px solid var(--lam-navy); }
-    .lam-btn--primary:hover { background: var(--lam-navy-deep); border-color: var(--lam-navy-deep); }
-    .lam-btn--ghost { background: transparent; color: var(--lam-ink); border: 1px solid var(--lam-ink); }
-    .lam-btn--ghost:hover { background: var(--lam-ink); color: var(--lam-paper); }
+    .lam-btn { display: inline-block; padding: 16px 28px; font-family: var(--body); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: all 0.25s ease; border-radius: 0; }
+    .lam-btn--primary { background: var(--navy); color: var(--paper); border: 1px solid var(--navy); }
+    .lam-btn--primary:hover { background: var(--navy-deep); border-color: var(--navy-deep); }
+    .lam-btn--ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+    .lam-btn--ghost:hover { background: var(--ink); color: var(--paper); }
     @media (max-width: 900px) {
-      .lam-nav { padding: 18px 24px; }
-      .lam-nav-logo img { width: 80px; }
-      .lam-nav-links { display: none; }
       .lam-breadcrumb { padding: 24px 24px 0; }
       .lam-hero { grid-template-columns: 1fr; padding: 48px 24px 72px; gap: 56px; }
       .lam-where-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -58,18 +48,8 @@
 </head>
 <body class="lam-rd lam-rd-body">
 
-<nav class="lam-nav lam-reveal lam-r1">
-  <a href="/" class="lam-nav-logo" aria-label="LAM Technology home">
-    <img src="/lam-logo.png" alt="LAM Technology" width="100" height="46">
-  </a>
-  <div class="lam-nav-links">
-    <a href="/professional-services/">Professional Services</a>
-    <a href="/practice-areas/">Practice Areas</a>
-    <a href="/about-lam/index-redesign.html" class="lam-nav-active">Why LAM</a>
-    <a href="/insights/">Insights</a>
-    <a href="/contact/">Contact</a>
-  </div>
-</nav>
+<!-- Nav (injected from /partials/nav-redesign.html) -->
+<div id="lam-nav"></div>
 
 <div class="lam-breadcrumb lam-reveal lam-r2">
   <a href="/">Home</a> &nbsp;/&nbsp; About LAM
@@ -155,6 +135,34 @@
     <a href="tel:8174844522" class="lam-btn lam-btn--ghost">Or call (817) 484-4522</a>
   </div>
 </section>
+
+<!-- Footer (injected from /partials/footer-redesign.html) -->
+<div id="lam-footer"></div>
+
+<script>
+(async () => {
+  const loadPartial = async (id, path) => {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error('Failed to load ' + path);
+      document.getElementById(id).innerHTML = await res.text();
+    } catch (e) { console.error(e); }
+  };
+  await Promise.all([
+    loadPartial('lam-nav', '/partials/nav-redesign.html'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html')
+  ]);
+  const currentPath = window.location.pathname;
+  document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && currentPath.startsWith(href) && href !== '/') {
+      link.classList.add('nav-active');
+    } else if (href === '/' && currentPath === '/') {
+      link.classList.add('nav-active');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
