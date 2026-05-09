@@ -7,7 +7,7 @@
   <meta name="description" content="POTS line costs have quietly drifted into four-figure monthly rates. The replacement question isn&rsquo;t whether &mdash; it&rsquo;s how much you&rsquo;re overpaying while you wait, and how to get out cleanly.">
   <link rel="canonical" href="https://lamtechnology.com/insights/pots-lines/">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=5">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=6">
 </head>
 <body>
   <div id="lam-nav"></div>
@@ -86,8 +86,8 @@
       } catch (e) { console.error(e); }
     };
     await Promise.all([
-      loadPartial('lam-nav', '/partials/nav-redesign.html?v=5'),
-      loadPartial('lam-footer', '/partials/footer-redesign.html?v=5')
+      loadPartial('lam-nav', '/partials/nav-redesign.html?v=6'),
+      loadPartial('lam-footer', '/partials/footer-redesign.html?v=6')
     ]);
     const currentPath = window.location.pathname;
     document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {

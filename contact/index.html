@@ -7,7 +7,7 @@
   <meta name="description" content="Start a conversation with LAM Technology. No sales pitch, no obligation &mdash; just a straightforward discussion about what you&rsquo;re dealing with and whether we can help.">
   <link rel="canonical" href="https://lamtechnology.com/contact/">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=5">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=6">
 </head>
 <body>
 
@@ -114,8 +114,8 @@
     } catch (e) { console.error(e); }
   };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=5'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=5')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=6'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=6')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {

@@ -6,7 +6,13 @@
           { "source": "/insights/identity-management", "destination": "/insights/", "permanent": true },
           { "source": "/insights/identity-management/", "destination": "/insights/", "permanent": true },
           { "source": "/insights/sase", "destination": "/insights/", "permanent": true },
-          { "source": "/insights/sase/", "destination": "/insights/", "permanent": true }
+          { "source": "/insights/sase/", "destination": "/insights/", "permanent": true },
+          { "source": "/cybersecurity.html", "destination": "/practice-areas/cybersecurity/", "permanent": true },
+          { "source": "/infrastructure-insight.html", "destination": "/practice-areas/infrastructure/", "permanent": true },
+          { "source": "/wireless-wisdom.html", "destination": "/practice-areas/mobility/", "permanent": true },
+          { "source": "/ai-readiness.html", "destination": "/practice-areas/ai-readiness/", "permanent": true },
+          { "source": "/practice-areas/customer-experience-digital-engagement", "destination": "/practice-areas/customer-experience/", "permanent": true },
+          { "source": "/practice-areas/customer-experience-digital-engagement/", "destination": "/practice-areas/customer-experience/", "permanent": true }
     ],
     "headers": [
           {

@@ -1,4 +1,4 @@
-/* Version: 5 — bump to invalidate browser caches */
+/* Version: 6 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -1034,6 +1034,441 @@ a.nav-cta:hover {
   .contact-form-row { grid-template-columns: 1fr; gap: 16px; }
   .contact-side-headline { font-size: 22px; }
   .contact-side-expect li { font-size: 19px; }
+}
+
+/* =============================================================================
+   PRACTICE AREAS — editorial hub + service page templates
+   ============================================================================= */
+
+/* Hub page */
+.pa-page {
+  padding: 96px 0 96px;
+}
+.pa-page-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+.pa-hero {
+  margin-bottom: 96px;
+  max-width: 800px;
+}
+.pa-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 32px;
+}
+.pa-eyebrow .accent { color: var(--gold-deep); }
+.pa-eyebrow .sep { color: var(--rule-strong); margin: 0 12px; }
+
+.pa-headline {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+.pa-headline em {
+  font-style: italic;
+}
+
+.pa-lede {
+  font-family: var(--body);
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 640px;
+  padding-top: 32px;
+  border-top: 1px solid var(--gold);
+}
+
+/* Methodology section (Uncover / Operate / Steward) */
+.pa-method {
+  margin: 96px 0;
+  padding: 64px 0;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+}
+.pa-method-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 32px;
+}
+.pa-method-headline {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 56px;
+  max-width: 720px;
+}
+.pa-method-headline em { font-style: italic; }
+.pa-method-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.pa-method-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-top: 1px solid var(--rule);
+}
+.pa-method-step:first-child { border-top: none; padding-top: 0; }
+.pa-method-step:last-child { padding-bottom: 0; }
+.pa-method-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--gold-deep);
+  padding-top: 8px;
+}
+.pa-method-content h3 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.pa-method-content p {
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 640px;
+}
+
+/* The 5 lenses section */
+.pa-lenses {
+  margin-top: 96px;
+}
+.pa-lenses-header {
+  margin-bottom: 64px;
+  max-width: 720px;
+}
+.pa-lenses-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 24px;
+}
+.pa-lenses-headline {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.pa-lenses-headline em { font-style: italic; }
+
+.pa-lens {
+  display: block;
+  padding: 48px 0;
+  border-top: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: padding 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.pa-lens:first-of-type { border-top: 1px solid var(--rule-strong); padding-top: 56px; }
+.pa-lens:last-of-type { border-bottom: 1px solid var(--rule); }
+.pa-lens:hover { padding-left: 16px; }
+
+.pa-lens-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+}
+.pa-lens-meta .num { color: var(--gold-deep); }
+.pa-lens-meta .sep { color: var(--rule-strong); margin: 0 10px; }
+.pa-lens-meta .tm { color: var(--ink); }
+
+.pa-lens-question {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  margin-bottom: 24px;
+  max-width: 720px;
+  transition: color 0.2s ease;
+}
+.pa-lens:hover .pa-lens-question { color: var(--ink); }
+
+.pa-lens-body {
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+
+.pa-lens-cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.pa-lens-cta .arrow {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 400;
+  transition: transform 0.25s ease;
+}
+.pa-lens:hover .pa-lens-cta .arrow { transform: translateX(4px); }
+
+/* Hub closing CTA */
+.pa-closing {
+  margin-top: 96px;
+  padding-top: 64px;
+  border-top: 1px solid var(--rule-strong);
+  max-width: 720px;
+}
+.pa-closing-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 24px;
+}
+.pa-closing-headline {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.pa-closing-headline em { font-style: italic; }
+.pa-closing-body {
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+}
+.pa-closing-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Service page template */
+.svc-page {
+  padding: 96px 0 96px;
+}
+.svc-page-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.svc-hero {
+  margin-bottom: 80px;
+}
+.svc-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 32px;
+}
+.svc-eyebrow .accent { color: var(--gold-deep); }
+.svc-eyebrow .sep { color: var(--rule-strong); margin: 0 12px; }
+
+.svc-headline {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+.svc-headline em {
+  font-style: italic;
+  background-image: linear-gradient(to top, var(--gold-tint) 0%, var(--gold-tint) 26%, transparent 26%);
+  padding: 0 0.04em 0.04em 0.04em;
+}
+
+.svc-lede {
+  font-family: var(--body);
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+  max-width: 640px;
+}
+
+.svc-tm {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  padding-top: 24px;
+  border-top: 1px solid var(--gold);
+  display: inline-block;
+}
+
+/* Pull-quote question (the italic real question) */
+.svc-question {
+  margin: 80px 0;
+  padding: 48px 0;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  text-align: left;
+}
+.svc-question-text {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(32px, 4.2vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.svc-question-attr {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* Body */
+.svc-body {
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.svc-body p { margin-bottom: 28px; }
+.svc-body h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+.svc-body h3 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+.svc-body strong { font-weight: 500; color: var(--ink); }
+.svc-body em {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Domain list — for the assessment domains */
+.svc-domains {
+  margin: 32px 0 48px;
+  border-top: 1px solid var(--rule);
+}
+.svc-domain {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+}
+.svc-domain-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--gold-deep);
+  padding-top: 6px;
+}
+.svc-domain-name {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.svc-domain-desc {
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 800px) {
+  .pa-page { padding: 56px 0 64px; }
+  .pa-page-inner { padding: 0 24px; }
+  .pa-hero { margin-bottom: 56px; }
+  .pa-headline { font-size: 40px; }
+  .pa-lede { font-size: 18px; padding-top: 24px; }
+  .pa-method { margin: 56px 0; padding: 40px 0; }
+  .pa-method-headline { font-size: 28px; margin-bottom: 32px; }
+  .pa-method-step { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+  .pa-method-content h3 { font-size: 22px; }
+  .pa-lenses { margin-top: 56px; }
+  .pa-lenses-header { margin-bottom: 40px; }
+  .pa-lenses-headline { font-size: 28px; }
+  .pa-lens { padding: 32px 0; }
+  .pa-lens:hover { padding-left: 0; }
+  .pa-lens-question { font-size: 24px; }
+  .pa-closing { margin-top: 56px; padding-top: 40px; }
+  .pa-closing-headline { font-size: 26px; }
+  .pa-closing-actions { flex-direction: column; }
+  .svc-page { padding: 56px 0 64px; }
+  .svc-page-inner { padding: 0 24px; }
+  .svc-hero { margin-bottom: 56px; }
+  .svc-headline { font-size: 32px; }
+  .svc-lede { font-size: 17px; }
+  .svc-question { margin: 56px 0; padding: 32px 0; }
+  .svc-question-text { font-size: 24px; }
+  .svc-body { font-size: 17px; }
+  .svc-body h2 { font-size: 24px; margin-top: 48px; }
+  .svc-domain { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
 }
 
 @media (max-width: 800px) {
