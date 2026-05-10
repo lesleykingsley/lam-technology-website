@@ -20,104 +20,47 @@
 <meta name="twitter:title" content="Your Self-Check Results | Billing Breakthrough&trade;"/>
 <meta name="twitter:description" content="Your Billing Breakthrough Self-Check results."/>
 <meta name="twitter:image" content="https://lamtechnology.com/lam-logo.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/assets/css/lam-theme.css"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#1a1a2e;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--r:12px;--rs:6px;--sl:0 12px 48px rgba(26,26,46,.16);--t:.2s ease}
-html{scroll-behavior:smooth;overflow-y:scroll}
-body{font-family:'Inter',sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:70px}
-img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
-.container{max-width:1200px;margin:0 auto;padding:0 32px}
-#navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,244,.97);border-bottom:1px solid var(--g2);transition:box-shadow var(--t)}
-#navbar.sc{box-shadow:0 2px 20px rgba(26,26,46,.10)}
-.nw{display:flex;align-items:center;justify-content:space-between;height:70px}
-.nlogo img{height:46px;width:auto}
-.nl{display:flex;align-items:center;justify-content:center;flex:1;gap:8px}
-.nl a{font-size:14px;font-weight:600;color:var(--g8);padding:8px 14px;border-radius:var(--rs);transition:all var(--t)}
-.nl a:hover{color:var(--navy);background:var(--g1)}
-.nl .nc{background:var(--red);color:#fff;padding:10px 22px;margin-left:8px}.nl .nc:hover{background:var(--rh);transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,168,67,.30)}
-.nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}.nhb span{width:22px;height:2px;background:var(--navy);border-radius:2px;display:block}
-.nm{display:none}.nm.op{display:flex;flex-direction:column;background:#fff;padding:16px 24px 24px;gap:4px;border-top:1px solid var(--g2)}
-.nm a{font-size:15px;font-weight:600;color:var(--g8);padding:12px 0;border-bottom:1px solid var(--g1)}
-.nm a:last-child{border:none;margin-top:8px;background:var(--red);color:#fff;text-align:center;padding:12px;border-radius:var(--rs)}
-#footer{background:var(--navy);color:rgba(255,255,255,.55);padding:72px 0 36px}
-.ft{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.3fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07)}
-.fli img{height:42px;width:auto;margin-bottom:18px;filter:brightness(0) invert(1)}
-.fde{font-size:14px;line-height:1.75;color:rgba(255,255,255,.42);max-width:270px}
-.fso{margin-top:24px;display:flex;gap:10px}
-.fso a{width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:rgba(255,255,255,.55);transition:all var(--t)}
-.fso a:hover{background:var(--red);border-color:var(--red);color:#fff}
-.fct{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.85);margin-bottom:20px}
-.flk{display:flex;flex-direction:column;gap:10px}
-.flk a{font-size:14px;color:rgba(255,255,255,.45);transition:color var(--t)}.flk a:hover{color:var(--red)}
-.fcr{display:flex;gap:12px;margin-bottom:12px;font-size:14px;color:rgba(255,255,255,.45);align-items:flex-start}
-.fcr a{color:rgba(255,255,255,.45);transition:color var(--t)}.fcr a:hover{color:var(--red)}
-.fb{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:13px;color:rgba(255,255,255,.25);flex-wrap:wrap;gap:12px}
-@media(max-width:1024px){.ft{grid-template-columns:1fr 1fr;gap:36px}}
-@media(max-width:680px){.container{padding:0 20px}.nl{display:none}.nhb{display:flex}.ft{grid-template-columns:1fr}}
-.bc-bar{background:var(--off);border-bottom:1px solid var(--g2);padding:12px 0;font-size:13px;color:var(--g6)}
-.bc-bar a{color:var(--g6);transition:color var(--t)}.bc-bar a:hover{color:var(--red)}
-.bc-bar span{color:var(--g4);margin:0 8px}
-
-    .bb-sc-flag{display:inline-flex;align-items:center;justify-content:center;vertical-align:-1px;margin-right:8px;width:14px;height:16px}
-    .bb-sc-flag svg{display:block}
-    .bb-sc-finding.bb-sc-sev-high h3{color:#1f3a52}
-    .bb-sc-finding.bb-sc-sev-med h3{color:#1f3a52}
-  </style>
-<link rel="stylesheet" href="/assets/css/a11y.css"/>
-<link rel="stylesheet" href="/assets/css/billing-breakthrough-self-check.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=7">
 </head>
-<body class="lam-typography">
-<a class="skip-link" href="#main">Skip to content</a>
-<header id="navbar">
-  <div class="container">
-    <nav class="nw">
-      <a href="/" class="nlogo"><img src="/lam-logo.png" alt="LAM Technology"/></a>
-      <div class="nl">
-        <a href="/professional-services/">Professional Services</a>
-        <a href="/practice-areas/">Practice Areas</a>
-        <a href="/about-lam/">Why LAM</a>
-        <a href="/insights/">Insights</a>
-        <a href="/contact/" class="nc">Just Ask LAM</a>
-      </div>
-      <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
-    </nav>
-    <div class="nm" id="nMob">
-      <a href="/professional-services/" onclick="tNav()">Professional Services</a>
-      <a href="/practice-areas/" onclick="tNav()">Practice Areas</a>
-      <a href="/about-lam/" onclick="tNav()">Why LAM</a>
-      <a href="/insights/" onclick="tNav()">Insights</a>
-      <a href="/contact/" onclick="tNav()">Just Ask LAM</a>
-    </div>
-  </div>
-</header>
-<div class="bc-bar"><div class="container">
-  <a href="/">&#8592; Home</a><span>/</span><a href="/professional-services/">Professional Services</a><span>/</span><a href="/professional-services/self-check/">Self-Check</a><span>/</span>Results
-</div></div>
+<body>
 
-<main id="main">
-  <div class="bb-sc-shell" id="bb-sc-results-root"></div>
+<div id="lam-nav"></div>
+
+<main class="sc-page">
+  <div class="sc-page-inner" id="bb-sc-results-root"></div>
 </main>
 
-<footer id="footer"><div class="container">
-  <div class="ft">
-    <div><div class="fli"><img src="/lam-logo.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div>
-    <div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/wireless-wisdom.html">Mobility &amp; IoT</a><a href="/ai-readiness.html">AI Readiness</a></div></div>
-    <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
-    <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
-  </div>
-  <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span class="ftx-badge">Fort Worth, TX</span></div>
-</div></footer>
+<div id="lam-footer"></div>
+
 <script>
-function tNav(){document.getElementById('nMob').classList.toggle('op')}
-document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
-window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
+(async () => {
+  const loadPartial = async (id, path) => {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error('Failed to load ' + path);
+      document.getElementById(id).innerHTML = await res.text();
+    } catch (e) { console.error(e); }
+  };
+  await Promise.all([
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=7'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=7')
+  ]);
+  const currentPath = window.location.pathname;
+  document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && currentPath.startsWith(href) && href !== '/') {
+      link.classList.add('nav-active');
+    } else if (href === '/' && currentPath === '/') {
+      link.classList.add('nav-active');
+    }
+  });
+})();
 </script>
+
 <script>
 const QUESTIONS_ORDER = ['locations','inventory','pots','pots_sunset','legacy_voice','per_minute','ccaas','circuits','suppliers','gaps','mobility'];
+const SEV_LABELS = { critical: 'Critical', material: 'Material', note: 'Note', clear: 'Clear', framing: 'Framing' };
 
 function getAnswers() {
   try { return JSON.parse(sessionStorage.getItem('bb_sc_answers_v1')) || {}; } catch (e) { return {}; }
@@ -134,56 +77,50 @@ function locationTier(a) {
 function buildFindings(a) {
   const f = [];
 
-  // Inventory gap
   if (a.inventory && a.inventory !== 'current') {
     f.push({
-      title: 'Inventory gap', severity: 'low',
-      body: 'Without a current written inventory, the other findings on this page cannot be confirmed or ruled out. This is the first thing to fix. At scale, an inventory gap is not an oversight, it is a structural problem, and the fix is a different engagement than a small-client audit.',
+      title: 'Inventory gap', severity: 'note',
+      body: 'Without a current written inventory, the other findings on this page cannot be confirmed or ruled out. This is the first thing to fix. At scale, an inventory gap is not an oversight, it is a structural problem, and the fix is a different engagement than a small-client review.',
       redeploy: 'Recovered spend from cleaning up inventory typically funds the documentation and tooling that prevents the gap from reopening.'
     });
   }
 
-  // Legacy voice infrastructure
   const potsLeak = a.pots === 'unsure_need' || a.pots === 'unsure';
   const legacy = a.legacy_voice === 'yes' || a.legacy_voice === 'unsure';
   if (potsLeak || legacy) {
     f.push({
-      title: 'Legacy voice infrastructure leak', severity: 'med',
-      body: 'POTS lines and PRI circuits that were never decommissioned are one of the most common leaks LAM sees. POTS lines commonly bill in the high three figures or low four figures per line per month. PRI circuits can run several thousand to tens of thousands per month in environments LAM has audited.',
+      title: 'Legacy voice infrastructure leak', severity: 'material',
+      body: 'POTS lines and PRI circuits that were never decommissioned are one of the most common leaks LAM sees. POTS lines commonly bill in the high three figures or low four figures per line per month. PRI circuits can run several thousand to tens of thousands per month in environments LAM has reviewed.',
       redeploy: 'Most LAM clients redeploy recovered legacy voice spend into SIP migration or cloud voice, which is the architecture they were moving to anyway.'
     });
   }
 
-  // POTS sunset
   const hasPots = a.pots === 'documented' || a.pots === 'unsure_need' || a.pots === 'unsure';
   const noPlan = a.pots_sunset === 'no_plan' || a.pots_sunset === 'first_hearing';
   if (hasPots && noPlan) {
     f.push({
-      title: 'POTS sunset exposure', severity: 'high',
+      title: 'POTS sunset exposure', severity: 'critical',
       body: 'Major carriers are actively decommissioning POTS copper service under the FCC unbundling order. Notice windows are short. Lines used for fax, alarm, elevator, fire, and back-of-house phones need a planned migration to cellular, VoIP, or managed POTS replacement. An unplanned cutover is more expensive than a planned one and can take critical safety systems offline.',
       redeploy: 'Recovered POTS spend typically funds the cellular or managed-replacement migration that the sunset requires anyway. The leakage and the modernization are the same conversation.'
     });
   }
 
-  // Above-market voice rates
   if (a.per_minute === 'not_reviewed' || a.per_minute === 'unsure') {
     f.push({
-      title: 'Above-market voice rates and plans', severity: 'med',
+      title: 'Above-market voice rates and plans', severity: 'material',
       body: 'Per-minute toll-free, 8YY rates, and legacy long-distance plans are some of the most commonly unbenchmarked items on a telecom bill. Contact center environments are particularly exposed. Bundled or flat-rate LD plans negotiated years ago routinely cost more than equivalent SIP or cloud voice service today.',
       redeploy: 'Most LAM clients redeploy recovered voice spend into modern voice architecture or contact center capabilities they could not previously fund.'
     });
   }
 
-  // Dedicated circuits without failover
   if (a.circuits === 'no_failover') {
     f.push({
-      title: 'Dedicated circuits without failover', severity: 'high',
+      title: 'Dedicated circuits without failover', severity: 'critical',
       body: 'A dedicated circuit without a documented failover path is both a cost issue and a resilience issue. Above-market dedicated pricing is common, and a single-path design is a business continuity risk regardless of the price.',
       redeploy: 'Recovered circuit spend typically funds SD-WAN deployment or proper failover architecture, which is what the environment needed in the first place.'
     });
   }
 
-  // CCaaS overspend
   if (a.ccaas === 'not_reviewed' || a.ccaas === 'unsure_when' || a.ccaas === 'unsure') {
     const tier = locationTier(a);
     let body = 'Contact center platforms accumulate cost in three places: licensed seats no longer assigned to active agents, premium features turned on but unused, and per-minute rates that have not been benchmarked since contract signing.';
@@ -194,29 +131,27 @@ function buildFindings(a) {
       body += ' On a recent engagement at this scale, LAM recovered 50 percent of monthly contact center spend, an annualized recovery in the seven figures for a single client.';
     }
     f.push({
-      title: 'CCaaS overspend', severity: 'high',
+      title: 'CCaaS overspend', severity: 'critical',
       body: body,
       redeploy: 'Most LAM clients redeploy recovered CCaaS spend into AI features, transcription, QA tooling, or seat expansion that was previously unfunded.'
     });
   }
 
-  // Vendor sprawl with coverage gaps
   if (a.suppliers === '5plus' && a.gaps === 'yes') {
     f.push({
-      title: 'Vendor sprawl with coverage gaps', severity: 'med',
+      title: 'Vendor sprawl with coverage gaps', severity: 'material',
       body: 'Paying multiple suppliers for overlapping services while leaving real gaps elsewhere is a portfolio mismanagement signal, not a duplicate-billing problem. The fix is consolidation and rebalance, not renegotiation.',
       redeploy: 'Most LAM clients redeploy recovered consolidation spend into the cybersecurity or monitoring gaps that the sprawl was masking.'
     });
   }
 
-  // Mobility waste
   if (a.mobility && a.mobility !== 'small_recent' && a.mobility !== 'mid_recent') {
     let body = 'Mobility environments accumulate waste in three places: zombie lines (active billing for inactive users), oversized plans, and stale device upgrade cycles. Recoverable mobility spend typically runs 30 percent or more in mid-market environments.';
     if (a.mobility === 'large' || a.mobility === 'enterprise') {
       body += ' On fleets of 500 or more lines, recoverable waste typically runs into six figures. On 1,000-line fleets, zombie line rates of 8 to 12 percent are common. Fleets untouched for three or more years commonly recover 30 percent or more.';
     }
     f.push({
-      title: 'Mobility waste', severity: 'med',
+      title: 'Mobility waste', severity: 'material',
       body: body,
       redeploy: 'Most LAM clients redeploy recovered mobility spend into device refresh cycles, MDM upgrades, or expansion into ruggedized devices for field workers.'
     });
@@ -246,13 +181,26 @@ function buildBand(a, count) {
   return body;
 }
 
+function escapeHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
 (function () {
   const a = getAnswers();
   const root = document.getElementById('bb-sc-results-root');
   const answered = QUESTIONS_ORDER.filter(k => a[k]).length;
 
   if (answered === 0) {
-    root.innerHTML = '<div class="bb-sc-empty"><p>It looks like you have not completed the Self-Check yet.</p><p style="margin-top:16px"><a class="bb-sc-start" href="/professional-services/self-check/">Start the Self-Check</a></p></div>';
+    let empty = '';
+    empty += '<div class="sc-empty">';
+    empty += '<header class="sc-hero">';
+    empty += '<div class="sc-eyebrow"><span class="accent">[BILLING BREAKTHROUGH™]</span> <span class="sep">·</span> SELF-CHECK <span class="sep">·</span> RESULTS</div>';
+    empty += '<h1 class="sc-title">It looks like you haven’t completed the Self-Check yet.</h1>';
+    empty += '<p class="sc-lede">The 11-question Self-Check takes about five minutes. Your findings will appear here when you finish.</p>';
+    empty += '</header>';
+    empty += '<div class="sc-cta-row"><a class="btn btn-primary" href="/professional-services/self-check/">START THE SELF-CHECK <span class="btn-arrow">&rarr;</span></a></div>';
+    empty += '</div>';
+    root.innerHTML = empty;
     return;
   }
 
@@ -260,57 +208,78 @@ function buildBand(a, count) {
   const band = buildBand(a, findings.length);
 
   let html = '';
-  html += '<p class="bb-sc-eyebrow">Billing Breakthrough\u2122 Self-Check Results</p>';
-  html += '<h1 class="bb-sc-title">Here is what your answers suggest.</h1>';
-  html += '<p class="bb-sc-lede">Self-Check findings are directional, not definitive. The LAM snapshot engagement turns these signals into a written benchmark against current market rates and a modernization roadmap.</p>';
-  html += '<p class="bb-sc-lede" style="margin-top:-16px;font-size:15px"><em>What you do with the recovery matters as much as the recovery itself. Most LAM clients redeploy recovered spend into modernization (POTS replacement, network refresh, security tooling, contact center AI) rather than returning it to the budget.</em></p>';
+  html += '<header class="sc-hero">';
+  html += '<div class="sc-eyebrow"><span class="accent">[BILLING BREAKTHROUGH™]</span> <span class="sep">·</span> SELF-CHECK <span class="sep">·</span> RESULTS</div>';
+  html += '<h1 class="sc-title">Here is what your answers <em>suggest.</em></h1>';
+  html += '<p class="sc-lede">Self-Check findings are directional, not definitive. The LAM snapshot engagement turns these signals into a written benchmark against current market rates and a modernization roadmap.</p>';
+  html += '<p class="sc-lede" style="font-size: 16px; font-style: italic;">What you do with the recovery matters as much as the recovery itself. Most LAM clients redeploy recovered spend into modernization &mdash; POTS replacement, network refresh, security tooling, contact center AI &mdash; rather than returning it to the budget.</p>';
+  html += '</header>';
 
-  html += '<div class="bb-sc-band"><h2>Overall picture</h2><p>' + band + '</p></div>';
+  html += '<aside class="sc-band">';
+  html += '<div class="sc-band-eyebrow">OVERALL PICTURE</div>';
+  html += '<p class="sc-band-text">' + escapeHtml(band) + '</p>';
+  html += '</aside>';
 
   if (findings.length === 0) {
-    html += '<div class="bb-sc-finding"><h3>No findings triggered</h3><p>Based on your answers, none of the common leakage patterns triggered. That is unusual and worth confirming. A LAM snapshot is the fastest way to verify.</p></div>';
+    html += '<div class="sc-finding sc-finding-clear">';
+    html += '<span class="sc-finding-sev">Clear</span>';
+    html += '<h2 class="sc-finding-title">No findings triggered.</h2>';
+    html += '<p class="sc-finding-para">Based on your answers, none of the common leakage patterns triggered. That is unusual and worth confirming. A LAM snapshot is the fastest way to verify.</p>';
+    html += '</div>';
   } else {
-    html += '<h2 style="font-size:20px;margin:0 0 16px">Findings</h2>';
-    html += '<div class="bb-sc-findings">';
+    html += '<div class="sc-findings-eyebrow">FINDINGS &middot; ' + findings.length + (findings.length === 1 ? ' SIGNAL' : ' SIGNALS') + '</div>';
+    html += '<div class="sc-findings">';
     findings.forEach(f => {
-      html += '<div class="bb-sc-finding bb-sc-sev-' + (f.severity || 'low') + '"><h3>' + (f.severity === 'high' ? '<span class="bb-sc-flag bb-sc-flag-high" aria-label="High priority"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1v14M1 1h11l-2 3 2 3H1" fill="#c0392b" stroke="#c0392b" stroke-width="1.2" stroke-linejoin="round"/></svg></span>' : f.severity === 'med' ? '<span class="bb-sc-flag bb-sc-flag-med" aria-label="Medium priority"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1v14M1 1h11l-2 3 2 3H1" fill="#d39000" stroke="#d39000" stroke-width="1.2" stroke-linejoin="round"/></svg></span>' : '') + f.title + '</h3><p>' + f.body + '</p><p class="bb-sc-redeploy">' + f.redeploy + '</p></div>';
+      html += '<article class="sc-finding sc-finding-' + f.severity + '">';
+      html += '<span class="sc-finding-sev">' + escapeHtml(SEV_LABELS[f.severity] || f.severity) + '</span>';
+      html += '<h2 class="sc-finding-title">' + escapeHtml(f.title) + '</h2>';
+      html += '<p class="sc-finding-para">' + escapeHtml(f.body) + '</p>';
+      html += '<p class="sc-finding-redeploy">' + escapeHtml(f.redeploy) + '</p>';
+      html += '</article>';
     });
     html += '</div>';
   }
 
-  html += '<div class="bb-sc-cross">Billing problems and contract problems travel together. The Contract Clarifier\u2122 Self-Check is the companion tool. <a href="/professional-services/#bb-services">Learn about Contract Clarifier\u2122</a> while we finish building the Self-Check version.</div>';
+  html += '<aside class="sc-cross">Billing problems and contract problems travel together. The Contract Clarifier™ Self-Check is the companion tool. <a href="/professional-services/#bb-services">Learn about Contract Clarifier™</a> while we finish building the Self-Check version.</aside>';
 
-  html += '<h2 style="font-size:20px;margin:0 0 12px">What happens next</h2>';
-  html += '<p style="font-size:15px;line-height:1.55;margin:0 0 16px">The Self-Check you just completed is free. The LAM snapshot engagement that follows is paid, scoped to your environment and the size of the opportunity. We will tell you what it costs before you commit, and we will tell you up front if your environment is too small or too clean for the engagement to be worth your investment.</p>';
-  html += '<p style="font-size:15px;line-height:1.55;margin:0 0 8px"><strong>Who this is for:</strong> Companies with roughly $100,000 or more in total monthly recurring spend across telecom, network, contact center, mobility, cybersecurity, and data center services.</p>';
-
-  html += '<div class="bb-sc-cta-row">';
-  html += '<a class="bb-sc-cta-primary" href="/professional-services/#bb-contact">Book a snapshot conversation</a>';
-  html += '<a class="bb-sc-cta-secondary" href="/professional-services/self-check/">Retake the Self-Check</a>';
+  html += '<section class="sc-cta-section">';
+  html += '<div class="sc-cta-eyebrow">WHAT HAPPENS NEXT</div>';
+  html += '<h2 class="sc-cta-headline"><em>Turn the signals into a written benchmark.</em></h2>';
+  html += '<p class="sc-cta-body">The Self-Check you just completed is free. The LAM snapshot engagement that follows is paid, scoped to your environment and the size of the opportunity. We will tell you what it costs before you commit, and we will tell you up front if your environment is too small or too clean for the engagement to be worth your investment.</p>';
+  html += '<p class="sc-cta-body" style="font-size: 15px;"><strong>Who this is for:</strong> Companies with roughly $100,000 or more in total monthly recurring spend across telecom, network, contact center, mobility, cybersecurity, and data center services.</p>';
+  html += '<div class="sc-cta-row">';
+  html += '<a class="btn btn-primary" href="/contact/?topic=billing-breakthrough-snapshot">BOOK A SNAPSHOT CONVERSATION <span class="btn-arrow">&rarr;</span></a>';
+  html += '<a class="btn btn-ghost" href="/professional-services/self-check/">RETAKE THE SELF-CHECK</a>';
   html += '</div>';
+  html += '</section>';
 
-  // GA4 tracking
+  root.innerHTML = html;
+
+  // GA4
   if (typeof gtag === 'function') {
-    var bbHighCount = findings.filter(function(x){return x.severity==='high';}).length;
-    var bbMedCount = findings.filter(function(x){return x.severity==='medium';}).length;
-    var bbLowCount = findings.filter(function(x){return x.severity==='low';}).length;
+    var critical_count = findings.filter(function(x){return x.severity === 'critical';}).length;
+    var material_count = findings.filter(function(x){return x.severity === 'material';}).length;
+    var note_count = findings.filter(function(x){return x.severity === 'note';}).length;
+    var clear_count = findings.filter(function(x){return x.severity === 'clear';}).length;
+    var framing_count = findings.filter(function(x){return x.severity === 'framing';}).length;
     gtag('event', 'self_check_complete', {
       tool: 'billing_breakthrough',
       finding_count: findings.length,
-      high_count: bbHighCount,
-      medium_count: bbMedCount,
-      low_count: bbLowCount,
-      locations_bucket: a.locations || 'unknown'
+      critical_count: critical_count,
+      material_count: material_count,
+      note_count: note_count,
+      clear_count: clear_count,
+      framing_count: framing_count
     });
   }
-  root.innerHTML = html;
-  // Track outbound clicks to snapshot/contact CTAs
+
+  // Outbound CTA tracking
   if (typeof gtag === 'function') {
     root.addEventListener('click', function(e) {
       var t = e.target.closest && e.target.closest('a');
       if (!t) return;
       var href = t.getAttribute('href') || '';
-      if (href.indexOf('contact') !== -1 || href.indexOf('mailto:') !== -1) {
+      if (href.indexOf('/contact/') !== -1 || href.indexOf('mailto:') !== -1) {
         gtag('event', 'self_check_to_snapshot', {
           tool: 'billing_breakthrough',
           target_href: href,
@@ -321,5 +290,6 @@ function buildBand(a, count) {
   }
 })();
 </script>
+
 </body>
 </html>

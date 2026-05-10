@@ -7,7 +7,7 @@
   <meta name="description" content="A 12-domain evaluation of your wireless and IoT footprint &mdash; carriers, devices, lifecycle, and operational risk. Built for environments where mobility decisions have piled up across acquisitions, locations, and supplier changes.">
   <link rel="canonical" href="https://lamtechnology.com/practice-areas/mobility/">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=6">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=7">
 </head>
 <body>
   <div id="lam-nav"></div>
@@ -154,8 +154,8 @@
       } catch (e) { console.error(e); }
     };
     await Promise.all([
-      loadPartial('lam-nav', '/partials/nav-redesign.html?v=6'),
-      loadPartial('lam-footer', '/partials/footer-redesign.html?v=6')
+      loadPartial('lam-nav', '/partials/nav-redesign.html?v=7'),
+      loadPartial('lam-footer', '/partials/footer-redesign.html?v=7')
     ]);
     const currentPath = window.location.pathname;
     document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {

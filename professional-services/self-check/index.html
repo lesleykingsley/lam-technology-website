@@ -20,121 +20,77 @@
 <meta name="twitter:title" content="Billing Breakthrough&trade; Self-Check | LAM Technology"/>
 <meta name="twitter:description" content="A free five-minute Self-Check. Find out where your telecom and contact center spend is likely leaking."/>
 <meta name="twitter:image" content="https://lamtechnology.com/lam-logo.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/assets/css/lam-theme.css"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#1a1a2e;--red:#d4a843;--rh:#b8922e;--off:#f8f6f0;--g1:#f0ede8;--g2:#e8e4dc;--g4:#c8c0b0;--g6:#8a8070;--g8:#4a4038;--r:12px;--rs:6px;--sl:0 12px 48px rgba(26,26,46,.16);--t:.2s ease}
-html{scroll-behavior:smooth;overflow-y:scroll}
-body{font-family:'Inter',sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:70px}
-img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
-.container{max-width:1200px;margin:0 auto;padding:0 32px}
-#navbar{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,244,.97);border-bottom:1px solid var(--g2);transition:box-shadow var(--t)}
-#navbar.sc{box-shadow:0 2px 20px rgba(26,26,46,.10)}
-.nw{display:flex;align-items:center;justify-content:space-between;height:70px}
-.nlogo img{height:46px;width:auto}
-.nl{display:flex;align-items:center;justify-content:center;flex:1;gap:8px}
-.nl a{font-size:14px;font-weight:600;color:var(--g8);padding:8px 14px;border-radius:var(--rs);transition:all var(--t)}
-.nl a:hover{color:var(--navy);background:var(--g1)}
-.nl .nc{background:var(--red);color:#fff;padding:10px 22px;margin-left:8px}.nl .nc:hover{background:var(--rh);transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,168,67,.30)}
-.nhb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}.nhb span{width:22px;height:2px;background:var(--navy);border-radius:2px;display:block}
-.nm{display:none}.nm.op{display:flex;flex-direction:column;background:#fff;padding:16px 24px 24px;gap:4px;border-top:1px solid var(--g2)}
-.nm a{font-size:15px;font-weight:600;color:var(--g8);padding:12px 0;border-bottom:1px solid var(--g1)}
-.nm a:last-child{border:none;margin-top:8px;background:var(--red);color:#fff;text-align:center;padding:12px;border-radius:var(--rs)}
-#footer{background:var(--navy);color:rgba(255,255,255,.55);padding:72px 0 36px}
-.ft{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.3fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07)}
-.fli img{height:42px;width:auto;margin-bottom:18px;filter:brightness(0) invert(1)}
-.fde{font-size:14px;line-height:1.75;color:rgba(255,255,255,.42);max-width:270px}
-.fso{margin-top:24px;display:flex;gap:10px}
-.fso a{width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:rgba(255,255,255,.55);transition:all var(--t)}
-.fso a:hover{background:var(--red);border-color:var(--red);color:#fff}
-.fct{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.85);margin-bottom:20px}
-.flk{display:flex;flex-direction:column;gap:10px}
-.flk a{font-size:14px;color:rgba(255,255,255,.45);transition:color var(--t)}.flk a:hover{color:var(--red)}
-.fcr{display:flex;gap:12px;margin-bottom:12px;font-size:14px;color:rgba(255,255,255,.45);align-items:flex-start}
-.fcr a{color:rgba(255,255,255,.45);transition:color var(--t)}.fcr a:hover{color:var(--red)}
-.fb{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:13px;color:rgba(255,255,255,.25);flex-wrap:wrap;gap:12px}
-@media(max-width:1024px){.ft{grid-template-columns:1fr 1fr;gap:36px}}
-@media(max-width:680px){.container{padding:0 20px}.nl{display:none}.nhb{display:flex}.ft{grid-template-columns:1fr}}
-.bc-bar{background:var(--off);border-bottom:1px solid var(--g2);padding:12px 0;font-size:13px;color:var(--g6)}
-.bc-bar a{color:var(--g6);transition:color var(--t)}.bc-bar a:hover{color:var(--red)}
-.bc-bar span{color:var(--g4);margin:0 8px}
-</style>
-<link rel="stylesheet" href="/assets/css/a11y.css"/>
-<link rel="stylesheet" href="/assets/css/billing-breakthrough-self-check.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=7">
 </head>
-<body class="lam-typography">
-<a class="skip-link" href="#main">Skip to content</a>
-<header id="navbar">
-  <div class="container">
-    <nav class="nw">
-      <a href="/" class="nlogo"><img src="/lam-logo.png" alt="LAM Technology"/></a>
-      <div class="nl">
-        <a href="/professional-services/">Professional Services</a>
-        <a href="/practice-areas/">Practice Areas</a>
-        <a href="/about-lam/">Why LAM</a>
-        <a href="/insights/">Insights</a>
-        <a href="/contact/" class="nc">Just Ask LAM</a>
+<body>
+
+<div id="lam-nav"></div>
+
+<main class="sc-page">
+  <div class="sc-page-inner">
+
+    <header class="sc-hero">
+      <div class="sc-eyebrow">
+        <span class="accent">[BILLING BREAKTHROUGH&trade;]</span>
+        <span class="sep">&middot;</span>
+        LAM TECHNOLOGY
+        <span class="sep">&middot;</span>
+        SELF-CHECK
       </div>
-      <div class="nhb" onclick="tNav()"><span></span><span></span><span></span></div>
-    </nav>
-    <div class="nm" id="nMob">
-      <a href="/professional-services/" onclick="tNav()">Professional Services</a>
-      <a href="/practice-areas/" onclick="tNav()">Practice Areas</a>
-      <a href="/about-lam/" onclick="tNav()">Why LAM</a>
-      <a href="/insights/" onclick="tNav()">Insights</a>
-      <a href="/contact/" onclick="tNav()">Just Ask LAM</a>
-    </div>
-  </div>
-</header>
-<div class="bc-bar"><div class="container">
-  <a href="/">&#8592; Home</a><span>/</span><a href="/professional-services/">Professional Services</a><span>/</span>Self-Check
-</div></div>
+      <h1 class="sc-title">Your telecom bill is probably leaking. <em>Find out where in five minutes.</em></h1>
+      <p class="sc-lede">Eleven questions about your current telecom and contact center environment. At the end, a plain-language report names where your spend is leaking, how big the leak likely is, and how recovered budget could fund modernization work that is already on your roadmap.</p>
 
-<main id="main">
-  <div class="bb-sc-shell" id="bb-sc-shell">
-    <p class="bb-sc-eyebrow">Billing Breakthrough™ Self-Check</p>
-    <h1 class="bb-sc-title">Your telecom bill is probably leaking. Find out where in five minutes.</h1>
-    <p class="bb-sc-lede">Eleven questions about your current telecom and contact center environment. At the end, a plain-language report names where your spend is leaking, how big the leak likely is, and how recovered budget could fund modernization work that is already on your roadmap.</p>
+      <div class="sc-positioning">
+        <p><strong>What this is, and what it isn&rsquo;t:</strong> This is not a Telecom Expense Management dashboard. LAM is not a TEMS. We do not sell a platform that ingests your bills and produces recurring reports.</p>
+        <p>We read the bills, find the leakage, and help you redeploy the recovery into the services your business actually needs next. POTS replacement, SIP or cloud voice, SD-WAN, contact center AI, security tooling, the modernization work that was already on your roadmap and waiting for budget.</p>
+        <p>This Self-Check focuses on telecom, contact center, and mobility, because that is where most clients have the highest immediate leakage. The full LAM engagement also covers network, cybersecurity, and data center spend.</p>
+        <p><strong>No login. No email required.</strong></p>
+      </div>
+    </header>
 
-    <div class="bb-sc-positioning">
-      <h3>What this is, and what it isn’t</h3>
-      <p>This is not a Telecom Expense Management dashboard. LAM is not a TEMS. We do not sell a platform that ingests your bills and produces recurring reports.</p>
-      <p>We read the bills, find the leakage, and help you redeploy the recovery into the services your business actually needs next. POTS replacement, SIP or cloud voice, SD-WAN, contact center AI, security tooling, the modernization work that was already on your roadmap and waiting for budget.</p>
-      <p>This Self-Check focuses on telecom, contact center, and mobility, because that is where most clients have the highest immediate leakage. The full LAM engagement also covers network, cybersecurity, and data center spend.</p>
-      <p>No login. No email required.</p>
-    </div>
-
-    <div class="bb-sc-progress" aria-live="polite">
-      <span id="bb-sc-counter">Question 1 of 11</span>
-      <div class="bb-sc-progress-track" aria-hidden="true"><div class="bb-sc-progress-fill" id="bb-sc-fill"></div></div>
+    <div class="sc-progress" aria-live="polite">
+      <div class="sc-progress-label" id="bb-sc-counter">Question 1 of 11</div>
+      <div class="sc-progress-track" aria-hidden="true"><div class="sc-progress-fill" id="bb-sc-fill"></div></div>
     </div>
 
     <div id="bb-sc-stage"></div>
 
-    <div class="bb-sc-nav">
-      <button type="button" class="bb-sc-back" id="bb-sc-back" disabled>← Back</button>
-      <button type="button" class="bb-sc-next" id="bb-sc-next" disabled>Next</button>
+    <div class="sc-actions">
+      <button type="button" class="sc-btn sc-btn-secondary" id="bb-sc-back" disabled>&larr; Back</button>
+      <button type="button" class="sc-btn sc-btn-primary" id="bb-sc-next" disabled>Next</button>
     </div>
+
   </div>
 </main>
 
-<footer id="footer"><div class="container">
-  <div class="ft">
-    <div><div class="fli"><img src="/lam-logo.png" alt="LAM Technology"/></div><p class="fde">We serve our clients by helping them select and manage the fabric of their IT services, using our unique engagement model to drive real, measurable results.</p><div class="fso"><a href="https://www.linkedin.com/company/584936" target="_blank" rel="noopener" aria-label="LinkedIn">in</a></div></div>
-    <div><div class="fct">Practice Areas</div><div class="flk"><a href="/cybersecurity.html">Cybersecurity &amp; Risk</a><a href="/practice-areas/customer-experience-digital-engagement/">Customer Experience</a><a href="/infrastructure-insight.html">Networking &amp; Infrastructure</a><a href="/wireless-wisdom.html">Mobility &amp; IoT</a><a href="/ai-readiness.html">AI Readiness</a></div></div>
-    <div><div class="fct">Company</div><div class="flk"><a href="/about-lam/">About LAM</a><a href="/insights/">Insights</a><a href="/contact/">Contact Us</a></div></div>
-    <div><div class="fct">Contact Us</div><div class="fcr">&#128222; <a href="tel:8174844522">(817) 484-4522</a></div><div class="fcr">&#128205; <span>1751 River Run, Suite 300<br>Fort Worth, TX 76107</span></div></div>
-  </div>
-  <div class="fb"><span>Copyright &copy; 2026 LAM Technology. All rights reserved.</span><span class="ftx-badge">Fort Worth, TX</span></div>
-</div></footer>
+<div id="lam-footer"></div>
+
 <script>
-function tNav(){document.getElementById('nMob').classList.toggle('op')}
-document.addEventListener('click',function(e){var m=document.getElementById('nMob'),h=document.querySelector('.nhb');if(m.classList.contains('op')&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('op')});
-window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('sc',window.scrollY>20)});
+(async () => {
+  const loadPartial = async (id, path) => {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error('Failed to load ' + path);
+      document.getElementById(id).innerHTML = await res.text();
+    } catch (e) { console.error(e); }
+  };
+  await Promise.all([
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=7'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=7')
+  ]);
+  const currentPath = window.location.pathname;
+  document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && currentPath.startsWith(href) && href !== '/') {
+      link.classList.add('nav-active');
+    } else if (href === '/' && currentPath === '/') {
+      link.classList.add('nav-active');
+    }
+  });
+})();
 </script>
+
 <script>
 const QUESTIONS = [
   {
@@ -262,7 +218,6 @@ const QUESTIONS = [
 
 (function() {
   const STORAGE_KEY = 'bb_sc_answers_v1';
-  const shell = document.getElementById('bb-sc-shell');
   const stage = document.getElementById('bb-sc-stage');
   const fill = document.getElementById('bb-sc-fill');
   const counter = document.getElementById('bb-sc-counter');
@@ -276,23 +231,26 @@ const QUESTIONS = [
     const q = QUESTIONS[idx];
     stage.innerHTML = '';
     const wrap = document.createElement('div');
-    wrap.className = 'bb-sc-question is-active';
+    wrap.className = 'sc-question';
     const h = document.createElement('h2');
+    h.className = 'sc-question-title';
     h.textContent = q.title;
     wrap.appendChild(h);
     if (q.help) {
       const p = document.createElement('p');
-      p.className = 'bb-sc-help';
+      p.className = 'sc-question-help';
       p.textContent = q.help;
       wrap.appendChild(p);
     }
     const opts = document.createElement('div');
-    opts.className = 'bb-sc-options';
+    opts.className = 'sc-options';
     q.options.forEach(opt => {
       const btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'bb-sc-option' + (answers[q.id] === opt.value ? ' is-selected' : '');
-      btn.textContent = opt.label;
+      btn.className = 'sc-option' + (answers[q.id] === opt.value ? ' is-selected' : '');
+      const span = document.createElement('span');
+      span.textContent = opt.label;
+      btn.appendChild(span);
       btn.addEventListener('click', () => {
         answers[q.id] = opt.value;
         sessionStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
@@ -300,7 +258,7 @@ const QUESTIONS = [
           window.__bbScStarted = true;
           gtag('event', 'self_check_start', { tool: 'billing_breakthrough', first_question_id: q.id });
         }
-        opts.querySelectorAll('.bb-sc-option').forEach(b => b.classList.remove('is-selected'));
+        opts.querySelectorAll('.sc-option').forEach(b => b.classList.remove('is-selected'));
         btn.classList.add('is-selected');
         nextBtn.removeAttribute('disabled');
       });
@@ -331,7 +289,7 @@ const QUESTIONS = [
     } else {
       fill.style.width = '100%';
       if (typeof gtag === 'function') {
-        gtag('event', 'self_check_submit', { tool: 'billing_breakthrough', locations_bucket: answers.locations || 'unknown', answers_count: Object.keys(answers).length });
+        gtag('event', 'self_check_submit', { tool: 'billing_breakthrough', locations_bucket: answers.locations || 'unknown', gate: null, answers_count: Object.keys(answers).length });
       }
       window.location.href = '/professional-services/self-check/results/';
     }
@@ -345,5 +303,6 @@ const QUESTIONS = [
   render();
 })();
 </script>
+
 </body>
 </html>

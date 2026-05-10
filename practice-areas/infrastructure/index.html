@@ -7,7 +7,7 @@
   <meta name="description" content="A dual-lens review of your network, data center, and connectivity &mdash; and the MSPs running it. Surfacing aging gear, drifting supplier relationships, and unreviewed contracts that quietly erode performance and budget.">
   <link rel="canonical" href="https://lamtechnology.com/practice-areas/infrastructure/">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=6">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=7">
 </head>
 <body>
   <div id="lam-nav"></div>
@@ -92,6 +92,13 @@
         <p>Network and data center assessment with 12-month roadmap. MSP relationship review and contract renegotiation. SD-WAN, ISP, and carrier supplier validation. Multi-site transition planning and delivery oversight.</p>
       </div>
 
+      <aside class="svc-mini-cta">
+        <div class="svc-mini-cta-eyebrow">MSP MICROSCOPE&trade; MINI-CHECK</div>
+        <h3 class="svc-mini-cta-headline"><em>Worried about your MSP relationship specifically?</em></h3>
+        <p class="svc-mini-cta-body">Take the MSP Mini-Check &mdash; 10 questions, 3 minutes. You&rsquo;ll get a plain-language read on where the friction or leakage in your current MSP relationship likely is, before you book any conversation.</p>
+        <a href="/professional-services/msp-self-check/" class="btn btn-primary">TAKE THE MSP MINI-CHECK <span class="btn-arrow">&rarr;</span></a>
+      </aside>
+
       <section class="article-cta">
         <div class="article-cta-eyebrow">JUST ASK LAM</div>
         <h2 class="article-cta-headline"><em>Wondering if your infrastructure is helping or holding you back?</em></h2>
@@ -113,8 +120,8 @@
       } catch (e) { console.error(e); }
     };
     await Promise.all([
-      loadPartial('lam-nav', '/partials/nav-redesign.html?v=6'),
-      loadPartial('lam-footer', '/partials/footer-redesign.html?v=6')
+      loadPartial('lam-nav', '/partials/nav-redesign.html?v=7'),
+      loadPartial('lam-footer', '/partials/footer-redesign.html?v=7')
     ]);
     const currentPath = window.location.pathname;
     document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
