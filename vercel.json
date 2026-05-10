@@ -14,7 +14,8 @@
           { "source": "/practice-areas/customer-experience-digital-engagement", "destination": "/practice-areas/customer-experience/", "permanent": true },
           { "source": "/practice-areas/customer-experience-digital-engagement/", "destination": "/practice-areas/customer-experience/", "permanent": true },
           { "source": "/billing-breakthrough", "destination": "/professional-services/billing-breakthrough/", "permanent": false },
-          { "source": "/billing-breakthrough/", "destination": "/professional-services/billing-breakthrough/", "permanent": false }
+          { "source": "/billing-breakthrough/", "destination": "/professional-services/billing-breakthrough/", "permanent": false },
+          { "source": "/support-scope.html", "destination": "/professional-services/support-scope/", "permanent": true }
     ],
     "headers": [
           {
