@@ -24,7 +24,7 @@ The redesign isn't doing that. The reasons content already works for SEO and GEO
 
 3. Named methodologies — Vigilance Verification, MSP Microscope, AI Readiness Radar. Trademarked names create unique strings in the indexable web. When someone searches for "Vigilance Verification," exactly one firm shows up.
 
-4. Specific numbers — "30 executives have brought LAM with them when changing companies — 10 of those twice, 2 three times." That kind of specific claim with structured numbers is exactly what AI engines surface as evidence.
+4. Specific numbers — "30 executives have brought LAM with them when changing companies — 10 of those three times, 2 of those more than three times." That kind of specific claim with structured numbers is exactly what AI engines surface as evidence.
 
 5. Editorial structure — headers, hairline rules, semantic HTML. Crawlers parse this as "high-quality reference material" rather than "marketing brochure."
 
