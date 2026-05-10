@@ -276,6 +276,17 @@ const QUESTIONS = [
       nextBtn.setAttribute('disabled', 'true');
     }
     nextBtn.textContent = idx === QUESTIONS.length - 1 ? 'See results' : 'Next';
+
+    // Smooth scroll to the new question on Back/Next (skip on initial render)
+    if (window.__bbScRendered) {
+      const questionEl = document.querySelector('.sc-question') || stage;
+      if (questionEl) {
+        const yOffset = -80;
+        const y = questionEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+    window.__bbScRendered = true;
   }
 
   backBtn.addEventListener('click', () => {

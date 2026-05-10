@@ -248,6 +248,17 @@ function renderCurrent(){
   attachHandlers(q);
   updateNav(q);
   document.getElementById("msp-sc-back").disabled = navHistory.length === 0;
+
+  // Smooth scroll to the new question on Back/Next (skip on initial render)
+  if (window.__mspScRendered) {
+    var questionEl = document.querySelector(".sc-question") || container;
+    if (questionEl) {
+      var yOffset = -80;
+      var y = questionEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
+  window.__mspScRendered = true;
 }
 function renderSingle(q){
   var v = answers[q.id];
@@ -372,8 +383,6 @@ function goNext(){
   if (currentIndex >= visible.length - 1) { goToResults(); return; }
   currentIndex++;
   renderCurrent();
-  var page = document.querySelector(".sc-page");
-  if (page) window.scrollTo({ top: page.offsetTop - 24, behavior: "smooth" });
 }
 function goBack(){
   if (navHistory.length === 0) return;
