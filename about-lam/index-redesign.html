@@ -7,7 +7,7 @@
   <meta name="description" content="Why executives bring LAM with them when they change companies. A serious, supplier-neutral IT advisory firm with 20+ years of receipts.">
   <meta name="robots" content="noindex,nofollow">
   <link rel="canonical" href="https://lamtechnology.com/about-lam/">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=8">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=9">
   <style>
     .lam-breadcrumb { position: relative; z-index: 5; padding: 32px 56px 0; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
     .lam-breadcrumb a { color: var(--ink-muted); text-decoration: none; }
@@ -52,7 +52,8 @@
 <div id="lam-nav"></div>
 
 <div class="lam-breadcrumb lam-reveal lam-r2">
-  <a href="/">Home</a> &nbsp;/&nbsp; About LAM
+  <!-- TEMP: Home breadcrumb points to /index-redesign.html until production cutover renames it to canonical /index.html. Revert to href="/" then. -->
+  <a href="/index-redesign.html">Home</a> &nbsp;/&nbsp; About LAM
 </div>
 
 <section class="lam-hero">
@@ -149,8 +150,8 @@
     } catch (e) { console.error(e); }
   };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=8'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=8')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=9'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=9')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
