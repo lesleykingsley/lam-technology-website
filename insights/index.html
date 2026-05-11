@@ -7,7 +7,7 @@
   <meta name="description" content="Field reports from twenty years of LAM Technology engagements &mdash; phone bills, security posture, mobility costs, and the operational choices that compound into outcomes.">
   <link rel="canonical" href="https://lamtechnology.com/insights/">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=11">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=12">
 </head>
 <body>
 
@@ -99,9 +99,25 @@
       });
     } catch (e) { console.error(e); }
   };
+  const loadSchema = async (path) => {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error('Failed to load ' + path);
+      const text = await res.text();
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = text;
+      tempDiv.querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        if (oldScript.type) newScript.type = oldScript.type;
+        newScript.textContent = oldScript.textContent;
+        document.head.appendChild(newScript);
+      });
+    } catch (e) { console.error(e); }
+  };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=11'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=11')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=12'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=12'),
+    loadSchema('/partials/schema-org.html?v=12')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {

@@ -7,7 +7,7 @@
   <meta name="description" content="Why executives bring LAM with them when they change companies. A serious, supplier-neutral IT advisory firm with 20+ years of receipts.">
   <meta name="robots" content="noindex,nofollow">
   <link rel="canonical" href="https://lamtechnology.com/about-lam/">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=11">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=12">
   <style>
     .lam-breadcrumb { position: relative; z-index: 5; padding: 32px 56px 0; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
     .lam-breadcrumb a { color: var(--ink-muted); text-decoration: none; }
@@ -156,9 +156,25 @@
       });
     } catch (e) { console.error(e); }
   };
+  const loadSchema = async (path) => {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error('Failed to load ' + path);
+      const text = await res.text();
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = text;
+      tempDiv.querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        if (oldScript.type) newScript.type = oldScript.type;
+        newScript.textContent = oldScript.textContent;
+        document.head.appendChild(newScript);
+      });
+    } catch (e) { console.error(e); }
+  };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=11'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=11')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=12'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=12'),
+    loadSchema('/partials/schema-org.html?v=12')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
