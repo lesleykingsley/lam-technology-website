@@ -4,6 +4,8 @@
     <a href="/index-redesign.html" class="nav-logo" aria-label="LAM Technology home">
       <img src="/lam-logo.png" alt="LAM Technology" width="96" height="44">
     </a>
+
+    <!-- Desktop nav links — hidden on mobile via CSS -->
     <div class="nav-links">
       <a href="/professional-services/">Services</a>
       <a href="/practice-areas/">Practice Areas</a>
@@ -12,5 +14,70 @@
       <a href="/insights/">Insights</a>
       <a href="/contact/" class="nav-cta">Just Ask LAM</a>
     </div>
+
+    <!-- Hamburger button — visible on mobile only via CSS -->
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="nav-hamburger-line"></span>
+      <span class="nav-hamburger-line"></span>
+      <span class="nav-hamburger-line"></span>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile menu overlay — full-screen, hidden by default -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="mobile-menu-close" aria-label="Close menu">
+    <span class="mobile-menu-close-line"></span>
+    <span class="mobile-menu-close-line"></span>
+  </button>
+  <nav class="mobile-menu-nav">
+    <a href="/professional-services/" class="mobile-menu-link">Professional Services</a>
+    <a href="/practice-areas/" class="mobile-menu-link">Practice Areas</a>
+    <!-- TEMP: Why LAM points to /about-lam/index-redesign.html until production cutover. Revert to href="/about-lam/" then. -->
+    <a href="/about-lam/index-redesign.html" class="mobile-menu-link">Why LAM</a>
+    <a href="/insights/" class="mobile-menu-link">Insights</a>
+    <a href="/contact/" class="mobile-menu-link mobile-menu-cta">Just Ask LAM</a>
+  </nav>
+</div>
+
+<script>
+(function() {
+  function initMobileMenu() {
+    var hamburger = document.querySelector('.nav-hamburger');
+    var closeBtn = document.querySelector('.mobile-menu-close');
+    var menu = document.getElementById('mobile-menu');
+    var body = document.body;
+
+    if (!hamburger || !menu) return;
+    if (hamburger.dataset.wired === '1') return;
+    hamburger.dataset.wired = '1';
+
+    function openMenu() {
+      menu.classList.add('is-open');
+      menu.setAttribute('aria-hidden', 'false');
+      hamburger.setAttribute('aria-expanded', 'true');
+      body.classList.add('mobile-menu-open');
+    }
+
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
+      body.classList.remove('mobile-menu-open');
+    }
+
+    hamburger.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    menu.querySelectorAll('.mobile-menu-link').forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
+    });
+  }
+
+  initMobileMenu();
+})();
+</script>

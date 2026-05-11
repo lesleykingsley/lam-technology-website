@@ -7,7 +7,7 @@
   <meta name="description" content="An honest read on where your data, processes, people, and platforms sit relative to AI adoption. Eight domains rated and documented &mdash; so you know what to fix first and which AI investments will actually pay back.">
   <link rel="canonical" href="https://lamtechnology.com/practice-areas/ai-readiness/">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=9">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=11">
 </head>
 <body>
   <div id="lam-nav"></div>
@@ -122,12 +122,19 @@
       try {
         const res = await fetch(path);
         if (!res.ok) throw new Error('Failed to load ' + path);
-        document.getElementById(id).innerHTML = await res.text();
+        const target = document.getElementById(id);
+        target.innerHTML = await res.text();
+        target.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) newScript.src = oldScript.src;
+          else newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
       } catch (e) { console.error(e); }
     };
     await Promise.all([
-      loadPartial('lam-nav', '/partials/nav-redesign.html?v=9'),
-      loadPartial('lam-footer', '/partials/footer-redesign.html?v=9')
+      loadPartial('lam-nav', '/partials/nav-redesign.html?v=11'),
+      loadPartial('lam-footer', '/partials/footer-redesign.html?v=11')
     ]);
     const currentPath = window.location.pathname;
     document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {

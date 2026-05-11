@@ -1,4 +1,4 @@
-/* Version: 9 — bump to invalidate browser caches */
+/* Version: 11 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -2547,9 +2547,137 @@ a.nav-cta:hover {
   .utility-body h2 { font-size: 24px; margin-top: 40px; }
 }
 
+/* =============================================================================
+   MOBILE NAVIGATION — hamburger + full-screen overlay
+   ============================================================================= */
+
+.nav-hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 12px;
+  margin: 0;
+  cursor: pointer;
+  z-index: 110;
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+.nav-hamburger-line {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--ink);
+  margin: 6px auto;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--paper);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 210;
+}
+
+.mobile-menu-close-line {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--ink);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.mobile-menu-close-line:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.mobile-menu-close-line:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.mobile-menu-link {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(28px, 6vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 8px 16px;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus {
+  color: var(--gold-deep);
+}
+
+.mobile-menu-cta {
+  font-family: var(--body);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--navy);
+  padding: 16px 32px;
+  margin-top: 24px;
+}
+
+.mobile-menu-cta:hover,
+.mobile-menu-cta:focus {
+  background: var(--navy);
+  color: var(--paper);
+}
+
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
 @media (max-width: 800px) {
     .nav-inner { padding: 16px 24px; }
     .nav-links { display: none; }
+    .nav-hamburger { display: block; }
     a.nav-cta { display: inline-flex; margin: 0; }
     .footer-inner { grid-template-columns: 1fr; padding: 0 24px; }
     .footer-bot { padding: 24px 24px 0; }
