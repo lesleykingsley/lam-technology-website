@@ -21,6 +21,124 @@
 <meta name="twitter:description" content="Your Billing Breakthrough Self-Check results."/>
 <meta name="twitter:image" content="https://lamtechnology.com/lam-logo.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Organization JSON-LD: canonical source at /partials/schema-org.html. Update both when changing. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://lamtechnology.com/#organization",
+  "name": "LAM Technology",
+  "alternateName": "LAM",
+  "url": "https://lamtechnology.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "@id": "https://lamtechnology.com/#logo",
+    "url": "https://lamtechnology.com/lam-logo.png",
+    "width": 373,
+    "height": 171,
+    "caption": "LAM Technology"
+  },
+  "image": { "@id": "https://lamtechnology.com/#logo" },
+  "description": "LAM Technology is a supplier-neutral IT advisory firm founded in 2002. We help executives select, negotiate, and manage their technology stack across cybersecurity, infrastructure, mobility, customer experience, and AI readiness. We are a kept advisor: 30 executives have brought LAM with them across company changes.",
+  "slogan": "Trustworthy guidance in technology enablement.",
+  "foundingDate": "2002",
+  "founder": [
+    { "@type": "Person", "name": "Link Moore" },
+    { "@type": "Person", "name": "Jim Suss" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1751 River Run, Suite 300",
+    "addressLocality": "Fort Worth",
+    "addressRegion": "TX",
+    "postalCode": "76107",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-817-484-4522",
+    "email": "info@lamtechnology.com",
+    "contactType": "customer service",
+    "areaServed": "US",
+    "availableLanguage": "English"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "sameAs": [
+    "https://www.linkedin.com/company/584936"
+  ],
+  "knowsAbout": [
+    "IT advisory services",
+    "Telecom expense management",
+    "Cybersecurity risk assessment",
+    "Infrastructure modernization",
+    "Managed service provider evaluation",
+    "Customer experience technology",
+    "Mobility and wireless strategy",
+    "AI readiness assessment",
+    "Technology Services Distributor (TSD) ecosystem",
+    "Vendor-neutral technology procurement",
+    "IT contract negotiation",
+    "Telecom audit",
+    "Supplier-neutral advisory"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Billing Breakthrough",
+        "description": "Diagnostic engagement that typically uncovers 20-30% savings on telecom and IT spend. Over 150 engagements completed."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Cybersecurity & Resilience — Vigilance Verification",
+        "description": "Cybersecurity posture assessment and ongoing diagnostic across people, process, and platform."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Infrastructure & MSP — Infrastructure Insight and MSP Microscope",
+        "description": "Dual-lens diagnostic for infrastructure modernization and managed service provider fit."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Mobility & IoT — Wireless Wisdom",
+        "description": "Mobility, wireless, and IoT strategy diagnostic for cost, security, and user experience."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Customer Experience — Experience Examination",
+        "description": "Customer experience and contact center diagnostic across channels, agents, and orchestration."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "AI Readiness — AI Readiness Radar",
+        "description": "AI readiness diagnostic across data, governance, talent, and use-case viability."
+      }
+    }
+  ],
+  "award": [
+    "Intelisys Palladium 2024",
+    "Intelisys Quadruple Platinum 2022",
+    "Avant Gold 2022",
+    "Intelisys Triple Platinum 2020"
+  ]
+}
+</script>
 <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=12">
 </head>
 <body>
@@ -49,25 +167,9 @@
       });
     } catch (e) { console.error(e); }
   };
-  const loadSchema = async (path) => {
-    try {
-      const res = await fetch(path);
-      if (!res.ok) throw new Error('Failed to load ' + path);
-      const text = await res.text();
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = text;
-      tempDiv.querySelectorAll('script').forEach(oldScript => {
-        const newScript = document.createElement('script');
-        if (oldScript.type) newScript.type = oldScript.type;
-        newScript.textContent = oldScript.textContent;
-        document.head.appendChild(newScript);
-      });
-    } catch (e) { console.error(e); }
-  };
   await Promise.all([
     loadPartial('lam-nav', '/partials/nav-redesign.html?v=12'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=12'),
-    loadSchema('/partials/schema-org.html?v=12')
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=12')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
