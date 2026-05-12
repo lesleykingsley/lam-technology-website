@@ -1,6 +1,42 @@
+# LAM Technology
+# Allow all standard crawlers; explicit allowlist for AI bots below.
+
 User-agent: *
 Allow: /
-Disallow: /hero-mockups.html
 Disallow: /internal/
+Disallow: /api/
+Disallow: /professional-services/self-check/results/
+Disallow: /professional-services/msp-self-check/results/
+
+# AI crawlers — explicitly allowed (LAM is content-discoverable to AI assistants)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
 
 Sitemap: https://lamtechnology.com/sitemap.xml
