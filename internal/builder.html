@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LAM Assessment Builder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+<script>
+  // CDN fallback: if unpkg failed, try jsdelivr, then cloudflare
+  if (typeof PptxGenJS === "undefined") {
+    document.write('<script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"><\/script>');
+  }
+</script>
+<script>
+  if (typeof PptxGenJS === "undefined") {
+    document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.12.0/pptxgen.bundle.js"><\/script>');
+  }
+</script>
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-warm: #f4f0e7;
+    --paper-deep: #ede8db;
+    --ink: #14181f;
+    --ink-soft: #2e3540;
+    --ink-muted: #6f7684;
+    --rule: #e2ddd0;
+    --rule-strong: #c9c2af;
+    --navy: #1B2D5B;
+    --navy-deep: #0f1d40;
+    --gold: #d4a843;
+    --gold-deep: #b8922e;
+    --gold-tint: rgba(212,168,67,0.12);
+    --gold-soft: rgba(212,168,67,0.32);
+    --critical: #B04A3C;
+    --caution: #d4a843;
+    --strong: #5C7A5C;
+
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; }
+
+  /* HEADER */
+  .header {
+    background: var(--navy-deep);
+    color: var(--paper);
+    padding: 28px 48px 24px;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .header-brand {
+    font-family: var(--body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.1;
+    color: var(--paper);
+  }
+  .header h1 .accent { color: var(--gold); }
+  .header-sub {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--paper-warm);
+    opacity: 0.75;
+    margin-top: 8px;
+  }
+  .header-status {
+    position: absolute;
+    top: 32px;
+    right: 48px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--paper-warm);
+    opacity: 0.7;
+  }
+  .header-status.saved { color: var(--gold); opacity: 1; }
+  .header-status.saving { color: var(--paper-warm); opacity: 0.7; }
+
+  /* MAIN LAYOUT */
+  main { max-width: 1100px; margin: 0 auto; padding: 40px 48px 80px; }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 56px;
+    position: relative;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 4px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+  }
+  .section h2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--ink);
+  }
+  .section-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin: 12px 0 24px;
+    max-width: 720px;
+  }
+
+  /* FIELDS */
+  .field { margin-bottom: 20px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 20px; }
+  .field-row.three { grid-template-columns: 2fr 1fr 1fr; }
+  label {
+    display: block;
+    font-family: var(--body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  input[type="text"], select, textarea {
+    width: 100%;
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    padding: 10px 12px;
+    font-family: var(--body);
+    font-size: 14px;
+    color: var(--ink);
+    border-radius: 0;
+    transition: border-color 0.15s;
+  }
+  input[type="text"]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--navy);
+  }
+  textarea { resize: vertical; min-height: 80px; font-family: var(--body); line-height: 1.5; }
+  select { cursor: pointer; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%236f7684'/></svg>"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; appearance: none; }
+
+  /* ASSESSMENT SELECTOR */
+  .assessment-picker {
+    background: var(--paper-warm);
+    border-left: 3px solid var(--gold);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .assessment-picker label { margin-bottom: 8px; }
+  .assessment-picker select {
+    background: var(--paper);
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 18px;
+  }
+  .assessment-info {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-style: italic;
+  }
+
+  /* DOMAINS */
+  .domain-card {
+    background: var(--paper-warm);
+    border-left: 3px solid var(--rule-strong);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    transition: border-left-color 0.2s;
+  }
+  .domain-card.critical { border-left-color: var(--critical); }
+  .domain-card.caution { border-left-color: var(--caution); }
+  .domain-card.strong { border-left-color: var(--strong); }
+
+  .domain-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+  .domain-name {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink);
+    flex: 1;
+  }
+  .domain-area {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  /* RATING TOGGLE */
+  .rating-toggle {
+    display: flex;
+    gap: 4px;
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    padding: 3px;
+  }
+  .rating-toggle button {
+    background: transparent;
+    border: none;
+    padding: 6px 14px;
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+  }
+  .rating-toggle button:hover { color: var(--ink); }
+  .rating-toggle button .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--rule-strong);
+  }
+  .rating-toggle button[data-rating="critical"] .dot { background: var(--critical); }
+  .rating-toggle button[data-rating="caution"] .dot { background: var(--caution); }
+  .rating-toggle button[data-rating="strong"] .dot { background: var(--strong); }
+  .rating-toggle button.active { background: var(--ink); color: var(--paper); }
+  .rating-toggle button.active .dot { box-shadow: 0 0 0 2px var(--paper); }
+
+  .domain-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .domain-body label { color: var(--ink-soft); }
+  .domain-body textarea { background: var(--paper); border-color: var(--rule); min-height: 90px; font-size: 13px; }
+
+  /* PRIORITIES */
+  .priority-card {
+    background: var(--paper-warm);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 80px;
+  }
+  .priority-num {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 42px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  /* ROADMAP */
+  .roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .quarter-card {
+    background: var(--paper-warm);
+    padding: 18px 20px;
+  }
+  .quarter-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold-deep);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .quarter-card input[type="text"] { font-size: 13px; padding: 8px 10px; margin-bottom: 6px; background: var(--paper); }
+  .quarter-card input.theme {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    border-color: var(--rule-strong);
+  }
+
+  /* GENERATE BAR */
+  .generate-bar {
+    position: sticky;
+    bottom: 0;
+    background: var(--navy-deep);
+    margin: 0 -48px -80px;
+    padding: 20px 48px;
+    border-top: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    z-index: 10;
+  }
+  .generate-status {
+    color: var(--paper-warm);
+    font-size: 13px;
+  }
+  .generate-status strong { color: var(--gold); font-weight: 600; }
+  .btn-generate {
+    background: var(--gold);
+    color: var(--navy-deep);
+    border: none;
+    padding: 14px 32px;
+    font-family: var(--body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-generate:hover { background: #e2bb5a; }
+  .btn-generate:disabled { background: var(--rule-strong); cursor: not-allowed; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--paper-warm);
+    border: 1px solid var(--paper-warm);
+    padding: 12px 20px;
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-secondary:hover { background: var(--paper-warm); color: var(--navy-deep); }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 100px;
+    right: 32px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 20px;
+    font-size: 13px;
+    border-left: 3px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+    pointer-events: none;
+    z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  /* HELPERS */
+  .help-text {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .gold-rule {
+    width: 32px;
+    height: 2px;
+    background: var(--gold);
+    margin: 12px 0 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-status" id="saveStatus">Autosave ready</div>
+  <div class="header-brand">LAM TECHNOLOGY · INTERNAL TOOL</div>
+  <h1>Assessment <span class="accent">Builder.</span></h1>
+  <div class="header-sub">Fill in the findings. Get a finished deck.</div>
+</div>
+
+<main>
+
+  <!-- ENGAGEMENT METADATA -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <h2>Engagement</h2>
+    </div>
+    <p class="section-desc">Pick the assessment, then enter the client details. These show on the cover slide.</p>
+
+    <div class="assessment-picker">
+      <label for="assessment">Assessment Type</label>
+      <select id="assessment" onchange="onAssessmentChange()">
+        <option value="">— Choose an assessment —</option>
+        <option value="vigilance-verification">Vigilance Verification (Cybersecurity & Resilience)</option>
+        <option value="infrastructure-insight">Infrastructure Insight (Infrastructure & MSP)</option>
+        <option value="wireless-wisdom">Wireless Wisdom (Mobility & IoT)</option>
+        <option value="experience-examination">Experience Examination (Customer Experience)</option>
+        <option value="ai-readiness-radar">AI Readiness Radar (AI Readiness)</option>
+      </select>
+      <div class="assessment-info" id="assessmentInfo"></div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="clientName">Client Name</label>
+        <input type="text" id="clientName" placeholder="Acme Manufacturing Co.">
+      </div>
+      <div class="field">
+        <label for="engagementId">Engagement ID</label>
+        <input type="text" id="engagementId" placeholder="ENG-2026-0142">
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="engagementDate">Date</label>
+        <input type="text" id="engagementDate" placeholder="May 2026">
+      </div>
+      <div class="field">
+        <label for="advisorName">Advisor</label>
+        <input type="text" id="advisorName" placeholder="Lesley Kingsley">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIORITIES -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <h2>Top Priorities</h2>
+    </div>
+    <p class="section-desc">The three moves that change the trajectory. Each one should tie to a domain you rate critical or caution.</p>
+
+    <div id="priorities"></div>
+  </section>
+
+  <!-- DOMAINS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <h2>Domain Findings</h2>
+    </div>
+    <p class="section-desc">For each domain, click a rating, then write 2–4 sentences for what's working and what to improve. Leave blank to skip — placeholder text will show in the deck.</p>
+
+    <div id="domains">
+      <p style="font-style:italic;color:var(--ink-muted)">Pick an assessment above to load domains.</p>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <h2>Roadmap</h2>
+    </div>
+    <p class="section-desc">Four quarters. Each gets a theme and up to three workstreams.</p>
+
+    <div class="roadmap-grid" id="roadmap"></div>
+  </section>
+
+</main>
+
+<!-- GENERATE BAR -->
+<div class="generate-bar">
+  <div class="generate-status" id="genStatus">Fill in the form. <strong id="completeness">0 of 0 domains filled.</strong></div>
+  <div style="display:flex;gap:12px">
+    <button class="btn-secondary" onclick="confirmReset()">Reset Form</button>
+    <button class="btn-generate" id="genBtn" onclick="generateDeck()" disabled>Generate Deck</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+// PRACTICE CONFIGS (embedded — verified May 12, 2026)
+// ============================================================
+const practices = {
+  "vigilance-verification": {
+    assessmentName: "Vigilance Verification",
+    titleLine1: "Vigilance",
+    titleLine2: "Verification",
+    practiceArea: "Cybersecurity & Resilience",
+    practiceAreaCount: 1,
+    coverLede: "A CISO-led assessment across nine control domains. Each domain is reviewed, rated, and documented with findings and recommendations — so you walk into your next investment, review, or board conversation with a defensible read on posture.",
+    closingLine1: "Know exactly where your security stands.",
+    closingLine2: "Across every critical control domain.",
+    domains: [
+      { area: "Cybersecurity & Resilience", name: "Governance" },
+      { area: "Cybersecurity & Resilience", name: "Perimeter Defense" },
+      { area: "Cybersecurity & Resilience", name: "Identity & Access Management" },
+      { area: "Cybersecurity & Resilience", name: "Remote Access" },
+      { area: "Cybersecurity & Resilience", name: "Email Security" },
+      { area: "Cybersecurity & Resilience", name: "Host Protection" },
+      { area: "Cybersecurity & Resilience", name: "Data Loss Prevention" },
+      { area: "Cybersecurity & Resilience", name: "Endpoint" },
+      { area: "Cybersecurity & Resilience", name: "Cloud" }
+    ]
+  },
+  "infrastructure-insight": {
+    assessmentName: "Infrastructure Insight",
+    titleLine1: "Infrastructure",
+    titleLine2: "Insight",
+    practiceArea: "Infrastructure & MSP",
+    practiceAreaCount: 5,
+    coverLede: "A structured review of your network, data center, MSP, and ISP footprint. Five domains, rated and documented — surfacing the aging gear, drifting supplier relationships, and unreviewed contracts that are slowly eroding performance and budget.",
+    closingLine1: "Know what your infrastructure is really doing.",
+    closingLine2: "And what it's quietly costing you.",
+    domains: [
+      { area: "Network", name: "LAN & Campus" },
+      { area: "Network", name: "WAN & SD-WAN" },
+      { area: "Network", name: "Segmentation & Architecture" },
+      { area: "Data Center", name: "Compute & Virtualization" },
+      { area: "Data Center", name: "Storage & Backup" },
+      { area: "Data Center", name: "Cloud Edge & Hybrid" },
+      { area: "Managed Services", name: "MSP Scope & SLAs" },
+      { area: "Managed Services", name: "MSP Performance & Tickets" },
+      { area: "Managed Services", name: "MSP Commercial Posture" },
+      { area: "Connectivity", name: "ISP & Carrier Mix" },
+      { area: "Connectivity", name: "Site Connectivity & Redundancy" },
+      { area: "Contracts", name: "Renewal, Notice & Commercial Terms" }
+    ]
+  },
+  "wireless-wisdom": {
+    assessmentName: "Wireless Wisdom",
+    titleLine1: "Wireless",
+    titleLine2: "Wisdom",
+    practiceArea: "Mobility & IoT",
+    practiceAreaCount: 1,
+    coverLede: "A 12-domain evaluation of your wireless and IoT footprint — covering carriers, devices, lifecycle, and operational risk. Built for environments where mobility decisions have piled up across acquisitions, locations, and supplier changes.",
+    closingLine1: "Know exactly what your wireless program costs.",
+    closingLine2: "And what it's costing you.",
+    domains: [
+      { area: "Mobility & IoT", name: "Carriers" },
+      { area: "Mobility & IoT", name: "Plans & Pooling" },
+      { area: "Mobility & IoT", name: "Devices" },
+      { area: "Mobility & IoT", name: "Lifecycle" },
+      { area: "Mobility & IoT", name: "Optimization" },
+      { area: "Mobility & IoT", name: "Expense Management" },
+      { area: "Mobility & IoT", name: "Security" },
+      { area: "Mobility & IoT", name: "IoT & M2M" },
+      { area: "Mobility & IoT", name: "Support Model" },
+      { area: "Mobility & IoT", name: "Policy" },
+      { area: "Mobility & IoT", name: "Reporting" },
+      { area: "Mobility & IoT", name: "Contracts" }
+    ]
+  },
+  "experience-examination": {
+    assessmentName: "Experience Examination",
+    titleLine1: "Experience",
+    titleLine2: "Examination",
+    practiceArea: "Customer Experience",
+    practiceAreaCount: 1,
+    coverLede: "A clear-eyed look at how customers move through your business across voice, digital, and self-service channels. Six service categories, rated and documented — surfacing the friction points that quietly cost engagement, loyalty, and revenue.",
+    closingLine1: "Find where your customer experience",
+    closingLine2: "is actually breaking.",
+    domains: [
+      { area: "Customer Experience", name: "Personalized Self-Service & Containment" },
+      { area: "Customer Experience", name: "Speech & Sentiment Analytics" },
+      { area: "Customer Experience", name: "UCaaS / Teams Voice & Collaboration" },
+      { area: "Customer Experience", name: "WFH, WFO & Gamification" },
+      { area: "Customer Experience", name: "Verified & Branded Caller ID" },
+      { area: "Customer Experience", name: "Omni-Channel Contact Center" }
+    ]
+  },
+  "ai-readiness-radar": {
+    assessmentName: "AI Readiness Radar",
+    titleLine1: "AI Readiness",
+    titleLine2: "Radar",
+    practiceArea: "AI Readiness",
+    practiceAreaCount: 1,
+    coverLede: "An honest read on where your data, processes, people, and platforms sit relative to AI adoption. Eight domains, rated and documented — so you know what to fix first, where to start, and which AI investments will actually pay back.",
+    closingLine1: "Know what you're standing on",
+    closingLine2: "before you \"do something with AI.\"",
+    domains: [
+      { area: "AI Readiness", name: "Data" },
+      { area: "AI Readiness", name: "Processes" },
+      { area: "AI Readiness", name: "People" },
+      { area: "AI Readiness", name: "Platforms" },
+      { area: "AI Readiness", name: "Governance" },
+      { area: "AI Readiness", name: "Security" },
+      { area: "AI Readiness", name: "Integration" },
+      { area: "AI Readiness", name: "Value" }
+    ]
+  }
+};
+
+// ============================================================
+// COLOR & TYPE CONSTANTS (deck generator)
+// ============================================================
+const NAVY="1B2D5B", NAVY_DEEP="0F1D40", GOLD="D4A843", CREAM="FAF8F4", CREAM_WARM="F4F0E7";
+const INK="14181F", INK_SOFT="2E3540", INK_MUTED="6F7684", RULE="E2DDD0", RULE_STRONG="C9C2AF";
+const RATING_CRITICAL="B04A3C", RATING_CAUTION="D4A843", RATING_STRONG="5C7A5C";
+const DISPLAY="Fraunces", BODY="Inter", MONO="JetBrains Mono";
+const SLIDE_W=13.333, SLIDE_H=7.5, MARGIN_X=0.7, MARGIN_Y=0.55;
+
+function ratingLabel(r){
+  const m = { critical:{color:RATING_CRITICAL,label:"Critical Gap"}, caution:{color:RATING_CAUTION,label:"Caution"}, strong:{color:RATING_STRONG,label:"Strong"} };
+  return m[r] || m.caution;
+}
+function ratingDot(s,x,y,c,sz=0.22){ s.addShape("ellipse",{x,y,w:sz,h:sz,fill:{color:c},line:{type:"none"}}); }
+
+// ============================================================
+// STATE
+// ============================================================
+const STORAGE_KEY = "lam_assessment_builder_v1";
+let state = {
+  assessment: "",
+  metadata: { client_name:"", engagement_id:"", date:"", advisor:"" },
+  priorities: [{},{},{}],
+  domains: {},
+  roadmap: [
+    { label:"Q2 2026", theme:"", workstreams:["","",""] },
+    { label:"Q3 2026", theme:"", workstreams:["","",""] },
+    { label:"Q4 2026", theme:"", workstreams:["","",""] },
+    { label:"Q1 2027", theme:"", workstreams:["","",""] }
+  ]
+};
+
+// ============================================================
+// AUTOSAVE
+// ============================================================
+let saveTimer = null;
+function setSaveStatus(text, cls){
+  const el = document.getElementById("saveStatus");
+  el.textContent = text;
+  el.className = "header-status " + (cls || "");
+}
+function scheduleSave(){
+  setSaveStatus("Saving...", "saving");
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      setSaveStatus("Saved · " + new Date().toLocaleTimeString(), "saved");
+    } catch(e) {
+      setSaveStatus("Save failed", "");
+      console.error(e);
+    }
+  }, 400);
+}
+function loadSaved(){
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const loaded = JSON.parse(raw);
+      Object.assign(state, loaded);
+      return true;
+    }
+  } catch(e) { console.error(e); }
+  return false;
+}
+
+// ============================================================
+// UI RENDERING
+// ============================================================
+function renderAssessmentInfo(){
+  const info = document.getElementById("assessmentInfo");
+  if (!state.assessment) { info.textContent = ""; return; }
+  const c = practices[state.assessment];
+  info.textContent = c.domains.length + " domains. " + c.practiceArea + ".";
+}
+
+function renderDomains(){
+  const container = document.getElementById("domains");
+  if (!state.assessment) {
+    container.innerHTML = '<p style="font-style:italic;color:var(--ink-muted)">Pick an assessment above to load domains.</p>';
+    return;
+  }
+  const c = practices[state.assessment];
+  const showArea = [...new Set(c.domains.map(d => d.area))].length > 1;
+
+  container.innerHTML = c.domains.map((d, i) => {
+    const saved = state.domains[d.name] || {};
+    const rating = saved.rating || "";
+    return `
+      <div class="domain-card ${rating}" id="dc-${i}">
+        <div class="domain-header">
+          <div style="flex:1">
+            ${showArea ? `<div class="domain-area">${d.area}</div>` : ''}
+            <div class="domain-name">${d.name}</div>
+          </div>
+          <div class="rating-toggle" data-domain="${d.name}" data-idx="${i}">
+            <button data-rating="critical" class="${rating==='critical'?'active':''}" onclick="setRating('${d.name.replace(/'/g,"\\'")}', 'critical', ${i})"><span class="dot"></span>Critical</button>
+            <button data-rating="caution" class="${rating==='caution'?'active':''}" onclick="setRating('${d.name.replace(/'/g,"\\'")}', 'caution', ${i})"><span class="dot"></span>Caution</button>
+            <button data-rating="strong" class="${rating==='strong'?'active':''}" onclick="setRating('${d.name.replace(/'/g,"\\'")}', 'strong', ${i})"><span class="dot"></span>Strong</button>
+          </div>
+        </div>
+        <div class="domain-body">
+          <div>
+            <label>What's Working</label>
+            <textarea data-field="working" data-domain="${d.name}" placeholder="2–4 sentences. What's in good shape, what's been done well, where the foundation is solid.">${saved.working||""}</textarea>
+          </div>
+          <div>
+            <label>What to Improve</label>
+            <textarea data-field="improve" data-domain="${d.name}" placeholder="2–4 sentences. Gaps, risks, recommendations. Be specific.">${saved.improve||""}</textarea>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  // Wire textareas
+  container.querySelectorAll("textarea").forEach(ta => {
+    ta.addEventListener("input", e => {
+      const name = e.target.dataset.domain;
+      const field = e.target.dataset.field;
+      if (!state.domains[name]) state.domains[name] = {};
+      state.domains[name][field] = e.target.value;
+      scheduleSave();
+      updateCompleteness();
+    });
+  });
+}
+
+function setRating(domainName, rating, idx){
+  if (!state.domains[domainName]) state.domains[domainName] = {};
+  // Toggle off if clicking active
+  if (state.domains[domainName].rating === rating) {
+    delete state.domains[domainName].rating;
+  } else {
+    state.domains[domainName].rating = rating;
+  }
+  // Update DOM
+  const card = document.getElementById("dc-" + idx);
+  card.classList.remove("critical","caution","strong");
+  if (state.domains[domainName].rating) {
+    card.classList.add(state.domains[domainName].rating);
+  }
+  card.querySelectorAll(".rating-toggle button").forEach(b => {
+    b.classList.toggle("active", b.dataset.rating === state.domains[domainName].rating);
+  });
+  scheduleSave();
+  updateCompleteness();
+}
+
+function renderPriorities(){
+  const container = document.getElementById("priorities");
+  container.innerHTML = [1,2,3].map(n => {
+    const p = state.priorities[n-1] || {};
+    return `
+      <div class="priority-card">
+        <div class="priority-num">0${n}</div>
+        <div class="field" style="margin-bottom:12px">
+          <label>Headline</label>
+          <input type="text" data-priority="${n-1}" data-field="headline" value="${(p.headline||'').replace(/"/g,'&quot;')}" placeholder="Reset the MSP commercial structure before the July renewal.">
+        </div>
+        <div class="field-row" style="margin-bottom:0">
+          <div class="field" style="margin-bottom:0">
+            <label>Domain Reference</label>
+            <input type="text" data-priority="${n-1}" data-field="domain" value="${(p.domain||'').replace(/"/g,'&quot;')}" placeholder="MSP Scope & SLAs">
+          </div>
+          <div class="field" style="margin-bottom:0">
+            <label>Body Text</label>
+            <textarea data-priority="${n-1}" data-field="body" placeholder="One paragraph: what to do, why now, what it unblocks.">${p.body||""}</textarea>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  container.querySelectorAll("input, textarea").forEach(el => {
+    el.addEventListener("input", e => {
+      const idx = parseInt(e.target.dataset.priority);
+      const field = e.target.dataset.field;
+      if (!state.priorities[idx]) state.priorities[idx] = {};
+      state.priorities[idx][field] = e.target.value;
+      scheduleSave();
+    });
+  });
+}
+
+function renderRoadmap(){
+  const container = document.getElementById("roadmap");
+  container.innerHTML = state.roadmap.map((q, qi) => `
+    <div class="quarter-card">
+      <div class="quarter-label">${q.label}</div>
+      <input type="text" class="theme" data-quarter="${qi}" data-field="theme" placeholder="Theme" value="${(q.theme||'').replace(/"/g,'&quot;')}">
+      ${[0,1,2].map(wi => `
+        <input type="text" data-quarter="${qi}" data-workstream="${wi}" placeholder="Workstream ${wi+1}" value="${(q.workstreams[wi]||'').replace(/"/g,'&quot;')}">
+      `).join("")}
+    </div>
+  `).join("");
+
+  container.querySelectorAll("input").forEach(el => {
+    el.addEventListener("input", e => {
+      const qi = parseInt(e.target.dataset.quarter);
+      if (e.target.dataset.field === "theme") {
+        state.roadmap[qi].theme = e.target.value;
+      } else if (e.target.dataset.workstream !== undefined) {
+        const wi = parseInt(e.target.dataset.workstream);
+        state.roadmap[qi].workstreams[wi] = e.target.value;
+      }
+      scheduleSave();
+    });
+  });
+}
+
+function renderAll(){
+  document.getElementById("assessment").value = state.assessment;
+  document.getElementById("clientName").value = state.metadata.client_name || "";
+  document.getElementById("engagementId").value = state.metadata.engagement_id || "";
+  document.getElementById("engagementDate").value = state.metadata.date || "";
+  document.getElementById("advisorName").value = state.metadata.advisor || "";
+  renderAssessmentInfo();
+  renderDomains();
+  renderPriorities();
+  renderRoadmap();
+  updateCompleteness();
+}
+
+function updateCompleteness(){
+  const btn = document.getElementById("genBtn");
+  const status = document.getElementById("completeness");
+  if (!state.assessment) {
+    status.textContent = "Pick an assessment first.";
+    btn.disabled = true;
+    return;
+  }
+  const c = practices[state.assessment];
+  const total = c.domains.length;
+  const rated = c.domains.filter(d => state.domains[d.name] && state.domains[d.name].rating).length;
+  status.textContent = `${rated} of ${total} domains rated.`;
+  btn.disabled = false; // Generate works even with partial data
+}
+
+function onAssessmentChange(){
+  const newVal = document.getElementById("assessment").value;
+  state.assessment = newVal;
+  renderAssessmentInfo();
+  renderDomains();
+  updateCompleteness();
+  scheduleSave();
+}
+
+// Wire top-level inputs
+function wireMetadataInputs(){
+  const map = {
+    clientName: "client_name",
+    engagementId: "engagement_id",
+    engagementDate: "date",
+    advisorName: "advisor"
+  };
+  Object.keys(map).forEach(id => {
+    document.getElementById(id).addEventListener("input", e => {
+      state.metadata[map[id]] = e.target.value;
+      scheduleSave();
+    });
+  });
+}
+
+function showToast(msg, ms){
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), ms || 2400);
+}
+
+function confirmReset(){
+  if (confirm("Reset everything? This clears the form and the saved draft.")) {
+    localStorage.removeItem(STORAGE_KEY);
+    state = {
+      assessment: "",
+      metadata: { client_name:"", engagement_id:"", date:"", advisor:"" },
+      priorities: [{},{},{}],
+      domains: {},
+      roadmap: [
+        { label:"Q2 2026", theme:"", workstreams:["","",""] },
+        { label:"Q3 2026", theme:"", workstreams:["","",""] },
+        { label:"Q4 2026", theme:"", workstreams:["","",""] },
+        { label:"Q1 2027", theme:"", workstreams:["","",""] }
+      ]
+    };
+    renderAll();
+    setSaveStatus("Reset · autosave ready", "");
+    showToast("Form reset.");
+  }
+}
+
+// ============================================================
+// DECK GENERATOR (same template as generate.js, ported to browser)
+// ============================================================
+function generateDeck(){
+  if (!state.assessment) { showToast("Pick an assessment first."); return; }
+  const config = practices[state.assessment];
+
+  const btn = document.getElementById("genBtn");
+  btn.disabled = true;
+  btn.textContent = "Generating...";
+
+  setTimeout(() => {
+    try {
+      buildPpt(config);
+    } catch(e) {
+      console.error(e);
+      showToast("Generation failed: " + e.message, 6000);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Generate Deck";
+    }
+  }, 50);
+}
+
+function buildPpt(config){
+  if (typeof PptxGenJS === "undefined") {
+    showToast("PowerPoint library didn't load. Try hard-refresh (Ctrl+Shift+R), or check your network. Sometimes corporate firewalls block CDNs.", 8000);
+    return;
+  }
+  const mergedDomains = config.domains.map(d => {
+    const f = state.domains[d.name] || {};
+    return {
+      ...d,
+      rating: f.rating || "caution",
+      working: f.working || `[ What's working in ${d.name}. Advisor fills in. ]`,
+      improve: f.improve || `[ Gaps or improvements for ${d.name}. Advisor fills in. ]`
+    };
+  });
+  const uniqueAreas = [...new Set(mergedDomains.map(d => d.area))];
+  const showAreaEyebrow = uniqueAreas.length > 1;
+
+  const pres = new PptxGenJS();
+  pres.layout = "LAYOUT_WIDE";
+  pres.author = "LAM Technology";
+  pres.title = config.assessmentName;
+
+  function addPageFrame(slide, pageNum, sectionLabel){
+    slide.background = { color: CREAM };
+    slide.addShape("line", { x:MARGIN_X, y:MARGIN_Y, w:SLIDE_W-2*MARGIN_X, h:0, line:{color:RULE_STRONG,width:0.75} });
+    slide.addText("LAM TECHNOLOGY", { x:MARGIN_X, y:0.2, w:3, h:0.3, fontFace:BODY, fontSize:8, bold:true, color:INK, charSpacing:2, margin:0 });
+    slide.addText(sectionLabel.toUpperCase(), { x:SLIDE_W-MARGIN_X-4, y:0.2, w:4, h:0.3, fontFace:BODY, fontSize:8, bold:true, color:INK_MUTED, charSpacing:2, align:"right", margin:0 });
+    slide.addShape("line", { x:MARGIN_X, y:SLIDE_H-MARGIN_Y, w:SLIDE_W-2*MARGIN_X, h:0, line:{color:RULE,width:0.5} });
+    slide.addText(config.assessmentName + "™", { x:MARGIN_X, y:SLIDE_H-0.4, w:5, h:0.3, fontFace:DISPLAY, fontSize:9, italic:true, color:INK_MUTED, margin:0 });
+    slide.addText(String(pageNum).padStart(2,"0"), { x:SLIDE_W-MARGIN_X-1, y:SLIDE_H-0.4, w:1, h:0.3, fontFace:MONO, fontSize:9, color:INK_MUTED, align:"right", margin:0 });
+  }
+
+  // COVER
+  {
+    const s = pres.addSlide();
+    s.background = { color: NAVY_DEEP };
+    s.addText("LAM TECHNOLOGY", { x:0.9, y:0.7, w:5, h:0.3, fontFace:BODY, fontSize:9, bold:true, color:GOLD, charSpacing:4, margin:0 });
+    s.addText("PRACTICE ASSESSMENT", { x:0.9, y:1.05, w:10, h:0.3, fontFace:BODY, fontSize:9, color:CREAM_WARM, charSpacing:2, margin:0, transparency:30 });
+    s.addText(config.titleLine1, { x:0.9, y:2.2, w:8, h:1.1, fontFace:DISPLAY, fontSize:64, italic:true, color:CREAM, margin:0 });
+    s.addText(config.titleLine2 + ".", { x:0.9, y:3.15, w:8, h:1.1, fontFace:DISPLAY, fontSize:64, italic:true, color:GOLD, margin:0 });
+    s.addShape("line", { x:0.9, y:4.5, w:0.6, h:0, line:{color:GOLD,width:1.5} });
+    s.addText(config.coverLede, { x:0.9, y:4.75, w:7.2, h:1.6, fontFace:DISPLAY, fontSize:13, italic:true, color:CREAM_WARM, margin:0, paraSpaceAfter:4 });
+
+    const metaX = 9.0;
+    s.addShape("line", { x:metaX, y:2.2, w:0, h:4.2, line:{color:GOLD,width:0.75} });
+    const meta = [
+      { label:"PREPARED FOR", value: state.metadata.client_name || "[ Client Name ]" },
+      { label:"ENGAGEMENT",   value: state.metadata.engagement_id || "[ Engagement ID ]" },
+      { label:"DATE",         value: state.metadata.date || "[ Month YYYY ]" },
+      { label:"ADVISOR",      value: state.metadata.advisor || "[ Advisor Name ]" }
+    ];
+    let my = 2.2;
+    meta.forEach(item => {
+      s.addText(item.label, { x:metaX+0.25, y:my, w:3.5, h:0.25, fontFace:BODY, fontSize:8, bold:true, color:GOLD, charSpacing:4, margin:0 });
+      s.addText(item.value, { x:metaX+0.25, y:my+0.27, w:3.5, h:0.35, fontFace:DISPLAY, fontSize:15, italic:true, color:CREAM, margin:0 });
+      my += 1.0;
+    });
+    s.addText("PRIVATE & CONFIDENTIAL", { x:0.9, y:SLIDE_H-0.5, w:10, h:0.3, fontFace:BODY, fontSize:9, color:CREAM_WARM, charSpacing:2, margin:0, transparency:40 });
+    s.addText("Fort Worth, TX  ·  est. 2002", { x:SLIDE_W-5-0.9, y:SLIDE_H-0.5, w:5, h:0.3, fontFace:DISPLAY, fontSize:10, italic:true, color:CREAM_WARM, align:"right", margin:0, transparency:40 });
+  }
+
+  // SCORECARD
+  {
+    const s = pres.addSlide();
+    addPageFrame(s, 2, "Executive Scorecard");
+    s.addText("At a glance.", { x:MARGIN_X, y:0.85, w:10, h:0.9, fontFace:DISPLAY, fontSize:36, italic:true, color:INK, margin:0 });
+    s.addText(`${mergedDomains.length} domains across ${config.practiceAreaCount} practice ${config.practiceAreaCount===1?"area":"areas"}, rated against current state and forward trajectory.`, { x:MARGIN_X, y:1.75, w:11, h:0.5, fontFace:BODY, fontSize:11, color:INK_MUTED, margin:0 });
+
+    const n = mergedDomains.length;
+    let cols, rows;
+    if (n<=4){cols=2;rows=2;} else if (n<=6){cols=3;rows=2;} else if (n===8){cols=4;rows=2;} else if (n<=9){cols=3;rows=3;} else if (n<=12){cols=3;rows=4;} else {cols=4;rows=Math.ceil(n/4);}
+
+    const gridW = SLIDE_W - 2*MARGIN_X;
+    const cardGapX = 0.18, cardGapY = 0.12;
+    const cardW = (gridW - (cols-1)*cardGapX) / cols;
+    const gridStartY = 2.45, gridMaxY = SLIDE_H - 1.0;
+    const cardH = Math.min(1.0, (gridMaxY - gridStartY - (rows-1)*cardGapY) / rows);
+
+    mergedDomains.forEach((d, i) => {
+      const col = i%cols, row = Math.floor(i/cols);
+      const cx = MARGIN_X + col*(cardW+cardGapX);
+      const cy = gridStartY + row*(cardH+cardGapY);
+      const r = ratingLabel(d.rating);
+      s.addShape("rect", { x:cx, y:cy, w:cardW, h:cardH, fill:{color:CREAM_WARM}, line:{type:"none"} });
+      s.addShape("rect", { x:cx, y:cy, w:0.04, h:cardH, fill:{color:r.color}, line:{type:"none"} });
+      ratingDot(s, cx+0.22, cy+0.22, r.color, 0.18);
+      if (showAreaEyebrow) {
+        s.addText((d.area||"").toUpperCase(), { x:cx+0.5, y:cy+0.14, w:cardW-0.65, h:0.25, fontFace:BODY, fontSize:7, bold:true, color:INK_MUTED, charSpacing:2, margin:0 });
+        s.addText(d.name, { x:cx+0.5, y:cy+0.38, w:cardW-0.65, h:0.32, fontFace:DISPLAY, fontSize:13, italic:true, color:INK, margin:0 });
+        s.addText(r.label, { x:cx+0.5, y:cy+0.66, w:cardW-0.65, h:0.22, fontFace:BODY, fontSize:8, bold:true, color:r.color, charSpacing:2, margin:0 });
+      } else {
+        s.addText(d.name, { x:cx+0.5, y:cy+0.12, w:cardW-0.65, h:0.5, fontFace:DISPLAY, fontSize:14, italic:true, color:INK, margin:0, valign:"top" });
+        s.addText(r.label, { x:cx+0.5, y:cy+cardH-0.3, w:cardW-0.65, h:0.22, fontFace:BODY, fontSize:8, bold:true, color:r.color, charSpacing:2, margin:0 });
+      }
+    });
+
+    const legendY = SLIDE_H - 0.75;
+    [["B04A3C","Critical Gap"],["D4A843","Caution"],["5C7A5C","Strong"]].forEach((l, i) => {
+      const lx = MARGIN_X + i*1.7;
+      ratingDot(s, lx, legendY+0.05, l[0], 0.16);
+      s.addText(l[1], { x:lx+0.25, y:legendY, w:1.4, h:0.28, fontFace:BODY, fontSize:9, color:INK_SOFT, margin:0 });
+    });
+  }
+
+  // PRIORITIES
+  {
+    const s = pres.addSlide();
+    addPageFrame(s, 3, "Priorities");
+    s.addText("Three things to do first.", { x:MARGIN_X, y:0.85, w:10, h:0.9, fontFace:DISPLAY, fontSize:36, italic:true, color:INK, margin:0 });
+    s.addText("Of everything in this assessment, these are the moves that change the trajectory.", { x:MARGIN_X, y:1.75, w:11, h:0.5, fontFace:BODY, fontSize:11, color:INK_MUTED, margin:0 });
+    let py = 2.45;
+    for (let i=0; i<3; i++) {
+      const p = state.priorities[i] || {};
+      const num = String(i+1).padStart(2,"0");
+      s.addText(num, { x:MARGIN_X, y:py, w:1.0, h:1.2, fontFace:DISPLAY, fontSize:48, italic:true, color:GOLD, margin:0 });
+      s.addShape("line", { x:MARGIN_X+1.1, y:py+0.1, w:0, h:1.1, line:{color:RULE_STRONG,width:0.5} });
+      s.addText(p.headline || `[ Priority ${i+1} headline ]`, { x:MARGIN_X+1.3, y:py+0.05, w:9, h:0.45, fontFace:DISPLAY, fontSize:18, italic:true, color:INK, margin:0 });
+      s.addText(p.body || "[ Priority body ]", { x:MARGIN_X+1.3, y:py+0.5, w:9, h:0.6, fontFace:BODY, fontSize:10.5, color:INK_SOFT, margin:0 });
+      s.addText((p.domain||"[ Domain ref ]").toUpperCase(), { x:SLIDE_W-MARGIN_X-2.5, y:py+0.05, w:2.5, h:0.3, fontFace:BODY, fontSize:8, bold:true, color:INK_MUTED, charSpacing:2, align:"right", margin:0 });
+      py += 1.35;
+    }
+  }
+
+  // DOMAIN DETAIL
+  function addDomainBlock(slide, d, x, y, w, h){
+    const r = ratingLabel(d.rating);
+    slide.addShape("line", { x, y, w, h:0, line:{color:RULE_STRONG,width:0.5} });
+    if (showAreaEyebrow) {
+      slide.addText((d.area||"").toUpperCase(), { x, y:y+0.1, w:w-1.5, h:0.25, fontFace:BODY, fontSize:8, bold:true, color:INK_MUTED, charSpacing:3, margin:0 });
+    }
+    ratingDot(slide, x+w-1.4, y+0.13, r.color, 0.18);
+    slide.addText(r.label.toUpperCase(), { x:x+w-1.15, y:y+0.1, w:1.2, h:0.25, fontFace:BODY, fontSize:8, bold:true, color:r.color, charSpacing:2, margin:0 });
+    slide.addText(d.name, { x, y:y+0.35, w, h:0.5, fontFace:DISPLAY, fontSize:22, italic:true, color:INK, margin:0 });
+    const colW = (w-0.3)/2, colY = y+0.95, colH = h-1.1;
+    slide.addText("WHAT'S WORKING", { x, y:colY, w:colW, h:0.22, fontFace:BODY, fontSize:8, bold:true, color:RATING_STRONG, charSpacing:3, margin:0 });
+    slide.addText(d.working, { x, y:colY+0.25, w:colW, h:colH-0.25, fontFace:BODY, fontSize:10, color:INK_SOFT, margin:0 });
+    slide.addText("WHAT TO IMPROVE", { x:x+colW+0.3, y:colY, w:colW, h:0.22, fontFace:BODY, fontSize:8, bold:true, color:RATING_CRITICAL, charSpacing:3, margin:0 });
+    slide.addText(d.improve, { x:x+colW+0.3, y:colY+0.25, w:colW, h:colH-0.25, fontFace:BODY, fontSize:10, color:INK_SOFT, margin:0 });
+  }
+
+  let pageNum = 4;
+  for (let i=0; i<mergedDomains.length; i+=2) {
+    const s = pres.addSlide();
+    addPageFrame(s, pageNum, "Domain Detail");
+    let title;
+    if (showAreaEyebrow) {
+      title = mergedDomains[i].area + ".";
+    } else {
+      const d1 = mergedDomains[i].name;
+      const d2 = mergedDomains[i+1] ? mergedDomains[i+1].name : null;
+      title = d2 ? `${d1}  ·  ${d2}.` : `${d1}.`;
+    }
+    s.addText(title, { x:MARGIN_X, y:0.85, w:12, h:0.7, fontFace:DISPLAY, fontSize:26, italic:true, color:INK, margin:0 });
+    const blockW = SLIDE_W - 2*MARGIN_X, blockH = 2.5;
+    addDomainBlock(s, mergedDomains[i], MARGIN_X, 1.85, blockW, blockH);
+    if (mergedDomains[i+1]) addDomainBlock(s, mergedDomains[i+1], MARGIN_X, 4.55, blockW, blockH);
+    pageNum++;
+  }
+
+  // ROADMAP
+  {
+    const s = pres.addSlide();
+    addPageFrame(s, pageNum, "Roadmap");
+    pageNum++;
+    s.addText("The next twelve months.", { x:MARGIN_X, y:0.85, w:10, h:0.9, fontFace:DISPLAY, fontSize:36, italic:true, color:INK, margin:0 });
+    s.addText("Sequenced by dependency and risk reduction.", { x:MARGIN_X, y:1.75, w:11, h:0.5, fontFace:BODY, fontSize:11, color:INK_MUTED, margin:0 });
+    const qW = 2.85, qGap = 0.18, qY = 2.55, qH = 4.0;
+    state.roadmap.forEach((q, i) => {
+      const qx = MARGIN_X + i*(qW+qGap);
+      s.addShape("rect", { x:qx, y:qY, w:qW, h:0.75, fill:{color:NAVY}, line:{type:"none"} });
+      s.addText(q.label, { x:qx+0.2, y:qY+0.1, w:qW-0.4, h:0.3, fontFace:BODY, fontSize:9, bold:true, color:GOLD, charSpacing:3, margin:0 });
+      s.addText(q.theme || "[ Theme ]", { x:qx+0.2, y:qY+0.38, w:qW-0.4, h:0.32, fontFace:DISPLAY, fontSize:17, italic:true, color:CREAM, margin:0 });
+      s.addShape("rect", { x:qx, y:qY+0.75, w:qW, h:qH-0.75, fill:{color:CREAM_WARM}, line:{type:"none"} });
+      let iy = qY + 0.95;
+      [0,1,2].forEach(k => {
+        const ws = q.workstreams[k] || "[ Workstream ]";
+        s.addShape("rect", { x:qx+0.2, y:iy+0.08, w:0.12, h:0.04, fill:{color:GOLD}, line:{type:"none"} });
+        s.addText(ws, { x:qx+0.4, y:iy, w:qW-0.55, h:0.6, fontFace:BODY, fontSize:10, color:INK_SOFT, margin:0 });
+        iy += 0.7;
+      });
+    });
+  }
+
+  // CLOSING
+  {
+    const s = pres.addSlide();
+    s.background = { color: NAVY_DEEP };
+    s.addShape("line", { x:MARGIN_X, y:MARGIN_Y, w:SLIDE_W-2*MARGIN_X, h:0, line:{color:GOLD,width:0.75} });
+    s.addText("LAM TECHNOLOGY", { x:MARGIN_X, y:0.2, w:3, h:0.3, fontFace:BODY, fontSize:8, bold:true, color:GOLD, charSpacing:4, margin:0 });
+    s.addText(config.closingLine1, { x:MARGIN_X, y:2.3, w:12, h:1.0, fontFace:DISPLAY, fontSize:32, italic:true, color:CREAM, margin:0 });
+    s.addText(config.closingLine2, { x:MARGIN_X, y:3.2, w:12, h:1.0, fontFace:DISPLAY, fontSize:32, italic:true, color:GOLD, margin:0 });
+    s.addShape("line", { x:MARGIN_X, y:4.5, w:0.6, h:0, line:{color:GOLD,width:1.5} });
+    s.addText("Findings, ratings, and roadmap above are advisory. Engagement and execution are scoped separately.", { x:MARGIN_X, y:4.75, w:9, h:1.0, fontFace:DISPLAY, fontSize:13, italic:true, color:CREAM_WARM, margin:0, transparency:20 });
+    s.addText("LAM TECHNOLOGY  ·  FORT WORTH, TX  ·  EST. 2002", { x:MARGIN_X, y:SLIDE_H-0.5, w:11, h:0.3, fontFace:BODY, fontSize:9, color:CREAM_WARM, charSpacing:2, margin:0, transparency:40 });
+    s.addText(config.assessmentName + "™", { x:SLIDE_W-MARGIN_X-5, y:SLIDE_H-0.5, w:5, h:0.3, fontFace:DISPLAY, fontSize:11, italic:true, color:GOLD, align:"right", margin:0 });
+  }
+
+  const safeClient = (state.metadata.client_name || "Engagement").replace(/[^a-zA-Z0-9]/g, "_");
+  const fileName = `${config.assessmentName.replace(/\s+/g,"_")}_${safeClient}.pptx`;
+  pres.writeFile({ fileName }).then(() => {
+    showToast(`Deck downloaded: ${fileName}`, 4000);
+  });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+loadSaved();
+wireMetadataInputs();
+renderAll();
+if (state.assessment) setSaveStatus("Draft loaded · autosave ready", "");
+else setSaveStatus("Autosave ready", "");
+</script>
+
+</body>
+</html>
