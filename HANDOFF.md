@@ -1,82 +1,54 @@
-# LAM Website Redesign — Handoff
+# LAM Redesign — Handoff Notes
 
-_Updated end of day Saturday, May 9, 2026. Massive progress today. Picking up where we left off requires reading this entire doc plus the brand rationale and SEO/GEO playbook in /docs/._
+**Last updated:** 2026-05-11
+**Working branch:** `redesign`
+**Cache-buster:** `v=12`
 
-## Current state — fully redesigned site live on preview branch
+## Where we are
 
-The redesign branch on GitHub has a fully clickable preview at:
-https://lam-technology-website-git-redesign-lam-technology.vercel.app/index-redesign.html
+Redesign is ~80% shipped. 24 pages migrated. SEO/GEO foundation work in progress.
 
-Production lamtechnology.com is unchanged. The preview is publicly accessible, no Vercel deployment protection.
+## SEO/GEO foundation — punch list status
 
-24 pages now live on the redesign system, all using lam-redesign.css and the partials-based nav/footer pattern:
+### Tier 1 (must ship before production cutover)
 
-- Homepage (/index-redesign.html — note: serves at /index-redesign.html, not /, until production cutover)
-- About (/about-lam/)
-- Insights index + 5 articles (security-tabletops, contact-center-agents, pots-lines, mobility-costs, penetration-testing)
-- Contact (/contact/)
-- Practice areas hub + 5 service pages (/practice-areas/cybersecurity/, /infrastructure/, /mobility/, /customer-experience/, /ai-readiness/)
-- Professional Services hub + BB destination + Support Scope (/professional-services/, /billing-breakthrough/, /support-scope/)
-- BB Self-Check + results (/professional-services/self-check/)
-- MSP Self-Check + results (/professional-services/msp-self-check/)
-- Privacy + Cookies (/privacy/, /cookies/)
+- ✅ **#1: Organization JSON-LD** — all 24 pages, inline static HTML. Canonical source: `/partials/schema-org.html`. Validated in Google Rich Results Test. (Commits 555aed5, 6346cec)
+- ✅ **#2: WebPage / Service / Article / Breadcrumb schema** — 22 indexable pages have page-specific schema. 2 results pages noindexed. Canonical sources: `/partials/schema-*.html`. (Commits 8739413, 4e76369)
+- ⏳ **#3: Meta tag audit** — title, description, canonical, OG, Twitter Card across all 24 pages
+- ⏳ **#4: OG image** — design + ship branded 1200×630 default
+- ⏳ **#5: robots.txt** — explicit AI bot allowlist (OAI-SearchBot, GPTBot, PerplexityBot, ClaudeBot), disallow `/index-redesign.html` and preview paths
+- ⏳ **#6: sitemap.xml** — all 24 canonical URLs, submit to Google Search Console and Bing Webmaster Tools at cutover
 
-22 redirects in vercel.json preserve SEO from the old URLs.
+### Tier 2 (ship within 14 days of cutover)
 
-## Pending workstreams
+- **#7: Google Search Console + Bing Webmaster Tools** verification
+- **#8: FAQ blocks with FAQPage schema** on 5 practice pages + BB destination
+- **#9: llms.txt** at site root
+- **#10: Internal linking audit**
 
-1. **Mobile navigation (FIRST TASK NEXT SESSION)** — mobile nav is broken. The nav bar (logo + links) renders at desktop width and either gets cut off or shows the wrong thing on mobile. Need to build a hamburger menu pattern. About 30–45 minutes of Claude Code time.
+### Tier 3 (ongoing cadence)
 
-2. **Resend / contact form** — gated on MSP completing DNS records. Form returns "Email send failed" until Resend domain verification completes. When MSP finishes, Raj clicks Verify in Resend, no further action needed on the website.
+- **#11: Author bylines + Person schema** on insights articles (will require updating Article schemas)
+- **#12: Quarterly AI citation audit** — top 10 buyer queries through ChatGPT, Perplexity, Google AI Overviews
 
-3. **Production cutover** — rename /index-redesign.html → /index.html and /about-lam/index-redesign.html → /about-lam/index.html. The nav logo currently points to /index-redesign.html as a temporary measure (TEMP comment in /partials/nav-redesign.html); revert to "/" during cutover.
+## Blockers still active
 
-4. **SEO/GEO foundation work** — JSON-LD structured data on every page, sitemap.xml at /sitemap.xml, robots.txt, meta-tag audit. About 90 minutes of Claude Code time. Documented in /docs/seo-geo-playbook.md (Part 2).
+- **Resend / contact form:** still gated on MSP completing 3 DNS records (TXT resend._domainkey DKIM, MX send, TXT send SPF). When MSP finishes, Raj clicks Verify in Resend dashboard. Contact form returns "Email send failed" until verification completes.
+- **info@lamtechnology.com:** declared in Organization schema. Send a test email to verify inbox is monitored before production cutover. If it bounces, either fix inbox or remove email field from `/partials/schema-org.html`.
 
-5. **OG image** — a 1200x630 branded image needs to be designed (cream paper, navy, gold, editorial style). Separate workstream from any code work. Until then, OG meta tags reference a placeholder.
+## Production cutover prep (not yet started)
 
-6. **Terms of Service + Accessibility statement** — common compliance pages, currently absent. Drafting requires a lawyer for ToS and likely an accessibility audit firm for the statement. Future workstream.
+- Rename redesign-suffixed files to production paths (e.g. `index-redesign.html` → `index.html`)
+- Set up redirects from old WordPress URLs to new paths where they differ
+- Verify Resend DNS before merging to main
+- Submit sitemap to Google Search Console + Bing Webmaster Tools
+- Verify info@ inbox lives
 
-7. **Executive feedback** — exec preview email sent end of day May 9. Capture responses out of inbox into a tracking doc. Don't change design while feedback comes in; batch responses and act on them after hearing from everyone.
+## Architecture / discipline reminders
 
-## Governance docs in /docs/
-
-- /docs/brand-rationale.md — TBD. Content drafted but not yet committed (the 7-reason argument for the cream-navy-gold aesthetic, to be referenced when the question gets re-litigated). Re-supply the content to add.
-- /docs/seo-geo-playbook.md — concepts, pre-launch foundation, post-launch ongoing playbook for search and AI-engine discovery work.
-
-## Tooling
-
-- All code work goes through Claude Code in PowerShell terminal. Type `claude` to launch.
-- Never use Claude in Chrome / GitHub web editor / any browser-based code tools — they corrupt markdown asterisks and have CodeMirror autopair issues.
-- Pattern: Strategy Claude (claude.ai conversation) for design and decisions, Claude Code for implementation.
-- Cache-busting protocol: any CSS or partial change requires bumping ?v=N to ?v=N+1 across all redesigned pages. Currently at v=9.
-- Brand tokens are unprefixed (--navy, --paper, --gold). The --lam-* prefix is deprecated.
-
-## Known temporary states
-
-- Nav logo links to /index-redesign.html instead of /. Revert during production cutover.
-- Why LAM nav link in /partials/nav-redesign.html points to /about-lam/index-redesign.html (with TEMP comment) instead of canonical /about-lam/. Revert during production cutover.
-- Why LAM footer link in /partials/footer-redesign.html points to /about-lam/index-redesign.html (with TEMP comment) instead of canonical /about-lam/. Revert during production cutover.
-- Breadcrumb Home link in /about-lam/index-redesign.html points to /index-redesign.html (with TEMP comment) instead of canonical /. Revert during production cutover.
-- The legacy /index.html still exists at root and serves at /. Will be replaced during cutover.
-- The legacy /about-lam/index.html still exists. Will be replaced during cutover.
-- Two lam-theme.css references remain in the repo, both on legacy index/about pages awaiting cutover.
-
-## Recent commits
-
-- 34ecd2b Temp: route footer Why LAM and About breadcrumb Home to redesigned URLs. Bump cache-buster to v=9.
-- b6e8d21 Temp: route Why LAM nav link to /about-lam/index-redesign.html until production cutover
-- 797e519 Quick fixes: nav logo to /index-redesign.html temporarily, smooth scroll on self-check question advance
-- 94af170 Redesign Professional Services + utility pages
-- 599e8bc Add SEO and GEO playbook doc
-- a23f9c7 Redesign self-check pair
-- 12aa9d9 Merge msp-self-check branch
-- (earlier commits cover practice areas, brand rationale doc, contact form, insights, about, homepage, etc.)
-
-## When picking up next time
-
-Open a new chat in this Claude project. Paste:
-
-> Picking up the LAM redesign. Read HANDOFF.md from the repo: https://github.com/lesleykingsley/lam-technology-website/blob/redesign/HANDOFF.md — ready to continue.
-
-The memory system has the full project context. The handoff fills in the immediate state.
+- **Cache-buster:** `/assets/*` immutable in `vercel.json`. Bump `?v=N` on CSS or partial changes. Currently `v=12`.
+- **`--lam-*` CSS prefix is deprecated.** Use unprefixed tokens only.
+- **Schema discipline:** every page has both Organization schema AND its page-specific schema. Canonical sources in `/partials/schema-*.html`, inlined into each page's `<head>` for static-HTML crawler visibility. Update both when changing.
+- **Never call TSDs "suppliers"** on the website. Intelisys and Avant are Technology Services Distributors.
+- **Never use the word "Audit"** on the site. LAM is an advisor, not an auditor. Practice diagnostics use "Radar, Verification, Examination, Insight, Wisdom."
+- **Browser-based editing is forbidden** due to past corruption (markdown asterisks, CodeMirror autopair). Claude Code in terminal only.
