@@ -16,7 +16,7 @@ Redesign is ~80% shipped. 24 pages migrated. SEO/GEO foundation work in progress
 - ✅ **#2: WebPage / Service / Article / Breadcrumb schema** — 22 indexable pages have page-specific schema. 2 results pages noindexed. Canonical sources: `/partials/schema-*.html`. (Commits 8739413, 4e76369)
 - ⏳ **#3: Meta tag audit** — title, description, canonical, OG, Twitter Card across all 24 pages
 - ⏳ **#4: OG image** — design + ship branded 1200×630 default
-- ⏳ **#5: robots.txt** — explicit AI bot allowlist (OAI-SearchBot, GPTBot, PerplexityBot, ClaudeBot), disallow `/index-redesign.html` and preview paths
+- ⏳ **#5: robots.txt** — explicit AI bot allowlist (OAI-SearchBot, GPTBot, PerplexityBot, ClaudeBot), disallow preview paths
 - ⏳ **#6: sitemap.xml** — all 24 canonical URLs, submit to Google Search Console and Bing Webmaster Tools at cutover
 
 ### Tier 2 (ship within 14 days of cutover)
@@ -38,7 +38,6 @@ Redesign is ~80% shipped. 24 pages migrated. SEO/GEO foundation work in progress
 
 ## Production cutover prep (not yet started)
 
-- Rename redesign-suffixed files to production paths (e.g. `index-redesign.html` → `index.html`)
 - Set up redirects from old WordPress URLs to new paths where they differ
 - Verify Resend DNS before merging to main
 - Submit sitemap to Google Search Console + Bing Webmaster Tools
