@@ -41,7 +41,7 @@ The single biggest SEO/GEO improvement available. Crawlers and AI engines both p
 Without JSON-LD, search engines have to infer what your page is from context. With JSON-LD, you tell them explicitly.
 
 For LAM, structured data includes:
-- Organization on every page (LAM Technology, founded 2002, location, etc.)
+- Organization on every page (LAM Technology, founded 2006, location, etc.)
 - Service on each practice area page
 - Article on each insights article
 - ProfessionalService on the homepage and contact page
