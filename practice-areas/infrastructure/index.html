@@ -9,8 +9,14 @@
   <meta property="og:description" content="Dual-lens review of your network, data center, connectivity — and the MSPs running it. Surface aging gear and unreviewed contracts before they drift further.">
   <meta property="og:url" content="https://lamtechnology.com/practice-areas/infrastructure/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://lamtechnology.com/lam-logo.png">
+  <meta property="og:image" content="https://lamtechnology.com/assets/og/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="LAM Technology — Independent IT advisory, Fort Worth, Texas">
+  <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://lamtechnology.com/assets/og/og-default.png">
+  <meta name="twitter:image:alt" content="LAM Technology — Independent IT advisory, Fort Worth, Texas">
   <meta name="twitter:title" content="Infrastructure &amp; MSP &mdash; LAM Technology">
   <meta name="twitter:description" content="Dual-lens review of your network, data center, connectivity — and the MSPs running it. Surface aging gear and unreviewed contracts before they drift further.">
   <link rel="canonical" href="https://lamtechnology.com/practice-areas/infrastructure/">
@@ -27,9 +33,9 @@
   "logo": {
     "@type": "ImageObject",
     "@id": "https://lamtechnology.com/#logo",
-    "url": "https://lamtechnology.com/lam-logo.png",
-    "width": 373,
-    "height": 171,
+    "url": "https://lamtechnology.com/assets/img/lam-logo.png",
+    "width": 2106,
+    "height": 972,
     "caption": "LAM Technology"
   },
   "image": { "@id": "https://lamtechnology.com/#logo" },
@@ -174,7 +180,7 @@
   ]
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=12">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=13">
 </head>
 <body>
   <div id="lam-nav"></div>
@@ -294,8 +300,8 @@
       } catch (e) { console.error(e); }
     };
     await Promise.all([
-      loadPartial('lam-nav', '/partials/nav-redesign.html?v=12'),
-      loadPartial('lam-footer', '/partials/footer-redesign.html?v=12')
+      loadPartial('lam-nav', '/partials/nav-redesign.html?v=13'),
+      loadPartial('lam-footer', '/partials/footer-redesign.html?v=13')
     ]);
     const currentPath = window.location.pathname;
     document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {

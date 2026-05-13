@@ -11,11 +11,16 @@
   <meta property="og:title" content="Support Scope&trade; &mdash; LAM Technology">
   <meta property="og:description" content="Define what your IT vendors actually owe you. Support Scope brings clarity to managed services, SLAs, and escalation paths before you sign anything.">
   <meta property="og:url" content="https://lamtechnology.com/professional-services/support-scope/">
-  <meta property="og:image" content="https://lamtechnology.com/lam-logo.png">
+  <meta property="og:image" content="https://lamtechnology.com/assets/og/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="LAM Technology — Independent IT advisory, Fort Worth, Texas">
+  <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Support Scope&trade; &mdash; LAM Technology">
   <meta name="twitter:description" content="Define what your IT vendors actually owe you. Support Scope brings clarity to managed services, SLAs, and escalation paths before you sign anything.">
-  <meta name="twitter:image" content="https://lamtechnology.com/lam-logo.png">
+  <meta name="twitter:image" content="https://lamtechnology.com/assets/og/og-default.png">
+  <meta name="twitter:image:alt" content="LAM Technology — Independent IT advisory, Fort Worth, Texas">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <!-- Organization JSON-LD: canonical source at /partials/schema-org.html. Update both when changing. -->
 <script type="application/ld+json">
@@ -29,9 +34,9 @@
   "logo": {
     "@type": "ImageObject",
     "@id": "https://lamtechnology.com/#logo",
-    "url": "https://lamtechnology.com/lam-logo.png",
-    "width": 373,
-    "height": 171,
+    "url": "https://lamtechnology.com/assets/img/lam-logo.png",
+    "width": 2106,
+    "height": 972,
     "caption": "LAM Technology"
   },
   "image": { "@id": "https://lamtechnology.com/#logo" },
@@ -176,7 +181,7 @@
   ]
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=12">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=13">
 </head>
 <body>
 
@@ -300,8 +305,8 @@
     } catch (e) { console.error(e); }
   };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=12'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=12')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=13'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=13')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
