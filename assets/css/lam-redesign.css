@@ -1169,15 +1169,6 @@ a.nav-cta:hover {
   color: var(--gold-deep);
   margin-bottom: 24px;
 }
-.pa-lenses-headline {
-  font-family: var(--display);
-  font-weight: 300;
-  font-size: clamp(36px, 4.5vw, 56px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.pa-lenses-headline em { font-style: italic; }
 
 .pa-lens {
   display: block;
@@ -1197,21 +1188,31 @@ a.nav-cta:hover {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 .pa-lens-meta .num { color: var(--gold-deep); }
 .pa-lens-meta .sep { color: var(--rule-strong); margin: 0 10px; }
 .pa-lens-meta .tm { color: var(--ink); }
 
+.pa-lens-title {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+
 .pa-lens-question {
   font-family: var(--display);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
   color: var(--navy);
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   max-width: 720px;
   transition: color 0.2s ease;
 }
@@ -1526,10 +1527,11 @@ a.nav-cta:hover {
   .pa-method-content h3 { font-size: 22px; }
   .pa-lenses { margin-top: 56px; }
   .pa-lenses-header { margin-bottom: 40px; }
-  .pa-lenses-headline { font-size: 28px; }
   .pa-lens { padding: 32px 0; }
   .pa-lens:hover { padding-left: 0; }
-  .pa-lens-question { font-size: 24px; }
+  .pa-lens-meta { margin-bottom: 24px; }
+  .pa-lens-title { font-size: 28px; }
+  .pa-lens-question { font-size: 20px; }
   .pa-closing { margin-top: 56px; padding-top: 40px; }
   .pa-closing-headline { font-size: 26px; }
   .pa-closing-actions { flex-direction: column; }
