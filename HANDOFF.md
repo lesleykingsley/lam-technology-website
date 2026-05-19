@@ -27,9 +27,8 @@ Tuesday May 19
 
 DONE (inserted out of schedule): Cybersecurity coverage diagram redesigned — periodic-table grid, 15 domains in 4 layers. New .svc-coverage* CSS in lam-redesign.css, cyber page bumped v=16→v=17, builder.html intentionally NOT touched (its 15-domain list still matches by name/count; reordering an internal tool on cutover week deemed unnecessary risk — optional follow-up only if the generated deck should mirror the 4-layer order).
 Copy fix shipped in same block: "Policies, frameworks & audit readiness" → "...& control evidence" (the word "audit" is forbidden per discipline rules; was a pre-existing live violation in the Risk & Compliance domain desc).
-STILL PENDING (was the original Tuesday plan — picked up next):
-Mobility page edits: drop IoT references everywhere (keep Wireless Wisdom™)
-Create new /practice-areas/managed-services/ page with real copy (90-min copy session required — owner: Lesley)
+DONE (May 19): Mobility page IoT-removal pass — visible copy + title/meta/OG/Twitter only. "Mobility & IoT" → "Mobility" in title/og/twitter/eyebrow/body; "wireless and IoT footprint" → "wireless footprint"; "Wireless and IoT guidance" → "Wireless guidance"; IoT/M2M prose → "connected assets". Domain [08] "IoT & M2M" RENAMED → "Connected Assets & M2M" (Lesley-approved May 19; desc → "M2M lines, connected devices & data plans." to keep the carrier-bill anchor; kept count at 12). Mobility inlined JSON-LD still says "Mobility & IoT" (L113-114, 150-177) — DEFERRED to the May-20 schema re-propagation (canonical partial + 24 copies together; do NOT one-off). Committed & pushed May 19 on feat/practices-restructure. Cache-buster unchanged (no CSS/partial touched; mobility stays v=14).
+NOT STARTED (intentionally, per Lesley): /practice-areas/managed-services/ page — 90-min copy session; grid replication strategy to be locked first.
 
 Wednesday May 20
 
@@ -71,7 +70,7 @@ What's still outstanding for May 22 (Commit 1b)
 Page content
 
  Edit /practice-areas/infrastructure/ — rename to "Infrastructure & Cloud", strip MSP content
- Edit /practice-areas/mobility/ — drop IoT references everywhere
+✅ Edit /practice-areas/mobility/ — drop IoT references everywhere (DONE May 19, visible copy + meta; schema IoT deferred to May-20 re-propagation; domain [08] renamed "Connected Assets & M2M" Lesley-approved; committed + pushed)
  Create /practice-areas/managed-services/index.html with real copy (LAM is not an MSP positioning)
 
 URL moves
