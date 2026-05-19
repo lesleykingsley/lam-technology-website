@@ -181,6 +181,14 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=14">
+  <style>
+  /* Mobility coverage map: 4 layers x 3 domains. Scoped 3-column override of the
+     shared .svc-coverage component (Cybersecurity runs 3-4-4-4). Global .svc-coverage* rules unchanged. */
+  .svc-coverage--3col .svc-coverage-cells { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 800px) {
+    .svc-coverage--3col .svc-coverage-cells { grid-template-columns: 1fr; }
+  }
+  </style>
 </head>
 <body>
   <div id="lam-nav"></div>
@@ -209,91 +217,92 @@
         <p>Wireless Wisdom&trade; is the Insight-phase assessment for the Mobility practice, giving you a clear, objective picture of your program before you commit to any direction, supplier, or investment. Advisor-led program review. Per-domain ratings with documented findings. Carrier and device contract sanity check. A strategy session to act on the results.</p>
 
         <h2>The Twelve Domains</h2>
-        <div class="svc-domains">
-          <div class="svc-domain">
-            <div class="svc-domain-num">[01]</div>
-            <div>
-              <div class="svc-domain-name">Carriers</div>
-              <div class="svc-domain-desc">Supplier mix &amp; commercial posture.</div>
+        <div class="svc-coverage svc-coverage--3col">
+
+          <div class="svc-coverage-layer is-l1">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER I</span>
+              <span class="svc-coverage-rail-name">Commercial &amp; Contracts</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Carriers</div>
+                <div class="svc-coverage-cell-desc">Supplier mix &amp; commercial posture.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Plans &amp; Pooling</div>
+                <div class="svc-coverage-cell-desc">Rate plans, pooling &amp; overage exposure.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Contracts</div>
+                <div class="svc-coverage-cell-desc">Renewal, notice &amp; benchmark posture.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[02]</div>
-            <div>
-              <div class="svc-domain-name">Plans &amp; Pooling</div>
-              <div class="svc-domain-desc">Rate plans, pooling &amp; overage exposure.</div>
+
+          <div class="svc-coverage-layer is-l2">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER II</span>
+              <span class="svc-coverage-rail-name">Inventory &amp; Lifecycle</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Devices</div>
+                <div class="svc-coverage-cell-desc">Inventory, models &amp; refresh cycle.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Lifecycle</div>
+                <div class="svc-coverage-cell-desc">Provisioning, swaps &amp; retirement.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Connected Assets &amp; M2M</div>
+                <div class="svc-coverage-cell-desc">M2M lines, connected devices &amp; data plans.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[03]</div>
-            <div>
-              <div class="svc-domain-name">Devices</div>
-              <div class="svc-domain-desc">Inventory, models &amp; refresh cycle.</div>
+
+          <div class="svc-coverage-layer is-l3">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER III</span>
+              <span class="svc-coverage-rail-name">Operations &amp; Optimization</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Optimization</div>
+                <div class="svc-coverage-cell-desc">Right-sizing &amp; usage management.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Expense Management</div>
+                <div class="svc-coverage-cell-desc">Invoices, reviews &amp; recovery.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Support Model</div>
+                <div class="svc-coverage-cell-desc">Helpdesk, escalation &amp; user experience.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[04]</div>
-            <div>
-              <div class="svc-domain-name">Lifecycle</div>
-              <div class="svc-domain-desc">Provisioning, swaps &amp; retirement.</div>
+
+          <div class="svc-coverage-layer is-l4">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER IV</span>
+              <span class="svc-coverage-rail-name">Governance &amp; Visibility</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Security</div>
+                <div class="svc-coverage-cell-desc">MDM, EMM &amp; mobile threat posture.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Policy</div>
+                <div class="svc-coverage-cell-desc">Acceptable use, BYOD &amp; reimbursement.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Reporting</div>
+                <div class="svc-coverage-cell-desc">Visibility, KPIs &amp; cost allocation.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[05]</div>
-            <div>
-              <div class="svc-domain-name">Optimization</div>
-              <div class="svc-domain-desc">Right-sizing &amp; usage management.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[06]</div>
-            <div>
-              <div class="svc-domain-name">Expense Management</div>
-              <div class="svc-domain-desc">Invoices, reviews &amp; recovery.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[07]</div>
-            <div>
-              <div class="svc-domain-name">Security</div>
-              <div class="svc-domain-desc">MDM, EMM &amp; mobile threat posture.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[08]</div>
-            <div>
-              <div class="svc-domain-name">Connected Assets &amp; M2M</div>
-              <div class="svc-domain-desc">M2M lines, connected devices &amp; data plans.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[09]</div>
-            <div>
-              <div class="svc-domain-name">Support Model</div>
-              <div class="svc-domain-desc">Helpdesk, escalation &amp; user experience.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[10]</div>
-            <div>
-              <div class="svc-domain-name">Policy</div>
-              <div class="svc-domain-desc">Acceptable use, BYOD &amp; reimbursement.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[11]</div>
-            <div>
-              <div class="svc-domain-name">Reporting</div>
-              <div class="svc-domain-desc">Visibility, KPIs &amp; cost allocation.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[12]</div>
-            <div>
-              <div class="svc-domain-name">Contracts</div>
-              <div class="svc-domain-desc">Renewal, notice &amp; benchmark posture.</div>
-            </div>
-          </div>
+
         </div>
 
         <h2>Why LAM</h2>
