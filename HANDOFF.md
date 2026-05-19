@@ -1,7 +1,7 @@
 LAM Redesign — Handoff Notes
 Last updated: 2026-05-19
 Working branch: feat/practices-restructure (off main)
-Cache-buster: v=17 cybersecurity page, v=14 most other pages
+Cache-buster: v=17 cybersecurity & infrastructure pages, v=15 practice-areas hub, v=14 most other pages
 Target cutover: Friday May 22, 2026 (with Thursday May 21 6pm PT go/no-go checkpoint)
 Where we are
 Redesign promoted to main on May 12, 2026 (5-practice version, fully shipped). Active work since then on feat/practices-restructure branch — splitting 5 practices into 6, plus a parallel Vigilance Verification expansion that landed first (out of original scope but now shipped).
@@ -66,6 +66,33 @@ f8023be (May 17) — Vigilance Verification 9 → 13 domains
 12e610c (May 18) — Vigilance Verification 15 domains synced to internal/builder.html
 
 Builder and public cybersecurity page now match at 15 domains.
+
+May 19, 2026 — End-of-session log
+
+Commits shipped today (7, on feat/practices-restructure):
+
+f5b9e15 — Cybersecurity 4-layer periodic grid (15 domains, new .svc-coverage component in lam-redesign.css; cyber CSS v=16→v=17). Replaced flat numbered list with grouped grid. Layers: Governance & Risk / Perimeter & Access / Endpoints & Workloads / Data & Cloud.
+a519ac1 — Mobility IoT removal + domain [08] rename to "Connected Assets & M2M" (was "IoT & M2M"). Visible copy + title/meta/OG/Twitter only; mobility inlined schema IoT references deferred to May-20 re-propagation.
+9c05207 — Mobility 4-layer periodic grid (12 domains, 4×3 layout via new .svc-coverage--3col scoped modifier; global CSS untouched). Layers: Commercial & Contracts / Inventory & Lifecycle / Operations & Optimization / Governance & Visibility.
+71aa68f — NEW MSP practice page at /practice-areas/msp/ (Pass 1 skeleton from Mobility template; Pass 2 full body content swap). 4-layer periodic grid (12 domains). Diagnostic: MSP Microscope™; question: "Is my MSP managing my environment, or just managing tickets?" Layers: Foundations & Governance / Service Desk & Support / Operations & End User / Infrastructure & Security.
+d4842b1 — Hub rewrite: cut Uncover/Operate/Steward pa-method section; tighten hero (5→6 lenses); add MSP card [03]; fix Cyber 9→15 domains + four layers, Infra rename to & Cloud (drop dual-lens), Mobility IoT drop from body; renumber cards [01]–[06].
+cb0c4ab — Hub: remove redundant H2 above cards (hero already establishes the six lenses; eyebrow retained as section marker).
+1e6f1a7 — Hub card hierarchy redesign: practice name promoted from meta line to display-serif h2 (36px desktop / 28px mobile); question shrunk to italic subtitle (22px / 20px; line-height 1.3, letter-spacing -0.005em); cleaned orphan .pa-lenses-headline CSS from the prior commit. Hub CSS v=14→v=15.
+
+Decisions locked May 19:
+
+SIX practice areas, not five. Canonical order/names: Cybersecurity & Resilience, Infrastructure & Cloud, MSP, Mobility & IoT, Customer Experience, AI Readiness.
+Mobility & IoT label policy (Option A): the practice scope label retains "& IoT" on the hub card; the practice page itself is branded "Mobility" only. Deliberate, documented inconsistency — the hub card preserves canonical practice scope while the page reflects post-IoT-removal copy.
+Periodic grid is the canonical visual pattern for practice diagnostics. Bullseye/wheel rejected (peer critique: target metaphor). Building blocks, honeycomb, and concentric arcs rejected per the May-19 visual-container study (Downloads/options-comparison.html). The .svc-coverage* component is the reusable pattern for every practice page with a domain framework — scales to any layer count via is-l1..is-lN tints, and to any cells-per-layer count via local .svc-coverage--Ncol scoped overrides.
+
+Open follow-ups before May 22 cutover (fresh-session work, none blocking tonight):
+
+1. Homepage L1471 sweep: "Five practices" → "Six practices."
+2. HANDOFF redirect reconciliation: this very document still references /practice-areas/managed-services/ for the MSP practice in three places (the May 22 plan criteria, the Page-content outstanding list, and the URL moves list — the msp-self-check git mv target). Canonical MSP path is now /practice-areas/msp/ per commit 71aa68f. Fix the cutover redirect plan so msp-self-check moves to a valid path under /practice-areas/msp/... (decision needed on the exact sub-path — likely /practice-areas/msp/msp-microscope/). Affects sitemap.xml and the vercel.json 301 list as well.
+3. Infrastructure page stale crosslink: practice-areas/infrastructure/index.html L273 has <a href="/practice-areas/managed-services/"> — non-existent path. Repoint to /practice-areas/msp/. Same page's inlined Org schema (L131) also names the practice "Managed & Professional Services" at the stale path; that half is May-20 schema scope.
+4. Engagement-model fold: /professional-services/index.html content (the 4-phase Insight/Strategy/Execution/Support body and the 6-card assessment grid) must fold into /about-lam/index.html before cutover deletes the /professional-services/ directory.
+5. Org schema makesOffer re-propagation (May 20 scope): across all 24 inlined copies — add MSP entry, change "Infrastructure & MSP — Infrastructure Insight and MSP Microscope" (dual-lens) to "Infrastructure & Cloud — Infrastructure Insight" (single-lens). Plus drop "Mobility & IoT" → "Mobility" framing, remove "Telecom audit" from knowsAbout, and align all dateModified stamps. Verify timing — May 20 has to land before Thursday 6pm go/no-go to satisfy criterion #3 (all 24 inlined schema copies propagated).
+
 What's still outstanding for May 22 (Commit 1b)
 Page content
 
