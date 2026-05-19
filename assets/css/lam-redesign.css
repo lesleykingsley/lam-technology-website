@@ -1440,6 +1440,80 @@ a.nav-cta:hover {
   color: var(--ink-soft);
 }
 
+/* Coverage map — periodic-table grid: the fifteen domains grouped into four layers.
+   Position encodes the grouping; the layer tint is reinforcement, not the only signal. */
+.svc-coverage {
+  margin: 32px 0 48px;
+  display: grid;
+  gap: 14px;
+}
+.svc-coverage-layer {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.svc-coverage-rail {
+  padding-top: 14px;
+  text-align: right;
+}
+.svc-coverage-rail-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+.svc-coverage-rail-name {
+  display: block;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--navy);
+  margin-top: 6px;
+  letter-spacing: -0.01em;
+}
+.svc-coverage-cells {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.svc-coverage-layer.is-l1 .svc-coverage-cells { grid-template-columns: repeat(3, 1fr); }
+.svc-coverage-cell {
+  padding: 16px 16px 18px;
+  border: 1px solid rgba(212,168,67,0.5);
+  border-radius: 3px;
+  background: rgba(212,168,67,0.14);
+}
+.svc-coverage-layer.is-l2 .svc-coverage-cell { background: rgba(27,45,91,0.07);  border-color: rgba(27,45,91,0.28); }
+.svc-coverage-layer.is-l3 .svc-coverage-cell { background: rgba(106,124,89,0.13); border-color: rgba(106,124,89,0.42); }
+.svc-coverage-layer.is-l4 .svc-coverage-cell { background: rgba(155,75,55,0.10);  border-color: rgba(155,75,55,0.38); }
+.svc-coverage-cell-name {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 7px;
+  letter-spacing: -0.01em;
+}
+.svc-coverage-cell-desc {
+  font-family: var(--body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 800px) {
+  .svc-coverage-layer { grid-template-columns: 1fr; gap: 10px; }
+  .svc-coverage-rail { text-align: left; padding-top: 0; }
+  .svc-coverage-rail-name { font-size: 18px; }
+  .svc-coverage-cells,
+  .svc-coverage-layer.is-l1 .svc-coverage-cells { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 800px) {
   .pa-page { padding: 56px 0 64px; }
   .pa-page-inner { padding: 0 24px; }

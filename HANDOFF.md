@@ -1,7 +1,7 @@
 LAM Redesign — Handoff Notes
-Last updated: 2026-05-18
+Last updated: 2026-05-19
 Working branch: feat/practices-restructure (off main)
-Cache-buster: v=16 cybersecurity page, v=14 most other pages
+Cache-buster: v=17 cybersecurity page, v=14 most other pages
 Target cutover: Friday May 22, 2026 (with Thursday May 21 6pm PT go/no-go checkpoint)
 Where we are
 Redesign promoted to main on May 12, 2026 (5-practice version, fully shipped). Active work since then on feat/practices-restructure branch — splitting 5 practices into 6, plus a parallel Vigilance Verification expansion that landed first (out of original scope but now shipped).
@@ -25,6 +25,9 @@ Infrastructure & Cloud page rewrite: rename in titles/h1/meta, strip MSP content
 
 Tuesday May 19
 
+DONE (inserted out of schedule): Cybersecurity coverage diagram redesigned — periodic-table grid, 15 domains in 4 layers. New .svc-coverage* CSS in lam-redesign.css, cyber page bumped v=16→v=17, builder.html intentionally NOT touched (its 15-domain list still matches by name/count; reordering an internal tool on cutover week deemed unnecessary risk — optional follow-up only if the generated deck should mirror the 4-layer order).
+Copy fix shipped in same block: "Policies, frameworks & audit readiness" → "...& control evidence" (the word "audit" is forbidden per discipline rules; was a pre-existing live violation in the Risk & Compliance domain desc).
+STILL PENDING (was the original Tuesday plan — picked up next):
 Mobility page edits: drop IoT references everywhere (keep Wireless Wisdom™)
 Create new /practice-areas/managed-services/ page with real copy (90-min copy session required — owner: Lesley)
 
@@ -106,11 +109,12 @@ Content sweep
 
  Homepage L1471 "Five practices" → "Six practices"
  All other "five practice/lens" references from May 13 audit
+ "audit" word-sweep: cybersecurity Org JSON-LD still contains "Telecom audit" (page L81, an inlined-schema entry). Forbidden-word rule says it must go. Handle in the schema re-propagation pass (fix canonical partial + all 24 inlined copies together — do NOT one-off edit a single copy). Sweep the rest of the site for "audit" at the same time.
 
 Parked to post-launch (NOT shipping May 22)
 
 Commit 2 — practice-areas hub redesign (6-card grid, kept-advisor proof block, page-end BB CTA). Current hub stays with text-only "Five → Six" sweep applied.
-Practice area diagrams — Vigilance Verification radial (v2 designed, not deployed), CX 4-item Experience Examination, plus diagrams for Infrastructure & Cloud, Mobility, Managed Services, AI Readiness
+Practice area diagrams — Vigilance Verification radial ABANDONED (peer critique: target/bullseye metaphor). Replaced May 19 with a periodic-table grid grouping the 15 domains into 4 layers (Governance & Risk / Perimeter & Access / Endpoints & Workloads / Data & Cloud) — shipped on the cybersecurity page. Still outstanding: CX 4-item Experience Examination, plus diagrams for Infrastructure & Cloud, Mobility, Managed Services, AI Readiness (the periodic grid is the reusable pattern for these — .svc-coverage* classes scale to any count/group).
 Brand rationale doc (/docs/brand-rationale.md) — not yet written
 SEO/GEO playbook doc (/docs/seo-geo-playbook.md) — status uncertain; verify before referencing
 Assessment builder rating color bug — Raj is verifying; ship fix only if confirmed broken
@@ -144,7 +148,7 @@ info@lamtechnology.com inbox — declared in Org schema. Verify monitored before
 
 Architecture / discipline reminders
 
-Cache-buster: /assets/* immutable in vercel.json. Bump ?v=N on every CSS or partial change. Cybersecurity page currently v=16, most other pages v=14.
+Cache-buster: /assets/* immutable in vercel.json. Bump ?v=N on every CSS or partial change. Cybersecurity page currently v=17, most other pages v=14. (v=17 added the additive .svc-coverage* periodic-grid rules to lam-redesign.css — purely additive, so other pages stay v=14 with no visual change; only cyber consumes the new classes.)
 --lam-* CSS prefix is deprecated. Use unprefixed tokens only.
 Schema dual-source pattern: every page has Organization schema AND page-specific schema. Canonical sources in /partials/schema-*.html, inlined into each page's <head> for static-HTML crawler visibility. Update both when changing.
 TSDs are NOT suppliers. Intelisys and Avant are Technology Services Distributors. Calling them suppliers anywhere on the site is a category error with real credibility implications.

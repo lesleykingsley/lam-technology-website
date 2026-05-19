@@ -180,7 +180,7 @@
   ]
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=16">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=17">
 </head>
 <body>
   <div id="lam-nav"></div>
@@ -209,112 +209,104 @@
         <p>Vigilance Verification&trade; is the Insight-phase assessment for the Cybersecurity &amp; Resilience practice, giving you a clear, objective picture of your security posture before you commit to any supplier, tool, or investment. CISO-led interview and environment review. Per-domain ratings with documented findings. Strengths and recommendations for each domain. A strategy session to act on the results.</p>
 
         <h2>The Fifteen Domains</h2>
-        <div class="svc-domains">
-          <div class="svc-domain">
-            <div class="svc-domain-num">[01]</div>
-            <div>
-              <div class="svc-domain-name">Risk &amp; Compliance</div>
-              <div class="svc-domain-desc">Policies, frameworks &amp; audit readiness.</div>
+        <div class="svc-coverage">
+
+          <div class="svc-coverage-layer is-l1">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER I</span>
+              <span class="svc-coverage-rail-name">Governance &amp; Risk</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Risk &amp; Compliance</div>
+                <div class="svc-coverage-cell-desc">Policies, frameworks &amp; control evidence.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Governance</div>
+                <div class="svc-coverage-cell-desc">Program ownership, decision rights &amp; board reporting.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Vulnerability Management</div>
+                <div class="svc-coverage-cell-desc">Scanning, prioritization &amp; remediation cadence.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[02]</div>
-            <div>
-              <div class="svc-domain-name">Governance</div>
-              <div class="svc-domain-desc">Program ownership, decision rights &amp; board reporting.</div>
+
+          <div class="svc-coverage-layer is-l2">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER II</span>
+              <span class="svc-coverage-rail-name">Perimeter &amp; Access</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Network Security</div>
+                <div class="svc-coverage-cell-desc">Segmentation, zero-trust architecture &amp; internal traffic.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Perimeter Defense</div>
+                <div class="svc-coverage-cell-desc">Firewalls, IDS/IPS &amp; edge appliances.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Identity &amp; Access Management</div>
+                <div class="svc-coverage-cell-desc">Identity, access &amp; authentication.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Remote Access</div>
+                <div class="svc-coverage-cell-desc">VPN, ZTNA &amp; supplier access.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[03]</div>
-            <div>
-              <div class="svc-domain-name">Network Security</div>
-              <div class="svc-domain-desc">Segmentation, zero-trust architecture &amp; internal traffic.</div>
+
+          <div class="svc-coverage-layer is-l3">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER III</span>
+              <span class="svc-coverage-rail-name">Endpoints &amp; Workloads</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Email Security</div>
+                <div class="svc-coverage-cell-desc">Phishing, spoofing &amp; filtering.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Host Protection</div>
+                <div class="svc-coverage-cell-desc">Hardening, patching &amp; system controls.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Endpoint</div>
+                <div class="svc-coverage-cell-desc">EDR/XDR coverage &amp; device management.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Application Security</div>
+                <div class="svc-coverage-cell-desc">SAST, DAST, WAF &amp; secure SDLC.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[04]</div>
-            <div>
-              <div class="svc-domain-name">Perimeter Defense</div>
-              <div class="svc-domain-desc">Firewalls, IDS/IPS &amp; edge appliances.</div>
+
+          <div class="svc-coverage-layer is-l4">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER IV</span>
+              <span class="svc-coverage-rail-name">Data &amp; Cloud</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Data Loss Prevention</div>
+                <div class="svc-coverage-cell-desc">Data classification &amp; exfiltration risk.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Secure File Transfer</div>
+                <div class="svc-coverage-cell-desc">MFT, encryption in transit &amp; external sharing.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Cloud</div>
+                <div class="svc-coverage-cell-desc">Config, access &amp; shared responsibility.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Security Monitoring &amp; Detection</div>
+                <div class="svc-coverage-cell-desc">SOC, SIEM, MDR &amp; alert response.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[05]</div>
-            <div>
-              <div class="svc-domain-name">Identity &amp; Access Management</div>
-              <div class="svc-domain-desc">Identity, access &amp; authentication.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[06]</div>
-            <div>
-              <div class="svc-domain-name">Remote Access</div>
-              <div class="svc-domain-desc">VPN, ZTNA &amp; supplier access.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[07]</div>
-            <div>
-              <div class="svc-domain-name">Email Security</div>
-              <div class="svc-domain-desc">Phishing, spoofing &amp; filtering.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[08]</div>
-            <div>
-              <div class="svc-domain-name">Host Protection</div>
-              <div class="svc-domain-desc">Hardening, patching &amp; system controls.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[09]</div>
-            <div>
-              <div class="svc-domain-name">Endpoint</div>
-              <div class="svc-domain-desc">EDR/XDR coverage &amp; device management.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[10]</div>
-            <div>
-              <div class="svc-domain-name">Application Security</div>
-              <div class="svc-domain-desc">SAST, DAST, WAF &amp; secure SDLC.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[11]</div>
-            <div>
-              <div class="svc-domain-name">Vulnerability Management</div>
-              <div class="svc-domain-desc">Scanning, prioritization &amp; remediation cadence.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[12]</div>
-            <div>
-              <div class="svc-domain-name">Data Loss Prevention</div>
-              <div class="svc-domain-desc">Data classification &amp; exfiltration risk.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[13]</div>
-            <div>
-              <div class="svc-domain-name">Secure File Transfer</div>
-              <div class="svc-domain-desc">MFT, encryption in transit &amp; external sharing.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[14]</div>
-            <div>
-              <div class="svc-domain-name">Cloud</div>
-              <div class="svc-domain-desc">Config, access &amp; shared responsibility.</div>
-            </div>
-          </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[15]</div>
-            <div>
-              <div class="svc-domain-name">Security Monitoring &amp; Detection</div>
-              <div class="svc-domain-desc">SOC, SIEM, MDR &amp; alert response.</div>
-            </div>
-          </div>
+
         </div>
 
         <h2>Why LAM</h2>
