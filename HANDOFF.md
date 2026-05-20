@@ -1,5 +1,5 @@
 LAM Redesign — Handoff Notes
-Last updated: 2026-05-19
+Last updated: 2026-05-20
 Working branch: feat/practices-restructure (off main)
 Cache-buster: v=17 cybersecurity & infrastructure pages, v=15 practice-areas hub, v=14 most other pages
 Target cutover: Friday May 22, 2026 (with Thursday May 21 6pm PT go/no-go checkpoint)
@@ -10,7 +10,7 @@ Preview URL pattern: lam-technology-website-{hash}-lam-technology.vercel.app per
 The May 22 plan
 Cutover to lamtechnology.com is targeted for Friday May 22. Go/no-go checkpoint Thursday May 21 at 6pm PT. All five criteria must be true to cut over:
 
-All public pages reflect 6 practices (Infrastructure & Cloud, Mobility, Managed Services exist with real content)
+All public pages reflect 6 practices (Infrastructure & Cloud, Mobility, MSP exist with real content)
 Nav and footer show 6 practices + BB top-level
 All 24 inlined schema copies are propagated (no "five IT advisory" or "Infrastructure & MSP" anywhere)
 Homepage "Five practices" copy updated to "Six"
@@ -28,18 +28,18 @@ Tuesday May 19
 DONE (inserted out of schedule): Cybersecurity coverage diagram redesigned — periodic-table grid, 15 domains in 4 layers. New .svc-coverage* CSS in lam-redesign.css, cyber page bumped v=16→v=17, builder.html intentionally NOT touched (its 15-domain list still matches by name/count; reordering an internal tool on cutover week deemed unnecessary risk — optional follow-up only if the generated deck should mirror the 4-layer order).
 Copy fix shipped in same block: "Policies, frameworks & audit readiness" → "...& control evidence" (the word "audit" is forbidden per discipline rules; was a pre-existing live violation in the Risk & Compliance domain desc).
 DONE (May 19): Mobility page IoT-removal pass — visible copy + title/meta/OG/Twitter only. "Mobility & IoT" → "Mobility" in title/og/twitter/eyebrow/body; "wireless and IoT footprint" → "wireless footprint"; "Wireless and IoT guidance" → "Wireless guidance"; IoT/M2M prose → "connected assets". Domain [08] "IoT & M2M" RENAMED → "Connected Assets & M2M" (Lesley-approved May 19; desc → "M2M lines, connected devices & data plans." to keep the carrier-bill anchor; kept count at 12). Mobility inlined JSON-LD still says "Mobility & IoT" (L113-114, 150-177) — DEFERRED to the May-20 schema re-propagation (canonical partial + 24 copies together; do NOT one-off). Committed & pushed May 19 on feat/practices-restructure. Cache-buster unchanged (no CSS/partial touched; mobility stays v=14).
-NOT STARTED (intentionally, per Lesley): /practice-areas/managed-services/ page — 90-min copy session; grid replication strategy to be locked first.
+SUPERSEDED May 19: MSP practice page was built at /practice-areas/msp/ (commit 71aa68f), NOT at /managed-services/. Grid replication strategy was locked first (cyber + Mobility periodic grids), then the MSP page was authored using the same 4-layer pattern. The "/managed-services/" path is abandoned. See May 19 log below.
 
 Wednesday May 20
 
 Nav and footer partials updated (6 practices + BB top-level)
-Builder dropdown updated (add Managed Services, rename Infrastructure & Cloud, drop IoT from Mobility)
+Builder dropdown updated (add MSP, rename Infrastructure & Cloud, drop IoT from Mobility)
 Schema re-propagation across all 24 inlined copies
 Homepage "Five practices" → "Six practices"
 
 Thursday May 21 (morning)
 
-File moves: BB out of /professional-services/, BB Self-Check, MSP Self-Check → MSP Microscope
+File moves: BB hub out of /professional-services/ to /billing-breakthrough/; BB Self-Check to /billing-breakthrough/self-check/; MSP Self-Check to /practice-areas/msp/self-check/ (NOT named after MSP Microscope™ — preserves the trademark, separates lead-magnet from paid diagnostic; the /self-check/ slug establishes the repeatable per-practice pattern for future self-checks). See May 20 redirect decision below.
 sitemap.xml rebuild with new URLs
 vercel.json: 5+ 301 redirects for URL moves, plus 2 precautionary (infrastructure-msp, mobility-iot)
 Delete /professional-services/ hub and support-scope (with 301 to about-lam)
@@ -88,7 +88,7 @@ Periodic grid is the canonical visual pattern for practice diagnostics. Bullseye
 Open follow-ups before May 22 cutover (fresh-session work, none blocking tonight):
 
 1. Homepage L1471 sweep: "Five practices" → "Six practices."
-2. HANDOFF redirect reconciliation: this very document still references /practice-areas/managed-services/ for the MSP practice in three places (the May 22 plan criteria, the Page-content outstanding list, and the URL moves list — the msp-self-check git mv target). Canonical MSP path is now /practice-areas/msp/ per commit 71aa68f. Fix the cutover redirect plan so msp-self-check moves to a valid path under /practice-areas/msp/... (decision needed on the exact sub-path — likely /practice-areas/msp/msp-microscope/). Affects sitemap.xml and the vercel.json 301 list as well.
+2. HANDOFF redirect reconciliation: RESOLVED May 20. Move target locked: /practice-areas/msp/self-check/ (NOT /msp/msp-microscope/ — naming the lead magnet after the paid diagnostic dilutes the MSP Microscope™ trademark and confuses the value ladder; the /self-check/ slug establishes the repeatable per-practice pattern for future per-practice self-checks). 301 from /professional-services/msp-self-check/ → /practice-areas/msp/self-check/, implemented Thursday in vercel.json. Schema classification: NOT a makesOffer entry — funnel page, not a service line — do NOT add to Org schema makesOffer during today's re-propagation. Indexing: NOT in sitemap.xml — intended user flow is practice page ranks → visitor converts via self-check → routes to Microscope; we want the practice page to rank, not the quiz. Reconciliation applied to lines 13, 31, 42, 101, 107, 117, 131 below.
 3. Infrastructure page stale crosslink: practice-areas/infrastructure/index.html L273 has <a href="/practice-areas/managed-services/"> — non-existent path. Repoint to /practice-areas/msp/. Same page's inlined Org schema (L131) also names the practice "Managed & Professional Services" at the stale path; that half is May-20 schema scope.
 4. Engagement-model fold: /professional-services/index.html content (the 4-phase Insight/Strategy/Execution/Support body and the 6-card assessment grid) must fold into /about-lam/index.html before cutover deletes the /professional-services/ directory.
 5. Org schema makesOffer re-propagation (May 20 scope): across all 24 inlined copies — add MSP entry, change "Infrastructure & MSP — Infrastructure Insight and MSP Microscope" (dual-lens) to "Infrastructure & Cloud — Infrastructure Insight" (single-lens). Plus drop "Mobility & IoT" → "Mobility" framing, remove "Telecom audit" from knowsAbout, and align all dateModified stamps. Verify timing — May 20 has to land before Thursday 6pm go/no-go to satisfy criterion #3 (all 24 inlined schema copies propagated).
@@ -98,13 +98,13 @@ Page content
 
  Edit /practice-areas/infrastructure/ — rename to "Infrastructure & Cloud", strip MSP content
 ✅ Edit /practice-areas/mobility/ — drop IoT references everywhere (DONE May 19, visible copy + meta; schema IoT deferred to May-20 re-propagation; domain [08] renamed "Connected Assets & M2M" Lesley-approved; committed + pushed)
- Create /practice-areas/managed-services/index.html with real copy (LAM is not an MSP positioning)
+✅ MSP practice page (DONE May 19, commit 71aa68f) — built at /practice-areas/msp/ (NOT /managed-services/, per May 20 path decision). 4-layer periodic grid, 12 domains. LAM-is-not-an-MSP positioning preserved: page examines the client's MSP, doesn't deliver MSP services.
 
 URL moves
 
  git mv /professional-services/billing-breakthrough/ → /billing-breakthrough/
  git mv /professional-services/self-check/ → /billing-breakthrough/self-check/ (+ /results/)
- git mv /professional-services/msp-self-check/ → /practice-areas/managed-services/msp-microscope/ (+ /results/)
+ git mv /professional-services/msp-self-check/ → /practice-areas/msp/self-check/ (+ /results/) [May 20 decision: lead-magnet path, NOT /msp/msp-microscope/ — preserves MSP Microscope™ trademark; /self-check/ slug = repeatable pattern]
 
 Deletions + content folds
 
@@ -114,7 +114,7 @@ Deletions + content folds
 
 Schema propagation
 
- Re-propagate Org schema to 24 inlined copies (currently still show old "Infrastructure & MSP" / "Mobility & IoT")
+ Re-propagate Org schema to 24 inlined copies (currently still show old "Infrastructure & MSP" / "Mobility & IoT" / no MSP entry). New makesOffer entries: ADD "MSP — MSP Microscope"; CHANGE "Infrastructure & MSP — Infrastructure Insight and MSP Microscope" (dual-lens) → "Infrastructure & Cloud — Infrastructure Insight" (single-lens); CHANGE "Mobility & IoT — Wireless Wisdom" → "Mobility — Wireless Wisdom". REMOVE "Telecom audit" from knowsAbout. NOTE: the MSP self-check at /practice-areas/msp/self-check/ is NOT a makesOffer entry — funnel page, not service line. Do NOT add it.
  Re-propagate practice-areas hub schema ("five" → "six")
  Re-propagate infrastructure schema ("Infrastructure & MSP" → "Infrastructure & Cloud")
  Re-propagate mobility schema (drop IoT)
@@ -123,12 +123,12 @@ Chrome / IA
 
  Update /partials/nav-redesign.html — 6 practices in dropdown, add Billing Breakthrough top-level
  Update /partials/footer-redesign.html — 6 practices listed, BB link
- Update internal/builder.html practice dropdown (lines 401–405): rename Infrastructure & Cloud, drop IoT from Mobility, add Managed & Professional Services entry
+ Update internal/builder.html practice dropdown (lines 401–405): rename Infrastructure & Cloud, drop IoT from Mobility, add MSP entry
  Update internal/builder.html practices object: infrastructure-insight.practiceArea → "Infrastructure & Cloud", wireless-wisdom.practiceArea → "Mobility", create new msp-microscope block
 
 Sitemap + redirects
 
- sitemap.xml: add managed-services, BB at root, BB Self-Check new URL, MSP Microscope new URL; remove /professional-services/, support-scope, old BB locations
+ sitemap.xml: ADD /practice-areas/msp/ (NEW indexable MSP practice page); UPDATE BB URLs (hub now at /billing-breakthrough/, Self-Check at /billing-breakthrough/self-check/); REMOVE all /professional-services/* URLs (hub, support-scope, old BB locations, old /professional-services/msp-self-check/). DO NOT ADD /practice-areas/msp/self-check/ — intentionally non-indexed (funnel page, not service line; practice page ranks, quiz doesn't).
  vercel.json: redirects per URL moves above + 2 precautionary
 
 Content sweep
@@ -140,7 +140,7 @@ Content sweep
 Parked to post-launch (NOT shipping May 22)
 
 Commit 2 — practice-areas hub redesign (6-card grid, kept-advisor proof block, page-end BB CTA). Current hub stays with text-only "Five → Six" sweep applied.
-Practice area diagrams — Vigilance Verification radial ABANDONED (peer critique: target/bullseye metaphor). Replaced May 19 with a periodic-table grid grouping the 15 domains into 4 layers (Governance & Risk / Perimeter & Access / Endpoints & Workloads / Data & Cloud) — shipped on the cybersecurity page. Still outstanding: CX 4-item Experience Examination, plus diagrams for Infrastructure & Cloud, Mobility, Managed Services, AI Readiness (the periodic grid is the reusable pattern for these — .svc-coverage* classes scale to any count/group).
+Practice area diagrams — Vigilance Verification radial ABANDONED (peer critique: target/bullseye metaphor). Replaced May 19 with a periodic-table grid grouping the 15 domains into 4 layers (Governance & Risk / Perimeter & Access / Endpoints & Workloads / Data & Cloud) — shipped on the cybersecurity page. Still outstanding: CX 4-item Experience Examination, plus diagrams for Infrastructure & Cloud, Mobility, MSP, AI Readiness (the periodic grid is the reusable pattern for these — .svc-coverage* classes scale to any count/group).
 Brand rationale doc (/docs/brand-rationale.md) — not yet written
 SEO/GEO playbook doc (/docs/seo-geo-playbook.md) — status uncertain; verify before referencing
 Assessment builder rating color bug — Raj is verifying; ship fix only if confirmed broken
