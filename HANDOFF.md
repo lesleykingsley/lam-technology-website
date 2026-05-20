@@ -33,9 +33,9 @@ SUPERSEDED May 19: MSP practice page was built at /practice-areas/msp/ (commit 7
 Wednesday May 20
 
 Nav and footer partials updated (6 practices + BB top-level)
-Builder dropdown updated (add MSP, rename Infrastructure & Cloud, drop IoT from Mobility)
-Schema re-propagation across all 24 inlined copies
-Homepage "Five practices" → "Six practices"
+Builder dropdown updated (add MSP, rename Infrastructure & Cloud, drop IoT from Mobility) — internal tool, robots-disallowed; NOT cutover-blocking; update when convenient, explicitly NOT on cutover eve.
+✅ Schema re-propagation across all 25 inlined Org-schema copies (18 surviving + 7 doomed scrub); mobility per-page schema IoT drop; infrastructure per-page Vendor→Supplier; practice-areas hub crawler-facing layer scrubbed to "Mobility" (visible card scope label keeps "& IoT" per Option A). See Wed May 20 commit.
+✅ Homepage "Five practices" → "Six practices" (DONE earlier May 20, commit 73a907d).
 
 Thursday May 21 (morning)
 
@@ -91,7 +91,13 @@ Open follow-ups before May 22 cutover (fresh-session work, none blocking tonight
 2. HANDOFF redirect reconciliation: RESOLVED May 20. Move target locked: /practice-areas/msp/self-check/ (NOT /msp/msp-microscope/ — naming the lead magnet after the paid diagnostic dilutes the MSP Microscope™ trademark and confuses the value ladder; the /self-check/ slug establishes the repeatable per-practice pattern for future per-practice self-checks). 301 from /professional-services/msp-self-check/ → /practice-areas/msp/self-check/, implemented Thursday in vercel.json. Schema classification: NOT a makesOffer entry — funnel page, not a service line — do NOT add to Org schema makesOffer during today's re-propagation. Indexing: NOT in sitemap.xml — intended user flow is practice page ranks → visitor converts via self-check → routes to Microscope; we want the practice page to rank, not the quiz. Reconciliation applied to lines 13, 31, 42, 101, 107, 117, 131 below.
 3. Infrastructure page stale crosslink: practice-areas/infrastructure/index.html L273 has <a href="/practice-areas/managed-services/"> — non-existent path. Repoint to /practice-areas/msp/. Same page's inlined Org schema (L131) also names the practice "Managed & Professional Services" at the stale path; that half is May-20 schema scope.
 4. Engagement-model fold: /professional-services/index.html content (the 4-phase Insight/Strategy/Execution/Support body and the 6-card assessment grid) must fold into /about-lam/index.html before cutover deletes the /professional-services/ directory.
-5. Org schema makesOffer re-propagation (May 20 scope): across all 24 inlined copies — add MSP entry, change "Infrastructure & MSP — Infrastructure Insight and MSP Microscope" (dual-lens) to "Infrastructure & Cloud — Infrastructure Insight" (single-lens). Plus drop "Mobility & IoT" → "Mobility" framing, remove "Telecom audit" from knowsAbout, and align all dateModified stamps. Verify timing — May 20 has to land before Thursday 6pm go/no-go to satisfy criterion #3 (all 24 inlined schema copies propagated).
+5. Org schema makesOffer re-propagation (May 20 scope): across all 24 inlined copies — add MSP entry, change "Infrastructure & MSP — Infrastructure Insight and MSP Microscope" (dual-lens) to "Infrastructure & Cloud — Infrastructure Insight" (single-lens). Plus drop "Mobility & IoT" → "Mobility" framing, remove "Telecom audit" from knowsAbout, and align all dateModified stamps. Verify timing — May 20 has to land before Thursday 6pm go/no-go to satisfy criterion #3 (all 24 inlined schema copies propagated). ✅ RESOLVED May 20 in this commit. 18 surviving + 7 doomed pages scrubbed. Canonical schema-org.html knowsAbout also rewritten to kill broker framing (removed "Vendor-neutral procurement", "IT contract negotiation", "Professional services partner sourcing"; renamed to "Supplier-neutral technology advisory"). MSP offer description rewritten: "Diagnostic for evaluating and managing managed service providers — LAM examines the MSP, never becomes one."
+
+6. internal/builder.html still uses 5-practice taxonomy: 13× "Mobility & IoT" + 2× "Infrastructure & MSP" across the practice dropdown (L402-403) and the JS data objects (L516, L540, L546-557). On the May-20 punch list ("Update internal/builder.html practice dropdown… rename Infrastructure & Cloud, drop IoT from Mobility, add MSP entry") but builder is internal, robots-disallowed, zero crawler exposure — NOT cutover-blocking. Update when convenient, explicitly NOT on cutover eve. Rename-only (not reorder) is lower risk per the May 19 ordering-risk note.
+
+7. practice-areas/customer-experience/index.html L317 uses "vendor-neutral" and "No vendor bias" as LAM-positioning body copy: "CX guidance that is strategic, operational, and vendor-neutral. No vendor bias — we recommend what is right for your customers and your business." Missed by the May-20 schema scrub (which targeted schema-only). Supplier-swap candidate to match canonical schema-org.html knowsAbout "Supplier-neutral technology advisory" and the rest of the site. Body copy edit; check tone fit before swap. NOT a blocker. (All other lowercase "vendor" hits in body copy across insights/* and practice-areas/* are generic English usage — "vendor selection", "vendor demos" — and are not LAM-positioning. Leave them alone.)
+
+8. POST-LAUNCH ARCHITECTURE DECISION — canonical partial vs inline schema sync. schema-practice-areas.html (canonical) uses order Infrastructure & Cloud, Cybersecurity & Resilience, Customer Experience, Mobility, MSP, AI Readiness. The inlined version in practice-areas/index.html L160 uses Cybersecurity & Resilience, Infrastructure & Cloud, MSP, Mobility, Customer Experience, AI Readiness. Different order. Both are clean of forbidden strings — structural drift, not a Phase-C failure. The "dual-source" pattern (canonical /partials/schema-*.html + inlined copies in each page <head>) treats inline as the propagation target, but if inline drifts from canonical, every schema re-propagation becomes a hand-coordination exercise like this May-20 commit was. POST-LAUNCH options to evaluate: (a) freeze inline as a "compiled artifact" of canonical, add pre-commit grep/CI check that fails on drift; (b) drop inlining and fetch-include the partial via JS at page load (loses static-HTML crawler visibility unless SSR/static-render via build step); (c) accept hand-propagation tax and document the canonical-first rule strictly. Do NOT lose this decision again — it's the single biggest recurring tax in this codebase right now.
 
 What's still outstanding for May 22 (Commit 1b)
 Page content
@@ -112,12 +118,12 @@ Deletions + content folds
  Delete /professional-services/index.html (Pro Services hub)
  Delete /professional-services/support-scope/index.html (with 301 → /about-lam/)
 
-Schema propagation
+Schema propagation — ✅ DONE May 20 (see Wed May 20 commit)
 
- Re-propagate Org schema to 24 inlined copies (currently still show old "Infrastructure & MSP" / "Mobility & IoT" / no MSP entry). New makesOffer entries: ADD "MSP — MSP Microscope"; CHANGE "Infrastructure & MSP — Infrastructure Insight and MSP Microscope" (dual-lens) → "Infrastructure & Cloud — Infrastructure Insight" (single-lens); CHANGE "Mobility & IoT — Wireless Wisdom" → "Mobility — Wireless Wisdom". REMOVE "Telecom audit" from knowsAbout. NOTE: the MSP self-check at /practice-areas/msp/self-check/ is NOT a makesOffer entry — funnel page, not service line. Do NOT add it.
- Re-propagate practice-areas hub schema ("five" → "six")
- Re-propagate infrastructure schema ("Infrastructure & MSP" → "Infrastructure & Cloud")
- Re-propagate mobility schema (drop IoT)
+✅ Org schema propagated to 18 surviving inlined pages + scrubbed in 7 doomed /professional-services/* pages (forbidden-string-only cleanup since they delete Thursday). 7-offer canonical: BB + Infrastructure & Cloud + Cybersecurity & Resilience + Customer Experience + Mobility + MSP + AI Readiness. Broker framing scrubbed from knowsAbout (Vendor-neutral procurement, IT contract negotiation, Professional services partner sourcing all removed; renamed "Supplier-neutral technology advisory"). MSP offer description: "Diagnostic for evaluating and managing managed service providers — LAM examines the MSP, never becomes one." The MSP self-check at /practice-areas/msp/self-check/ is NOT a makesOffer entry — funnel page, not service line. Confirmed NOT added.
+✅ Practice-areas hub schema partial canonical updated ("Managed & Professional Services" → "MSP"). Inlined hub crawler-facing layer (meta description + og:description + twitter:description + inlined schema description) scrubbed "Mobility & IoT" → "Mobility". Visible card scope label keeps "& IoT" per Option A.
+✅ Infrastructure schema partial canonical updated ("Vendor-neutral" → "Supplier-neutral"). Propagated to inlined infrastructure per-page schema. Org schema variant-B (intermediate 6-practice) swapped to canonical.
+✅ Mobility per-page schema canonical was already clean; propagated to inlined mobility page (dropped "& IoT" from name, serviceType, description, breadcrumb, and HTML comment label).
 
 Chrome / IA
 
