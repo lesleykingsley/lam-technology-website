@@ -147,7 +147,7 @@
       "@type": "Service",
       "@id": "https://lamtechnology.com/professional-services/billing-breakthrough/#service",
       "name": "Billing Breakthrough",
-      "serviceType": "Telecom and IT spend audit",
+      "serviceType": "Telecom and IT spend review",
       "description": "Diagnostic engagement that typically uncovers 20-30% savings on telecom and IT spend. Comprehensive review of invoices, contracts, and auto-renewals. Over 150 engagements delivered.",
       "provider": { "@id": "https://lamtechnology.com/#organization" },
       "areaServed": { "@type": "Country", "name": "United States" },
@@ -180,6 +180,48 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=14">
+  <style>
+  /* Billing Breakthrough proof stats: page-local. Three display-serif
+     numbers with mono-caps labels, three-up on desktop, stacked on mobile.
+     No global CSS touched — BB stays at ?v=14. */
+  .bb-proof { margin: 52px 0; }
+  .bb-proof-eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 28px;
+  }
+  .bb-proof-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .bb-proof-num {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    font-feature-settings: "lnum";
+    white-space: nowrap;
+  }
+  .bb-proof-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 12px;
+    line-height: 1.45;
+  }
+  @media (max-width: 700px) {
+    .bb-proof-stats { grid-template-columns: 1fr; gap: 28px; }
+  }
+  </style>
 </head>
 <body>
 
@@ -208,6 +250,24 @@
       <p class="bb-pullquote-text">&ldquo;IT contracts are structured to favor the provider. Visibility is the only defense.&rdquo;</p>
       <span class="bb-pullquote-attr">THE FRAME</span>
     </aside>
+
+    <section class="bb-proof">
+      <p class="bb-proof-eyebrow">What visibility recovers</p>
+      <div class="bb-proof-stats">
+        <div class="bb-proof-stat">
+          <div class="bb-proof-num">150+</div>
+          <div class="bb-proof-label">Engagements delivered</div>
+        </div>
+        <div class="bb-proof-stat">
+          <div class="bb-proof-num">20&ndash;30%</div>
+          <div class="bb-proof-label">Typically recovered in spend</div>
+        </div>
+        <div class="bb-proof-stat">
+          <div class="bb-proof-num">One-time</div>
+          <div class="bb-proof-label">Fixed scope, fast turnaround</div>
+        </div>
+      </div>
+    </section>
 
     <section class="bb-services">
       <div>
