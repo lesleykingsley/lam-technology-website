@@ -146,7 +146,7 @@ Content sweep
 Parked to post-launch (NOT shipping May 22)
 
 Commit 2 — practice-areas hub redesign (6-card grid, kept-advisor proof block, page-end BB CTA). Current hub stays with text-only "Five → Six" sweep applied.
-Practice area diagrams — Vigilance Verification radial ABANDONED (peer critique: target/bullseye metaphor). Replaced May 19 with a periodic-table grid grouping the 15 domains into 4 layers (Governance & Risk / Perimeter & Access / Endpoints & Workloads / Data & Cloud) — shipped on the cybersecurity page. Still outstanding: CX 4-item Experience Examination, plus diagrams for Infrastructure & Cloud, Mobility, MSP, AI Readiness (the periodic grid is the reusable pattern for these — .svc-coverage* classes scale to any count/group).
+Practice area diagrams — Vigilance Verification radial ABANDONED (peer critique: target/bullseye metaphor). Replaced May 19 with a periodic-table grid grouping the 15 domains into 4 layers (Governance & Risk / Perimeter & Access / Endpoints & Workloads / Data & Cloud) — shipped on the cybersecurity page. CX periodic grid (4 layers, 10 domains: Customer & Agent / Platform & Systems / Insight & Compliance / Resilience & Growth) SHIPPED May 22 (commit 136ec29) and APPROVED by Diane Gray May 22 — no longer draft. Mobility periodic grid also shipped May 19 (commit 9c05207). Still outstanding: diagrams for Infrastructure & Cloud, MSP, AI Readiness (the periodic grid is the reusable pattern for these — .svc-coverage* classes scale to any count/group).
 Brand rationale doc (/docs/brand-rationale.md) — not yet written
 SEO/GEO playbook doc (/docs/seo-geo-playbook.md) — status uncertain; verify before referencing
 Assessment builder rating color bug — Raj is verifying; ship fix only if confirmed broken
