@@ -110,7 +110,7 @@ URL moves
 
  git mv /professional-services/billing-breakthrough/ → /billing-breakthrough/
  git mv /professional-services/self-check/ → /billing-breakthrough/self-check/ (+ /results/)
- git mv /professional-services/msp-self-check/ → /practice-areas/msp/self-check/ (+ /results/) [May 20 decision: lead-magnet path, NOT /msp/msp-microscope/ — preserves MSP Microscope™ trademark; /self-check/ slug = repeatable pattern]
+✅ git mv /professional-services/msp-self-check/ → /practice-areas/msp/self-check/ (+ /results/) — DONE May 25 (executed early, ahead of cutover). [May 20 decision: lead-magnet path, NOT /msp/msp-microscope/ — preserves MSP Microscope™ trademark; /self-check/ slug = repeatable pattern.] Pass 1 of 2 complete: file move + internal self-ref path fixes + 301 redirects (4 entries in vercel.json, permanent) + sitemap loc updated + inline/canonical schema paths updated + breadcrumb restructured to Home/Practice Areas/MSP/MSP Self-Check (old parent /professional-services/ is doomed). Cache-buster stays v=14 (self-check pages use .sc-* classes, not .svc-coverage; same as the working BB self-check). robots.txt Disallow updated to the new /practice-areas/msp/self-check/results/ path (results stays disallowed + noindex). Pass 2 (PENDING): wire a discovery CTA to /practice-areas/msp/self-check/ from the MSP practice page — no entry point exists yet.
 
 Deletions + content folds
 

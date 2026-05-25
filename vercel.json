@@ -15,7 +15,11 @@
           { "source": "/practice-areas/customer-experience-digital-engagement/", "destination": "/practice-areas/customer-experience/", "permanent": true },
           { "source": "/billing-breakthrough", "destination": "/professional-services/billing-breakthrough/", "permanent": false },
           { "source": "/billing-breakthrough/", "destination": "/professional-services/billing-breakthrough/", "permanent": false },
-          { "source": "/support-scope.html", "destination": "/professional-services/support-scope/", "permanent": true }
+          { "source": "/support-scope.html", "destination": "/professional-services/support-scope/", "permanent": true },
+          { "source": "/professional-services/msp-self-check/results", "destination": "/practice-areas/msp/self-check/results/", "permanent": true },
+          { "source": "/professional-services/msp-self-check/results/", "destination": "/practice-areas/msp/self-check/results/", "permanent": true },
+          { "source": "/professional-services/msp-self-check", "destination": "/practice-areas/msp/self-check/", "permanent": true },
+          { "source": "/professional-services/msp-self-check/", "destination": "/practice-areas/msp/self-check/", "permanent": true }
     ],
     "headers": [
           {
