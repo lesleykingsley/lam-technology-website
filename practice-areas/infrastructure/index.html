@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infrastructure &amp; Cloud &mdash; LAM Technology</title>
-  <meta name="description" content="A structured review of your network, data center, cloud, and connectivity footprint. Five domains, rated and documented — surfacing aging gear, drifting architectures, and unreviewed contracts before they erode performance and budget.">
+  <meta name="description" content="A structured review of your network, data center, cloud, and connectivity footprint. Fourteen domains, rated and documented — surfacing aging gear, drifting architectures, and unreviewed contracts before they erode performance and budget.">
   <meta property="og:title" content="Infrastructure &amp; Cloud &mdash; LAM Technology">
-  <meta property="og:description" content="A structured review of your network, data center, cloud, and connectivity footprint. Five domains, rated and documented — surfacing aging gear, drifting architectures, and unreviewed contracts before they erode performance and budget.">
+  <meta property="og:description" content="A structured review of your network, data center, cloud, and connectivity footprint. Fourteen domains, rated and documented — surfacing aging gear, drifting architectures, and unreviewed contracts before they erode performance and budget.">
   <meta property="og:url" content="https://lamtechnology.com/practice-areas/infrastructure/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://lamtechnology.com/assets/og/og-default.png">
@@ -18,7 +18,7 @@
   <meta name="twitter:image" content="https://lamtechnology.com/assets/og/og-default.png">
   <meta name="twitter:image:alt" content="LAM Technology — Independent IT advisory, Fort Worth, Texas">
   <meta name="twitter:title" content="Infrastructure &amp; Cloud &mdash; LAM Technology">
-  <meta name="twitter:description" content="A structured review of your network, data center, cloud, and connectivity footprint. Five domains, rated and documented — surfacing aging gear, drifting architectures, and unreviewed contracts before they erode performance and budget.">
+  <meta name="twitter:description" content="A structured review of your network, data center, cloud, and connectivity footprint. Fourteen domains, rated and documented — surfacing aging gear, drifting architectures, and unreviewed contracts before they erode performance and budget.">
   <link rel="canonical" href="https://lamtechnology.com/practice-areas/infrastructure/">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <!-- Organization JSON-LD: canonical source at /partials/schema-org.html. Update both when changing. -->
@@ -187,6 +187,18 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=17">
+  <style>
+  /* Infrastructure runs 4-4-3-3 on the default 4-column .svc-coverage.
+     Global is-l1 defaults to 3 cols (tuned for Cybersecurity's 3-4-4-4);
+     override to 4 so Layer I's four cells fill one row. Layers III/IV keep
+     the default 4 cols — their 3 cells left-align with an honest empty
+     trailing slot (same pattern as CX's 2-cell layers). Page-local; global
+     .svc-coverage* untouched, so no cache-buster bump. */
+  .svc-coverage--infra .svc-coverage-layer.is-l1 .svc-coverage-cells { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 800px) {
+    .svc-coverage--infra .svc-coverage-layer.is-l1 .svc-coverage-cells { grid-template-columns: 1fr; }
+  }
+  </style>
 </head>
 <body>
   <div id="lam-nav"></div>
@@ -202,7 +214,7 @@
           ASSESSMENT
         </div>
         <h1 class="svc-headline">Know what your infrastructure is really doing. <em>And what it&rsquo;s quietly costing you.</em></h1>
-        <p class="svc-lede">A structured review of your network, data center, cloud, and connectivity footprint. Five domains, rated and documented &mdash; surfacing the aging gear, drifting architectures, and unreviewed contracts that are slowly eroding performance and budget.</p>
+        <p class="svc-lede">A structured review of your network, data center, cloud, and connectivity footprint. Fourteen domains, rated and documented &mdash; surfacing the aging gear, drifting architectures, and unreviewed contracts that are slowly eroding performance and budget.</p>
         <div class="svc-tm">INFRASTRUCTURE INSIGHT&trade;</div>
       </header>
 
@@ -217,43 +229,101 @@
         <h2>One Lens, Whole Picture</h2>
         <p>Infrastructure Insight&trade; is a read on the environment itself &mdash; the gear, the topology, the cloud footprint, the suppliers, and where risk is accumulating. Network, data center, and connectivity health. Cloud architecture and shared-responsibility posture. Lifecycle, age, and end-of-support exposure. Segmentation and modernization review. Supplier diversity and concentration risk. Documented findings with prioritized recommendations.</p>
 
-        <h2>The Five Domains</h2>
-        <div class="svc-domains">
-          <div class="svc-domain">
-            <div class="svc-domain-num">[01]</div>
-            <div>
-              <div class="svc-domain-name">Network</div>
-              <div class="svc-domain-desc">LAN, WAN, SD-WAN &amp; segmentation.</div>
+        <h2>The Fourteen Domains</h2>
+        <div class="svc-coverage svc-coverage--infra">
+
+          <div class="svc-coverage-layer is-l1">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER I</span>
+              <span class="svc-coverage-rail-name">Network &amp; Connectivity</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Network Architecture</div>
+                <div class="svc-coverage-cell-desc">Topology, standards, documentation &amp; architecture review.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">WAN &amp; SD-WAN</div>
+                <div class="svc-coverage-cell-desc">MPLS legacy, SD-WAN adoption, carrier diversity &amp; traffic shaping.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Site Connectivity</div>
+                <div class="svc-coverage-cell-desc">Primary/failover circuits, branch design &amp; last-mile resilience.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Cloud Connectivity</div>
+                <div class="svc-coverage-cell-desc">Direct Connect strategy, cloud routing &amp; egress cost visibility.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[02]</div>
-            <div>
-              <div class="svc-domain-name">Data Center</div>
-              <div class="svc-domain-desc">Compute, storage, colo &amp; on-prem edge.</div>
+
+          <div class="svc-coverage-layer is-l2">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER II</span>
+              <span class="svc-coverage-rail-name">Compute, Cloud &amp; Data</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Compute &amp; Virtualization</div>
+                <div class="svc-coverage-cell-desc">Hypervisor, lifecycle, OS standardization &amp; capacity planning.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Cloud Edge &amp; Hybrid</div>
+                <div class="svc-coverage-cell-desc">Cloud peering, hybrid routing &amp; edge firewall.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Storage &amp; Backup</div>
+                <div class="svc-coverage-cell-desc">Coverage, recovery testing, retention &amp; immutability.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Segmentation &amp; Access</div>
+                <div class="svc-coverage-cell-desc">VLAN design, microsegmentation &amp; zero trust readiness.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[03]</div>
-            <div>
-              <div class="svc-domain-name">Cloud</div>
-              <div class="svc-domain-desc">Public cloud, hybrid architecture &amp; shared responsibility.</div>
+
+          <div class="svc-coverage-layer is-l3">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER III</span>
+              <span class="svc-coverage-rail-name">Operations &amp; Lifecycle</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Asset &amp; Lifecycle</div>
+                <div class="svc-coverage-cell-desc">Inventory accuracy, refresh cadence &amp; vendor standardization.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Capacity &amp; Performance</div>
+                <div class="svc-coverage-cell-desc">Compute headroom &amp; bandwidth utilization.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">Observability</div>
+                <div class="svc-coverage-cell-desc">Monitoring coverage &amp; telemetry.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[04]</div>
-            <div>
-              <div class="svc-domain-name">Connectivity</div>
-              <div class="svc-domain-desc">ISP, circuits &amp; supplier diversity.</div>
+
+          <div class="svc-coverage-layer is-l4">
+            <div class="svc-coverage-rail">
+              <span class="svc-coverage-rail-num">LAYER IV</span>
+              <span class="svc-coverage-rail-name">MSP Oversight</span>
+            </div>
+            <div class="svc-coverage-cells">
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">MSP Scope &amp; SLAs</div>
+                <div class="svc-coverage-cell-desc">Defined scope, SLA definitions, service catalog &amp; coverage windows.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">MSP Performance &amp; Tickets</div>
+                <div class="svc-coverage-cell-desc">Ticket trends, SLA compliance, incident response &amp; escalation discipline.</div>
+              </div>
+              <div class="svc-coverage-cell">
+                <div class="svc-coverage-cell-name">MSP Commercial Posture</div>
+                <div class="svc-coverage-cell-desc">Spend benchmark, contract terms, notice windows &amp; auto-renewal posture.</div>
+              </div>
             </div>
           </div>
-          <div class="svc-domain">
-            <div class="svc-domain-num">[05]</div>
-            <div>
-              <div class="svc-domain-name">Contracts</div>
-              <div class="svc-domain-desc">Renewal, notice &amp; commercial posture.</div>
-            </div>
-          </div>
+
         </div>
 
         <h2>Why LAM</h2>
