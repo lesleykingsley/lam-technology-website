@@ -1,5 +1,7 @@
 {
     "redirects": [
+          { "source": "/professional-services", "destination": "/how-we-work/", "permanent": true },
+          { "source": "/professional-services/", "destination": "/how-we-work/", "permanent": true },
           { "source": "/practice-areas/billing-breakthrough", "destination": "/professional-services/", "permanent": true },
           { "source": "/practice-areas/billing-breakthrough/", "destination": "/professional-services/", "permanent": true },
           { "source": "/practice-areas/billing-breakthrough/:path*", "destination": "/professional-services/", "permanent": true },
