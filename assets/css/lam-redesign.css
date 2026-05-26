@@ -1,4 +1,4 @@
-/* Version: 14 — bump to invalidate browser caches */
+/* Version: 18 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -2219,6 +2219,7 @@ a.nav-cta:hover {
   padding-left: 32px;
   padding-right: 32px;
   border-right: none;
+  grid-column: 1 / -1;
 }
 .ps-assessment-card.is-featured + .ps-assessment-card { padding-left: 32px; }
 .ps-assessment-badge {
