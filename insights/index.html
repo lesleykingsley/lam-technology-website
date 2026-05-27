@@ -175,6 +175,16 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=18">
+<style>
+  /* Page-local: tighten the trailing JUST ASK LAM CTA on the insights hub */
+  /* — matches the list width above and reduces excessive vertical padding. */
+  /* Selector targets only .article-cta when it follows .insights-list, so   */
+  /* the same component on article pages (inside <article>) is unaffected.   */
+  .insights-list + .article-cta {
+    max-width: 960px;
+    padding: 56px 32px 64px;
+  }
+</style>
 </head>
 <body>
 
