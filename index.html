@@ -769,8 +769,8 @@
     z-index: 1;
   }
   .schematic-svg g { transition: transform 0.3s ease; transform-origin: center; cursor: pointer; }
-  .schematic-svg g:hover { transform: scale(1.05); }
-  .schematic-svg g:hover circle:first-child { stroke: var(--gold); stroke-width: 2.5; }
+  .schematic-svg .flow-node circle { transition: stroke 0.3s ease, fill 0.3s ease; }
+  .schematic-svg .flow-node:hover circle[r="42"] { stroke: #d4a843; }
 
   .schematic-foot {
     margin-top: 36px;
@@ -1364,7 +1364,7 @@
         <line x1="80" y1="140" x2="1120" y2="140" stroke="#d4a843" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
 
         <!-- Stage 1 — Insight -->
-        <g>
+        <g class="flow-node">
           <circle cx="120" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
           <circle cx="120" cy="140" r="6" fill="#d4a843"/>
           <text x="120" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Insight</text>
@@ -1376,7 +1376,7 @@
         <line x1="170" y1="140" x2="378" y2="140" stroke="#1B2D5B" stroke-width="1" marker-end="url(#arrow)"/>
 
         <!-- Stage 2 — Strategy -->
-        <g>
+        <g class="flow-node">
           <circle cx="420" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
           <circle cx="420" cy="140" r="6" fill="#d4a843"/>
           <text x="420" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Strategy</text>
@@ -1388,7 +1388,7 @@
         <line x1="470" y1="140" x2="678" y2="140" stroke="#1B2D5B" stroke-width="1" marker-end="url(#arrow)"/>
 
         <!-- Stage 3 — Execution -->
-        <g>
+        <g class="flow-node">
           <circle cx="720" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
           <circle cx="720" cy="140" r="6" fill="#d4a843"/>
           <text x="720" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Execution</text>
@@ -1400,8 +1400,8 @@
         <line x1="770" y1="140" x2="978" y2="140" stroke="#1B2D5B" stroke-width="1" marker-end="url(#arrow)"/>
 
         <!-- Stage 4 — Support -->
-        <g>
-          <circle cx="1020" cy="140" r="42" fill="#faf8f4" stroke="#d4a843" stroke-width="1.5"/>
+        <g class="flow-node">
+          <circle cx="1020" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
           <circle cx="1020" cy="140" r="6" fill="#d4a843"/>
           <text x="1020" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Support</text>
           <text x="1020" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#b8922e" letter-spacing="1">[ 04 ]</text>
