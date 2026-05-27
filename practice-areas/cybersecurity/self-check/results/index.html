@@ -164,7 +164,7 @@ const FINDINGS = {
   }
 };
 
-const CLOSE_TEXT = 'This Self-Check covers six of the sixteen control domains cyber insurers evaluate: Multi-Factor Authentication, Endpoint Detection and Response, Backups, Privileged Access Management, Email and Web Security, and Awareness Training. The other ten (patch management, logging and monitoring, incident response, end-of-life systems, hardening, supply chain, DLP, cloud and SaaS, external attack surface, and application and API security) are part of a full Vigilance Verification engagement. If anything in these findings warrants a longer conversation, that is what the engagement is for.';
+const CLOSE_TEXT = 'This Self-Check partially covers six of the sixteen control domains cyber insurers evaluate: Multi-Factor Authentication, Endpoint Detection and Response, Backups, Privileged Access Management, Email and Web Security, and Awareness Training. The other ten (patch management, logging and monitoring, incident response, end-of-life systems, hardening, supply chain, DLP, cloud and SaaS, external attack surface, and application and API security) are part of a full Vigilance Verification engagement. If anything in these findings warrants a longer conversation, that is what the engagement is for.';
 
 function loadAnswers() { try { return JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { return {}; } }
 function scoreAnswer(v) { if (v === 'yes') return 10; if (v === 'partially') return 5; return 0; }
