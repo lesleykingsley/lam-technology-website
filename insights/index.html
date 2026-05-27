@@ -180,9 +180,11 @@
   /* — matches the list width above and reduces excessive vertical padding. */
   /* Selector targets only .article-cta when it follows .insights-list, so   */
   /* the same component on article pages (inside <article>) is unaffected.   */
-  .insights-list + .article-cta {
+  .insights-list--has-cta { padding-bottom: 0; }
+  .insights-list--has-cta + .article-cta {
     max-width: 960px;
-    padding: 56px 32px 64px;
+    padding: 48px 32px 64px;
+    border-top: none;
   }
 </style>
 </head>
@@ -199,7 +201,7 @@
   </div>
 </section>
 
-<section class="insights-list">
+<section class="insights-list insights-list--has-cta">
   <a href="/insights/security-tabletops/" class="insights-item featured">
     <div class="insights-item-meta">
       <span class="cat">CYBERSECURITY</span>
