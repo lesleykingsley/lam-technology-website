@@ -896,16 +896,16 @@
     position: relative;
     z-index: 10;
     padding: 128px 0;
-    background: var(--navy);
-    color: var(--paper);
+    background: var(--paper-warm);
+    color: var(--ink);
   }
   .outcomes::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(to right, rgba(212, 168, 67, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(212, 168, 67, 0.06) 1px, transparent 1px);
+      linear-gradient(to right, rgba(27, 45, 91, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27, 45, 91, 0.04) 1px, transparent 1px);
     background-size: 64px 64px;
     pointer-events: none;
     mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
@@ -919,7 +919,7 @@
   .outcomes-eyebrow { color: var(--gold); margin-bottom: 24px; }
   .outcomes-headline {
     font-size: clamp(40px, 4.5vw, 72px);
-    color: var(--paper);
+    color: var(--ink);
   }
   .outcomes-headline em {
     font-style: italic;
@@ -960,19 +960,19 @@
     font-weight: 300;
     font-size: 22px;
     line-height: 1.3;
-    color: var(--paper);
+    color: var(--ink);
     letter-spacing: -0.012em;
     margin-bottom: 24px;
   }
   .outcome-attr {
     font-size: 13px;
     line-height: 1.5;
-    color: rgba(250, 248, 244, 0.7);
-    border-top: 1px solid rgba(250, 248, 244, 0.18);
+    color: var(--ink-muted);
+    border-top: 1px solid var(--rule);
     padding-top: 16px;
   }
   .outcome-attr strong {
-    color: var(--paper);
+    color: var(--ink);
     font-weight: 500;
     display: block;
     margin-bottom: 4px;
@@ -1015,7 +1015,7 @@
     font-style: italic;
     font-weight: 300;
     font-size: 18px;
-    color: var(--paper);
+    color: var(--ink-soft);
   }
   .logo-wall-row span::before {
     content: '·';
@@ -1522,12 +1522,62 @@
   </div>
 </section>
 
+<!-- ============ OUTCOMES ============ -->
+<section class="outcomes">
+  <div class="container">
+
+    <div class="outcomes-head">
+      <div class="section-coord" style="color: var(--ink-muted);"><span style="color:var(--gold);">[05]</span> &nbsp; The Receipts</div>
+      <div class="label label-rule outcomes-eyebrow" style="display:inline-flex;">Results, in their words</div>
+      <h2 class="display outcomes-headline">What clients<br/>actually <em>kept saying.</em></h2>
+    </div>
+
+    <div class="outcomes-grid">
+      <div class="outcome">
+        <div class="outcome-tag">Billing Breakthrough™</div>
+        <p class="outcome-quote">"LAM uncovered errors and auto-renewed contracts we didn't know existed. Resolved within 90 days."</p>
+        <div class="outcome-attr">
+          <strong>CFO</strong>
+          <span class="outcome-attr-firm">Texas-based financial services firm</span>
+        </div>
+      </div>
+      <div class="outcome">
+        <div class="outcome-tag">Network Modernization</div>
+        <p class="outcome-quote">"A wholesale changeover of your network is a risky proposition. LAM made it one of the best decisions we've made."</p>
+        <div class="outcome-attr">
+          <strong>CIO</strong>
+          <span class="outcome-attr-firm">Major electronic components distributor</span>
+        </div>
+      </div>
+      <div class="outcome">
+        <div class="outcome-tag">Growth Enablement</div>
+        <p class="outcome-quote">"A valued partner and strategic enabler as we executed on a highly aggressive growth strategy."</p>
+        <div class="outcome-attr">
+          <strong>CIO</strong>
+          <span class="outcome-attr-firm">Nationwide automotive services company</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo-wall">
+      <div class="logo-wall-label">Trusted by mid-market leaders in</div>
+      <div class="logo-wall-row">
+        <span>Automotive</span>
+        <span>Financial Services</span>
+        <span>Insurance</span>
+        <span>Manufacturing</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ============ CTA ============ -->
 <section class="cta">
   <div class="cta-inner">
 
     <div class="cta-left">
-      <div class="section-coord"><span>[05]</span> &nbsp; The Conversation</div>
+      <div class="section-coord"><span>[06]</span> &nbsp; The Conversation</div>
       <div class="label label-rule cta-eyebrow">Just Ask LAM</div>
       <h2 class="display cta-headline">Tell us what<br/>you're working on.</h2>
       <p class="lead cta-lead">
