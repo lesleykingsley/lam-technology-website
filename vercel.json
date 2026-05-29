@@ -1,8 +1,18 @@
 {
     "redirects": [
-          { "source": "/practice-areas/billing-breakthrough", "destination": "/professional-services/", "permanent": true },
-          { "source": "/practice-areas/billing-breakthrough/", "destination": "/professional-services/", "permanent": true },
-          { "source": "/practice-areas/billing-breakthrough/:path*", "destination": "/professional-services/", "permanent": true },
+          { "source": "/professional-services", "destination": "/how-we-work/", "permanent": true },
+          { "source": "/professional-services/", "destination": "/how-we-work/", "permanent": true },
+          { "source": "/professional-services/billing-breakthrough", "destination": "/billing-breakthrough/", "permanent": true },
+          { "source": "/professional-services/billing-breakthrough/", "destination": "/billing-breakthrough/", "permanent": true },
+          { "source": "/professional-services/self-check/results", "destination": "/billing-breakthrough/self-check/results/", "permanent": true },
+          { "source": "/professional-services/self-check/results/", "destination": "/billing-breakthrough/self-check/results/", "permanent": true },
+          { "source": "/professional-services/self-check", "destination": "/billing-breakthrough/self-check/", "permanent": true },
+          { "source": "/professional-services/self-check/", "destination": "/billing-breakthrough/self-check/", "permanent": true },
+          { "source": "/professional-services/support-scope", "destination": "/about-lam/", "permanent": true },
+          { "source": "/professional-services/support-scope/", "destination": "/about-lam/", "permanent": true },
+          { "source": "/practice-areas/billing-breakthrough", "destination": "/billing-breakthrough/", "permanent": true },
+          { "source": "/practice-areas/billing-breakthrough/", "destination": "/billing-breakthrough/", "permanent": true },
+          { "source": "/practice-areas/billing-breakthrough/:path*", "destination": "/billing-breakthrough/", "permanent": true },
           { "source": "/insights/identity-management", "destination": "/insights/", "permanent": true },
           { "source": "/insights/identity-management/", "destination": "/insights/", "permanent": true },
           { "source": "/insights/sase", "destination": "/insights/", "permanent": true },
@@ -13,9 +23,11 @@
           { "source": "/ai-readiness.html", "destination": "/practice-areas/ai-readiness/", "permanent": true },
           { "source": "/practice-areas/customer-experience-digital-engagement", "destination": "/practice-areas/customer-experience/", "permanent": true },
           { "source": "/practice-areas/customer-experience-digital-engagement/", "destination": "/practice-areas/customer-experience/", "permanent": true },
-          { "source": "/billing-breakthrough", "destination": "/professional-services/billing-breakthrough/", "permanent": false },
-          { "source": "/billing-breakthrough/", "destination": "/professional-services/billing-breakthrough/", "permanent": false },
-          { "source": "/support-scope.html", "destination": "/professional-services/support-scope/", "permanent": true }
+          { "source": "/support-scope.html", "destination": "/about-lam/", "permanent": true },
+          { "source": "/professional-services/msp-self-check/results", "destination": "/practice-areas/msp/self-check/results/", "permanent": true },
+          { "source": "/professional-services/msp-self-check/results/", "destination": "/practice-areas/msp/self-check/results/", "permanent": true },
+          { "source": "/professional-services/msp-self-check", "destination": "/practice-areas/msp/self-check/", "permanent": true },
+          { "source": "/professional-services/msp-self-check/", "destination": "/practice-areas/msp/self-check/", "permanent": true }
     ],
     "headers": [
           {

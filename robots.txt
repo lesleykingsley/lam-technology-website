@@ -5,8 +5,8 @@ User-agent: *
 Allow: /
 Disallow: /internal/
 Disallow: /api/
-Disallow: /professional-services/self-check/results/
-Disallow: /professional-services/msp-self-check/results/
+Disallow: /billing-breakthrough/self-check/results/
+Disallow: /practice-areas/msp/self-check/results/
 
 # AI crawlers — explicitly allowed (LAM is content-discoverable to AI assistants)
 User-agent: GPTBot

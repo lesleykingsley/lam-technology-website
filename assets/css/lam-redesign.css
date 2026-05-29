@@ -1,4 +1,4 @@
-/* Version: 13 — bump to invalidate browser caches */
+/* Version: 18 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -1169,15 +1169,6 @@ a.nav-cta:hover {
   color: var(--gold-deep);
   margin-bottom: 24px;
 }
-.pa-lenses-headline {
-  font-family: var(--display);
-  font-weight: 300;
-  font-size: clamp(36px, 4.5vw, 56px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.pa-lenses-headline em { font-style: italic; }
 
 .pa-lens {
   display: block;
@@ -1197,21 +1188,31 @@ a.nav-cta:hover {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 .pa-lens-meta .num { color: var(--gold-deep); }
 .pa-lens-meta .sep { color: var(--rule-strong); margin: 0 10px; }
 .pa-lens-meta .tm { color: var(--ink); }
 
+.pa-lens-title {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+
 .pa-lens-question {
   font-family: var(--display);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
   color: var(--navy);
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   max-width: 720px;
   transition: color 0.2s ease;
 }
@@ -1440,6 +1441,80 @@ a.nav-cta:hover {
   color: var(--ink-soft);
 }
 
+/* Coverage map — periodic-table grid: the fifteen domains grouped into four layers.
+   Position encodes the grouping; the layer tint is reinforcement, not the only signal. */
+.svc-coverage {
+  margin: 32px 0 48px;
+  display: grid;
+  gap: 14px;
+}
+.svc-coverage-layer {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.svc-coverage-rail {
+  padding-top: 14px;
+  text-align: right;
+}
+.svc-coverage-rail-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+.svc-coverage-rail-name {
+  display: block;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--navy);
+  margin-top: 6px;
+  letter-spacing: -0.01em;
+}
+.svc-coverage-cells {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.svc-coverage-layer.is-l1 .svc-coverage-cells { grid-template-columns: repeat(3, 1fr); }
+.svc-coverage-cell {
+  padding: 16px 16px 18px;
+  border: 1px solid rgba(212,168,67,0.5);
+  border-radius: 3px;
+  background: rgba(212,168,67,0.14);
+}
+.svc-coverage-layer.is-l2 .svc-coverage-cell { background: rgba(27,45,91,0.07);  border-color: rgba(27,45,91,0.28); }
+.svc-coverage-layer.is-l3 .svc-coverage-cell { background: rgba(106,124,89,0.13); border-color: rgba(106,124,89,0.42); }
+.svc-coverage-layer.is-l4 .svc-coverage-cell { background: rgba(155,75,55,0.10);  border-color: rgba(155,75,55,0.38); }
+.svc-coverage-cell-name {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 7px;
+  letter-spacing: -0.01em;
+}
+.svc-coverage-cell-desc {
+  font-family: var(--body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 800px) {
+  .svc-coverage-layer { grid-template-columns: 1fr; gap: 10px; }
+  .svc-coverage-rail { text-align: left; padding-top: 0; }
+  .svc-coverage-rail-name { font-size: 18px; }
+  .svc-coverage-cells,
+  .svc-coverage-layer.is-l1 .svc-coverage-cells { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 800px) {
   .pa-page { padding: 56px 0 64px; }
   .pa-page-inner { padding: 0 24px; }
@@ -1452,10 +1527,11 @@ a.nav-cta:hover {
   .pa-method-content h3 { font-size: 22px; }
   .pa-lenses { margin-top: 56px; }
   .pa-lenses-header { margin-bottom: 40px; }
-  .pa-lenses-headline { font-size: 28px; }
   .pa-lens { padding: 32px 0; }
   .pa-lens:hover { padding-left: 0; }
-  .pa-lens-question { font-size: 24px; }
+  .pa-lens-meta { margin-bottom: 24px; }
+  .pa-lens-title { font-size: 28px; }
+  .pa-lens-question { font-size: 20px; }
   .pa-closing { margin-top: 56px; padding-top: 40px; }
   .pa-closing-headline { font-size: 26px; }
   .pa-closing-actions { flex-direction: column; }
@@ -1983,6 +2059,33 @@ a.nav-cta:hover {
 }
 
 /* =============================================================================
+   SVC-CROSSLINK — small italic crosslink between practice pages
+   ============================================================================= */
+
+.svc-crosslink {
+  margin: 48px 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  text-align: center;
+}
+.svc-crosslink a {
+  color: var(--ink-muted);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.svc-crosslink a:hover {
+  color: var(--gold-deep);
+}
+
+/* =============================================================================
    SVC-MINI-CTA — embed self-check tools inside service pages
    ============================================================================= */
 
@@ -2116,6 +2219,7 @@ a.nav-cta:hover {
   padding-left: 32px;
   padding-right: 32px;
   border-right: none;
+  grid-column: 1 / -1;
 }
 .ps-assessment-card.is-featured + .ps-assessment-card { padding-left: 32px; }
 .ps-assessment-badge {

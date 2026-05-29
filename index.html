@@ -39,7 +39,7 @@
     "caption": "LAM Technology"
   },
   "image": { "@id": "https://lamtechnology.com/#logo" },
-  "description": "LAM Technology is a supplier-neutral IT advisory firm founded in 2006 and based in Fort Worth, Texas. We help executives select, negotiate, and manage their technology stack across cybersecurity, infrastructure, mobility, customer experience, and AI readiness. We are a kept advisor: 30 executives have brought LAM with them across company changes — ten of them three times, two more than three.",
+  "description": "LAM Technology is a supplier-neutral IT advisory firm founded in 2006 and based in Fort Worth, Texas. We help executives evaluate, select, and manage their technology stack across cybersecurity, infrastructure and cloud, MSP, mobility, customer experience, and AI readiness. We are a kept advisor: 30 executives have brought LAM with them across company changes — ten of them three times, two more than three.",
   "slogan": "Trustworthy guidance in technology enablement.",
   "foundingDate": "2006-01-01",
   "founder": [
@@ -70,16 +70,14 @@
     "IT advisory services",
     "Telecom expense management",
     "Cybersecurity risk assessment",
-    "Infrastructure modernization",
+    "Infrastructure and cloud strategy",
+    "Cloud architecture advisory",
     "Managed service provider evaluation",
     "Customer experience technology",
     "Mobility and wireless strategy",
     "AI readiness assessment",
     "Technology Services Distributor (TSD) ecosystem",
-    "Vendor-neutral technology procurement",
-    "IT contract negotiation",
-    "Telecom audit",
-    "Supplier-neutral advisory"
+    "Supplier-neutral technology advisory"
   ],
   "makesOffer": [
     {
@@ -94,6 +92,14 @@
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
+        "name": "Infrastructure & Cloud — Infrastructure Insight",
+        "description": "Infrastructure and cloud advisory diagnostic across networks, data centers, and modernization strategy."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
         "name": "Cybersecurity & Resilience — Vigilance Verification",
         "description": "Cybersecurity posture assessment and ongoing diagnostic across people, process, and platform."
       }
@@ -102,24 +108,24 @@
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Infrastructure & MSP — Infrastructure Insight and MSP Microscope",
-        "description": "Dual-lens diagnostic for infrastructure modernization and managed service provider fit."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Mobility & IoT — Wireless Wisdom",
-        "description": "Mobility, wireless, and IoT strategy diagnostic for cost, security, and user experience."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
         "name": "Customer Experience — Experience Examination",
         "description": "Customer experience and contact center diagnostic across channels, agents, and orchestration."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Mobility — Wireless Wisdom",
+        "description": "Mobility and wireless strategy diagnostic for cost, security, and user experience."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "MSP — MSP Microscope",
+        "description": "Diagnostic for evaluating and managing managed service providers — LAM examines the MSP, never becomes one."
       }
     },
     {
@@ -181,7 +187,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=13">
+<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=18">
 <style>
   /* ===============================================================
      LAM HOMEPAGE — "THE QUIET AUTHORITY, WIRED"
@@ -763,8 +769,8 @@
     z-index: 1;
   }
   .schematic-svg g { transition: transform 0.3s ease; transform-origin: center; cursor: pointer; }
-  .schematic-svg g:hover { transform: scale(1.05); }
-  .schematic-svg g:hover circle:first-child { stroke: var(--gold); stroke-width: 2.5; }
+  .schematic-svg .flow-node circle { transition: stroke 0.3s ease, fill 0.3s ease; }
+  .schematic-svg .flow-node:hover circle[r="42"] { stroke: #d4a843; }
 
   .schematic-foot {
     margin-top: 36px;
@@ -890,16 +896,16 @@
     position: relative;
     z-index: 10;
     padding: 128px 0;
-    background: var(--navy);
-    color: var(--paper);
+    background: var(--paper-warm);
+    color: var(--ink);
   }
   .outcomes::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(to right, rgba(212, 168, 67, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(212, 168, 67, 0.06) 1px, transparent 1px);
+      linear-gradient(to right, rgba(27, 45, 91, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27, 45, 91, 0.04) 1px, transparent 1px);
     background-size: 64px 64px;
     pointer-events: none;
     mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
@@ -913,7 +919,7 @@
   .outcomes-eyebrow { color: var(--gold); margin-bottom: 24px; }
   .outcomes-headline {
     font-size: clamp(40px, 4.5vw, 72px);
-    color: var(--paper);
+    color: var(--ink);
   }
   .outcomes-headline em {
     font-style: italic;
@@ -954,19 +960,19 @@
     font-weight: 300;
     font-size: 22px;
     line-height: 1.3;
-    color: var(--paper);
+    color: var(--ink);
     letter-spacing: -0.012em;
     margin-bottom: 24px;
   }
   .outcome-attr {
     font-size: 13px;
     line-height: 1.5;
-    color: rgba(250, 248, 244, 0.7);
-    border-top: 1px solid rgba(250, 248, 244, 0.18);
+    color: var(--ink-muted);
+    border-top: 1px solid var(--rule);
     padding-top: 16px;
   }
   .outcome-attr strong {
-    color: var(--paper);
+    color: var(--ink);
     font-weight: 500;
     display: block;
     margin-bottom: 4px;
@@ -1009,7 +1015,7 @@
     font-style: italic;
     font-weight: 300;
     font-size: 18px;
-    color: var(--paper);
+    color: var(--ink-soft);
   }
   .logo-wall-row span::before {
     content: '·';
@@ -1216,7 +1222,7 @@
 
     <div class="hero-status reveal r2">
       <span class="hero-status-line">Established 2006 · Fort Worth, TX</span>
-      <span class="hero-status-line">150+ engagements · Independent · Supplier-neutral</span>
+      <span class="hero-status-line">Independent · Supplier-neutral</span>
     </div>
 
     <div class="hero-left">
@@ -1242,7 +1248,7 @@
       </div>
       <div class="receipt-row">
         <div class="receipt-text">Practice areas, each with a <em>branded assessment.</em></div>
-        <div class="receipt-num">5</div>
+        <div class="receipt-num">6</div>
       </div>
       <div class="receipt-row">
         <div class="receipt-text">Step engagement model from <em>insight to support.</em></div>
@@ -1276,8 +1282,8 @@
           Five minutes or five weeks. Both paths land in the same place — clarity on what you're paying for, and what to do about it.
         </p>
         <div class="bb-actions">
-          <a href="/professional-services/billing-breakthrough/" class="btn btn-primary">Start Billing Breakthrough <span class="btn-arrow">→</span></a>
-          <a href="/professional-services/self-check/" class="btn btn-gold-ghost">Take the 5-Minute Self-Check</a>
+          <a href="/billing-breakthrough/" class="btn btn-primary">Start Billing Breakthrough <span class="btn-arrow">→</span></a>
+          <a href="/billing-breakthrough/self-check/" class="btn btn-gold-ghost">Take the 5-Minute Self-Check</a>
         </div>
         <div class="bb-actions-note"><span>// </span>Self-Check is free. Findings are yours to keep.</div>
       </div>
@@ -1329,7 +1335,7 @@
       <div>
         <div class="section-coord"><span>[03]</span> &nbsp; The Method</div>
         <div class="label label-rule engagement-eyebrow">The LAM engagement model</div>
-        <h2 class="display engagement-headline">Insight. Strategy.<br/>Execution. <em>Support.</em></h2>
+        <h2 class="display engagement-headline">Insight. Strategy.<br/><em>Execution. Support.</em></h2>
       </div>
       <p class="lead engagement-lead">
         Every engagement begins with the receipts and goes wherever your business needs it to go. Our only loyalty is to you. No supplier agenda — just a true extension of your team.
@@ -1358,7 +1364,7 @@
         <line x1="80" y1="140" x2="1120" y2="140" stroke="#d4a843" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
 
         <!-- Stage 1 — Insight -->
-        <g>
+        <g class="flow-node">
           <circle cx="120" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
           <circle cx="120" cy="140" r="6" fill="#d4a843"/>
           <text x="120" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Insight</text>
@@ -1370,7 +1376,7 @@
         <line x1="170" y1="140" x2="378" y2="140" stroke="#1B2D5B" stroke-width="1" marker-end="url(#arrow)"/>
 
         <!-- Stage 2 — Strategy -->
-        <g>
+        <g class="flow-node">
           <circle cx="420" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
           <circle cx="420" cy="140" r="6" fill="#d4a843"/>
           <text x="420" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Strategy</text>
@@ -1382,7 +1388,7 @@
         <line x1="470" y1="140" x2="678" y2="140" stroke="#1B2D5B" stroke-width="1" marker-end="url(#arrow)"/>
 
         <!-- Stage 3 — Execution -->
-        <g>
+        <g class="flow-node">
           <circle cx="720" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
           <circle cx="720" cy="140" r="6" fill="#d4a843"/>
           <text x="720" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Execution</text>
@@ -1394,8 +1400,8 @@
         <line x1="770" y1="140" x2="978" y2="140" stroke="#1B2D5B" stroke-width="1" marker-end="url(#arrow)"/>
 
         <!-- Stage 4 — Support -->
-        <g>
-          <circle cx="1020" cy="140" r="42" fill="#faf8f4" stroke="#d4a843" stroke-width="1.5"/>
+        <g class="flow-node">
+          <circle cx="1020" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
           <circle cx="1020" cy="140" r="6" fill="#d4a843"/>
           <text x="1020" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Support</text>
           <text x="1020" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#b8922e" letter-spacing="1">[ 04 ]</text>
@@ -1468,7 +1474,7 @@
     <div class="practices-head">
       <div class="section-coord"><span>[04]</span> &nbsp; The Practices</div>
       <div class="label label-rule practices-eyebrow">Where the engagement goes</div>
-      <h2 class="display practices-headline">Five practices.<br/>Each with its <em>own assessment.</em></h2>
+      <h2 class="display practices-headline">Six practices.<br/>Each with its <em>own assessment.</em></h2>
       <p class="lead practices-lead">
         After Billing Breakthrough, the work goes where you need it. Each practice is led by senior advisors and starts with a branded assessment that meets your team where they are.
       </p>
@@ -1481,16 +1487,16 @@
         <span class="practice-tool"><span>Vigilance Verification™</span></span>
         <span class="practice-arrow">→</span>
       </a>
-      <a href="/practice-areas/customer-experience/" class="practice-item">
+      <a href="/practice-areas/infrastructure/" class="practice-item">
         <span class="practice-num">/02</span>
-        <span class="practice-name">Customer Experience</span>
-        <span class="practice-tool"><span>Experience Examination™</span></span>
+        <span class="practice-name">Infrastructure &amp; Cloud</span>
+        <span class="practice-tool"><span>Infrastructure Insight™</span></span>
         <span class="practice-arrow">→</span>
       </a>
-      <a href="/practice-areas/infrastructure/" class="practice-item">
+      <a href="/practice-areas/msp/" class="practice-item">
         <span class="practice-num">/03</span>
-        <span class="practice-name">Infrastructure &amp; MSP</span>
-        <span class="practice-tool"><span>Infrastructure Insight™</span></span>
+        <span class="practice-name">MSP</span>
+        <span class="practice-tool"><span>MSP Microscope™</span></span>
         <span class="practice-arrow">→</span>
       </a>
       <a href="/practice-areas/mobility/" class="practice-item">
@@ -1499,8 +1505,14 @@
         <span class="practice-tool"><span>Wireless Wisdom™</span></span>
         <span class="practice-arrow">→</span>
       </a>
-      <a href="/practice-areas/ai-readiness/" class="practice-item">
+      <a href="/practice-areas/customer-experience/" class="practice-item">
         <span class="practice-num">/05</span>
+        <span class="practice-name">Customer Experience</span>
+        <span class="practice-tool"><span>Experience Examination™</span></span>
+        <span class="practice-arrow">→</span>
+      </a>
+      <a href="/practice-areas/ai-readiness/" class="practice-item">
+        <span class="practice-num">/06</span>
         <span class="practice-name">AI Readiness</span>
         <span class="practice-tool"><span>AI Readiness Radar™</span></span>
         <span class="practice-arrow">→</span>
@@ -1515,7 +1527,7 @@
   <div class="container">
 
     <div class="outcomes-head">
-      <div class="section-coord" style="color: rgba(212,168,67,0.7);"><span style="color:var(--gold);">[05]</span> &nbsp; The Receipts</div>
+      <div class="section-coord" style="color: var(--ink-muted);"><span style="color:var(--gold);">[05]</span> &nbsp; The Receipts</div>
       <div class="label label-rule outcomes-eyebrow" style="display:inline-flex;">Results, in their words</div>
       <h2 class="display outcomes-headline">What clients<br/>actually <em>kept saying.</em></h2>
     </div>
@@ -1553,7 +1565,6 @@
         <span>Automotive</span>
         <span>Financial Services</span>
         <span>Insurance</span>
-        <span>Electronic Distribution</span>
         <span>Manufacturing</span>
       </div>
     </div>
@@ -1628,8 +1639,8 @@
     } catch (e) { console.error(e); }
   };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=13'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=13')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=15'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=15')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {

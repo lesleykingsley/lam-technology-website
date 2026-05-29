@@ -38,7 +38,7 @@
     "caption": "LAM Technology"
   },
   "image": { "@id": "https://lamtechnology.com/#logo" },
-  "description": "LAM Technology is a supplier-neutral IT advisory firm founded in 2006 and based in Fort Worth, Texas. We help executives select, negotiate, and manage their technology stack across cybersecurity, infrastructure, mobility, customer experience, and AI readiness. We are a kept advisor: 30 executives have brought LAM with them across company changes — ten of them three times, two more than three.",
+  "description": "LAM Technology is a supplier-neutral IT advisory firm founded in 2006 and based in Fort Worth, Texas. We help executives evaluate, select, and manage their technology stack across cybersecurity, infrastructure and cloud, MSP, mobility, customer experience, and AI readiness. We are a kept advisor: 30 executives have brought LAM with them across company changes — ten of them three times, two more than three.",
   "slogan": "Trustworthy guidance in technology enablement.",
   "foundingDate": "2006-01-01",
   "founder": [
@@ -69,16 +69,14 @@
     "IT advisory services",
     "Telecom expense management",
     "Cybersecurity risk assessment",
-    "Infrastructure modernization",
+    "Infrastructure and cloud strategy",
+    "Cloud architecture advisory",
     "Managed service provider evaluation",
     "Customer experience technology",
     "Mobility and wireless strategy",
     "AI readiness assessment",
     "Technology Services Distributor (TSD) ecosystem",
-    "Vendor-neutral technology procurement",
-    "IT contract negotiation",
-    "Telecom audit",
-    "Supplier-neutral advisory"
+    "Supplier-neutral technology advisory"
   ],
   "makesOffer": [
     {
@@ -93,6 +91,14 @@
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
+        "name": "Infrastructure & Cloud — Infrastructure Insight",
+        "description": "Infrastructure and cloud advisory diagnostic across networks, data centers, and modernization strategy."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
         "name": "Cybersecurity & Resilience — Vigilance Verification",
         "description": "Cybersecurity posture assessment and ongoing diagnostic across people, process, and platform."
       }
@@ -101,24 +107,24 @@
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Infrastructure & MSP — Infrastructure Insight and MSP Microscope",
-        "description": "Dual-lens diagnostic for infrastructure modernization and managed service provider fit."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Mobility & IoT — Wireless Wisdom",
-        "description": "Mobility, wireless, and IoT strategy diagnostic for cost, security, and user experience."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
         "name": "Customer Experience — Experience Examination",
         "description": "Customer experience and contact center diagnostic across channels, agents, and orchestration."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Mobility — Wireless Wisdom",
+        "description": "Mobility and wireless strategy diagnostic for cost, security, and user experience."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "MSP — MSP Microscope",
+        "description": "Diagnostic for evaluating and managing managed service providers — LAM examines the MSP, never becomes one."
       }
     },
     {
@@ -167,7 +173,7 @@
   ]
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=13">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=18">
   <style>
     .lam-breadcrumb { position: relative; z-index: 5; padding: 32px 56px 0; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
     .lam-breadcrumb a { color: var(--ink-muted); text-decoration: none; }
@@ -177,7 +183,10 @@
     .lam-hero-statement .lam-eyebrow { margin-bottom: 28px; }
     .lam-headline { margin-bottom: 40px; }
     .lam-body-lead { max-width: 480px; }
-    .lam-where-headline { margin: 12px 0 56px; max-width: 720px; }
+    .lam-section--bordered { text-align: center; }
+    .lam-where-headline { margin: 12px auto 56px; max-width: 720px; }
+    .lam-where-grid { margin-left: auto; margin-right: auto; }
+    .lam-where-item { text-align: left; }
     .lam-where-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; max-width: 1200px; }
     .lam-where-num { font-family: var(--display); font-weight: 300; font-size: 72px; line-height: 0.9; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 20px; }
     .lam-where-num sup { font-size: 28px; vertical-align: super; color: var(--gold); }
@@ -186,10 +195,10 @@
     .lam-section--awards { padding: 72px 56px 88px; background: linear-gradient(180deg, transparent, rgba(27, 45, 91, 0.025)); border-top: 1px solid var(--rule); text-align: center; }
     .lam-awards-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--navy); margin-bottom: 12px; font-weight: 500; }
     .lam-awards-headline { margin-bottom: 56px; }
-    .lam-cta { padding: 96px 56px 120px; }
+    .lam-cta { padding: 96px 56px 120px; text-align: center; }
     .lam-cta-headline { margin: 24px 0 32px; }
-    .lam-cta-lead { margin-bottom: 48px; max-width: 520px; }
-    .lam-cta-actions { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+    .lam-cta-lead { margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .lam-cta-actions { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: center; }
     .lam-btn { display: inline-block; padding: 16px 28px; font-family: var(--body); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: all 0.25s ease; border-radius: 0; }
     .lam-btn--primary { background: var(--navy); color: var(--paper); border: 1px solid var(--navy); }
     .lam-btn--primary:hover { background: var(--navy-deep); border-color: var(--navy-deep); }
@@ -316,8 +325,8 @@
     } catch (e) { console.error(e); }
   };
   await Promise.all([
-    loadPartial('lam-nav', '/partials/nav-redesign.html?v=13'),
-    loadPartial('lam-footer', '/partials/footer-redesign.html?v=13')
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=15'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=15')
   ]);
   const currentPath = window.location.pathname;
   document.querySelectorAll('#lam-nav .nav-links a').forEach(link => {
