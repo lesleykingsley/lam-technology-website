@@ -1,4 +1,4 @@
-/* Version: 19 — bump to invalidate browser caches */
+/* Version: 20 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -259,6 +259,7 @@ body {
 .r6 { animation-delay: 0.74s; }
 .r7 { animation-delay: 0.88s; }
 .r8 { animation-delay: 1.02s; }
+.r9 { animation-delay: 1.16s; }
 @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
 /* ============================================================
