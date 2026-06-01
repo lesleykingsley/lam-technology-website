@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Page not found &mdash; LAM Technology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=21">
+  <style>
+    .notfound {
+      padding: 80px 56px 120px;
+      text-align: center;
+    }
+    .notfound-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .notfound-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+    }
+    .notfound-headline {
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(40px, 5vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+    .notfound-body {
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin-bottom: 40px;
+    }
+    /* Invert the canonical .btn:hover .btn-arrow rightward translate for this
+       back-pointing arrow only. Same specificity as the global rule; wins by
+       source order since this stylesheet loads after lam-redesign.css. */
+    .btn-back-home:hover .btn-arrow {
+      transform: translateX(-4px);
+    }
+    @media (max-width: 600px) {
+      .notfound { padding: 56px 24px 88px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="lam-nav"></div>
+
+<main>
+  <section class="notfound">
+    <div class="notfound-inner">
+      <div class="notfound-eyebrow">Error 404</div>
+      <h1 class="notfound-headline">That page wandered off.</h1>
+      <p class="notfound-body">The link you followed may be broken, or the page may have moved. Either way, let&rsquo;s get you back on the path.</p>
+      <a href="/" class="btn btn-primary btn-back-home"><span class="btn-arrow">&larr;</span> Return home</a>
+    </div>
+  </section>
+</main>
+
+<div id="lam-footer"></div>
+
+<script>
+(async () => {
+  const loadPartial = async (id, path) => {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error('Failed to load ' + path);
+      const target = document.getElementById(id);
+      target.innerHTML = await res.text();
+      target.querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        if (oldScript.src) newScript.src = oldScript.src;
+        else newScript.textContent = oldScript.textContent;
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+      });
+    } catch (e) { console.error(e); }
+  };
+  await Promise.all([
+    loadPartial('lam-nav', '/partials/nav-redesign.html?v=15'),
+    loadPartial('lam-footer', '/partials/footer-redesign.html?v=15')
+  ]);
+})();
+</script>
+
+</body>
+</html>
