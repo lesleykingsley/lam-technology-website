@@ -1,4 +1,4 @@
-/* Version: 22 — bump to invalidate browser caches */
+/* Version: 23 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -286,6 +286,7 @@ body {
     -webkit-backdrop-filter: blur(8px);
 }
 .nav-inner {
+    box-sizing: content-box;
     max-width: 1280px;
     margin: 0 auto;
     padding: 20px 56px;
