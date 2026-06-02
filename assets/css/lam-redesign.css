@@ -1,4 +1,4 @@
-/* Version: 21 — bump to invalidate browser caches */
+/* Version: 22 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -38,6 +38,8 @@
 /* ---- Base reset for redesigned pages ---- */
 .lam-rd { box-sizing: border-box; margin: 0; padding: 0; }
 .lam-rd *, .lam-rd *::before, .lam-rd *::after { box-sizing: border-box; }
+
+html { scrollbar-gutter: stable; }
 
 body {
   background: var(--paper);
