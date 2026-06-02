@@ -1,1 +1,7 @@
 /.scratch/
+
+# Office artifacts (accidental binary saves and lock files from Word/Excel/PowerPoint)
+*.docx
+*.xlsx
+*.pptx
+~$*
