@@ -1,4 +1,4 @@
-/* Version: 23 — bump to invalidate browser caches */
+/* Version: 24 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -538,6 +538,14 @@ a.nav-cta:hover {
   padding-top: 24px;
   border-top: 1px solid var(--gold);
   display: inline-block;
+}
+.insights-meta-dates {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 16px 0 32px;
 }
 
 .article-body {
