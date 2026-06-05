@@ -399,7 +399,8 @@
       <select id="assessment" onchange="onAssessmentChange()">
         <option value="">— Choose an assessment —</option>
         <option value="vigilance-verification">Vigilance Verification (Cybersecurity & Resilience)</option>
-        <option value="infrastructure-insight">Infrastructure Insight (Infrastructure & MSP)</option>
+        <option value="infrastructure-insight">Infrastructure Insight (Infrastructure & Cloud)</option>
+        <option value="msp-microscope">MSP Microscope (MSP)</option>
         <option value="wireless-wisdom">Wireless Wisdom (Mobility & IoT)</option>
         <option value="experience-examination">Experience Examination (Customer Experience)</option>
         <option value="ai-readiness-radar">AI Readiness Radar (AI Readiness)</option>
@@ -513,9 +514,9 @@ const practices = {
     assessmentName: "Infrastructure Insight",
     titleLine1: "Infrastructure",
     titleLine2: "Insight",
-    practiceArea: "Infrastructure & MSP",
-    practiceAreaCount: 5,
-    coverLede: "A structured review of your network, data center, MSP, and ISP footprint. Five domains, rated and documented — surfacing the aging gear, drifting supplier relationships, and unreviewed contracts that are slowly eroding performance and budget.",
+    practiceArea: "Infrastructure & Cloud",
+    practiceAreaCount: 1,
+    coverLede: "A structured review of your network, data center, cloud, and ISP footprint. Nine domains, rated and documented — surfacing the aging gear, unreviewed contracts, and architectural decisions that are slowly eroding performance and budget.",
     closingLine1: "Know what your infrastructure is really doing.",
     closingLine2: "And what it's quietly costing you.",
     domains: [
@@ -525,12 +526,24 @@ const practices = {
       { area: "Data Center", name: "Compute & Virtualization" },
       { area: "Data Center", name: "Storage & Backup" },
       { area: "Data Center", name: "Cloud Edge & Hybrid" },
-      { area: "Managed Services", name: "MSP Scope & SLAs" },
-      { area: "Managed Services", name: "MSP Performance & Tickets" },
-      { area: "Managed Services", name: "MSP Commercial Posture" },
       { area: "Connectivity", name: "ISP & Carrier Mix" },
       { area: "Connectivity", name: "Site Connectivity & Redundancy" },
       { area: "Contracts", name: "Renewal, Notice & Commercial Terms" }
+    ]
+  },
+  "msp-microscope": {
+    assessmentName: "MSP Microscope",
+    titleLine1: "MSP",
+    titleLine2: "Microscope",
+    practiceArea: "MSP",
+    practiceAreaCount: 1,
+    coverLede: "An examination of your managed service provider relationship. Three domains, rated and documented — surfacing the scope gaps, ticket-flow patterns, and commercial drift that are slowly eroding what you should be getting from the relationship. LAM examines the MSP, never becomes one.",
+    closingLine1: "Know what your MSP is really doing.",
+    closingLine2: "And whether they should keep doing it.",
+    domains: [
+      { area: "Managed Services", name: "MSP Scope & SLAs" },
+      { area: "Managed Services", name: "MSP Performance & Tickets" },
+      { area: "Managed Services", name: "MSP Commercial Posture" }
     ]
   },
   "wireless-wisdom": {
