@@ -50,6 +50,20 @@ export default async function handler(req, res) {
     return res.status(200).json({ ok: true });
   }
 
+  // Origin allow-list: silently succeed if the request originates off-site.
+  // We let missing/empty origins through (some privacy browsers strip the
+  // header) and rely on the message-HTML check below to catch those.
+  const origin = req.headers.origin || req.headers.referer || '';
+  if (origin && !origin.startsWith('https://lamtechnology.com') && !origin.startsWith('https://www.lamtechnology.com')) {
+    return res.status(200).json({ ok: true });
+  }
+
+  // Reject HTML/links in the message: real prospects submit plain text.
+  // Bots sending <a href=...> link-spam get the same silent 200 as the honeypot.
+  if (/<a[\s>]|href\s*=|<\/?(b|strong|i|em|p|div|span|script)\b/i.test(message)) {
+    return res.status(200).json({ ok: true });
+  }
+
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
