@@ -67,8 +67,7 @@
       '.lam-legal-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:18px 16px 24px;font-size:13px;color:rgba(255,255,255,.55);text-align:center}',
       '.lam-legal-links a{color:rgba(255,255,255,.7);text-decoration:none}',
       '.lam-legal-links a:hover{color:#d4b66a;text-decoration:underline}'
-    ].join('
-');
+    ].join('\n');
     document.head.appendChild(s);
   }
 
