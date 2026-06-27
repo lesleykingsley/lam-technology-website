@@ -222,6 +222,46 @@
   @media (max-width: 700px) {
     .bb-proof-stats { grid-template-columns: 1fr; gap: 28px; }
   }
+
+  /* Billing Breakthrough FAQ: page-local. Single-column Q/A list that
+     mirrors the bb-deliverables-list rules and bb-reason type scale.
+     No global CSS touched — BB CSS reference stays at ?v=26. */
+  .bb-faq {
+    margin: 64px 0;
+    border-top: 1px solid var(--rule-strong);
+  }
+  .bb-faq-item {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .bb-faq-q {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin: 0 0 12px;
+  }
+  .bb-faq-a {
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 68ch;
+    margin: 0;
+  }
+  .bb-faq-a a {
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-color: var(--gold);
+  }
+  @media (max-width: 700px) {
+    .bb-faq { margin: 48px 0; }
+    .bb-faq-item { padding: 22px 0; }
+    .bb-faq-q { font-size: 20px; }
+  }
   </style>
 </head>
 <body>
@@ -381,6 +421,65 @@
       </ol>
 
       <p class="svc-lede" style="font-size: 15px; margin-top: 32px;">The depth and breadth of your report reflects the services and contracts you bring to the engagement. The more complete your inputs, the more complete your picture. Most clients use this report to kick off supplier renegotiations, inform integration planning, or build their first IT strategy presentation for leadership.</p>
+    </section>
+
+    <section>
+      <div class="bb-deliverables-eyebrow">FREQUENTLY ASKED</div>
+      <h2 class="bb-deliverables-headline">Questions executives ask before a Billing Breakthrough</h2>
+
+      <div class="bb-faq">
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">What is a Billing Breakthrough, exactly?</h3>
+          <p class="bb-faq-a">A Billing Breakthrough is a one-time, fixed-scope review of every IT infrastructure and communications service you are paying for &mdash; telecom, networking, security, cloud, mobility, and managed services &mdash; broken out by location and supplier. You receive a structured dossier with a full spend inventory, a 12-month renewal calendar, flagged anomalies and duplicates, and a recommended action list. It is the foundation every LAM engagement is built on.</p>
+        </div>
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">How much can a Billing Breakthrough save us?</h3>
+          <p class="bb-faq-a">Across 150+ engagements since 2006, the typical first review uncovers 20&ndash;30% in recoverable spend hiding in auto-renewed contracts, billing errors, duplicate services, and obligations no one is using anymore. The exact figure depends on the size of your environment, how many suppliers and locations are in scope, and how long it has been since the last clean review.</p>
+        </div>
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">How long does a Billing Breakthrough take?</h3>
+          <p class="bb-faq-a">Once your invoices are in our hands, Billing Breakthrough findings typically land in about 45 days, with Contract Clarifier following in roughly another 45. The variable is the front end &mdash; assembling invoices across every supplier and location &mdash; which is where we guide your team so the work moves quickly. A free <a href="/billing-breakthrough/self-check/">5-Minute Self-Check</a> is also available for a faster directional read before committing to the full engagement.</p>
+        </div>
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">What does a Billing Breakthrough cost?</h3>
+          <p class="bb-faq-a">Billing Breakthrough is a fixed-scope engagement, scoped per client against the number of suppliers, locations, and contracts in play. We share the specifics after a brief scoping conversation, so the figure reflects your environment rather than a generic package. The review almost always surfaces material savings that more than offset the engagement.</p>
+        </div>
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">Is LAM Technology supplier-neutral? Do you take commissions from suppliers?</h3>
+          <p class="bb-faq-a">Yes &mdash; supplier-neutral. LAM does not resell hardware, software, or carrier services, and our advisory recommendations are not driven by supplier commissions. Our only loyalty is to you. That independence is what allows us to read your contracts honestly and recommend renegotiation, consolidation, or a supplier change when the data warrants it.</p>
+        </div>
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">What do we have to provide to start a Billing Breakthrough?</h3>
+          <p class="bb-faq-a">A 30-minute kickoff, then one internal point of contact to help assemble the invoices, supplier list, and contract documents you want reviewed. No software install, no agents, no production access. The more complete your inputs, the more complete your dossier &mdash; and in an acquisition, where the &ldquo;customer of record&rdquo; is often a tangle of legacy entity names, that assembly is the real work, and the part we guide you through.</p>
+        </div>
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">What is the difference between Billing Breakthrough and Contract Clarifier?</h3>
+          <p class="bb-faq-a">Billing Breakthrough is the receipts review: it normalizes your IT spend across every supplier and location &mdash; what you are paying, where, and to whom. Contract Clarifier is the terms review: it maps when every service expires, at the service level, and the exact notice period to tell a supplier you are not renewing. Miss that window and a contract can silently auto-renew for its entire original term. Most clients run them together &mdash; spend without renewal dates cannot be acted on, and renewal dates without spend cannot be prioritized.</p>
+        </div>
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">Is Billing Breakthrough the right starting point after an acquisition or for a new CIO?</h3>
+          <p class="bb-faq-a">Yes. For M&amp;A, carve-outs, and takeovers, the review surfaces inherited contract obligations and renewal landmines before they lock in the new owner. For new CIOs and CFOs, it delivers an immediate inventory of what IT is actually running and paying for, so leadership conversations begin with data instead of open questions.</p>
+        </div>
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">Do you work outside Fort Worth, Texas?</h3>
+          <p class="bb-faq-a">LAM Technology is based in Fort Worth, Texas, and engages mid-market clients across the United States. Most of the work &mdash; invoice review, contract mapping, supplier analysis, and the readout &mdash; is conducted remotely. On-site time is available when scope warrants.</p>
+        </div>
+
+        <div class="bb-faq-item">
+          <h3 class="bb-faq-q">What happens after the Billing Breakthrough readout?</h3>
+          <p class="bb-faq-a">The dossier is yours to keep and act on, with or without LAM. Most clients use it to open supplier renegotiations, inform integration planning, or build their first IT strategy presentation for leadership. If you want a partner for what comes next &mdash; across <a href="/practice-areas/cybersecurity/">cybersecurity</a>, <a href="/practice-areas/infrastructure/">infrastructure</a>, <a href="/practice-areas/mobility/">mobility</a>, <a href="/practice-areas/customer-experience/">customer experience</a>, or <a href="/practice-areas/ai-readiness/">AI readiness</a> &mdash; that is where the LAM engagement model picks up.</p>
+        </div>
+
+      </div>
     </section>
 
     <aside class="bb-cta-card">
