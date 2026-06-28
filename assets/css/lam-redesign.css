@@ -1,4 +1,4 @@
-/* Version: 27 — bump to invalidate browser caches */
+/* Version: 28 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -98,15 +98,10 @@ body {
     letter-spacing: -0.025em;
     color: var(--ink);
 }
+/* about-lam hero highlight now uses the shared hero-headline rule (added
+   .lam-headline em to the consolidated selector above). Keep its navy ink. */
 .lam-headline em {
-    font-style: italic;
-    font-weight: 300;
     color: var(--navy);
-    background-image: linear-gradient(to top,
-                                          var(--gold-tint) 0%,
-                                          var(--gold-tint) 28%,
-                                          transparent 28%);
-    padding-bottom: 4px;
 }
 
 .lam-subhead {
@@ -1352,7 +1347,8 @@ a.nav-cta:hover {
 .display em,
 .svc-headline em,
 .article-headline em,
-.contact-headline em {
+.contact-headline em,
+.lam-headline em {
   font-style: italic;
   font-weight: 300;
   background-image: linear-gradient(var(--gold-soft), var(--gold-soft));
