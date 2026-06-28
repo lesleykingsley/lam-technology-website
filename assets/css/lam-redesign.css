@@ -1,4 +1,4 @@
-/* Version: 28 — bump to invalidate browser caches */
+/* Version: 29 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -99,10 +99,9 @@ body {
     color: var(--ink);
 }
 /* about-lam hero highlight now uses the shared hero-headline rule (added
-   .lam-headline em to the consolidated selector above). Keep its navy ink. */
-.lam-headline em {
-    color: var(--navy);
-}
+   .lam-headline em to the consolidated selector above). No color override:
+   the em inherits --ink from .lam-headline so line 2 matches line 1, the way
+   the em does on every other hero. */
 
 .lam-subhead {
     font-family: var(--display);
