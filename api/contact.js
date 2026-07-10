@@ -15,6 +15,7 @@
 //   4. url        - plain-text URLs incl. bare shorteners (is.gd/x, psee.io/x)
 //   5. keyword    - cold-outreach + casino template phrases (from live samples)
 //   6. mojibake   - broken-encoding artifacts from spam kits
+//   7. company    - Company field is exactly "google" (bot tell)
 
 import { Resend } from 'resend';
 
@@ -98,6 +99,15 @@ export default async function handler(req, res) {
         return silentDrop(res, 'mojibake');
   }
 
+  // Layer 7 - fake company: both observed spam families (casino kits and the
+  // grief/suicide content-spam) set Company to exactly "google". No real
+  // prospect writes that when contacting a Fort Worth IT advisory. Exact
+  // match only, so a genuine "Google Cloud reseller" note in a longer
+  // company string still gets through.
+  if (company.trim().toLowerCase() === 'google') {
+        return silentDrop(res, 'company');
+  }
+
   if (!name || !email || !message) {
         return res.status(400).json({ error: 'Missing required fields' });
   }
@@ -152,3 +162,4 @@ export default async function handler(req, res) {
         return res.status(500).json({ error: 'Email send failed' });
   }
 }
+0
