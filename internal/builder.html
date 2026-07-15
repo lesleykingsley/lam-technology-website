@@ -572,7 +572,7 @@ const practices = {
       { area: "Mobility", name: "Optimization" },
       { area: "Mobility", name: "Expense Management" },
       { area: "Mobility", name: "Security" },
-      { area: "Mobility", name: "IoT & M2M" },
+      { area: "Mobility", name: "Connected Assets & M2M" },
       { area: "Mobility", name: "Support Model" },
       { area: "Mobility", name: "Policy" },
       { area: "Mobility", name: "Reporting" },
@@ -638,17 +638,24 @@ function ratingDot(s,x,y,c,sz=0.22){ s.addShape("ellipse",{x,y,w:sz,h:sz,fill:{c
 // STATE
 // ============================================================
 const STORAGE_KEY = "lam_assessment_builder_v1";
+function defaultRoadmap(){
+  const now = new Date();
+  const startQ = Math.floor(now.getMonth() / 3);   // 0-3, current quarter
+  const arr = [];
+  for (let i = 0; i < 4; i++) {
+    const q = (startQ + i) % 4;
+    const y = now.getFullYear() + Math.floor((startQ + i) / 4);
+    arr.push({ label: "Q" + (q + 1) + " " + y, theme: "", workstreams: ["", "", ""] });
+  }
+  return arr;
+}
+
 let state = {
   assessment: "",
   metadata: { client_name:"", engagement_id:"", date:"", advisor:"" },
   priorities: [{},{},{}],
   domains: {},
-  roadmap: [
-    { label:"Q2 2026", theme:"", workstreams:["","",""] },
-    { label:"Q3 2026", theme:"", workstreams:["","",""] },
-    { label:"Q4 2026", theme:"", workstreams:["","",""] },
-    { label:"Q1 2027", theme:"", workstreams:["","",""] }
-  ]
+  roadmap: defaultRoadmap()
 };
 
 // ============================================================
@@ -898,12 +905,7 @@ function confirmReset(){
       metadata: { client_name:"", engagement_id:"", date:"", advisor:"" },
       priorities: [{},{},{}],
       domains: {},
-      roadmap: [
-        { label:"Q2 2026", theme:"", workstreams:["","",""] },
-        { label:"Q3 2026", theme:"", workstreams:["","",""] },
-        { label:"Q4 2026", theme:"", workstreams:["","",""] },
-        { label:"Q1 2027", theme:"", workstreams:["","",""] }
-      ]
+      roadmap: defaultRoadmap()
     };
     renderAll();
     setSaveStatus("Reset · autosave ready", "");
