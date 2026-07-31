@@ -250,6 +250,13 @@
   .domain-body label { color: var(--ink-soft); }
   .domain-body textarea { background: var(--paper); border-color: var(--rule); min-height: 90px; font-size: 13px; }
 
+  .domain-discovery { margin-bottom: 16px; padding: 14px 16px; background: var(--paper); border: 1px solid var(--rule); }
+  .discovery-heading { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: var(--ink-muted); text-transform: uppercase; margin-bottom: 10px; }
+  .discovery-q { margin-bottom: 12px; }
+  .discovery-q:last-child { margin-bottom: 0; }
+  .discovery-q label { display: block; color: var(--ink-soft); font-size: 12.5px; line-height: 1.4; margin-bottom: 5px; }
+  .discovery-q textarea { min-height: 60px; font-size: 13px; background: var(--paper-warm); border-color: var(--rule); }
+
   /* PRIORITIES */
   .priority-card {
     background: var(--paper-warm);
@@ -628,16 +635,16 @@ const practices = {
     closingLine1: "See where your cloud, SaaS, and AI spend goes.",
     closingLine2: "And who owns the decisions behind it.",
     domains: [
-      { area: "Cross-Domain", name: "FinOps Operating Model & Ownership" },
-      { area: "Cross-Domain", name: "Budgeting & Forecasting" },
-      { area: "Cross-Domain", name: "Supplier Evaluation Process" },
-      { area: "Cross-Domain", name: "Improvement Priorities" },
-      { area: "Cloud", name: "Cloud Cost Visibility & Allocation" },
-      { area: "Cloud", name: "Cloud Cost-Management Practices" },
-      { area: "SaaS & License", name: "SaaS & License Portfolio" },
-      { area: "SaaS & License", name: "SaaS Renewal Readiness" },
-      { area: "AI & Tokens", name: "AI Usage Visibility" },
-      { area: "AI & Tokens", name: "AI Consumption Cost Tracking" }
+      { area: "Cross-Domain", name: "FinOps Operating Model & Ownership", subs: ["Which teams are involved today IT, engineering, finance, procurement, security, application owners, executive leadership?", "Is FinOps viewed primarily as cost reduction, financial governance, business-value enablement, or something else?", "Where do decisions about technology spend happen today: centralized, decentralized, or informally by team?"] },
+      { area: "Cross-Domain", name: "Budgeting & Forecasting", subs: ["Are forecasts based on usage drivers — headcount, workloads, roadmap, transaction volume, adoption, model usage — or mainly prior invoices?", "Who reviews variance between forecast and actual spend?", "Are technology budgets connected to business outcomes, or are they tracked as standalone expense categories?"] },
+      { area: "Cross-Domain", name: "Supplier Evaluation Process", subs: ["Do you have a consistent process for requirements gathering, market scan, supplier comparison, demos, scorecards, and finalist selection?", "Are evaluation criteria agreed up front across IT, finance, procurement, security, and business stakeholders?", "Where does the process typically slow down — requirements, supplier research, pricing comparisons, stakeholder alignment, or contract negotiation?"] },
+      { area: "Cross-Domain", name: "Improvement Priorities", subs: ["Cloud visibility and optimization?", "SaaS/license inventory and renewal control?", "AI token visibility and governance?", "Supplier benchmarking, RFP structure, or ongoing ownership of the process?", "What would make the biggest difference: better data, better process, better tools, better ownership, or outside market intelligence?"] },
+      { area: "Cloud", name: "Cloud Cost Visibility & Allocation", subs: ["Can you see cost by cloud provider, account/subscription, application, environment, business unit, and owner?", "How timely is the data real time, daily, monthly invoice review, or ad hoc?", "Are there areas of Cloud spend that are difficult to explain or allocate?"] },
+      { area: "Cloud", name: "Cloud Cost-Management Practices", subs: ["Do you actively review rightsizing, idle resources, storage tiers, reservations, savings plans, or committed-use discounts?", "Are optimization recommendations tracked through completion, or are they mostly advisory?", "When unexpected spend increases occur, who investigates, who approves action, and who owns the outcome?"] },
+      { area: "SaaS & License", name: "SaaS & License Portfolio", subs: ["Do you have a centralized inventory of applications, owners, license counts, renewal dates, contract terms, and business purpose?", "How do you identify unused licenses, duplicate applications, shadow purchases, or tools that no longer align to business needs?", "Who owns license utilization: IT, procurement, finance, app owners, business leaders, or a shared team?"] },
+      { area: "SaaS & License", name: "SaaS Renewal Readiness", subs: ["Do you review actual usage, active users, adoption, entitlements, and business value before renewal?", "Are renewal dates, notice periods, auto-renewal clauses, price increases, and true-up/down terms visible in advance?", "When negotiating with suppliers, do you have usage evidence and market benchmarks available, or are renewals handled mostly by calendar pressure?"] },
+      { area: "AI & Tokens", name: "AI Usage Visibility", subs: ["Which AI tools, copilots, model providers, coding assistants, or embedded AI features are in use?", "Are purchases coming through procurement, cloud marketplaces, department budgets, developer accounts, or expense cards?", "Can you identify who is using AI, for what business purpose, and under which commercial model?"] },
+      { area: "AI & Tokens", name: "AI Consumption Cost Tracking", subs: ["Can token/API/model spend be viewed by provider, application, user, team, environment, or use case?", "Do you understand the major cost drivers: model choice, prompt size, output length, context window, retries, and agent workflows?", "Are there budget alerts, usage thresholds, or approval controls before AI spend scales?"] }
     ]
   }
 };
@@ -727,6 +734,7 @@ function renderAssessmentInfo(){
 
 function renderDomains(){
   const container = document.getElementById("domains");
+  const escHtml = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   if (!state.assessment) {
     container.innerHTML = '<p style="font-style:italic;color:var(--ink-muted)">Pick an assessment above to load domains.</p>';
     return;
@@ -750,6 +758,7 @@ function renderDomains(){
             <button data-rating="strong" class="${rating==='strong'?'active':''}" onclick="setRating('${d.name.replace(/'/g,"\\'")}', 'strong', ${i})"><span class="dot"></span>Strong</button>
           </div>
         </div>
+        ${(Array.isArray(d.subs) && d.subs.length) ? `<div class="domain-discovery"><div class="discovery-heading">Discovery Questions</div>${d.subs.map((q, si) => `<div class="discovery-q"><label>${escHtml(q)}</label><textarea data-field="sq${si}" data-domain="${d.name}" placeholder="Client response / notes">${saved['sq'+si] ? escHtml(saved['sq'+si]) : ""}</textarea></div>`).join("")}</div>` : ""}
         <div class="domain-body">
           <div>
             <label>What's Working</label>
