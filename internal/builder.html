@@ -1152,6 +1152,62 @@ function buildPpt(config){
     });
   }
 
+  // DISCOVERY NOTES (appendix) — only for assessments that carry sub-questions
+  const discoveryDomains = config.domains
+    .filter(d => Array.isArray(d.subs) && d.subs.length)
+    .map(d => ({
+      area: d.area,
+      name: d.name,
+      qa: d.subs.map((q, si) => ({
+        q,
+        a: (state.domains[d.name] && state.domains[d.name]["sq"+si]) ? state.domains[d.name]["sq"+si] : ""
+      }))
+    }));
+  if (discoveryDomains.length) {
+    const APX_L = MARGIN_X, APX_W = SLIDE_W - 2*MARGIN_X;
+    const APX_TOP = 1.75, APX_BOTTOM = SLIDE_H - 0.85;
+    const estLines = (t, cpl) => Math.max(1, Math.ceil((t ? String(t).length : 0) / cpl));
+    const qH = t => estLines(t, 104) * 0.20 + 0.06;
+    const aH = t => estLines(t, 118) * 0.185 + 0.06;
+    const ENTRY_GAP = 0.14, HEAD_H = 0.5, DOMAIN_GAP = 0.20;
+
+    let s = null;
+    let ay = APX_TOP;
+    function newApxSlide(subtitle){
+      s = pres.addSlide();
+      addPageFrame(s, pageNum++, "Discovery Notes");
+      s.addText("Discovery notes.", { x:APX_L, y:0.85, w:11, h:0.6, fontFace:DISPLAY, fontSize:30, italic:true, color:INK, margin:0 });
+      s.addText(subtitle, { x:APX_L, y:1.42, w:APX_W, h:0.3, fontFace:BODY, fontSize:10, color:INK_MUTED, margin:0 });
+      ay = APX_TOP;
+    }
+    function drawHead(d, cont){
+      if (showAreaEyebrow) {
+        s.addText((d.area||"").toUpperCase(), { x:APX_L, y:ay, w:APX_W, h:0.2, fontFace:BODY, fontSize:8, bold:true, color:INK_MUTED, charSpacing:3, margin:0 });
+      }
+      s.addText(d.name + (cont ? "  (continued)" : ""), { x:APX_L, y:ay+0.18, w:APX_W, h:0.3, fontFace:DISPLAY, fontSize:16, italic:true, color:INK, margin:0 });
+      s.addShape("line", { x:APX_L, y:ay+0.46, w:APX_W, h:0, line:{color:RULE,width:0.5} });
+      ay += HEAD_H;
+    }
+
+    newApxSlide("Client responses captured during discovery. Advisory, and separate from the ratings above.");
+    discoveryDomains.forEach(d => {
+      const firstH = qH(d.qa[0].q) + aH(d.qa[0].a || "x") + ENTRY_GAP;
+      if (ay + HEAD_H + firstH > APX_BOTTOM) newApxSlide("Discovery notes, continued.");
+      drawHead(d, false);
+      d.qa.forEach(item => {
+        const filled = item.a && String(item.a).trim();
+        const ans = filled ? item.a : "[ Not captured ]";
+        const eH = qH(item.q) + aH(ans) + ENTRY_GAP;
+        if (ay + eH > APX_BOTTOM) { newApxSlide("Discovery notes, continued."); drawHead(d, true); }
+        s.addText(item.q, { x:APX_L, y:ay, w:APX_W, h:qH(item.q), fontFace:DISPLAY, fontSize:11, italic:true, color:INK_SOFT, margin:0 });
+        ay += qH(item.q);
+        s.addText(ans, { x:APX_L+0.22, y:ay, w:APX_W-0.22, h:aH(ans), fontFace:BODY, fontSize:10, italic: !filled, color: filled ? INK_SOFT : INK_MUTED, margin:0 });
+        ay += aH(ans) + ENTRY_GAP;
+      });
+      ay += DOMAIN_GAP;
+    });
+  }
+
   // CLOSING
   {
     const s = pres.addSlide();
