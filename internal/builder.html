@@ -710,12 +710,25 @@ function scheduleSave(){
     }
   }, 400);
 }
+function refreshRoadmapLabels(roadmap){
+  const fresh = defaultRoadmap();
+  if (!Array.isArray(roadmap)) return fresh;
+  return fresh.map((card, i) => {
+    const saved = roadmap[i] || {};
+    return {
+      label: card.label,
+      theme: saved.theme || "",
+      workstreams: card.workstreams.map((_, j) => (saved.workstreams && saved.workstreams[j]) || "")
+    };
+  });
+}
 function loadSaved(){
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       const loaded = JSON.parse(raw);
       Object.assign(state, loaded);
+      state.roadmap = refreshRoadmapLabels(loaded.roadmap);
       return true;
     }
   } catch(e) { console.error(e); }
