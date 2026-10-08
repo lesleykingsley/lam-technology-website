@@ -16,8 +16,11 @@
 //   5. keyword    - cold-outreach + casino template phrases (from live samples)
 //   6. mojibake   - broken-encoding artifacts from spam kits
 //   7. company    - Company field is exactly "google" (bot tell)
+//   8. botid      - Vercel BotID basic check classifies the session as a bot
+//                   (fails open: a BotID error is logged and the message continues)
 
 import { Resend } from 'resend';
+import { checkBotId } from 'botid/server';
 
 const TO = process.env.CONTACT_TO || 'info@lamtechnology.com';
 const FROM = process.env.CONTACT_FROM || 'LAM Website <forms@lamtechnology.com>';
@@ -106,6 +109,25 @@ export default async function handler(req, res) {
   // company string still gets through.
   if (company.trim().toLowerCase() === 'google') {
         return silentDrop(res, 'company');
+  }
+
+  // Layer 8 - Vercel BotID, basic check level (must match the contact page).
+  // Runs last so the trial shows what it catches that layers 1-7 miss, and so
+  // only submissions that passed every content layer cost a check. Fails open:
+  // if BotID itself errors (service outage, OIDC disabled) the message goes
+  // through, because a silent drop during an outage would lose real leads.
+  // BOTID_DEV_BYPASS (HUMAN | BAD-BOT | GOOD-BOT) is honored only when
+  // NODE_ENV is not "production", i.e. local tests; deployments ignore it.
+  try {
+        const verification = await checkBotId({
+                advancedOptions: { checkLevel: 'basic', headers: req.headers },
+                developmentOptions: { bypass: process.env.BOTID_DEV_BYPASS },
+        });
+        if (verification.isBot) {
+                return silentDrop(res, 'botid');
+        }
+  } catch (err) {
+        console.error('contact-botid-error:', err && err.message);
   }
 
   if (!name || !email || !message) {
