@@ -71,8 +71,15 @@ export default async function handler(req, res) {
   // Layer 2 - origin allow-list: silently succeed if the request originates
   // off-site. Missing/empty origins pass (some privacy browsers strip the
   // header); the content checks below catch those.
+  // Preview deployments also accept their own deployment and branch URLs so
+  // the form can be tested end to end. VERCEL_ENV is "production" on the live
+  // site, so the production allow-list is unchanged.
   const origin = req.headers.origin || req.headers.referer || '';
-    if (origin && !origin.startsWith('https://lamtechnology.com') && !origin.startsWith('https://www.lamtechnology.com')) {
+  const previewOrigins = process.env.VERCEL_ENV === 'preview'
+        ? [process.env.VERCEL_URL, process.env.VERCEL_BRANCH_URL].filter(Boolean).map((h) => 'https://' + h)
+        : [];
+  const allowedOrigins = ['https://lamtechnology.com', 'https://www.lamtechnology.com', ...previewOrigins];
+    if (origin && !allowedOrigins.some((a) => origin.startsWith(a))) {
           return silentDrop(res, 'origin');
     }
 
