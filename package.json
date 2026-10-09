@@ -2,6 +2,7 @@
     "name": "lam-technology-website",
     "version": "1.0.0",
     "private": true,
+    "type": "module",
     "description": "LAM Technology marketing website with native contact form API.",
     "dependencies": {
         "botid": "1.5.11",
