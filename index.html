@@ -1661,6 +1661,15 @@
 })();
 </script>
 
+<script type="module">
+import { initBotId } from '/assets/js/botid-core.js?v=1';
+initBotId({
+  protect: [
+    { path: '/api/contact', method: 'POST', advancedOptions: { checkLevel: 'basic' } }
+  ]
+});
+</script>
+
 <script>
 (function(){
   var form = document.getElementById('contact-form');
