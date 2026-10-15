@@ -97,8 +97,11 @@ export default async function handler(req, res) {
   }
 
   // Layer 5 - template keyword screen. High-precision phrases taken from
-  // live spam samples: web-design cold outreach + casino/sweepstakes kits.
-  if (/\b(website design|web design|web development services|seo services|search engine optimi[sz]|backlinks?|google ranking|digital marketing|portfolio and pricing|spin to win|last spin|jackpot|casino|start winning|claim your prize)\b/i.test(message)) {
+  // live spam samples: web-design cold outreach + casino/sweepstakes kits +
+  // the fake "ADNOC vendor registration" advance-fee scam (Oct 2026). Plain
+  // "vendor questionnaire" is deliberately NOT listed: real cybersecurity
+  // prospects ask about vendor security questionnaires.
+  if (/\b(website design|web design|web development services|seo services|search engine optimi[sz]|backlinks?|google ranking|digital marketing|portfolio and pricing|spin to win|last spin|jackpot|casino|start winning|claim your prize|contractor partnership registration|vendor\/contractor partnership|vendor questionnaire and eoi)\b/i.test(message)) {
         return silentDrop(res, 'keyword');
   }
 
