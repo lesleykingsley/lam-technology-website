@@ -189,7 +189,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=30">
+<link rel="stylesheet" href="/assets/css/lam-redesign.css?v=31">
 <style>
   /* ===============================================================
      LAM HOMEPAGE — "THE QUIET AUTHORITY, WIRED"
@@ -235,18 +235,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-  }
-
-  /* Paper grain — warmth without noise */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.30;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.07 0 0 0 0 0.05 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    z-index: 1;
   }
 
   /* Drafting grid — used selectively */
@@ -453,7 +441,6 @@
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
     padding: 28px 0;
-    background: var(--paper-warm);
   }
   .hero-strap-inner {
     max-width: 1280px;
@@ -686,7 +673,6 @@
     z-index: 10;
     padding: 128px 0;
     border-top: 1px solid var(--rule);
-    background: var(--paper-warm);
   }
   .engagement::before {
     content: '';
@@ -902,7 +888,7 @@
     position: relative;
     z-index: 10;
     padding: 128px 0;
-    background: var(--paper-warm);
+    border-top: 1px solid var(--rule);
     color: var(--ink);
   }
   .outcomes::before {
