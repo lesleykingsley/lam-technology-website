@@ -2812,6 +2812,18 @@ body.mobile-menu-open {
   overflow: hidden;
 }
 
+/* Nav: six links plus CTA. Tighten spacing, keep labels on one line, and switch to the menu button before the links can overflow. */
+@media (max-width: 1360px) {
+    .nav-links { gap: 22px; }
+    .nav-links a { white-space: nowrap; }
+    .nav-inner { padding-left: 32px; padding-right: 32px; }
+}
+@media (max-width: 1260px) {
+    .nav-links { display: none; }
+    .nav-hamburger { display: block; }
+    a.nav-cta { display: inline-flex; margin: 0; }
+}
+
 @media (max-width: 800px) {
     .nav-inner { padding: 16px 24px; }
     .nav-links { display: none; }
