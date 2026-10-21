@@ -1,4 +1,4 @@
-/* Version: 32 — bump to invalidate browser caches */
+/* Version: 33 — bump to invalidate browser caches */
 /* ============================================================
    LAM Technology — Redesign Brand System
    Source of truth for the new visual system.
@@ -473,7 +473,7 @@ a.nav-cta:hover {
    ============================================================================= */
 
 .article-hero {
-  padding: 96px 0 64px;
+  padding: 64px 0 40px;
   border-bottom: 1px solid var(--rule);
 }
 .article-hero-inner {
@@ -533,7 +533,7 @@ a.nav-cta:hover {
 .article-body {
   max-width: 720px;
   margin: 0 auto;
-  padding: 64px 32px 96px;
+  padding: 48px 32px 64px;
   font-family: var(--body);
   font-size: 19px;
   line-height: 1.7;
@@ -670,7 +670,7 @@ a.nav-cta:hover {
 }
 
 .insights-hero {
-  padding: 96px 0 64px;
+  padding: 64px 0 40px;
   border-bottom: 1px solid var(--rule);
 }
 .insights-hero-inner {
@@ -805,7 +805,7 @@ a.nav-cta:hover {
    ============================================================================= */
 
 .contact-page {
-  padding: 96px 0 96px;
+  padding: 56px 0 72px;
 }
 .contact-page-inner {
   max-width: 1200px;
@@ -814,7 +814,7 @@ a.nav-cta:hover {
 }
 
 .contact-hero {
-  margin-bottom: 80px;
+  margin-bottom: 48px;
   max-width: 720px;
 }
 .contact-eyebrow {
@@ -1043,7 +1043,7 @@ a.nav-cta:hover {
 
 /* Hub page */
 .pa-page {
-  padding: 96px 0 96px;
+  padding: 56px 0 72px;
 }
 .pa-page-inner {
   max-width: 1080px;
@@ -1052,7 +1052,7 @@ a.nav-cta:hover {
 }
 
 .pa-hero {
-  margin-bottom: 96px;
+  margin-bottom: 56px;
   max-width: 800px;
 }
 .pa-eyebrow {
@@ -1091,7 +1091,7 @@ a.nav-cta:hover {
 
 /* Methodology section (Uncover / Operate / Steward) */
 .pa-method {
-  margin: 96px 0;
+  margin: 64px 0;
   padding: 64px 0;
   border-top: 1px solid var(--rule-strong);
   border-bottom: 1px solid var(--rule-strong);
@@ -1156,10 +1156,10 @@ a.nav-cta:hover {
 
 /* The 5 lenses section */
 .pa-lenses {
-  margin-top: 96px;
+  margin-top: 56px;
 }
 .pa-lenses-header {
-  margin-bottom: 64px;
+  margin-bottom: 40px;
   max-width: 720px;
 }
 .pa-lenses-eyebrow {
@@ -1296,7 +1296,7 @@ a.nav-cta:hover {
 
 /* Service page template */
 .svc-page {
-  padding: 96px 0 96px;
+  padding: 56px 0 72px;
 }
 .svc-page-inner {
   max-width: 800px;
@@ -1305,7 +1305,7 @@ a.nav-cta:hover {
 }
 
 .svc-hero {
-  margin-bottom: 80px;
+  margin-bottom: 48px;
 }
 .svc-eyebrow {
   font-family: var(--mono);
@@ -1367,7 +1367,7 @@ a.nav-cta:hover {
 
 /* Pull-quote question (the italic real question) */
 .svc-question {
-  margin: 80px 0;
+  margin: 56px 0;
   padding: 48px 0;
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold);
@@ -1406,7 +1406,7 @@ a.nav-cta:hover {
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin-top: 64px;
+  margin-top: 48px;
   margin-bottom: 24px;
 }
 .svc-body h3 {
@@ -1576,7 +1576,7 @@ a.nav-cta:hover {
    ============================================================================= */
 
 .sc-page {
-  padding: 80px 0 96px;
+  padding: 56px 0 72px;
   background: var(--paper);
 }
 .sc-page-inner {
@@ -2180,10 +2180,10 @@ a.nav-cta:hover {
    PROFESSIONAL SERVICES HUB — engagement model + assessment grid
    ============================================================================= */
 
-.ps-page { padding: 96px 0 96px; }
+.ps-page { padding: 56px 0 72px; }
 .ps-page-inner { max-width: 1080px; margin: 0 auto; padding: 0 56px; }
 
-.ps-hero { margin-bottom: 96px; max-width: 800px; }
+.ps-hero { margin-bottom: 56px; max-width: 800px; }
 
 .ps-phase {
   margin: 56px 0;
@@ -2342,10 +2342,10 @@ a.nav-cta:hover {
    BB DESTINATION PAGE — substantial commercial sales page
    ============================================================================= */
 
-.bb-page { padding: 96px 0 96px; }
+.bb-page { padding: 56px 0 72px; }
 .bb-page-inner { max-width: 800px; margin: 0 auto; padding: 0 32px; }
 
-.bb-hero { margin-bottom: 64px; }
+.bb-hero { margin-bottom: 40px; }
 
 .bb-pullquote {
   margin: 56px 0;
@@ -2407,7 +2407,7 @@ a.nav-cta:hover {
 .bb-personas {
   display: flex;
   flex-direction: column;
-  margin: 64px 0;
+  margin: 44px 0;
 }
 .bb-persona {
   padding: 40px 0;
@@ -2465,7 +2465,7 @@ a.nav-cta:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  margin: 64px 0;
+  margin: 44px 0;
   border-top: 1px solid var(--rule-strong);
 }
 .bb-reason {
@@ -2539,7 +2539,7 @@ a.nav-cta:hover {
 }
 
 .bb-cta-card {
-  margin-top: 96px;
+  margin-top: 56px;
   padding: 48px;
   background: var(--paper-warm);
   border-left: 3px solid var(--gold);
