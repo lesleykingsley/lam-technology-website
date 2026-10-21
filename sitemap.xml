@@ -103,6 +103,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lamtechnology.com/what-clients-say/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://lamtechnology.com/billing-breakthrough/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
