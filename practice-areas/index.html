@@ -177,6 +177,7 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=31">
+  <link rel="stylesheet" href="/assets/css/lens-map.css?v=1">
   <style>
   /* Testimonial pull quote: base .article-pullquote size (up to 40px) is tuned
      for a headline-length line. Page-local; global CSS untouched. */
@@ -186,74 +187,6 @@
     padding: 32px 0;
   }
 
-  /* How the lenses connect: page-local. Brand tokens only; no new colors. */
-  .pam { margin: 72px 0 24px; }
-  .pam-head { max-width: 640px; margin-bottom: 40px; }
-  .pam-title { font-family: var(--display); font-weight: 400; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); margin: 0 0 16px; }
-  .pam-lede { font-size: 17px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
-  .pam-draft { margin: 0 0 28px; padding: 12px 16px; border-left: 2px solid var(--gold); background: var(--paper-warm); font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
-  .pam-body { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: start; }
-  .pam-svg { width: 100%; height: auto; display: block; }
-  .pam-svg .spoke { stroke: var(--rule-strong); stroke-width: 1; stroke-dasharray: 2 5; fill: none; }
-  .pam-svg .link { fill: none; stroke: var(--navy); stroke-linecap: round; opacity: 0.22; transition: opacity .2s ease; }
-  .pam-svg .link.w1 { stroke-width: 1.2; } .pam-svg .link.w2 { stroke-width: 2.2; } .pam-svg .link.w3 { stroke-width: 3.4; }
-  .pam-svg .link.lit { opacity: 0.9; }
-  .pam-svg .link.dim { opacity: 0.06; }
-  .pam-svg .node, .pam-svg .hub { cursor: pointer; transform-box: fill-box; }
-  .pam-svg .node rect { fill: var(--paper); stroke: var(--navy); stroke-width: 1.2; }
-  .pam-svg .node .n1 { fill: var(--navy); font: 600 14px var(--body); text-anchor: middle; }
-  .pam-svg .node .n2 { fill: var(--ink-soft); font: 400 12px var(--body); text-anchor: middle; }
-  .pam-svg .node.sel rect { fill: var(--navy); }
-  .pam-svg .node.sel .n1, .pam-svg .node.sel .n2 { fill: var(--paper); }
-  .pam-svg .node.rel rect { stroke-width: 2.2; }
-  .pam-svg .node.dim { opacity: 0.32; }
-  .pam-svg .hub rect { fill: var(--paper); stroke: var(--gold); stroke-width: 1.6; }
-  .pam-svg .hub .n1 { fill: var(--navy); font: 400 17px var(--display); text-anchor: middle; }
-  .pam-svg .hub .n2 { fill: var(--navy); font: 400 17px var(--display); text-anchor: middle; }
-  .pam-svg .hub.sel .n2 { fill: var(--paper); }
-  .pam-svg .hub.sel rect { fill: var(--navy); }
-  .pam-svg .hub.sel .n1 { fill: var(--paper); }
-  .pam-svg .node:focus-visible rect, .pam-svg .hub:focus-visible rect { outline: 2px solid var(--navy); outline-offset: 3px; }
-  .pam-chips { display: none; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-  .pam-chip { font: 500 14px var(--body); color: var(--navy); background: var(--paper); border: 1px solid var(--navy); border-radius: 6px; padding: 10px 14px; cursor: pointer; text-align: left; min-height: 44px; }
-  .pam-chip[aria-pressed="true"] { background: var(--navy); color: var(--paper); }
-  .pam-panel { border-top: 1px solid var(--rule-strong); padding-top: 28px; min-height: 280px; }
-  .pam-ptitle { font-family: var(--display); font-weight: 400; font-size: 28px; line-height: 1.2; color: var(--ink); margin: 0 0 6px; }
-  .pam-psub { font-size: 14px; color: var(--ink-soft); margin: 0 0 20px; }
-  .pam-pq { font-family: var(--display); font-style: italic; font-size: 20px; line-height: 1.35; color: var(--navy); margin: 0 0 20px; }
-  .pam-ptext { font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 20px; }
-  .pam-ph { font-size: 14px; font-weight: 500; color: var(--ink); margin: 0 0 10px; }
-  .pam-rel { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; }
-  .pam-rel button { font: 500 14px var(--body); color: var(--navy); background: none; border: 1px solid var(--rule-strong); border-radius: 6px; padding: 8px 12px; cursor: pointer; }
-  .pam-rel button:hover { border-color: var(--navy); }
-  .pam-plink { font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
-  @media (max-width: 860px) {
-    .pam-body { grid-template-columns: 1fr; gap: 28px; }
-    .pam-svg { display: none; }
-    .pam-chips { display: flex; }
-    .pam-panel { min-height: 0; }
-  }
-  .pam-svg .ring { fill: none; stroke: var(--rule); stroke-width: 1; stroke-dasharray: 3 7; }
-  .pam-svg .spoke { transition: stroke .25s ease, opacity .25s ease; }
-  .pam-svg .spoke.gold { stroke: var(--gold); stroke-width: 1.6; stroke-dasharray: none; }
-  .pam-svg .link.hov { opacity: 0.55; }
-  .pam-svg .node:hover rect, .pam-svg .hub:hover rect { stroke-width: 2.2; }
-  /* One entrance: rings, spokes and links draw in, then the nodes settle. */
-  .pam-svg .link { stroke-dasharray: 1; stroke-dashoffset: 0; }
-  .pam-svg:not(.in) .link { stroke-dashoffset: 1; }
-  .pam-svg:not(.in) .node, .pam-svg:not(.in) .hub { opacity: 0; transform: translateY(8px); }
-  .pam-svg .link { transition: opacity .2s ease, stroke-dashoffset 1.1s cubic-bezier(.3,.7,.2,1); }
-  .pam-svg .node, .pam-svg .hub { transition: opacity .6s ease, transform .6s cubic-bezier(.3,.7,.2,1); }
-  .pam-svg:not(.in) .spoke, .pam-svg:not(.in) .ring { opacity: 0; }
-  .pam-svg .ring { transition: opacity 1s ease; }
-  .pam-note { font-size: 14px; color: var(--ink-soft); margin: 0 0 20px; }
-  .pam-bb { display: inline-flex; margin: 0 0 20px; font: 500 14px var(--body); color: var(--navy); background: var(--paper); border: 1px solid var(--gold); border-radius: 6px; padding: 8px 12px; cursor: pointer; }
-  .pam-bb:hover { background: var(--paper-warm); }
-  @media (prefers-reduced-motion: reduce) {
-    .pam-svg .link, .pam-svg .node, .pam-svg .hub, .pam-svg .spoke, .pam-svg .ring { transition: none !important; }
-    .pam-svg:not(.in) .link { stroke-dashoffset: 0; } .pam-svg:not(.in) .node, .pam-svg:not(.in) .hub { opacity: 1; transform: none; }
-    .pam-svg:not(.in) .spoke, .pam-svg:not(.in) .ring { opacity: 1; }
-  }
   </style>
 </head>
 <body>
@@ -290,143 +223,6 @@
       </div>
     </section>
 
-    <script>
-    (function () {
-      var DRAFT = false; // Lesley approved shipping the current connections on 10/21; set true to show the review banner
-      var TM = '\u2122';
-      var LENSES = [
-        { id: 'infrastructure', a: 'Infrastructure Insight', n: 'Infrastructure & Cloud', q: 'Is my infrastructure helping the business, or holding it back?', u: '/practice-areas/infrastructure/' },
-        { id: 'cybersecurity', a: 'Vigilance Verification', n: 'Cybersecurity & Resilience', q: 'Am I secure where it matters, or just checking boxes?', u: '/practice-areas/cybersecurity/' },
-        { id: 'msp', a: 'MSP Microscope', n: 'MSP', q: 'Is my MSP managing my environment, or just managing tickets?', u: '/practice-areas/msp/' },
-        { id: 'ai-readiness', a: 'AI Readiness Radar', n: 'AI Readiness', q: 'Are we actually positioned for AI, or just being asked to act like it?', u: '/practice-areas/ai-readiness/' },
-        { id: 'mobility', a: 'Wireless Wisdom', n: 'Mobility & IoT', q: 'What is wireless really costing us, in dollars and in capability?', u: '/practice-areas/mobility/' },
-        { id: 'customer-experience', a: 'Experience Examination', n: 'Customer Experience', q: 'Where is our customer experience actually breaking?', u: '/practice-areas/customer-experience/' }
-      ];
-      // Areas of review from the working taxonomy, with names removed. Each entry lists the lenses
-      // that area reaches. The eight Infrastructure areas also belong to Infrastructure Insight.
-      var AREAS = [
-        ['infrastructure', 'cybersecurity', 'mobility', 'msp'],
-        ['infrastructure', 'cybersecurity', 'msp'],
-        ['infrastructure', 'cybersecurity', 'msp'],
-        ['infrastructure', 'msp', 'mobility', 'customer-experience', 'cybersecurity'],
-        ['infrastructure', 'cybersecurity', 'mobility'],
-        ['infrastructure', 'mobility', 'cybersecurity', 'ai-readiness'],
-        ['infrastructure', 'msp', 'cybersecurity'],
-        ['infrastructure', 'msp', 'ai-readiness'],
-        ['cybersecurity', 'ai-readiness', 'msp'] // cross-cutting area with no single owner
-      ];
-      var W = {};
-      AREAS.forEach(function (set) {
-        for (var i = 0; i < set.length; i++) for (var j = i + 1; j < set.length; j++) {
-          var k = [set[i], set[j]].sort().join('|'); W[k] = (W[k] || 0) + 1;
-        }
-      });
-      function weight(a, b) { return W[[a, b].sort().join('|')] || 0; }
-
-      var NS = 'http://www.w3.org/2000/svg', CX = 340, CY = 300, RX = 255, RY = 215, NW = 176, NH = 58;
-      function el(t, at) { var e = document.createElementNS(NS, t); for (var k in at) e.setAttribute(k, at[k]); return e; }
-      var svg = document.getElementById('pam-svg'), panel = document.getElementById('pam-panel'), chips = document.getElementById('pam-chips');
-      if (!svg || !panel) return;
-      if (DRAFT) document.getElementById('pam-draft').hidden = false;
-
-      var pos = {};
-      LENSES.forEach(function (l, i) {
-        var ang = -Math.PI / 2 + i * 2 * Math.PI / LENSES.length;
-        pos[l.id] = [CX + RX * Math.cos(ang), CY + RY * Math.sin(ang)];
-      });
-
-      var gS = el('g'), gL = el('g'), gN = el('g'); svg.appendChild(el('ellipse', { class: 'ring', cx: CX, cy: CY, rx: RX, ry: RY })); svg.appendChild(el('ellipse', { class: 'ring', cx: CX, cy: CY, rx: RX * 0.5, ry: RY * 0.5 })); svg.appendChild(gS); svg.appendChild(gL); svg.appendChild(gN);
-      var links = [];
-      var spokes = {};
-      LENSES.forEach(function (l) { var p = pos[l.id]; spokes[l.id] = el('path', { class: 'spoke', d: 'M' + CX + ',' + CY + ' L' + p[0] + ',' + p[1] }); gS.appendChild(spokes[l.id]); });
-      for (var i = 0; i < LENSES.length; i++) for (var j = i + 1; j < LENSES.length; j++) {
-        var w = weight(LENSES[i].id, LENSES[j].id); if (!w) continue;
-        var a = pos[LENSES[i].id], b = pos[LENSES[j].id], mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2;
-        var cx = mx * 0.6 + CX * 0.4, cy = my * 0.6 + CY * 0.4;
-        var cls = 'link ' + (w >= 5 ? 'w3' : w >= 3 ? 'w2' : 'w1');
-        var path = el('path', { class: cls, pathLength: '1', style: 'transition-delay:' + (0.25 + links.length * 0.07) + 's', d: 'M' + a[0] + ',' + a[1] + ' Q' + cx + ',' + cy + ' ' + b[0] + ',' + b[1] });
-        gL.appendChild(path); links.push({ a: LENSES[i].id, b: LENSES[j].id, el: path });
-      }
-
-      var nodes = {};
-      function mk(id, x, y, w, h, l1, l2, cls) {
-        var g = el('g', { class: cls, tabindex: '0', role: 'button', 'aria-pressed': 'false', 'aria-label': l1 + (l2 ? ', ' + l2 : '') });
-        g.appendChild(el('rect', { x: x - w / 2, y: y - h / 2, width: w, height: h, rx: 6 }));
-        var t1 = el('text', { x: x, y: l2 ? y - 3 : y + 6, class: 'n1' }); t1.textContent = l1; g.appendChild(t1);
-        if (l2) { var t2 = el('text', { x: x, y: y + 15, class: 'n2' }); t2.textContent = l2; g.appendChild(t2); }
-        g.addEventListener('click', function () { pick(id); });
-        g.addEventListener('mouseenter', function () { preview(id, true); });
-        g.addEventListener('mouseleave', function () { preview(id, false); });
-        g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(id); } });
-        g.style.transitionDelay = (id === 'hub' ? 0.1 : 0.5 + Object.keys(nodes).length * 0.08) + 's'; gN.appendChild(g); nodes[id] = g; return g;
-      }
-      mk('hub', CX, CY, 200, 76, 'Billing Breakthrough' + TM, 'Contract Clarifier' + TM, 'hub');
-      // hub label sits on two lines inside the hub; use display face via CSS class
-      LENSES.forEach(function (l) { var p = pos[l.id]; mk(l.id, p[0], p[1], NW, NH, l.a + TM, l.n, 'node'); });
-
-      LENSES.forEach(function (l) {
-        var b = document.createElement('button'); b.className = 'pam-chip'; b.type = 'button'; b.setAttribute('aria-pressed', 'false');
-        b.dataset.id = l.id; b.textContent = l.a + TM; b.addEventListener('click', function () { pick(l.id); }); chips.appendChild(b);
-      });
-      var hubChip = document.createElement('button'); hubChip.className = 'pam-chip'; hubChip.type = 'button'; hubChip.setAttribute('aria-pressed', 'false');
-      hubChip.dataset.id = 'hub'; hubChip.textContent = 'Billing Breakthrough' + TM + ' + Contract Clarifier' + TM;
-      hubChip.addEventListener('click', function () { pick('hub'); }); chips.insertBefore(hubChip, chips.firstChild);
-
-      function preview(id, on) {
-        if (id === 'hub') return;
-        links.forEach(function (lk) { lk.el.classList.toggle('hov', on && (lk.a === id || lk.b === id)); });
-      }
-      function byId(id) { return LENSES.filter(function (l) { return l.id === id; })[0]; }
-      function pick(id) {
-        var rel = [];
-        if (id !== 'hub' && id !== null) LENSES.forEach(function (l) { if (l.id !== id && weight(id, l.id)) rel.push(l.id); });
-        Object.keys(nodes).forEach(function (k) {
-          var n = nodes[k], on = k === id, isRel = rel.indexOf(k) > -1;
-          n.classList.toggle('sel', on); n.classList.toggle('rel', isRel);
-          n.classList.toggle('dim', id && id !== 'hub' && !on && !isRel);
-          n.setAttribute('aria-pressed', on ? 'true' : 'false');
-        });
-        links.forEach(function (lk) {
-          var lit = id && id !== 'hub' && (lk.a === id || lk.b === id);
-          lk.el.classList.toggle('lit', !!lit); lk.el.classList.toggle('dim', !!(id && id !== 'hub' && !lit));
-        });
-        LENSES.forEach(function (l) { spokes[l.id].classList.toggle('gold', id === 'hub' || id === l.id); });
-        Array.prototype.forEach.call(chips.children, function (c) { c.setAttribute('aria-pressed', c.dataset.id === id ? 'true' : 'false'); });
-        render(id, rel);
-      }
-      function render(id, rel) {
-        var h = '';
-        if (id === 'hub') {
-          h = '<h3 class="pam-ptitle">Billing Breakthrough' + TM + ' and Contract Clarifier' + TM + '</h3>' +
-              '<p class="pam-psub">Where every engagement starts</p>' +
-              '<p class="pam-ptext">What you are paying for, and when you can change it. All six lenses build on this baseline.</p>' +
-              '<p class="pam-ph">Not ready for the full engagement?</p>' +
-              '<p class="pam-ptext" style="margin-bottom: 16px;">The 5-minute Self-Check gives you a free, directional read on whether material savings are sitting in your current bills.</p>' +
-              '<p style="margin: 0 0 24px;"><a class="btn btn-primary" href="/billing-breakthrough/self-check/">Take the 5-minute Self-Check <span class="btn-arrow">&rarr;</span></a></p>' +
-              '<a class="pam-plink" href="/billing-breakthrough/">Explore Billing Breakthrough</a>';
-        } else if (id) {
-          var l = byId(id);
-          h = '<h3 class="pam-ptitle">' + l.a + TM + '</h3><p class="pam-psub">' + l.n + '</p>' +
-              '<p class="pam-pq">\u201C' + l.q + '\u201D</p>' +
-              '<button type="button" class="pam-bb" data-go="hub">Starts with Billing Breakthrough' + TM + ' + Contract Clarifier' + TM + '</button>' +
-              '<p class="pam-ph">Also connects to</p><ul class="pam-rel">' +
-              rel.map(function (r) { return '<li><button type="button" data-go="' + r + '">' + byId(r).a + TM + '</button></li>'; }).join('') + '</ul>' +
-              '<a class="pam-plink" href="' + l.u + '">Explore ' + l.a + TM + '</a>';
-        } else {
-          h = '<h3 class="pam-ptitle">Pick a lens</h3><p class="pam-ptext">Each lens stands on its own. Select one to see where it overlaps with the others.</p>';
-        }
-        panel.innerHTML = h;
-      }
-      panel.addEventListener('click', function (e) { var b = e.target.closest('[data-go]'); if (b) pick(b.dataset.go); });
-      svg.addEventListener('click', function (e) { if (!e.target.closest('.node, .hub')) pick(null); });
-      pick(null);
-      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-      // Entrance delays must not linger, or they would also delay the highlight transitions.
-      function clearDelays() { Object.keys(nodes).forEach(function (k) { nodes[k].style.transitionDelay = ''; }); links.forEach(function (lk) { lk.el.style.transitionDelay = ''; }); }
-      if (reduce || !('IntersectionObserver' in window)) { svg.classList.add('in'); clearDelays(); }
-      else { new IntersectionObserver(function (en, ob) { if (en[0].isIntersecting) { svg.classList.add('in'); ob.disconnect(); setTimeout(clearDelays, 2400); } }, { threshold: 0.25 }).observe(svg); }
-    })();
-    </script>
 
     <section class="pa-lenses">
       <header class="pa-lenses-header">
@@ -523,6 +319,7 @@
 </main>
 
 <div id="lam-footer"></div>
+<script src="/assets/js/lens-map.js?v=1" defer></script>
 
 <script>
 (async () => {

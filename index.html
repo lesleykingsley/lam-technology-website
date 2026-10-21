@@ -190,6 +190,7 @@
 }
 </script>
 <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=31">
+<link rel="stylesheet" href="/assets/css/lens-map.css?v=1">
 <style>
   /* ===============================================================
      LAM HOMEPAGE — "THE QUIET AUTHORITY, WIRED"
@@ -811,9 +812,14 @@
   }
 
   .practices-head {
-    margin-bottom: 80px;
-    max-width: 720px;
+    margin-bottom: 64px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 64px;
+    align-items: start;
   }
+  .practices-head-text { max-width: 560px; }
+  @media (max-width: 960px) { .practices-head { grid-template-columns: 1fr; gap: 40px; } }
   .practices-eyebrow { color: var(--navy); margin-bottom: 24px; }
   .practices-headline {
     font-size: clamp(40px, 4.5vw, 72px);
@@ -1467,13 +1473,23 @@
   <div class="container">
 
     <div class="practices-head">
+      <div class="practices-head-text">
       <div class="section-coord"><span>[04]</span> &nbsp; The Practices</div>
       <div class="label label-rule practices-eyebrow">Where the engagement goes</div>
       <h2 class="display practices-headline">Six practices.<br/>Each with its <em>own assessment.</em></h2>
       <p class="lead practices-lead">
         After Billing Breakthrough, the work goes where you need it. Each practice is led by senior advisors and starts with a signature assessment that meets your team where they are.
       </p>
-      <p style="margin-top: 28px;"><a href="/practice-areas/#lens-map" class="btn btn-ghost">See how the six lenses connect <span class="btn-arrow">&rarr;</span></a></p>
+      </div>
+      <div class="pam pam--compact" id="lens-map" role="region" aria-label="How the six lenses connect">
+        <div class="pam-body">
+          <div>
+            <div class="pam-chips" id="pam-chips"></div>
+            <svg class="pam-svg" id="pam-svg" viewBox="0 0 680 600" role="group" aria-label="Map of the six lenses around Billing Breakthrough and Contract Clarifier"></svg>
+          </div>
+          <div class="pam-panel" id="pam-panel" aria-live="polite"></div>
+        </div>
+      </div>
     </div>
 
     <div class="practice-list">
@@ -1627,6 +1643,7 @@
 
 <!-- ============ FOOTER (injected from /partials/footer-redesign.html) ============ -->
 <div id="lam-footer"></div>
+<script src="/assets/js/lens-map.js?v=1" defer></script>
 
 <script>
 (async () => {
