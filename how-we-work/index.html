@@ -170,6 +170,16 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=29">
+  <style>
+  /* Testimonial pull quotes here run several sentences; the base
+     .article-pullquote size (up to 40px) is tuned for one short line.
+     Page-local; global CSS untouched, so no cache-buster bump. */
+  .ps-page .article-pullquote {
+    font-size: clamp(20px, 2.2vw, 26px);
+    line-height: 1.4;
+    padding: 32px 0;
+  }
+  </style>
 </head>
 <body>
 
