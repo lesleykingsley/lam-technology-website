@@ -70,5 +70,5 @@
 /* Compact variant (Home): single column, map above the panel. */
 .pam--compact { margin: 0; }
 .pam--compact .pam-body { grid-template-columns: 1fr; gap: 20px; }
-.pam--compact .pam-panel { min-height: 300px; padding-top: 20px; }
+.pam--compact .pam-panel { min-height: 230px; padding-top: 20px; }
 .pam--compact .pam-ptitle { font-size: 24px; }
