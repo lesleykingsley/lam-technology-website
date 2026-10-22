@@ -72,3 +72,12 @@
 .pam--compact .pam-body { grid-template-columns: 1fr; gap: 20px; }
 .pam--compact .pam-panel { min-height: 230px; padding-top: 20px; }
 .pam--compact .pam-ptitle { font-size: 24px; }
+
+/* Mini variant: the real map under each page title. Same ring on every screen size. */
+.pam--mini { margin: 0 0 8px; max-width: 460px; }
+.pam--mini .pam-svg { display: block; }
+.pam--mini .pam-svg .node .n1 { font-size: 22px; }
+.pam--mini .pam-svg .hub .n1, .pam--mini .pam-svg .hub .n2 { font-size: 19px; }
+.pam--mini .pam-svg .node { cursor: pointer; }
+.pam--mini .pam-svg .node[aria-current="page"], .pam--mini .pam-svg .hub[aria-current="page"] { cursor: default; }
+.pam-cap { margin: 4px 0 0; font-family: var(--body); font-size: 13px; line-height: 1.5; color: var(--ink-soft); min-height: 21px; }

@@ -188,7 +188,8 @@
   ]
 }
 </script>
-  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=32">
+  <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=33">
+  <link rel="stylesheet" href="/assets/css/lens-map.css?v=6">
   <style>
   /* Infrastructure runs 4-4-3-3 on the default 4-column .svc-coverage.
      Global is-l1 defaults to 3 cols (tuned for Cybersecurity's 3-4-4-4);
@@ -227,6 +228,11 @@
         <p class="svc-lede">A structured review of your network, data center, cloud, and connectivity footprint. Fourteen domains, rated and documented &mdash; surfacing the aging gear, drifting architectures, and unreviewed contracts that are slowly eroding performance and budget.</p>
         <div class="svc-tm">INFRASTRUCTURE INSIGHT&trade;</div>
       </header>
+
+      <div class="pam pam--mini" id="lens-map">
+        <svg class="pam-svg" id="pam-svg" data-mini data-current="infrastructure" viewBox="0 0 680 440" role="group" aria-label="Map of the six lenses around Billing Breakthrough and Contract Clarifier"></svg>
+        <p class="pam-cap" id="pam-cap" aria-live="polite"></p>
+      </div>
 
       <aside class="svc-question">
         <p class="svc-question-text">&ldquo;Is my infrastructure helping the business &mdash; or holding it back?&rdquo;</p>
@@ -354,8 +360,6 @@
 
       <p class="svc-crosslink"><em>Reviewing the MSP running your infrastructure? See our <a href="/practice-areas/msp/">MSP practice &rarr;</a></em></p>
 
-      <p class="svc-bb-note" style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 56px 0 0;">Every LAM engagement starts with <a href="/billing-breakthrough/" style="color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px;">Billing Breakthrough&trade; and Contract Clarifier&trade;</a>, so Infrastructure Insight&trade; begins from a clear view of what you pay for and when you can change it.</p>
-
       <section class="article-cta">
         <div class="article-cta-eyebrow">JUST ASK LAM</div>
         <h2 class="article-cta-headline"><em>Wondering if your infrastructure is helping or holding you back?</em></h2>
@@ -366,6 +370,7 @@
   </main>
 
   <div id="lam-footer"></div>
+<script src="/assets/js/lens-map.js?v=3" defer></script>
 
   <script>
   (async () => {
