@@ -189,7 +189,7 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=32">
-  <link rel="stylesheet" href="/assets/css/lens-nav.css?v=1">
+  <link rel="stylesheet" href="/assets/css/lens-map.css?v=5">
   <style>
   /* MSP coverage map: 4 layers x 3 domains. Scoped 3-column override of the
      shared .svc-coverage component (Cybersecurity runs 3-4-4-4). Global .svc-coverage* rules unchanged. */
@@ -217,7 +217,10 @@
         <div class="svc-tm">MSP MICROSCOPE&trade;</div>
       </header>
 
-      <nav class="lnav" id="lens-nav" data-lens="msp" aria-label="Where this fits among the six lenses"></nav>
+      <div class="pam pam--mini" id="lens-map">
+        <svg class="pam-svg" id="pam-svg" data-mini data-current="msp" viewBox="0 0 680 440" role="group" aria-label="Map of the six lenses around Billing Breakthrough and Contract Clarifier"></svg>
+        <p class="pam-cap" id="pam-cap" aria-live="polite"></p>
+      </div>
 
       <aside class="svc-question">
         <p class="svc-question-text">&ldquo;Is my MSP managing my environment, or just managing tickets?&rdquo;</p>
@@ -343,7 +346,7 @@
   </main>
 
   <div id="lam-footer"></div>
-<script src="/assets/js/lens-nav.js?v=1" defer></script>
+<script src="/assets/js/lens-map.js?v=3" defer></script>
 
   <script>
   (async () => {

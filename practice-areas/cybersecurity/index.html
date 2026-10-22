@@ -189,7 +189,7 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=32">
-  <link rel="stylesheet" href="/assets/css/lens-nav.css?v=1">
+  <link rel="stylesheet" href="/assets/css/lens-map.css?v=5">
   <style>
   /* Testimonial pull quote: base .article-pullquote size (up to 40px) is tuned
      for a headline-length line. Page-local; global CSS untouched. */
@@ -218,7 +218,10 @@
         <div class="svc-tm">VIGILANCE VERIFICATION&trade;</div>
       </header>
 
-      <nav class="lnav" id="lens-nav" data-lens="cybersecurity" aria-label="Where this fits among the six lenses"></nav>
+      <div class="pam pam--mini" id="lens-map">
+        <svg class="pam-svg" id="pam-svg" data-mini data-current="cybersecurity" viewBox="0 0 680 440" role="group" aria-label="Map of the six lenses around Billing Breakthrough and Contract Clarifier"></svg>
+        <p class="pam-cap" id="pam-cap" aria-live="polite"></p>
+      </div>
 
       <aside class="svc-question">
         <p class="svc-question-text">&ldquo;Am I secure where it matters, or just checking boxes?&rdquo;</p>
@@ -354,7 +357,7 @@
   </main>
 
   <div id="lam-footer"></div>
-<script src="/assets/js/lens-nav.js?v=1" defer></script>
+<script src="/assets/js/lens-map.js?v=3" defer></script>
 
   <script>
   (async () => {
