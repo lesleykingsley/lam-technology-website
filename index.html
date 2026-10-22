@@ -486,7 +486,7 @@
   @media (prefers-reduced-motion: reduce) {
     .hero-strap-line.strap-ready .sw-time, .hero-strap-line.strap-ready .sw-cost { transform: none; }
     .hero-strap-line.strap-ready .sw-risk::after { transform: none; opacity: 0; }
-    .hero-strap-line.strap-ready.in .sw, .hero-strap-line.strap-ready.in .sd { transition: opacity .8s ease; }
+    .hero-strap-line.strap-ready.in .sw, .hero-strap-line.strap-ready.in .sd { transition-property: opacity; transition-duration: .8s; }
     .hero-strap-line.strap-ready.in .sw-risk::after { opacity: 1; transition: opacity .8s ease 1.5s; }
   }
   .hero-strap-loc {
