@@ -459,7 +459,33 @@
     font-size: 22px;
     color: var(--navy);
   }
-  .hero-strap-line span { color: var(--gold); }
+  .hero-strap-line .sd { color: var(--gold); }
+  /* Strapline motion: each phrase moves the way it reads. Once, on first view. */
+  .hero-strap-line .sw { display: inline-block; position: relative; }
+  .hero-strap-line.strap-ready .sw, .hero-strap-line.strap-ready .sd { opacity: 0; }
+  .hero-strap-line.strap-ready .sw-time { transform: translateX(28px); }
+  .hero-strap-line.strap-ready .sw-cost { transform: translateY(-16px); }
+  .hero-strap-line.strap-ready .sw-risk::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+  }
+  .hero-strap-line.strap-ready.in .sw,
+  .hero-strap-line.strap-ready.in .sd {
+    opacity: 1; transform: none;
+    transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+  }
+  .hero-strap-line.strap-ready.in .sw-time { transition-delay: 0s; }
+  .hero-strap-line.strap-ready.in .sd:nth-of-type(1) { transition-delay: .35s; }
+  .hero-strap-line.strap-ready.in .sw-cost { transition-delay: .45s; }
+  .hero-strap-line.strap-ready.in .sd:nth-of-type(2) { transition-delay: .8s; }
+  .hero-strap-line.strap-ready.in .sw-risk { transition-delay: .9s; }
+  .hero-strap-line.strap-ready.in .sw-risk::after {
+    transform: scaleX(1); transition: transform .9s ease 1.5s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-strap-line.strap-ready .sw, .hero-strap-line.strap-ready .sd { opacity: 1; transform: none; }
+    .hero-strap-line.strap-ready .sw-risk::after { transform: scaleX(1); }
+  }
   .hero-strap-loc {
     font-size: 11px;
     letter-spacing: 0.18em;
@@ -1260,7 +1286,7 @@
 
   <div class="hero-strap reveal r9">
     <div class="hero-strap-inner">
-      <div class="hero-strap-line">Time back. <span>·</span> Cost down. <span>·</span> Risk managed.</div>
+      <div class="hero-strap-line" id="strap-line"><span class="sw sw-time">Time back.</span> <span class="sd">·</span> <span class="sw sw-cost">Cost down.</span> <span class="sd">·</span> <span class="sw sw-risk">Risk managed.</span></div>
       <div class="hero-strap-loc">Built in Fort Worth. Trusted across the country.</div>
     </div>
   </div>
@@ -1643,6 +1669,15 @@
 <!-- ============ FOOTER (injected from /partials/footer-redesign.html) ============ -->
 <div id="lam-footer"></div>
 <script src="/assets/js/lens-map.js?v=1" defer></script>
+<script>
+(function(){
+  var el=document.getElementById('strap-line'); if(!el) return;
+  el.classList.add('strap-ready');
+  if(!('IntersectionObserver' in window)){ el.classList.add('in'); return; }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ el.classList.add('in'); io.disconnect(); } }); },{threshold:.6});
+  io.observe(el);
+})();
+</script>
 
 <script>
 (async () => {
