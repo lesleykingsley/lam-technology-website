@@ -190,7 +190,7 @@
 }
 </script>
 <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=32">
-<link rel="stylesheet" href="/assets/css/lens-map.css?v=1">
+<link rel="stylesheet" href="/assets/css/lens-map.css?v=3">
 <style>
   /* ===============================================================
      LAM HOMEPAGE — "THE QUIET AUTHORITY, WIRED"
@@ -313,7 +313,7 @@
   .hero {
     position: relative;
     z-index: 10;
-    padding: 96px 0 0;
+    padding: 64px 0 0;
     overflow: hidden;
   }
 
@@ -325,7 +325,6 @@
     grid-template-columns: 1.3fr 1fr;
     gap: 96px;
     align-items: end;
-    min-height: 70vh;
     position: relative;
   }
 
@@ -460,7 +459,33 @@
     font-size: 22px;
     color: var(--navy);
   }
-  .hero-strap-line span { color: var(--gold); }
+  .hero-strap-line .sd { color: var(--gold); }
+  /* Strapline motion: each phrase moves the way it reads. Once, on first view. */
+  .hero-strap-line .sw { display: inline-block; position: relative; }
+  .hero-strap-line.strap-ready .sw, .hero-strap-line.strap-ready .sd { opacity: 0; }
+  .hero-strap-line.strap-ready .sw-time { transform: translateX(28px); }
+  .hero-strap-line.strap-ready .sw-cost { transform: translateY(-16px); }
+  .hero-strap-line.strap-ready .sw-risk::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+  }
+  .hero-strap-line.strap-ready.in .sw,
+  .hero-strap-line.strap-ready.in .sd {
+    opacity: 1; transform: none;
+    transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+  }
+  .hero-strap-line.strap-ready.in .sw-time { transition-delay: 0s; }
+  .hero-strap-line.strap-ready.in .sd:nth-of-type(1) { transition-delay: .35s; }
+  .hero-strap-line.strap-ready.in .sw-cost { transition-delay: .45s; }
+  .hero-strap-line.strap-ready.in .sd:nth-of-type(2) { transition-delay: .8s; }
+  .hero-strap-line.strap-ready.in .sw-risk { transition-delay: .9s; }
+  .hero-strap-line.strap-ready.in .sw-risk::after {
+    transform: scaleX(1); transition: transform .9s ease 1.5s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-strap-line.strap-ready .sw, .hero-strap-line.strap-ready .sd { opacity: 1; transform: none; }
+    .hero-strap-line.strap-ready .sw-risk::after { transform: scaleX(1); }
+  }
   .hero-strap-loc {
     font-size: 11px;
     letter-spacing: 0.18em;
@@ -473,7 +498,7 @@
   .bb {
     position: relative;
     z-index: 10;
-    padding: 128px 0;
+    padding: 40px 0;
   }
   .bb::before {
     content: '';
@@ -672,7 +697,7 @@
   .engagement {
     position: relative;
     z-index: 10;
-    padding: 128px 0;
+    padding: 40px 0;
     border-top: 1px solid var(--rule);
   }
   .engagement::before {
@@ -693,7 +718,7 @@
     grid-template-columns: auto 1fr;
     gap: 64px;
     align-items: end;
-    margin-bottom: 88px;
+    margin-bottom: 40px;
     position: relative;
   }
 
@@ -715,7 +740,7 @@
     position: relative;
     background: var(--paper);
     border: 1px solid var(--rule);
-    padding: 64px 48px 56px;
+    padding: 40px 48px 32px;
     overflow: hidden;
   }
   .schematic::before {
@@ -808,11 +833,11 @@
   .practices {
     position: relative;
     z-index: 10;
-    padding: 128px 0;
+    padding: 40px 0;
   }
 
   .practices-head {
-    margin-bottom: 64px;
+    margin-bottom: 32px;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
     gap: 64px;
@@ -893,7 +918,7 @@
   .outcomes {
     position: relative;
     z-index: 10;
-    padding: 128px 0;
+    padding: 40px 0;
     border-top: 1px solid var(--rule);
     color: var(--ink);
   }
@@ -911,7 +936,7 @@
   }
 
   .outcomes-head {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     max-width: 800px;
   }
   .outcomes-eyebrow { color: var(--gold); margin-bottom: 24px; }
@@ -988,8 +1013,8 @@
   }
 
   .logo-wall {
-    margin-top: 96px;
-    padding-top: 48px;
+    margin-top: 40px;
+    padding-top: 32px;
     border-top: 1px solid rgba(212, 168, 67, 0.25);
     text-align: center;
     position: relative;
@@ -1030,7 +1055,7 @@
   .cta {
     position: relative;
     z-index: 10;
-    padding: 144px 0;
+    padding: 64px 0;
   }
 
   .cta-inner {
@@ -1261,7 +1286,7 @@
 
   <div class="hero-strap reveal r9">
     <div class="hero-strap-inner">
-      <div class="hero-strap-line">Time back. <span>·</span> Cost down. <span>·</span> Risk managed.</div>
+      <div class="hero-strap-line" id="strap-line"><span class="sw sw-time">Time back.</span> <span class="sd">·</span> <span class="sw sw-cost">Cost down.</span> <span class="sd">·</span> <span class="sw sw-risk">Risk managed.</span></div>
       <div class="hero-strap-loc">Built in Fort Worth. Trusted across the country.</div>
     </div>
   </div>
@@ -1644,6 +1669,15 @@
 <!-- ============ FOOTER (injected from /partials/footer-redesign.html) ============ -->
 <div id="lam-footer"></div>
 <script src="/assets/js/lens-map.js?v=1" defer></script>
+<script>
+(function(){
+  var el=document.getElementById('strap-line'); if(!el) return;
+  el.classList.add('strap-ready');
+  if(!('IntersectionObserver' in window)){ el.classList.add('in'); return; }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ el.classList.add('in'); io.disconnect(); } }); },{threshold:.6});
+  io.observe(el);
+})();
+</script>
 
 <script>
 (async () => {
