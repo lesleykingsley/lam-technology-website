@@ -190,7 +190,7 @@
 }
 </script>
 <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=33">
-<link rel="stylesheet" href="/assets/css/lens-map.css?v=6">
+<link rel="stylesheet" href="/assets/css/lens-map.css?v=7">
 <style>
   /* ===============================================================
      LAM HOMEPAGE — "THE QUIET AUTHORITY, WIRED"
@@ -482,9 +482,12 @@
   .hero-strap-line.strap-ready.in .sw-risk::after {
     transform: scaleX(1); transition: transform .9s ease 1.5s;
   }
+  /* Reduce Motion: no sliding or drawing, but the phrases still arrive one after another as a soft fade. */
   @media (prefers-reduced-motion: reduce) {
-    .hero-strap-line.strap-ready .sw, .hero-strap-line.strap-ready .sd { opacity: 1; transform: none; }
-    .hero-strap-line.strap-ready .sw-risk::after { transform: scaleX(1); }
+    .hero-strap-line.strap-ready .sw-time, .hero-strap-line.strap-ready .sw-cost { transform: none; }
+    .hero-strap-line.strap-ready .sw-risk::after { transform: none; opacity: 0; }
+    .hero-strap-line.strap-ready.in .sw, .hero-strap-line.strap-ready.in .sd { transition-property: opacity; transition-duration: .8s; }
+    .hero-strap-line.strap-ready.in .sw-risk::after { opacity: 1; transition: opacity .8s ease 1.5s; }
   }
   .hero-strap-loc {
     font-size: 11px;
@@ -1668,7 +1671,7 @@
 
 <!-- ============ FOOTER (injected from /partials/footer-redesign.html) ============ -->
 <div id="lam-footer"></div>
-<script src="/assets/js/lens-map.js?v=3" defer></script>
+<script src="/assets/js/lens-map.js?v=4" defer></script>
 <script>
 (function(){
   var el=document.getElementById('strap-line'); if(!el) return;
