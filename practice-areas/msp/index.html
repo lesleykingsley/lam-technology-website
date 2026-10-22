@@ -189,6 +189,7 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=32">
+  <link rel="stylesheet" href="/assets/css/lens-nav.css?v=1">
   <style>
   /* MSP coverage map: 4 layers x 3 domains. Scoped 3-column override of the
      shared .svc-coverage component (Cybersecurity runs 3-4-4-4). Global .svc-coverage* rules unchanged. */
@@ -215,6 +216,8 @@
         <p class="svc-lede">A 12-domain examination of your managed services provider &mdash; covering service desk, incident handling, end-user support, infrastructure, security, and the renewable accountability surfaces that quietly drift over time. Built for environments where the MSP relationship has shifted from partnership to transaction.</p>
         <div class="svc-tm">MSP MICROSCOPE&trade;</div>
       </header>
+
+      <nav class="lnav" id="lens-nav" data-lens="msp" aria-label="Where this fits among the six lenses"></nav>
 
       <aside class="svc-question">
         <p class="svc-question-text">&ldquo;Is my MSP managing my environment, or just managing tickets?&rdquo;</p>
@@ -330,8 +333,6 @@
         <a href="/practice-areas/msp/self-check/" class="btn btn-primary">TAKE THE MSP SELF-CHECK <span class="btn-arrow">&rarr;</span></a>
       </section>
 
-      <p class="svc-bb-note" style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 56px 0 0;">Every LAM engagement starts with <a href="/billing-breakthrough/" style="color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px;">Billing Breakthrough&trade; and Contract Clarifier&trade;</a>, so MSP Microscope&trade; begins from a clear view of what you pay for and when you can change it.</p>
-
       <section class="article-cta">
         <div class="article-cta-eyebrow">JUST ASK LAM</div>
         <h2 class="article-cta-headline"><em>Curious whether your MSP is actually managing your environment?</em></h2>
@@ -342,6 +343,7 @@
   </main>
 
   <div id="lam-footer"></div>
+<script src="/assets/js/lens-nav.js?v=1" defer></script>
 
   <script>
   (async () => {

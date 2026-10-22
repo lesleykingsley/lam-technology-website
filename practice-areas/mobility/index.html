@@ -189,6 +189,7 @@
 }
 </script>
   <link rel="stylesheet" href="/assets/css/lam-redesign.css?v=32">
+  <link rel="stylesheet" href="/assets/css/lens-nav.css?v=1">
   <style>
   /* Mobility coverage map: 4 layers x 3 domains. Scoped 3-column override of the
      shared .svc-coverage component (Cybersecurity runs 3-4-4-4). Global .svc-coverage* rules unchanged. */
@@ -215,6 +216,8 @@
         <p class="svc-lede">A 12-domain evaluation of your wireless footprint &mdash; covering carriers, devices, lifecycle, and operational risk. Built for environments where mobility decisions have piled up across acquisitions, locations, and supplier changes.</p>
         <div class="svc-tm">WIRELESS WISDOM&trade;</div>
       </header>
+
+      <nav class="lnav" id="lens-nav" data-lens="mobility" aria-label="Where this fits among the six lenses"></nav>
 
       <aside class="svc-question">
         <p class="svc-question-text">&ldquo;What is wireless really costing us &mdash; in dollars and in capability?&rdquo;</p>
@@ -323,8 +326,6 @@
         <p>Wireless program assessment with 12-month roadmap. Carrier supplier validation and contract renegotiation. MDM / EMM selection and lifecycle redesign. Connected-asset sourcing and connectivity strategy.</p>
       </div>
 
-      <p class="svc-bb-note" style="font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 56px 0 0;">Every LAM engagement starts with <a href="/billing-breakthrough/" style="color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px;">Billing Breakthrough&trade; and Contract Clarifier&trade;</a>, so Wireless Wisdom&trade; begins from a clear view of what you pay for and when you can change it.</p>
-
       <section class="article-cta">
         <div class="article-cta-eyebrow">JUST ASK LAM</div>
         <h2 class="article-cta-headline"><em>Curious what your wireless program is really costing you?</em></h2>
@@ -335,6 +336,7 @@
   </main>
 
   <div id="lam-footer"></div>
+<script src="/assets/js/lens-nav.js?v=1" defer></script>
 
   <script>
   (async () => {
