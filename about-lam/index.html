@@ -215,6 +215,31 @@
       .lam-section--awards { padding: 56px 24px 72px; }
       .lam-cta { padding: 72px 24px 88px; }
     }
+
+    .lam-team { padding: 72px 56px 24px; border-top: 1px solid var(--rule); background: var(--paper-warm, #F4F0E7); }
+    .lam-team-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 72px; align-items: center; }
+    .lam-team-photo { margin: 0; }
+    .lam-team-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 70%; }
+    .lam-team-photo figcaption { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--gold); font-size: 14px; line-height: 1.4; color: var(--ink-muted); }
+    .lam-team-headline { font-family: var(--display); font-weight: 500; font-size: clamp(40px, 4.6vw, 72px); line-height: 1; letter-spacing: -0.025em; color: var(--navy); margin: 0 0 24px; }
+    .lam-team-copy { font-size: 18px; line-height: 1.55; color: var(--ink-soft); max-width: 520px; margin: 0; }
+    .lam-leaders { padding: 56px 56px 96px; background: var(--paper-warm, #F4F0E7); }
+    .lam-leaders-inner { max-width: 1200px; margin: 0 auto; }
+    .lam-leaders-headline { font-family: var(--display); font-weight: 500; font-size: clamp(32px, 3.4vw, 52px); line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 40px; }
+    .lam-leaders-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; }
+    .lam-leader img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; background: #fff; }
+    .lam-leader-name { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.15; color: var(--navy); margin: 16px 0 4px; }
+    .lam-leader-title { font-size: 15px; line-height: 1.35; color: var(--ink-soft); margin: 0 0 10px; }
+    .lam-leader-link { display: inline-block; font-size: 14px; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
+    .lam-leader-link:hover, .lam-leader-link:focus-visible { color: var(--navy-deep, #14224A); border-bottom-width: 2px; }
+    @media (max-width: 1000px) { .lam-leaders-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px) {
+      .lam-team { padding: 48px 24px 16px; }
+      .lam-team-inner { grid-template-columns: 1fr; gap: 28px; }
+      .lam-team-photo { max-width: 460px; }
+      .lam-leaders { padding: 40px 24px 72px; }
+    }
+    @media (max-width: 560px) { .lam-leaders-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; } }
   </style>
 </head>
 <body class="lam-rd lam-rd-body">
@@ -267,6 +292,57 @@
       <div class="lam-where-label">Neutral</div>
       <p class="lam-where-text">We carry every relevant supplier and we charge for our own work. That combination is what keeps the recommendation honest.</p>
     </div>
+  </div>
+</section>
+
+<section class="lam-team" aria-labelledby="team-h">
+  <div class="lam-team-inner">
+    <figure class="lam-team-photo">
+      <img src="/assets/team/team-20th-dinner.jpg" srcset="/assets/team/team-20th-dinner-640.jpg 640w, /assets/team/team-20th-dinner.jpg 1000w" sizes="(max-width: 900px) 90vw, 440px" width="1000" height="1333" loading="lazy" alt="The LAM Technology team seated along a long table outdoors at the 20th anniversary dinner, string lights overhead.">
+      <figcaption>Celebrating 20 years at our team dinner. Fort Worth, TX.</figcaption>
+    </figure>
+    <div>
+      <h2 id="team-h" class="lam-team-headline">The people behind the work.</h2>
+      <p class="lam-team-copy">LAM was founded in 2006 by Link Moore and Jim Suss. Twenty years on, the whole team sat down together in October to mark the anniversary.</p>
+    </div>
+  </div>
+</section>
+
+<section class="lam-leaders" aria-labelledby="leaders-h">
+  <div class="lam-leaders-inner">
+    <h2 id="leaders-h" class="lam-leaders-headline">Leadership</h2>
+    <ul class="lam-leaders-grid">
+      <li class="lam-leader">
+        <img src="/assets/team/link-moore.webp" width="300" height="300" loading="lazy" alt="Portrait of Link Moore">
+        <h3 class="lam-leader-name">Link Moore</h3>
+        <p class="lam-leader-title">Chief Executive Officer</p>
+        <a class="lam-leader-link" href="https://www.linkedin.com/in/linkmoore/" target="_blank" rel="noopener noreferrer" aria-label="Link Moore on LinkedIn (opens in a new tab)">LinkedIn</a>
+      </li>
+      <li class="lam-leader">
+        <img src="/assets/team/jim-suss.webp" width="300" height="300" loading="lazy" alt="Portrait of Jim Suss">
+        <h3 class="lam-leader-name">Jim Suss</h3>
+        <p class="lam-leader-title">President</p>
+        <a class="lam-leader-link" href="https://www.linkedin.com/in/jim-suss-92187b6/" target="_blank" rel="noopener noreferrer" aria-label="Jim Suss on LinkedIn (opens in a new tab)">LinkedIn</a>
+      </li>
+      <li class="lam-leader">
+        <img src="/assets/team/lesley-kingsley-sq.jpg" width="300" height="300" loading="lazy" alt="Portrait of Lesley Kingsley">
+        <h3 class="lam-leader-name">Lesley Kingsley</h3>
+        <p class="lam-leader-title">Chief Operating Officer</p>
+        <a class="lam-leader-link" href="https://www.linkedin.com/in/lesleykingsley/" target="_blank" rel="noopener noreferrer" aria-label="Lesley Kingsley on LinkedIn (opens in a new tab)">LinkedIn</a>
+      </li>
+      <li class="lam-leader">
+        <img src="/assets/team/beckie-russell-sq.jpg" width="300" height="300" loading="lazy" alt="Portrait of Beckie Russell">
+        <h3 class="lam-leader-name">Beckie Russell</h3>
+        <p class="lam-leader-title">Chief Experience Officer</p>
+        <a class="lam-leader-link" href="https://www.linkedin.com/in/beckie-russell/" target="_blank" rel="noopener noreferrer" aria-label="Beckie Russell on LinkedIn (opens in a new tab)">LinkedIn</a>
+      </li>
+      <li class="lam-leader">
+        <img src="/assets/team/jeff-lovejoy.webp" width="300" height="300" loading="lazy" alt="Portrait of Jeff Lovejoy">
+        <h3 class="lam-leader-name">Jeff Lovejoy</h3>
+        <p class="lam-leader-title">Chief Relationship Officer</p>
+        <a class="lam-leader-link" href="https://www.linkedin.com/in/jelovejoy/" target="_blank" rel="noopener noreferrer" aria-label="Jeff Lovejoy on LinkedIn (opens in a new tab)">LinkedIn</a>
+      </li>
+    </ul>
   </div>
 </section>
 
