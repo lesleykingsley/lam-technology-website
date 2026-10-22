@@ -793,6 +793,47 @@
   .schematic-svg .flow-node circle { transition: stroke 0.3s ease, fill 0.3s ease; }
   .schematic-svg .flow-node:hover circle[r="42"] { stroke: #d4a843; }
 
+
+  /* Flow motion: plays once when the diagram scrolls into view */
+  .schematic.flow-ready .flow-node text { opacity: 0; transition: opacity .5s ease; }
+  .schematic.flow-ready .fl-ring { transition: fill .6s ease; }
+  .schematic.flow-ready .fl-dot { transform-box: fill-box; transform-origin: center; transform: scale(.2); opacity: 0; transition: transform .6s cubic-bezier(.2,.9,.3,1.4), opacity .3s ease; }
+  .schematic.flow-ready .fl-line { transform-box: fill-box; transform-origin: 0 50%; transform: scaleX(0); transition: transform .65s ease-in-out; }
+  .schematic.flow-ready .fl-head { opacity: 0; transition: opacity .2s ease; }
+  .schematic.flow-ready .fl-cap { opacity: 0; transition: opacity .8s ease; }
+  .schematic.flow-ready .fl-mask { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .schematic.flow-ready .fl-li { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
+
+  .schematic.flow-play .flow-node text { opacity: 1; }
+  .schematic.flow-play .fl-ring { fill: #f6ecd0; }
+  .schematic.flow-play .fl-dot { transform: scale(1); opacity: 1; }
+  .schematic.flow-play .fl-line { transform: scaleX(1); }
+  .schematic.flow-play .fl-head { opacity: 1; }
+  .schematic.flow-play .fl-cap { opacity: 1; }
+  .schematic.flow-play .fl-mask { stroke-dashoffset: 0; transition: stroke-dashoffset 1.5s ease-in-out 3.4s; }
+  .schematic.flow-play .fl-li { opacity: 1; transform: none; }
+  .schematic.flow-play .fn1 text, .schematic.flow-play .fn1 .fl-ring, .schematic.flow-play .fn1 .fl-dot { transition-delay: 0s; }
+  .schematic.flow-play .fn2 text, .schematic.flow-play .fn2 .fl-ring, .schematic.flow-play .fn2 .fl-dot { transition-delay: 1s; }
+  .schematic.flow-play .fn3 text, .schematic.flow-play .fn3 .fl-ring, .schematic.flow-play .fn3 .fl-dot { transition-delay: 2s; }
+  .schematic.flow-play .fn4 text, .schematic.flow-play .fn4 .fl-ring, .schematic.flow-play .fn4 .fl-dot { transition-delay: 3s; }
+  .schematic.flow-play .fl1 { transition-delay: .35s; } .schematic.flow-play .fh1 { transition-delay: 1s; }
+  .schematic.flow-play .fl2 { transition-delay: 1.35s; } .schematic.flow-play .fh2 { transition-delay: 2s; }
+  .schematic.flow-play .fl3 { transition-delay: 2.35s; } .schematic.flow-play .fh3 { transition-delay: 3s; }
+  .schematic.flow-play .fl-cap { transition-delay: 4.2s; }
+  .schematic.flow-play .fl-li:nth-child(1) { transition-delay: 0s; }
+  .schematic.flow-play .fl-li:nth-child(2) { transition-delay: .35s; }
+  .schematic.flow-play .fl-li:nth-child(3) { transition-delay: .7s; }
+  .schematic.flow-play .fl-li:nth-child(4) { transition-delay: 1.05s; }
+  @media (prefers-reduced-motion: reduce) {
+    .schematic.flow-ready .fl-line { transform: none; opacity: 0; transition: opacity .6s ease; }
+    .schematic.flow-play .fl-line { opacity: 1; }
+    .schematic.flow-ready .fl-dot { transform: none; }
+    .schematic.flow-ready .fl-mask { stroke-dasharray: none; stroke-dashoffset: 0; }
+    .schematic.flow-ready .fl-li { transform: none; }
+    .schematic.flow-ready .schematic-svg path[stroke-dasharray] { opacity: 0; transition: opacity .8s ease 3.4s; }
+    .schematic.flow-play .schematic-svg path[stroke-dasharray] { opacity: .6; }
+  }
+
   .schematic-foot {
     margin-top: 36px;
     padding-top: 24px;
@@ -1396,51 +1437,55 @@
           <marker id="arrowGold" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
             <path d="M0,0 L8,4 L0,8 z" fill="#d4a843"/>
           </marker>
+        <mask id="loopMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="280"><path class="fl-mask" pathLength="1" d="M 1020 100 C 1020 30, 120 30, 120 100" fill="none" stroke="#fff" stroke-width="10"/></mask>
         </defs>
 
         <!-- Horizontal main line through middle -->
         <line x1="80" y1="140" x2="1120" y2="140" stroke="#d4a843" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
 
         <!-- Stage 1 — Insight -->
-        <g class="flow-node">
-          <circle cx="120" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
-          <circle cx="120" cy="140" r="6" fill="#d4a843"/>
+        <g class="flow-node fn1">
+          <circle class="fl-ring" cx="120" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
+          <circle class="fl-dot" cx="120" cy="140" r="6" fill="#d4a843"/>
           <text x="120" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Insight</text>
           <text x="120" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#b8922e" letter-spacing="1">[ 01 ]</text>
           <text x="120" y="210" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6f7684" letter-spacing="1">ASSESS</text>
           <text x="120" y="225" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6f7684" letter-spacing="1">DISCOVER</text>
         </g>
 
-        <line x1="170" y1="140" x2="378" y2="140" stroke="#1B2D5B" stroke-width="1" marker-end="url(#arrow)"/>
+        <line class="fl-line fl1" x1="170" y1="140" x2="370" y2="140" stroke="#1B2D5B" stroke-width="1"/>
+        <path class="fl-head fh1" d="M370,135 L378,140 L370,145 z" fill="#1B2D5B"/>
 
         <!-- Stage 2 — Strategy -->
-        <g class="flow-node">
-          <circle cx="420" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
-          <circle cx="420" cy="140" r="6" fill="#d4a843"/>
+        <g class="flow-node fn2">
+          <circle class="fl-ring" cx="420" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
+          <circle class="fl-dot" cx="420" cy="140" r="6" fill="#d4a843"/>
           <text x="420" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Strategy</text>
           <text x="420" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#b8922e" letter-spacing="1">[ 02 ]</text>
           <text x="420" y="210" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6f7684" letter-spacing="1">ROADMAP</text>
           <text x="420" y="225" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6f7684" letter-spacing="1">SOURCE</text>
         </g>
 
-        <line x1="470" y1="140" x2="678" y2="140" stroke="#1B2D5B" stroke-width="1" marker-end="url(#arrow)"/>
+        <line class="fl-line fl2" x1="470" y1="140" x2="670" y2="140" stroke="#1B2D5B" stroke-width="1"/>
+        <path class="fl-head fh2" d="M670,135 L678,140 L670,145 z" fill="#1B2D5B"/>
 
         <!-- Stage 3 — Execution -->
-        <g class="flow-node">
-          <circle cx="720" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
-          <circle cx="720" cy="140" r="6" fill="#d4a843"/>
+        <g class="flow-node fn3">
+          <circle class="fl-ring" cx="720" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
+          <circle class="fl-dot" cx="720" cy="140" r="6" fill="#d4a843"/>
           <text x="720" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Execution</text>
           <text x="720" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#b8922e" letter-spacing="1">[ 03 ]</text>
           <text x="720" y="210" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6f7684" letter-spacing="1">DEPLOY</text>
           <text x="720" y="225" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6f7684" letter-spacing="1">MANAGE</text>
         </g>
 
-        <line x1="770" y1="140" x2="978" y2="140" stroke="#1B2D5B" stroke-width="1" marker-end="url(#arrow)"/>
+        <line class="fl-line fl3" x1="770" y1="140" x2="970" y2="140" stroke="#1B2D5B" stroke-width="1"/>
+        <path class="fl-head fh3" d="M970,135 L978,140 L970,145 z" fill="#1B2D5B"/>
 
         <!-- Stage 4 — Support -->
-        <g class="flow-node">
-          <circle cx="1020" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
-          <circle cx="1020" cy="140" r="6" fill="#d4a843"/>
+        <g class="flow-node fn4">
+          <circle class="fl-ring" cx="1020" cy="140" r="42" fill="#faf8f4" stroke="#1B2D5B" stroke-width="1.5"/>
+          <circle class="fl-dot" cx="1020" cy="140" r="6" fill="#d4a843"/>
           <text x="1020" y="80" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="400" font-size="20" fill="#1B2D5B">Support</text>
           <text x="1020" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#b8922e" letter-spacing="1">[ 04 ]</text>
           <text x="1020" y="210" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6f7684" letter-spacing="1">ADVOCATE</text>
@@ -1448,14 +1493,14 @@
         </g>
 
         <!-- Loop-back arc from Support to Insight -->
-        <path d="M 1020 100 C 1020 30, 120 30, 120 100" fill="none" stroke="#d4a843" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrowGold)" opacity="0.6"/>
-        <text x="570" y="36" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="300" font-size="13" fill="#b8922e">Lifecycle continues — relationships that span decades</text>
+        <g mask="url(#loopMask)"><path d="M 1020 100 C 1020 30, 120 30, 120 100" fill="none" stroke="#d4a843" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrowGold)" opacity="0.6"/></g>
+        <text class="fl-cap" x="570" y="36" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="300" font-size="13" fill="#b8922e">Lifecycle continues — relationships that span decades</text>
 
       </svg>
 
       <div class="schematic-mobile">
         <ol style="list-style: none; padding: 0; margin: 0;">
-          <li style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--rule);">
+          <li class="fl-li" style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--rule);">
             <div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--navy); display: flex; align-items: center; justify-content: center; position: relative;">
               <span style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 9px; color: var(--gold-deep); letter-spacing: 1px; white-space: nowrap; min-width: 60px; text-align: center;">[ 01 ]</span>
               <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
@@ -1465,7 +1510,7 @@
               <div style="font-family: var(--mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 1px;">ASSESS &middot; DISCOVER</div>
             </div>
           </li>
-          <li style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--rule);">
+          <li class="fl-li" style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--rule);">
             <div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--navy); display: flex; align-items: center; justify-content: center; position: relative;">
               <span style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 9px; color: var(--gold-deep); letter-spacing: 1px; white-space: nowrap; min-width: 60px; text-align: center;">[ 02 ]</span>
               <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
@@ -1475,7 +1520,7 @@
               <div style="font-family: var(--mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 1px;">ROADMAP &middot; SOURCE</div>
             </div>
           </li>
-          <li style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--rule);">
+          <li class="fl-li" style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--rule);">
             <div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--navy); display: flex; align-items: center; justify-content: center; position: relative;">
               <span style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 9px; color: var(--gold-deep); letter-spacing: 1px; white-space: nowrap; min-width: 60px; text-align: center;">[ 03 ]</span>
               <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
@@ -1485,7 +1530,7 @@
               <div style="font-family: var(--mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 1px;">DEPLOY &middot; MANAGE</div>
             </div>
           </li>
-          <li style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0;">
+          <li class="fl-li" style="display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: center; padding: 18px 0;">
             <div style="width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center; position: relative;">
               <span style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 9px; color: var(--gold-deep); letter-spacing: 1px; white-space: nowrap; min-width: 60px; text-align: center;">[ 04 ]</span>
               <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
@@ -1779,6 +1824,19 @@ initBotId({
 })();
 </script>
 
+<script>
+(function () {
+  var sc = document.querySelector('.schematic');
+  if (!sc || !('IntersectionObserver' in window)) return;
+  sc.classList.add('flow-ready');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { sc.classList.add('flow-play'); io.disconnect(); }
+    });
+  }, { threshold: 0.35 });
+  io.observe(sc);
+})();
+</script>
 </body>
 </html>
 0
