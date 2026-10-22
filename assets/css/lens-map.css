@@ -41,8 +41,6 @@
 .pam-plink { font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
 @media (max-width: 860px) {
   .pam-body { grid-template-columns: 1fr; gap: 28px; }
-  .pam-svg { display: none; }
-  .pam-chips { display: flex; }
   .pam-panel { min-height: 0; }
 }
 .pam-svg .ring { fill: none; stroke: var(--rule); stroke-width: 1; stroke-dasharray: 3 7; }
@@ -81,3 +79,8 @@
 .pam--mini .pam-svg .node { cursor: pointer; }
 .pam--mini .pam-svg .node[aria-current="page"], .pam--mini .pam-svg .hub[aria-current="page"] { cursor: default; }
 .pam-cap { margin: 4px 0 0; font-family: var(--body); font-size: 13px; line-height: 1.5; color: var(--ink-soft); min-height: 21px; }
+
+/* Small geometry (phones and mini): same ring, bigger type so labels stay readable. */
+.pam-svg.pam-small .node .n1 { font-size: 22px; }
+.pam-svg.pam-small .hub .n1, .pam-svg.pam-small .hub .n2 { font-size: 19px; }
+@media (max-width: 860px) { .pam-body { gap: 20px; } }
