@@ -2,7 +2,8 @@
 The notes below are from the May 2026 cutover and are historical. Current state:
 - Site is live on lamtechnology.com. Production = main on Vercel (team lam-technology). Branch, open a PR with gh api REST, squash-merge only with Lesley's approval.
 - Shipped 10/21 (PRs #73 to #86): client testimonials and /what-clients-say/ page and nav link; brand paper cleanup (grain removed, hairlines instead of warm bands); interactive lens map on Practice Areas and Home; mini lens map under the title on the six assessment pages and Billing Breakthrough; single gold rule on pull quotes site-wide; tighter Home spacing; animated Home strapline.
-- Lens map files: assets/css/lens-map.css and assets/js/lens-map.js (modes: full on Practice Areas, compact on Home, data-mini on assessment pages). Connections are derived from the AREAS array in lens-map.js (draft taxonomy; Lesley approved shipping as is). Cache-busters: lam-redesign.css v=33, lens-map.css v=6, lens-map.js v=3, nav/footer partials v=17.
+- Shipped overnight, PR #88: the lens map shows as the ring on phones too (Home and Practice Areas; small geometry under 860px, rebuilt if the window crosses the breakpoint). The Home strapline fades in under Reduce Motion instead of showing static.
+- Lens map files: assets/css/lens-map.css and assets/js/lens-map.js (modes: full on Practice Areas, compact on Home, data-mini on assessment pages). Connections are derived from the AREAS array in lens-map.js (draft taxonomy; Lesley approved shipping as is). Cache-busters: lam-redesign.css v=33, lens-map.css v=7, lens-map.js v=4, nav/footer partials v=17.
 - Open: PR #80 (old spacing branch, conflicts with main, mostly superseded; the Billing Breakthrough FAQ collapse exists only there). Next ideas: collapse persona bullets, shorten How We Work, "juice up the site" (not scoped).
 - Full day log and rules: SharePoint Shared Documents/Claude/handoff-website-2026-10-21.md.
 
