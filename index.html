@@ -1237,6 +1237,26 @@
     .cta-inner { grid-template-columns: 1fr; gap: 56px; padding: 0 24px; }
     .form { padding: 32px 24px; }
   }
+
+  /* ============ VISUAL UPGRADE: bolder headlines + team photo ============ */
+  .hero-headline, .practices-headline, .outcomes-headline, .cta-headline,
+  .team-headline { font-weight: 500; }
+  .hero-headline { font-size: clamp(60px, 7.6vw, 128px); }
+  .practices-headline, .outcomes-headline { font-size: clamp(44px, 5.4vw, 88px); }
+  .cta-headline { font-size: clamp(48px, 5.8vw, 92px); }
+
+  .team-band { position: relative; z-index: 10; padding: 40px 0 48px; border-top: 1px solid var(--rule); background: var(--paper-warm, #F4F0E7); }
+  .team-inner { max-width: 1280px; margin: 0 auto; padding: 0 56px; display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 72px; align-items: center; }
+  .team-photo { margin: 0; }
+  .team-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 70%; }
+  .team-photo figcaption { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--gold); font-size: 14px; line-height: 1.4; color: var(--ink-muted); }
+  .team-headline { font-family: var(--display); font-size: clamp(44px, 5.2vw, 84px); line-height: 0.98; letter-spacing: -0.025em; color: var(--navy); margin: 0 0 24px; }
+  .team-copy { font-size: 18px; line-height: 1.55; color: var(--ink-soft); max-width: 520px; margin: 0 0 28px; }
+  @media (max-width: 860px) {
+    .team-band { padding: 40px 0; }
+    .team-inner { grid-template-columns: 1fr; gap: 28px; padding: 0 24px; }
+    .team-photo { max-width: 460px; }
+  }
 </style>
 </head>
 <body>
@@ -1619,6 +1639,21 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="team-band" aria-labelledby="team-h">
+  <div class="team-inner">
+    <figure class="team-photo">
+      <img src="/assets/team/team-20th-dinner.jpg" srcset="/assets/team/team-20th-dinner-640.jpg 640w, /assets/team/team-20th-dinner.jpg 1000w" sizes="(max-width: 860px) 90vw, 440px" width="1000" height="1333" loading="lazy" alt="The LAM Technology team seated along a long table outdoors at the 20th anniversary dinner, string lights overhead.">
+      <figcaption>Celebrating 20 years at our team dinner. Fort Worth, TX.</figcaption>
+    </figure>
+    <div class="team-text">
+      <h2 id="team-h" class="display team-headline">Twenty years.<br/>One table.</h2>
+      <p class="team-copy">The people you work with at LAM have built this firm together since 2006. In October the whole team sat down to mark 20 years.</p>
+      <a href="/about-lam/" class="btn btn-ghost">About LAM <span class="btn-arrow">&rarr;</span></a>
+    </div>
   </div>
 </section>
 
